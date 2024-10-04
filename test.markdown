@@ -4,9 +4,9 @@
 
 layout: page
 title: "Homepage"
-permalink: /index
+permalink: /index.html
 ---
 
 ## Welcome
 
-Hello World! Test!
+Hello World! Test 3!
