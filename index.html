@@ -7,7 +7,18 @@ layout: page
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   	<head>
-	    	<style type="text/css" media="screen">
+	    	<script>
+			function toggleNav() {
+			  var x = document.getElementById("navbar");
+			  if (x.className === "homeNav") {
+			    x.className += " responsive";
+			  } else {
+			    x.className = "homeNav";
+			  }
+			}
+		</script>
+		
+		<style type="text/css" media="screen">
 		  .container {
 			margin: 10px auto;
 			max-width: 600px;
@@ -43,6 +54,27 @@ layout: page
 		.navbar .icon {
 		  display: none;
 		}
+
+		@media screen and (max-width: 600px) {
+		  .navbar a:not(:first-child) {display: none;}
+		  .navbar a.icon {
+		    float: right;
+		    display: block;
+		  }
+		}
+		@media screen and (max-width: 600px) {
+		  .navbar.responsive {position: relative;}
+		  .navbar.responsive a.icon {
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		  }
+		  .navbar.responsive a {
+		    float: none;
+		    display: block;
+		    text-align: left;
+		  }
+		}
 		</style>
 	
 	<meta charset='utf-8'>
@@ -56,10 +88,10 @@ layout: page
 
   <body>
     <header>
-      	<div class="container">
+      	<div class="homeNav">
 		<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<section id="navbar">
+		<section class="homeNav" id="navbar">
 			<a href="#home" class="active">Home</a>
 			<a href="#about">About</a>
 			<a href="#projects">Projects</a>
