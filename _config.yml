@@ -22,7 +22,7 @@ title: Taylor Inman's Work & Professional Blog
 email: taylor.inman.ctc@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   Electrical & Computer Engineer, Sensors & Rapid Prototyping Specialist;
-  Check here often for news & projects related to my research & work interests,
+  Check here for news & projects related to my research & work interests,
   as well as assorted other bits of knowledge or tech.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tinmanctc.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
