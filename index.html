@@ -75,6 +75,33 @@ layout: page
 		    text-align: left;
 		  }
 		}
+
+		body, html {
+		    height: 100%;
+		}
+		.hero-image {
+		  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+		  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("AIreferences.png");
+		
+		  /* Set a specific height */
+		  height: 50%;
+		
+		  /* Position and center the image to scale nicely on all screens */
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  position: relative;
+		}
+		
+		/* Place text in the middle of the image */
+		.hero-text {
+		  text-align: center;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  color: white;
+		}
 		</style>
 	
 	<meta charset='utf-8'>
@@ -88,17 +115,15 @@ layout: page
 
   <body>
     <header>
-      	<div class="homeNav">
+      	<div class="homeNav" id="navBar">
 		<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<section class="homeNav" id="navbar">
-			<a href="#home" class="active">Home</a>
-			<a href="#about">About</a>
-			<a href="#projects">Projects</a>
-			<a href="javascript:void(0);" class="icon" onclick="toggleNav()">
-				<i class="fa fa-bars"></i>
-			</a>
-		</section>
+		<a href="home" class="active">Home</a>
+		<a href="about">About</a>
+		<a href="projects">Projects</a>
+		<a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+			<i class="fa fa-bars"></i>
+		</a>
 	</div>
 	    
 	<div class="container">
@@ -117,11 +142,15 @@ layout: page
       </div>
     </header>
 
-    <div class="container">
-      <section id="main_content">
-        <h1>Hello World! Test 4!</h1>
-      </section>
-    </div>
+  <div class="hero-image">
+    <section class="hero_section">
+	      <div class="hero-text">
+			<h1>Who</h1>
+			<p>What</p>
+		      <button>How</button>
+	      </div>
+    </section>
+  </div>
   </body>
 </html>
 
