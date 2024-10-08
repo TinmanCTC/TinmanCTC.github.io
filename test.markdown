@@ -4,7 +4,7 @@
 
 layout: page
 title: "Homepage"
-permalink: /about.html
+permalink: /markdown.html
 ---
 
 ## Welcome
