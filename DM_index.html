@@ -1,0 +1,160 @@
+---
+permalink: /index.html
+title: "Data Miner Idle Game"
+layout: page
+---
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  	<head>
+	    	<script>
+			function toggleNav() {
+			  var x = document.getElementById("navbar");
+			  if (x.className == "homeNav") {
+			    x.className += " responsive";
+			  } else {
+			    x.className = "homeNav";
+			  }
+			}
+		</script>
+		
+		<style type="text/css" media="screen">
+		  .container {
+			margin: 10px auto;
+			max-width: 600px;
+			text-align: center;
+		  }
+		  h1 {
+			margin: 30px 0;
+			font-size: 2em;
+			line-height: 1;
+			letter-spacing: -1px;
+		  }
+		.navbar {
+		  background-color: #4a5545;
+		  overflow: hidden;
+		}
+		.navbar a {
+		  float: left;
+		  display: block;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 17px;
+		}
+		.navbar a:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+		.navbar a.active {
+		  background-color: #04AA6D;
+		  color: white;
+		}
+		.navbar .icon {
+		  display: none;
+		}
+
+		@media screen and (max-width: 600px) {
+		  .navbar a:not(:first-child) {display: none;}
+		  .navbar a.icon {
+		    float: right;
+		    display: block;
+		  }
+		}
+		@media screen and (max-width: 600px) {
+		  .navbar.responsive {position: relative;}
+		  .navbar.responsive a.icon {
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		  }
+		  .navbar.responsive a {
+		    float: none;
+		    display: block;
+		    text-align: left;
+		  }
+		}
+
+		body, html {
+		    height: 100%;
+		}
+		.hero-image {
+		  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("AIreferences.png");
+		  height: 50%;
+	
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		  position: relative;
+		}
+		
+		.hero-text {
+		  text-align: center;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  color: white;
+		  text-shadow: 
+			3px 3px 0 #000,
+			-3px 3px 0 #000,
+			-3px -3px 0 #000,
+			3px -3px 0 #000;
+		}
+		</style>
+	
+	<meta charset='utf-8'>
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    	{% include head-custom.html %}
+
+{% seo %}
+  </head>
+
+  <body>
+    <header>
+      	<div class="homeNav" id="navBar">
+		<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<a href="index" class="active">Home</a>
+		<a href="about">About</a>
+		<a href="writing">Writing</a>
+		<a href="projects">Projects</a>
+		<a href="ramblings">Ramblings</a>
+		<a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	    
+	<div class="container">
+        <a id="a-title" href="{{ '/' | relative_url }}">
+          <h1>{{ site.title | default: site.github.tinmanctc.github.io }}</h1>
+        </a>
+        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+
+        <section id="downloads">
+          {% if site.show_downloads %}
+            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
+          {% endif %}
+          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+  <div class="hero-image">
+    <section class="hero_section">
+	      <div class="hero-text">
+			<h1><i>"Scientia est potentia; Aut viam invenium aut facium."</i></h1>
+			<p>Knowledge is power. The problems of today require understanding many different disciplines, or having access to many different tools, perspectives, and resources.
+			<br>If these aren't available, they must be made available; By institutions or the people themselves. 
+			<br>Here you'll find my attempt to share knowledge and insight, wherever it may be found, though the lens that is my perpsective on this mad world.</p>
+		      	<a href="about">Learn More</a>
+	      </div>
+    </section>
+  </div>
+  </body>
+</html>
+
