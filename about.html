@@ -9,19 +9,19 @@ layout: page
   <head>
     <style type="text/css">
 		#body_c1 {
-				text-align: center;
+			text-align: center;
 		}
 		#body_c2 {
-				text-align: center;
+			text-align: center;
 		}
 		#body_c3 {
-				text-align: center;
+			text-align: center;
 		}
 		.container {
 			margin: 10px auto;
 			max-width: 600px;
 			text-align: center;
-		  }
+		}
     </style>
     <style type="text/css" media="screen">
       .navbar {
@@ -94,6 +94,12 @@ layout: page
   			<i class="fa fa-bars"></i>
   		</a>
   	</div>
+	
+	<div class="container">
+        <a id="a-title" href="{{ '/' | relative_url }}">
+          <h1>{{ site.title | default: site.github.tinmanctc.github.io }}</h1>
+        </a>
+    </div>
     </header>
 
     <section class="content" id="body_fr1" style="width: 75%; margin: auto;">
