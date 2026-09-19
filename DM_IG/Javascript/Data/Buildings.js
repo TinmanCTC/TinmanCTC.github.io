@@ -1,3 +1,10 @@
+---
+permalink: /DM_IG/Javascript/Data/Buildings.js
+title: "Data Miner Idle Game"
+layout: page
+---
+
+<!DOCTYPE html>
 /**
  * ../Data/Buildings.js
  * Contains object information for production buildings 

@@ -1,3 +1,10 @@
+---
+permalink: /DM_IG/Javascript/Subsystems/Buildings.js
+title: "Data Miner Idle Game"
+layout: page
+---
+
+<!DOCTYPE html>
 import { Building } from "../Data/Buildings.js";
 
 /**
