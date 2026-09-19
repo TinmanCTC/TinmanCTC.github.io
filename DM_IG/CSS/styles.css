@@ -1,0 +1,92 @@
+aside {
+	display: flex;
+	float: right;
+	padding-left: 64px;
+	width: 18vw;
+	height: 100%;
+	background-color: lightgray;
+}
+
+body {
+  background-color: #1e1e1e;
+}
+
+.view-tabs {
+	display: flex;
+	border: 6px solid #4c504b;
+	background-color: #546350;
+	width: 75vw;
+	height: 10vw;
+	max-height: 100px;
+}
+
+#view-buttons {
+	display: flex;
+	justify-content: space-between;
+	width: 75vw;
+}
+
+.tab-btn {
+	width: 6vw;
+	height: 6vw;
+	min-height: 10px;
+	min-width: 10px;
+	max-height: 100px;
+	max-width: 100px;
+}
+
+.tab-btn:active {
+	transform: translateY(2px);
+}
+
+.options-tab {
+	display: flex;
+	border: 2px solid #4c504b;
+	background-color: lightgray;
+	width: 18vw;
+	height: 5vw;
+}
+
+.main-tabs {
+	display: flex;
+	justify-content: space-between;
+	width: 75vw;
+}
+
+
+.btn-img {
+	width: 5vw;
+	height: 5vw;
+	min-height: 10px;
+	min-width: 10px;
+	max-height: 100px;
+	max-width: 100px;
+	
+}
+
+/* Tooltip Code */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* Add dots under the hoverable text */
+  cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip-text {
+  opacity: 0;
+  transition: opacity 0.4s;
+  width: 130px;
+  background-color: black;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1; /* Ensure tooltip is displayed above content */
+}
+
+/* Show the tooltip text on hover */
+.tooltip:hover .tooltip-text {
+  opacity: 1;
+}
