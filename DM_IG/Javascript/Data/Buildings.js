@@ -114,4 +114,4 @@ export const Building = {
 	}
 };
 
-export Building as Building;
+export { Building } as Building;
