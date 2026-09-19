@@ -7,8 +7,8 @@ layout: page
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   	<head>
-	    	<script>
-			function toggleNav() {
+	    	<script>				
+				function toggleNav() {
 			  var x = document.getElementById("navbar");
 			  if (x.className == "homeNav") {
 			    x.className += " responsive";
@@ -276,12 +276,6 @@ layout: page
 	</section>
   </body>
 
-	<!-- Engine -->
-	<script src="Javascript/Engine/Helpers.js"></script>
-	<script src="Javascript/Engine/eventManager.js"></script>
-	<script src="Javascript/Engine/saveManager.js"></script>
-	<script src="Javascript/Engine/stateManager.js"></script>		
-	
 	<!-- Data -->
 	<script src="Javascript/Data/Buildings.js" type="module"></script>
 	<script src="Javascript/Data/Upgrades.js"></script>
@@ -297,6 +291,12 @@ layout: page
 	<script src="Javascript/Subsystems/Research.js"></script>
 	<script src="Javascript/Subsystems/Synergies.js"></script>
 	<script src="Javascript/Subsystems/Legacy.js"></script>
+	
+	<!-- Engine -->
+	<script src="Javascript/Engine/Helpers.js"></script>
+	<script src="Javascript/Engine/eventManager.js"></script>
+	<script src="Javascript/Engine/saveManager.js"></script>
+	<script src="Javascript/Engine/stateManager.js"></script>		
 	
 	<!-- Main Game Entry -->
 	<script src="Javascript/main.js"></script>
