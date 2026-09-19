@@ -7,7 +7,57 @@ layout: page
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en-US' }}">
   	<head>
+		<script>				
+			function toggleNav() {
+			  var x = document.getElementById("navbar");
+			  if (x.className == "homeNav") {
+				x.className += " responsive";
+			  } else {
+				x.className = "homeNav";
+			  }
+			}
+		</script>
+		<!-- Data -->
+		<script type="module" src="Javascript/Data/Buildings.js"></script>
+		<!--
+		<script src="Javascript/Data/Upgrades.js"></script>
+		<script src="Javascript/Data/Achievements.js"></script>
+		<script src="Javascript/Data/Research.js"></script>
+		<script src="Javascript/Data/Synergies.js"></script>
+		<script src="Javascript/Data/Legacy.js"></script>
+		-->
+		<!-- Subsystems -->
+		<script src="Javascript/Subsystems/Buildings.js"></script>
 		
+		<!--
+		<script src="Javascript/Subsystems/Upgrades.js"></script>
+		<script src="Javascript/Subsystems/Achievements.js"></script>
+		<script src="Javascript/Subsystems/Research.js"></script>
+		<script src="Javascript/Subsystems/Synergies.js"></script>
+		<script src="Javascript/Subsystems/Legacy.js"></script>
+		-->
+		<!-- Engine -->
+		<script src="Javascript/Engine/Helpers.js"></script>
+		<script src="Javascript/Engine/eventManager.js"></script>
+		<script src="Javascript/Engine/saveManager.js"></script>
+		<script src="Javascript/Engine/stateManager.js"></script>		
+		
+		<script defer>
+			const floaters = ["Hello World!", "Nobody here but us chickens!", "I wish I wish I was a fish!", "BYOB(Bring Your Own Bits)", "Why was six afraid of seven? Because seven ate nine!", "A long time ago, in a galaxy far, far away...", "Knock, knock!", "Orange you glad I didn't say banana?", "Banana!"];
+
+			function init() {
+				i = Math.round(Math.random() * floaters.length);
+				document.getElementById("float_bar").innerHTML = floaters[i];
+				
+				initListeners();
+				initBuildings();
+				
+				setInterval(tickTock, 100);
+				setInterval(drift, 15000);
+			}
+			
+			init();
+		</script>
 		
 		<link rel="stylesheet" href="CSS/styles.css">
 		
@@ -266,58 +316,6 @@ layout: page
 		</div>
 	</section>
   </body>
-	
-	<script>				
-			function toggleNav() {
-			  var x = document.getElementById("navbar");
-			  if (x.className == "homeNav") {
-				x.className += " responsive";
-			  } else {
-				x.className = "homeNav";
-			  }
-			}
-		</script>
-		<!-- Data -->
-		<script type="module" src="Javascript/Data/Buildings.js"></script>
-		<!--
-		<script src="Javascript/Data/Upgrades.js"></script>
-		<script src="Javascript/Data/Achievements.js"></script>
-		<script src="Javascript/Data/Research.js"></script>
-		<script src="Javascript/Data/Synergies.js"></script>
-		<script src="Javascript/Data/Legacy.js"></script>
-		-->
-		<!-- Subsystems -->
-		<script src="Javascript/Subsystems/Buildings.js"></script>
-		
-		<!--
-		<script src="Javascript/Subsystems/Upgrades.js"></script>
-		<script src="Javascript/Subsystems/Achievements.js"></script>
-		<script src="Javascript/Subsystems/Research.js"></script>
-		<script src="Javascript/Subsystems/Synergies.js"></script>
-		<script src="Javascript/Subsystems/Legacy.js"></script>
-		-->
-		<!-- Engine -->
-		<script src="Javascript/Engine/Helpers.js"></script>
-		<script src="Javascript/Engine/eventManager.js"></script>
-		<script src="Javascript/Engine/saveManager.js"></script>
-		<script src="Javascript/Engine/stateManager.js"></script>		
-		
-		<script>
-		const floaters = ["Hello World!", "Nobody here but us chickens!", "I wish I wish I was a fish!", "BYOB(Bring Your Own Bits)", "Why was six afraid of seven? Because seven ate nine!", "A long time ago, in a galaxy far, far away...", "Knock, knock!", "Orange you glad I didn't say banana?", "Banana!"];
-
-		function init() {
-			i = Math.round(Math.random() * floaters.length);
-			document.getElementById("float_bar").innerHTML = floaters[i];
-			
-			initListeners();
-			initBuildings();
-			
-			setInterval(tickTock, 100);
-			setInterval(drift, 15000);
-		}
-		
-		init();
-		</script>
 	
 </html>
 
