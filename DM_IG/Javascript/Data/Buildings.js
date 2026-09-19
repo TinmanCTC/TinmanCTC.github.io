@@ -113,5 +113,3 @@ export const Building = {
 		imgStr: "blockchain_img"
 	}
 };
-
-export { Building } as Building;

@@ -1,11 +1,11 @@
+import { Building } from "../Data/Buildings.js";
+
 /**
  * ../Subsystems/Buildings.js
  * Contains object information for production buildings 
  * Utilized by Subsystems/Buildings.js
  * 
  */
-
-import { Building } from "../Data/Buildings.js";
 
 let Punchcard = [];
 let Desktop = [];
