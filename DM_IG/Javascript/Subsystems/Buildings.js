@@ -82,6 +82,6 @@ class Buildings {
 		Building.Punchcard.managerInterval,
 		Building.Punchcard.imgStr);
 	
-		//document.getElementById("prod-first-row").innerHTML = "<img src='" + Punchcard.imgString + "' class='prod-img' id='punchcard-btn'>";
-		document.getElementById("prod-first-row").innerHTML = "Test!";
+		document.getElementById("prod-first-row").innerHTML = "<img src='" + Punchcard.imgString + "' class='prod-img' id='punchcard-btn'>";
+		//document.getElementById("prod-first-row").innerHTML = "Test!";
  }
