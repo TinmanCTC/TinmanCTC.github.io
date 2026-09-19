@@ -39,7 +39,7 @@ const Building = {
 		powerUse: 100,
 		clickInterval: 100,
 		managerInterval: 500,
-		imgStr: "\Assets\Images\punchcard_framed.png"
+		imgStr: "/DM_IG/Assets/Images/punchcard_framed.png"
 	},
 	Desktop: {
 		id: "desktop",

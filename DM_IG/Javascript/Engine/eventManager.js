@@ -1,3 +1,9 @@
+---
+permalink: /DM_IG/Javascript/Engine/eventManager.js
+title: "Data Miner Idle Game"
+layout: page
+---
+
 let settingsButtonID = document.getElementById("settings_button");
 let researchButtonID = document.getElementById("research_button");
 let productionButtonID = document.getElementById("production_button");
