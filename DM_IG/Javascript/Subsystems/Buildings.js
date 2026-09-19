@@ -3,7 +3,7 @@ permalink: /DM_IG/Javascript/Subsystems/Buildings.js
 title: "Data Miner Idle Game"
 layout: page
 ---
-import { Building } from "../Data/Buildings.js";
+import { Building } from "/DM_IG/Javascript/Data/Buildings.js";
 
 /**
  * ../Subsystems/Buildings.js
