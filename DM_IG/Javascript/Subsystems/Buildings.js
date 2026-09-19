@@ -5,7 +5,7 @@
  * 
  */
 
-import Building from "../Data/Buildings.js";
+import("../Data/Buildings.js");
 
 let Punchcard = [];
 let Desktop = [];
