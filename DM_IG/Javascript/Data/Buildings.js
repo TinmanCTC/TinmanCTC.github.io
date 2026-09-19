@@ -22,7 +22,7 @@
 
 */
 
-const Building = {
+export const Building = {
 	Punchcard: {
 		id: "punchcard",
 		name: "Punch Card Computer",
