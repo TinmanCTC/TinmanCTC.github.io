@@ -18,6 +18,8 @@ layout: page
 			}
 		</script>
 		
+		<link rel="stylesheet" href="CSS/styles.css">
+		
 		<style type="text/css" media="screen">
 		  .container {
 			margin: 10px auto;
@@ -142,19 +144,165 @@ layout: page
           <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
         </section>
       </div>
+
+		<!-- Copied code start-->
+		<aside class="options-tab">
+			<div class="logo-area">
+				<p id="float_bar"></p>
+			</div>
+		</aside>
+		
+		<nav class="view-tabs" id="view-buttons">	
+				<button data-view="production" id="production_button" class="tab-btn">
+					<div class="tooltip">
+						<img src="Assets/Images/prodButton.jpg" class="btn-img" id="prod-btn">
+						<span class="tooltip-text">Production</span>
+					</div>
+				</button>
+				<button data-view="research" id="research_button" class="tab-btn" type="button">
+					<div class="tooltip">
+						<img src="Assets/Images/researchButton.jpg" class="btn-img" id="res-btn">
+						<span class="tooltip-text">Research</span>
+					</div>
+				</button>
+				<button data-view="upgrades" id="upgrades_button" class="tab-btn" type="button">
+					<div class="tooltip">
+						<img src="Assets/Images/upgradeButton.jpg" class="btn-img" id="upgr-btn">
+						<span class="tooltip-text">Upgrades</span>
+					</div>
+				</button>
+				<button data-view="managers" id="managers_button" class="tab-btn" type="button">
+					<div class="tooltip">
+						<img src="Assets/Images/managerButton.jpg" class="btn-img" id="mang-btn">
+						<span class="tooltip-text">Managers</span>
+					</div>
+				</button>
+				<button data-view="settings" id="settings_button" class="tab-btn" type="button">
+					<div class="tooltip">
+						<img src="Assets/Images/settingsButton.jpg" class="btn-img" id="sett-btn">
+						<span class="tooltip-text">Settings</span>
+					</div>
+				</button>
+		</nav>
     </header>
 
-  <div class="hero-image">
-    <section class="hero_section">
-	      <div class="hero-text">
-			<h1><i>"Scientia est potentia; Aut viam invenium aut facium."</i></h1>
-			<p>Knowledge is power. The problems of today require understanding many different disciplines, or having access to many different tools, perspectives, and resources.
-			<br>If these aren't available, they must be made available; By institutions or the people themselves. 
-			<br>Here you'll find my attempt to share knowledge and insight, wherever it may be found, though the lens that is my perpsective on this mad world.</p>
-		      	<a href="about">Learn More</a>
-	      </div>
-    </section>
-  </div>
+  <main id="app">
+	<!-- Sidebar -->
+	<aside id="sidebar">
+		<section id="store">
+			<h3>Cheamu Store</h3>
+			<p><i>Shipping guaranteed, quality optional.</i></p>
+			<p id="time"></p>
+
+			<div id="building-list">
+				<!-- Dynamically populated -->
+			</div>
+		</section>
+	</aside>
+
+	<!-- Main Content Area -->
+	<section id="content">
+
+		<!-- Resource Display -->
+		<div id="resource-bar">
+			<div class="resource">
+				<img src="img/bits_stored_icon.png">
+				<span id="bits"></span>
+			</div>
+
+			<div class="resource">
+				<img src="img/power_gen_icon.png">
+				<span id="powerGen"></span>
+				<img src="img/power_use_icon.png">
+				<span id="powerCon"></span>
+			</div>
+
+			<div class="resource">
+				<img src="img/cash_icon.png">
+				<span id="cash"></span>
+			</div>
+		</div>
+
+		<!-- Views -->
+		<div id="views">
+
+			<div id="view-production" class="view">
+				<h2 id="production-header">Production</h2>
+				<div id="production-buttons">
+					<!-- Dynamically populated -->
+					<p id="prod-first-row"></p>
+				</div>
+			</div>
+
+			<div id="view-research" class="view" style="display:none;">
+				<h2>Research</h2>
+				<div id="research-tree">
+					<!-- Dynamically populated -->
+				</div>
+			</div>
+
+			<div id="view-upgrades" class="view" style="display:none;">
+				<h2>Upgrades</h2>
+				<div id="upgrade-list">
+					<!-- Dynamically populated -->
+				</div>
+			</div>
+
+			<div id="view-managers" class="view" style="display:none;">
+				<h2>Managers</h2>
+				<div id="manager-list">
+					<!-- Dynamically populated -->
+				</div>
+			</div>
+
+			<div id="view-settings" class="view" style="display:none;">
+				<h2>Settings</h2>
+				<div id="settings-panel">
+					<!-- Settings UI goes here -->
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	</main>
+
+	<!-- Brokers Row -->
+	<section id="brokers">
+		<h2>Data Brokers</h2>
+		<div id="broker-list">
+			<!-- Dynamically populated -->
+		</div>
+	</section>
   </body>
+
+	<!-- Engine -->
+	<script src="Javascript/Engine/Helpers.js"></script>
+	<script src="Javascript/Engine/eventManager.js"></script>
+	<script src="Javascript/Engine/saveManager.js"></script>
+	<script src="Javascript/Engine/stateManager.js"></script>		
+	
+	<!-- Data -->
+	<script src="Javascript/Data/Buildings.js" type="module"></script>
+	<script src="Javascript/Data/Upgrades.js"></script>
+	<script src="Javascript/Data/Achievements.js"></script>
+	<script src="Javascript/Data/Research.js"></script>
+	<script src="Javascript/Data/Synergies.js"></script>
+	<script src="Javascript/Data/Legacy.js"></script>
+	
+	<!-- Subsystems -->
+	<script src="Javascript/Subsystems/Buildings.js"></script>
+	<script src="Javascript/Subsystems/Upgrades.js"></script>
+	<script src="Javascript/Subsystems/Achievements.js"></script>
+	<script src="Javascript/Subsystems/Research.js"></script>
+	<script src="Javascript/Subsystems/Synergies.js"></script>
+	<script src="Javascript/Subsystems/Legacy.js"></script>
+	
+	<!-- Main Game Entry -->
+	<script src="Javascript/main.js"></script>
+	
+	<script>
+		init();
+	</script>
 </html>
 
