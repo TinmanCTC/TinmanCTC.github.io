@@ -11,8 +11,8 @@ layout: page
  * Utilized by Subsystems/Buildings.js
  * 
  */
-const data = import("/DM_IG/Javascript/Data/Buildings.json", { with: { type: "json" } });
-const bldg = JSON.parse(data);
+//const data = import("/DM_IG/Javascript/Data/Buildings.json", { with: { type: "json" } });
+const bldg = JSON.parse("/DM_IG/Javascript/Data/Buildings.json");
 
 function Building(id, name, unlocked, baseOutput, baseBonus, mngCost, mngInterval, powerUse, clickInterval, imgStr) {
 	this.id = id;
