@@ -11,7 +11,7 @@
 		"clickInterval": 100,
 		"managerInterval": 500,
 		"imgStr": "Assets/Images/punchcard_framed.png"
-	}
+	},
 	"Desktop": {
 		"id": "desktop",
 		"name": "Desktop Computer",
@@ -24,9 +24,7 @@
 		"clickInterval": 2000,
 		"managerInterval": 7500,
 		"imgStr": "desktop_img"
-	}
-}
-{
+	},
 	"Cubicle": {
 		"id": "cubicle",
 		"name": "Cubicle Workstation",
@@ -39,9 +37,7 @@
 		"clickInterval": 5000,
 		"managerInterval": 10000,
 		"imgStr": "cubicle_img"
-	}
-}
-{
+	},
 	"LAN": {
 		"id": "lan",
 		"name": "LAN Server",
@@ -54,9 +50,7 @@
 		"clickInterval":  10000,
 		"managerInterval": 15000,
 		"imgStr": "lan_img"
-	}
-}
-{
+	},
 	"Cheap_Gen": {
 		"id": "cheapGen",
 		"name": "Cheap Generator",
@@ -67,9 +61,7 @@
 		"powerUse": 10000,
 		"clickInterval": 30000,
 		"imgStr": "cheap_gen_img"
-	}
-}
-{
+	},
 	"Cloud": {
 		"id": "cloud",
 		"name": "Cloud Server",
@@ -82,9 +74,7 @@
 		"clickInterval": 30000,
 		"managerInterval": 15000,
 		"imgStr": "cloud_img"
-	}
-}
-{
+	},
 	"Blockchain": {
 		"id": "blockchain",
 		"name": "Blockchain Processor",
