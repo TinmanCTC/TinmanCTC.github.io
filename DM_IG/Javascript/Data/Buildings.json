@@ -1,5 +1,4 @@
-{
-	"Punchcard": {
+{"Punchcard": {
 		"id": "punchcard",
 		"name": "Punch Card Computer",
 		"startUnlocked": true,
