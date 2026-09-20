@@ -11,8 +11,8 @@ layout: page
  * Utilized by Subsystems/Buildings.js
  * 
  */
-//const data = import("/DM_IG/Javascript/Data/Buildings.json", { with: { type: "json" } });
-const bldg = JSON.parse('/DM_IG/Javascript/Data/Buildings.json');
+const data = import("./DM_IG/Javascript/Data/Buildings.json", { with: { type: "json" } });
+//const bldg = JSON.parse('/DM_IG/Javascript/Data/Buildings.json');
 
 function Building(id, name, unlocked, baseOutput, baseBonus, mngCost, mngInterval, powerUse, clickInterval, imgStr) {
 	this.id = id;
@@ -27,8 +27,8 @@ function Building(id, name, unlocked, baseOutput, baseBonus, mngCost, mngInterva
 	this.imgStr = imgStr;
 }
 
-let bldg1 = [];
-let bldg2 = [];
+//let bldg1 = [];
+//let bldg2 = [];
 
 class Buildings {
 	constructor(id, name,level = 0,quantity = 1,unlocked = false,baseProduction,baseCost,baseBonus = 0,powerUse,isClicked = false,timeClicked = 0,clickInterval,isManaged = false,mngCost = 500,mngInterval = 5000,imgString) {
@@ -77,7 +77,7 @@ class Buildings {
 				
  };
  
- function initBuildings() {
+ /*function initBuildings() {
 	
 	bldg1 = new Buildings(
 		bldg.Punchcard.id,
@@ -98,4 +98,4 @@ class Buildings {
 	
 		document.getElementById("prod-first-row").innerHTML = "<img src='" + Punchcard.imgString + "' class='prod-img' id='punchcard-btn'>";
 		//document.getElementById("prod-first-row").innerHTML = "Test!";
- }
+ }*/
