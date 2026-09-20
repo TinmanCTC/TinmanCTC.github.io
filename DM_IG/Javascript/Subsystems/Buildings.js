@@ -11,7 +11,7 @@ layout: page
  * Utilized by Subsystems/Buildings.js
  * 
  */
-const bldg = require("./DM_IG/Javascript/Data/Buildings.json");
+const bldg = import("./DM_IG/Javascript/Data/Buildings.json");
 
 
 function Building(id, name, unlocked, baseOutput, baseBonus, mngCost, mngInterval, powerUse, clickInterval, imgStr) {
