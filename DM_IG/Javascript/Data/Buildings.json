@@ -1,9 +1,3 @@
----
-permalink: /DM_IG/Javascript/Data/Buildings.json
-title: "Data Miner Idle Game"
-layout: page
----
-
 {
 	"Punchcard": {
 		"id": "punchcard",
