@@ -11,7 +11,7 @@ layout: page
  * Utilized by Subsystems/Buildings.js
  * 
  */
-const bldg = import("./DM_IG/Javascript/Data/Buildings.json", { with: { type: "json" } });
+const { bldg } = import('/DM_IG/Javascript/Data/Buildings.json', { with: { type: "json" } });
 
 
 function Building(id, name, unlocked, baseOutput, baseBonus, mngCost, mngInterval, powerUse, clickInterval, imgStr) {
@@ -80,15 +80,15 @@ class Buildings {
  function initBuildings() {
 	
 	bldg1 = new Buildings(
-		Building.Punchcard.id,
-		Building.Punchcard.name,
+		bldg.Punchcard.id,
+		bldg.Punchcard.name,
 		1,
 		1,
-		Building.Punchcard.startUnlocked,
-		Building.Punchcard.baseOutput,
-		Building.Punchcard.baseCost,
-		Building.Punchcard.baseBonus,
-		Building.Punchcard.powerUse,
+		bldg.Punchcard.startUnlocked,
+		bldg.Punchcard.baseOutput,
+		bldg.Punchcard.baseCost,
+		bldg.Punchcard.baseBonus,
+		bldg.Punchcard.powerUse,
 		false,
 		0,
 		Building.Punchcard.clickInterval,
