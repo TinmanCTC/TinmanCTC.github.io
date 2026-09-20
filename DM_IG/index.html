@@ -8,6 +8,8 @@ layout: page
 <html lang="{{ site.lang | default: 'en-US' }}">
   	<head>
 		<script>				
+			import data from "/DM_IG/Javascript/Data/Buildings.json" with: { type: "json" };
+			
 			function toggleNav() {
 			  var x = document.getElementById("navbar");
 			  if (x.className == "homeNav") {
@@ -304,7 +306,6 @@ layout: page
 	<script src="Javascript/main.js"></script>
 	
 	<script>
-		import data from "/DM_IG/Javascript/Data/Buildings.json" with: { type: "json" };
 		init();
 	</script>
 	
