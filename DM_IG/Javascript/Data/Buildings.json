@@ -12,8 +12,6 @@
 		"managerInterval": 500,
 		"imgStr": "Assets/Images/punchcard_framed.png"
 	}
-}
-{
 	"Desktop": {
 		"id": "desktop",
 		"name": "Desktop Computer",
