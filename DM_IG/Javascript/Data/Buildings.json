@@ -1,4 +1,4 @@
-{"Punchcard": {
+"Punchcard": {
 		"id": "punchcard",
 		"name": "Punch Card Computer",
 		"startUnlocked": true,
@@ -87,4 +87,3 @@
 		"managerInterval": 15000,
 		"imgStr": "blockchain_img"
 	}
-}
