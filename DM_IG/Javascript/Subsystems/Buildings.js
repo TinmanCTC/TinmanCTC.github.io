@@ -12,7 +12,7 @@ layout: page
  * 
  */
 //const data = import("/DM_IG/Javascript/Data/Buildings.json", { with: { type: "json" } });
-import data from "/DM_IG/Javascript/Data/Buildings.json" with: { type: "json" };
+
 
 //const bldg = JSON.parse(data);
 
