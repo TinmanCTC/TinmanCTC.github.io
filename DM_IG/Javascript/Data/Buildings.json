@@ -1,4 +1,4 @@
-{ "id": "punchcard",
+"id": "punchcard",
 	"name": "Punch Card Computer",
 	"startUnlocked": true,
 	"baseOutput": 864,
@@ -9,4 +9,3 @@
 	"clickInterval": 100,
 	"managerInterval": 500,
 	"imgStr": "Assets/Images/punchcard_framed.png"
-}
