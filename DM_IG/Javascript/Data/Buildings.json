@@ -1,15 +1,12 @@
-{ "Punchcard": {
-		"id": "punchcard",
-		"name": "Punch Card Computer",
-		"startUnlocked": true,
-		"baseOutput": 864,
-		"baseBonus": 0,
-		"baseCost": 50,
-		"managerCost": 5000,
-		"powerUse": 100,
-		"clickInterval": 100,
-		"managerInterval": 500,
-		"imgStr": "Assets/Images/punchcard_framed.png"
-	}
+{ "id": "punchcard",
+	"name": "Punch Card Computer",
+	"startUnlocked": true,
+	"baseOutput": 864,
+	"baseBonus": 0,
+	"baseCost": 50,
+	"managerCost": 5000,
+	"powerUse": 100,
+	"clickInterval": 100,
+	"managerInterval": 500,
+	"imgStr": "Assets/Images/punchcard_framed.png"
 }
-	
