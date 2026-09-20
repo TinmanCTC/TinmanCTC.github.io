@@ -12,7 +12,7 @@ layout: page
  * 
  */
 //const data = import("/DM_IG/Javascript/Data/Buildings.json", { with: { type: "json" } });
-const bldg = JSON.parse("./DM_IG/Javascript/Data/Buildings.json");
+const bldg = JSON.parse('/DM_IG/Javascript/Data/Buildings.json');
 
 function Building(id, name, unlocked, baseOutput, baseBonus, mngCost, mngInterval, powerUse, clickInterval, imgStr) {
 	this.id = id;
