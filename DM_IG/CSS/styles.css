@@ -26,19 +26,6 @@ body {
 	width: 75vw;
 }
 
-.tab-btn {
-	width: 6vw;
-	height: 6vw;
-	min-height: 10px;
-	min-width: 10px;
-	max-height: 100px;
-	max-width: 100px;
-}
-
-.tab-btn:active {
-	transform: translateY(2px);
-}
-
 .options-tab {
 	display: flex;
 	border: 2px solid #4c504b;
@@ -53,6 +40,31 @@ body {
 	width: 75vw;
 }
 
+.tab-btn {
+	width: 6vw;
+	height: 6vw;
+	min-height: 10px;
+	min-width: 10px;
+	max-height: 100px;
+	max-width: 100px;
+}
+
+.tab-btn:active {
+	transform: translateY(2px);
+}
+
+.prod-btn {
+	width: 6vw;
+	height: 6vw;
+	min-height: 10px;
+	min-width: 10px;
+	max-height: 100px;
+	max-width: 100px;
+}
+
+.prod-btn:active {
+	transform: translateY(2px);
+}
 
 .btn-img {
 	width: 5vw;
