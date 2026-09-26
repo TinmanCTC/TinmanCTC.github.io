@@ -14,7 +14,7 @@ function init() {
 	document.getElementById("float_bar").innerHTML = floaters[i];
 	
 	initListeners();
-	initBuildings();
+	//initBuildings();
 	
 	setInterval(tickTock, 100);
 	setInterval(drift, 15000);
