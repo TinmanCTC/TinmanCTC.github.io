@@ -3,20 +3,62 @@ permalink: /DM_IG/Javascript/Subsystems/Buildings.js
 title: "Data Miner Idle Game"
 layout: page
 ---
-//import Building from "./DM_IG/Javascript/Data/Buildings.js";
-
 /**
  * ../Subsystems/Buildings.js
- * Contains object information for production buildings 
- * Utilized by Subsystems/Buildings.js
+ * Contains object information for production buildings
  * 
  */
-//const data = import("/DM_IG/Javascript/Data/Buildings.json", { with: { type: "json" } });
 
+// Template for default buildings
+const Building = {
+/* Format:
+	<BLDG_DEF>: {
+		id: 
+		name: 
+		startUnlocked: 
+		baseOutput: 
+		baseBonus: 
+		baseCost: 
+		managerCost:
+		powerUse: 
+		clickInterval: 
+		managerInterval: 
+		imgStr:
+	}
 
-//const bldg = JSON.parse(data);
+*/
+	// Level 0
+	Punchcard: {
+		id: "punchcard",
+		name: "Punch Card Computer",
+		startUnlocked: true,
+		baseOutput: 864,
+		baseBonus: 0,
+		baseCost: 50,
+		managerCost: 5000,
+		powerUse: 100,
+		clickInterval: 100,
+		managerInterval: 500,
+		imgStr: "pnch_img"
+	},
+	// Level 1
+	Desktop: {
+		id: "desktop",
+		name: "Desktop Computer",
+		startUnlocked: false,
+		baseOutput: 2056,
+		baseBonus: 0,
+		baseCost: 1000,
+		managerCost: 5000,
+		powerUse: 250,
+		clickInterval: 2000,
+		managerInterval:		7500,
+		imgStr: "desktop_img"
+	}
+	// Level 2
+};
 
-function Building(id, name, unlocked, baseOutput, baseBonus, mngCost, mngInterval, powerUse, clickInterval, imgStr) {
+function Buildings(id, name, unlocked, baseOutput, baseBonus, mngCost, mngInterval, powerUse, clickInterval, imgStr) {
 	this.id = id;
 	this.name = name;
 	this.startUnlocked = unlocked;
@@ -28,9 +70,6 @@ function Building(id, name, unlocked, baseOutput, baseBonus, mngCost, mngInterva
 	this.clickInterval = clickInterval;
 	this.imgStr = imgStr;
 }
-
-//let bldg1 = [];
-//let bldg2 = [];
 
 class Buildings {
 	constructor(id, name,level = 0,quantity = 1,unlocked = false,baseProduction,baseCost,baseBonus = 0,powerUse,isClicked = false,timeClicked = 0,clickInterval,isManaged = false,mngCost = 500,mngInterval = 5000,imgString) {
@@ -53,11 +92,11 @@ class Buildings {
 		}
 				
 		enable() {
-			
+			this.unlocked = true;
 		}
 		
 		disable() {
-			
+			this.unlocked = false;
 		}
 		
 		buy(amt) {
@@ -79,18 +118,18 @@ class Buildings {
 				
  };
  
- /*function initBuildings() {
+ function initBuildings() {
 	
-	bldg1 = new Buildings(
-		bldg.Punchcard.id,
-		bldg.Punchcard.name,
+	Punchcard = new Buildings(
+		Building.Punchcard.id,
+		Building.Punchcard.name,
 		1,
 		1,
-		bldg.Punchcard.startUnlocked,
-		bldg.Punchcard.baseOutput,
-		bldg.Punchcard.baseCost,
-		bldg.Punchcard.baseBonus,
-		bldg.Punchcard.powerUse,
+		Building.Punchcard.startUnlocked,
+		Building.Punchcard.baseOutput,
+		Building.Punchcard.baseCost,
+		Building.Punchcard.baseBonus,
+		Building.Punchcard.powerUse,
 		false,
 		0,
 		Building.Punchcard.clickInterval,
@@ -100,4 +139,5 @@ class Buildings {
 	
 		document.getElementById("prod-first-row").innerHTML = "<img src='" + Punchcard.imgString + "' class='prod-img' id='punchcard-btn'>";
 		//document.getElementById("prod-first-row").innerHTML = "Test!";
- }*/
+ }
+ 
