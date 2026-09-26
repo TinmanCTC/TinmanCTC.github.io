@@ -64,6 +64,15 @@ body {
 	
 }
 
+.prod-img {
+	width: 5vw;
+	height: 5vw;
+	min-height: 10px;
+	min-width: 10px;
+	max-height: 100px;
+	max-width: 100px;
+}
+
 /* Tooltip Code */
 .tooltip {
   position: relative;
