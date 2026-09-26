@@ -39,7 +39,7 @@ const Building = {
 		powerUse: 100,
 		clickInterval: 100,
 		managerInterval: 500,
-		imgStr: "punchcard_framed.png"
+		imgStr: "Assets/Images/punchcard_framed.png"
 	},
 	// Level 1
 	Desktop: {
