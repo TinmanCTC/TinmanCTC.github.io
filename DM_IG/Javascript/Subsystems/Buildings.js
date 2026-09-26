@@ -58,19 +58,6 @@ const Building = {
 	// Level 2
 };
 
-function Buildings(id, name, unlocked, baseOutput, baseBonus, mngCost, mngInterval, powerUse, clickInterval, imgStr) {
-	this.id = id;
-	this.name = name;
-	this.startUnlocked = unlocked;
-	this.baseOutput = baseOutput;
-	this.baseBonus = baseBonus;
-	this.managerCost = mngCost;
-	this.managerInterval = mngInterval;
-	this.powerUse = powerUse;
-	this.clickInterval = clickInterval;
-	this.imgStr = imgStr;
-}
-
 class Buildings {
 	constructor(id, name,level = 0,quantity = 1,unlocked = false,baseProduction,baseCost,baseBonus = 0,powerUse,isClicked = false,timeClicked = 0,clickInterval,isManaged = false,mngCost = 500,mngInterval = 5000,imgString) {
 		this.id = id;
