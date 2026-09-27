@@ -4,7 +4,8 @@ aside {
 	padding-left: 64px;
 	width: 18vw;
 	height: 100%;
-	background-color: lightgray;
+	border: 2px solid #4c504b;
+	background-color: #546350;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
 .options-tab {
 	display: flex;
 	border: 2px solid #4c504b;
-	background-color: lightgray;
+	background-color: #546350;
 	width: 18vw;
 	height: 5vw;
 }
