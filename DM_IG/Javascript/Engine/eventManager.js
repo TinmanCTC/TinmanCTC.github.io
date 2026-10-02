@@ -10,7 +10,8 @@ let productionButtonID = document.getElementById("production_button");
 let upgradesButtonID = document.getElementById("upgrades_button");
 let managersButtonID = document.getElementById("managers_button");
 
-let punchcardButtonID = document.getElementById("punchcard_button");
+let punchcardButtonID = document.getElementById('punchcard_button');
+
 
 function initListeners() {
 	
@@ -43,7 +44,14 @@ function initListeners() {
 	
 	// Punchcard - On by default
 	punchcardButtonID.addEventListener("click", function () {
-		alert("Punchcard clicked!");
+		let time = Date.now;
+		let punchcardTimeClicked = Punchcard.timeClicked;
+		if ((time - punchcardTimeClicked) > Punchcard.clickInterval) {
+			Punchcard.timeClicked = time;
+			alert("Punchcard clicked!");
+		} else {
+			alert("Punchcard clicked too early!");
+		}
 	});
 }
 
