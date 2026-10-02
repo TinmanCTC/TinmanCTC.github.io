@@ -310,8 +310,8 @@ layout: page
 		i = Math.round(Math.random() * floaters.length);
 		document.getElementById("float_bar").innerHTML = floaters[i];
 	
-		initListeners();
 		initBuildings();
+		initListeners();		
 	
 		setInterval(tickTock, 100);
 		setInterval(drift, 15000);
