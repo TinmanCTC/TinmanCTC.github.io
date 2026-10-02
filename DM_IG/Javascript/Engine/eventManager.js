@@ -10,6 +10,8 @@ let productionButtonID = document.getElementById("production_button");
 let upgradesButtonID = document.getElementById("upgrades_button");
 let managersButtonID = document.getElementById("managers_button");
 
+let punchcardButtonID = document.getElementById("punchcard_button");
+
 function initListeners() {
 	
 	// Change view to Production View
@@ -35,6 +37,13 @@ function initListeners() {
 	// Change view to Settings View
 	settingsButtonID.addEventListener("click", function () {
 		alert("Settings!");
+	});
+	
+	// Building Listeners
+	
+	// Punchcard - On by default
+	punchcardButtonID.addEventListener("click", function () {
+		alert("Punchcard clicked!");
 	});
 }
 
