@@ -125,5 +125,18 @@ class Buildings {
 		Building.Punchcard.imgStr);
 	
 		document.getElementById("prod-first-row").innerHTML = "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcard_framed.png' class='prod-img'></button>";
+		// Punchcard - On by default
+		
+		let punchcardButtonID = document.getElementById("punchcard_button");
+		punchcardButtonID.addEventListener("click", function () {
+			let time = Date.now;
+			let punchcardTimeClicked = Punchcard.timeClicked;
+			if ((time - punchcardTimeClicked) > Punchcard.clickInterval) {
+				Punchcard.timeClicked = time;
+				alert("Punchcard clicked!");
+			} else {
+				alert("Punchcard clicked too early!");
+			}
+		});
  };
  
