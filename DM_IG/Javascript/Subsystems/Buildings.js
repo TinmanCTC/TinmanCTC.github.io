@@ -133,7 +133,7 @@ class Buildings {
 			let punchcardTimeClicked = Punchcard.timeClicked;
 			if ((time - punchcardTimeClicked) > Punchcard.clickInterval) {
 				Punchcard.timeClicked = time;
-				alert("Punchcard clicked at " + time");
+				alert("Punchcard clicked at " + "time");
 			} else {
 				if (!Punchcard.isClicked) {
 					Punchcard.timeClicked = time;
