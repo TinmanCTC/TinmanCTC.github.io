@@ -17,3 +17,5 @@ function initGame() {
 	setInterval(tickTock, 100);
 	setInterval(drift, 15000);
 }
+
+initGame();
