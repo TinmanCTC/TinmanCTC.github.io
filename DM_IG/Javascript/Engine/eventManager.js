@@ -3,17 +3,22 @@ permalink: /DM_IG/Javascript/Engine/eventManager.js
 title: "Data Miner Idle Game"
 layout: page
 ---
+/* Module: eventManager.js
+*  Purpose: Handle I/O
+*  
+*  Dependencies: Game state, most other modules
+*  
+*  
+*/
 
-let settingsButtonID = document.getElementById("settings_button");
-let researchButtonID = document.getElementById("research_button");
-let productionButtonID = document.getElementById("production_button");
-let upgradesButtonID = document.getElementById("upgrades_button");
-let managersButtonID = document.getElementById("managers_button");
 
-
-
-
-function initListeners() {
+export function initListeners() {
+	
+	const settingsButtonID = document.getElementById("settings_button");
+	const researchButtonID = document.getElementById("research_button");
+	const productionButtonID = document.getElementById("production_button");
+	const upgradesButtonID = document.getElementById("upgrades_button");
+	const managersButtonID = document.getElementById("managers_button");
 	
 	// Change view to Production View
 	productionButtonID.addEventListener("click", function () {
