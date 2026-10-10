@@ -10,7 +10,7 @@ layout: page
  */
 
 // Template for default buildings
-const Building = {
+export const Building = {
 /* Format:
 	<BLDG_DEF>: {
 		id: 
@@ -58,7 +58,7 @@ const Building = {
 	// Level 2
 };
 
-class Buildings {
+export class Buildings {
 	constructor(id, name,level = 0,quantity = 1,unlocked = false,baseProduction,baseCost,baseBonus = 0,powerUse,isClicked = false,timeClicked = 0,clickInterval,isManaged = false,mngCost = 500,mngInterval = 5000,imgString) {
 		this.id = id;
 		this.name = name;
