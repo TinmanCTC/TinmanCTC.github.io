@@ -107,7 +107,7 @@ export class Buildings {
  
  export function initBuildings() {
 	
-	Punchcard = new Buildings(
+	let Punchcard = new Buildings(
 		Building.Punchcard.id,
 		Building.Punchcard.name,
 		1,
