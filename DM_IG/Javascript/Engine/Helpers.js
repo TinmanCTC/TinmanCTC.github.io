@@ -12,6 +12,6 @@ export function tickTock() {
 }
 
 export function drift() {
-	i = Math.round(Math.random() * floaters.length);
+	let i = Math.round(Math.random() * floaters.length);
 	document.getElementById("float_bar").innerHTML = floaters[i];
 }
