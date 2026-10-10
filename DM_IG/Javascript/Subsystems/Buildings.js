@@ -105,7 +105,7 @@ class Buildings {
 				
  };
  
- function initBuildings() {
+ export function initBuildings() {
 	
 	Punchcard = new Buildings(
 		Building.Punchcard.id,
