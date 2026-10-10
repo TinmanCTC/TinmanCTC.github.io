@@ -3,7 +3,8 @@ permalink: /DM_IG/Javascript/main.js
 title: "Data Miner Idle Game"
 layout: page
 ---
-import { initListeners } from "./Engine/eventManager.js";
+import { initListeners } from "./Javascript/Engine/eventManager.js";
+import { tickTock, drift } from "./Javascript/Engine/Helpers.js";
 
 const floaters = ["Hello World!", "Nobody here but us chickens!", "I wish I wish I was a fish!", "BYOB(Bring Your Own Bits)", "Why was six afraid of seven? Because seven ate nine!", "A long time ago, in a galaxy far, far away...", "Knock, knock!", "Orange you glad I didn't say banana?", "Banana!"];
 
