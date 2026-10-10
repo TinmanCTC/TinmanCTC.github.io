@@ -1,5 +1,5 @@
 ---
-permalink: /DM_IG/Javascript/main.js
+permalink: /DM_IG/main.js
 title: "Data Miner Idle Game"
 layout: page
 ---
