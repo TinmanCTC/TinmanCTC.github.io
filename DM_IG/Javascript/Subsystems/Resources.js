@@ -9,8 +9,8 @@ layout: page
  * 
  */
  
- import { gameState } from "./Javascript/Engine/stateManager.js";
- import { eventFeed } from "./Javascript/Engine/eventManager.js";
+ import { gameState } from "../Javascript/Engine/stateManager.js";
+ import { eventFeed } from "../Javascript/Engine/eventManager.js";
  
  export class Resources {
 	 constructor(id, name, baseRate) {
