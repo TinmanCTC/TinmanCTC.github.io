@@ -9,59 +9,16 @@ layout: page
  * 
  */
 
-// Template for default buildings
-export const Building = {
-/* Format:
-	<BLDG_DEF>: {
-		id: 
-		name: 
-		startUnlocked: 
-		baseOutput: 
-		baseBonus: 
-		baseCost: 
-		managerCost:
-		powerUse: 
-		clickInterval: 
-		managerInterval: 
-		imgStr:
-	}
+import { gameState } from "./Javascript/Engine/stateManager.js";
+import { eventFeed } from "./Javascript/Engine/eventManager.js";
+import { BUILDING_DEFS } from "./Javascript/Data/Buildings.js";
 
-*/
-	// Level 0
-	Punchcard: {
-		id: "punchcard",
-		name: "Punch Card Computer",
-		startUnlocked: true,
-		baseOutput: 864,
-		baseBonus: 0,
-		baseCost: 50,
-		managerCost: 5000,
-		powerUse: 100,
-		clickInterval: 100,
-		managerInterval: 500,
-		imgStr: "Assets/Images/punchcard_framed.png"
-	},
-	// Level 1
-	Desktop: {
-		id: "desktop",
-		name: "Desktop Computer",
-		startUnlocked: false,
-		baseOutput: 2056,
-		baseBonus: 0,
-		baseCost: 1000,
-		managerCost: 5000,
-		powerUse: 250,
-		clickInterval: 2000,
-		managerInterval:		7500,
-		imgStr: "desktop_img"
-	}
-	// Level 2
-};
 
 export class Buildings {
-	constructor(id, name,level = 0,quantity = 1,unlocked = false,baseProduction,baseCost,baseBonus = 0,powerUse,isClicked = false,timeClicked = 0,clickInterval,isManaged = false,mngCost = 500,mngInterval = 5000,imgString) {
+	constructor(id, name, resourceID = 0, level = 0,quantity = 1,unlocked = false,baseProduction,baseCost,baseBonus = 0,powerUse,isClicked = false,timeClicked = 0,clickInterval,isManaged = false,mngCost = 500,mngInterval = 5000,imgString) {
 		this.id = id;
 		this.name = name;
+		this.resourceID = resourceID;
 		this.level = level;
 		this.quantity = quantity;
 		this.unlocked = unlocked;

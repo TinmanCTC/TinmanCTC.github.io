@@ -27,94 +27,48 @@ layout: page
 
 */
 
-const Building = {
-	Punchcard: {
-		id: "punchcard",
-		name: "Punch Card Computer",
-		startUnlocked: true,
-		baseOutput: 864,
-		baseBonus: 0,
-		baseCost: 50,
-		managerCost: 5000,
-		powerUse: 100,
-		clickInterval: 100,
-		managerInterval: 500,
-		imgStr: "Assets/Images/punchcard_framed.png"
-	},
-	Desktop: {
-		id: "desktop",
-		name: "Desktop Computer",
-		startUnlocked: false,
-		baseOutput: 2056,
-		baseBonus: 0,
-		baseCost: 1000,
-		managerCost: 5000,
-		powerUse: 250,
-		clickInterval: 2000,
-		managerInterval: 7500,
-		imgStr: "desktop_img"
-	},
-	Cubicle: {
-		id: "cubicle",
-		name: "Cubicle Workstation",
-		startUnlocked: false,
-		baseOutput: 32568,
-		baseBonus: 0,
-		baseCost: 3500,
-		managerCost:25000,
-		powerUse: 500,
-		clickInterval: 5000,
-		managerInterval: 10000,
-		imgStr: "cubicle_img"
-	},
-	LAN: {
-		id: "lan",
-		name: "LAN Server",
-		startUnlocked: false,
-		baseOutput: 1024000,
-		baseBonus: 0,
-		baseCost: 7500,
-		managerCost: 40000,
-		powerUse: 2000,
-		clickInterval:  10000,
-		managerInterval: 15000,
-		imgStr: "lan_img"
-	},
-	Cheap_Gen: {
-		id: "cheapGen",
-		name: "Cheap Generator",
-		startUnlocked: false,
-		baseOutput: 10000,
-		baseBonus: 0,
-		baseCost: 15000,
-		powerUse: 10000,
-		clickInterval: 30000,
-		imgStr: "cheap_gen_img"
-	},
-	Cloud: {
-		id: "cloud",
-		name: "Cloud Server",
-		startUnlocked: false,
-		baseOutput: 10240000,
-		baseBonus: 0,
-		baseCost: 25000,
-		managerCost: 60000,
-		powerUse: 4000,
-		clickInterval: 30000,
-		managerInterval: 15000,
-		imgStr: "cloud_img"
-	},
-	Blockchain: {
-		id: "blockchain",
-		name: "Blockchain Processor",
-		startUnlocked: false,
-		baseOutput: 5120000,
-		baseBonus: 0.05,
-		baseCost: 100000,
-		managerCost: 100000,
-		powerUse: 10000,
-		clickInterval: 10000,
-		managerInterval: 15000,
-		imgStr: "blockchain_img"
+export const BUILDING_DEFS = [
+	{
+		id: 0,
+		name: "Punchcard",
+		resource: "bits",
+		description: "A vintage, manual punch card machine. It processes data... In its own way.",
+		upgrades: [],
+		cost: {
+			base: 50,
+			growthRate: 1.06,
+			growthFactor: "exponential"
+		},
+		production: {
+			base: 864,
+			clickInterval: 100,
+			bonus: 0,
+			powerUse: 100
+			growthRate: 1.0,
+			growthFactor: "multiplicative",
+		},
+		manager: {
+			cost: 5000,
+			clickInterval: 500,
+			multiplier: 1.0,
+		},
+		unlock: {
+			resource: "bits",
+			gate: 0
+		},
+		prestige: {
+			level: 0,
+			multiplier: 1.0,
+			scalesWith: "legacies"
+		},
+		ui: {
+			icon: "punchcard_framed.png",
+			sortOrder: 1,
+			
+		},
+		tags: ["production", "early-game", "default"]	
 	}
-};
+	// Desktop 
+]
+
+// Template & Definitions for default buildings
