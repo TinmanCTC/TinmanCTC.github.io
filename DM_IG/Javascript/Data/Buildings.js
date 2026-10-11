@@ -43,7 +43,7 @@ export const BUILDING_DEFS = [
 			base: 864,
 			clickInterval: 100,
 			bonus: 0,
-			powerUse: 100
+			powerUse: 100,
 			growthRate: 1.0,
 			growthFactor: "multiplicative",
 		},
