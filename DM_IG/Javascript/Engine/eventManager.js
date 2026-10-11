@@ -11,6 +11,7 @@ layout: page
 *  
 */
 
+export const eventFeed = [];
 
 export function initListeners() {
 	
