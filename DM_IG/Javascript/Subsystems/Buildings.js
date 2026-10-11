@@ -9,9 +9,9 @@ layout: page
  * 
  */
 
-import { gameState } from "/Javascript/Engine/stateManager.js";
-import { eventFeed } from "/Javascript/Engine/eventManager.js";
-import { BUILDING_DEFS } from "/Javascript/Data/Buildings.js";
+import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
+import { eventFeed } from "/DM_IG/Javascript/Engine/eventManager.js";
+import { BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 
 
 export class Buildings {
