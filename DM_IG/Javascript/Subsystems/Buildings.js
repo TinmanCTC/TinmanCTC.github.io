@@ -64,7 +64,7 @@ export class Buildings {
  
  export function initBuildings() {
 	
-	let Punchcard = new Buildings(
+	/*let Punchcard = new Buildings(
 		Building.Punchcard.id,
 		Building.Punchcard.name,
 		1,
@@ -99,6 +99,6 @@ export class Buildings {
 					alert("Punchcard clicked too early!");
 				}
 			}
-		});
+		});*/
  };
  
