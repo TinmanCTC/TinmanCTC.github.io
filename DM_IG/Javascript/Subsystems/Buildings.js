@@ -76,7 +76,7 @@ export const buildingManager = new BuildingManager();
 
 export function initBuildings() {
 	
-	addBuilding(BUILDING_DEFS[0]);
+	buildingManager.addBuilding(BUILDING_DEFS[0]);
 	
 	/*let Punchcard = new Buildings(
 		Building.Punchcard.id,
