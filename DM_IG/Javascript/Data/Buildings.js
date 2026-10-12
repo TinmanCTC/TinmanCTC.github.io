@@ -69,6 +69,6 @@ export const BUILDING_DEFS = [
 		tags: ["production", "early-game", "default"]	
 	}
 	// Desktop 
-]
+];
 
 // Template & Definitions for default buildings

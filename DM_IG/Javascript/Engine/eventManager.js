@@ -11,6 +11,9 @@ layout: page
 *  
 */
 
+import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
+import { buildingInstances } from "/DM_IG/Javascript/Subsystems/Buildings.js";
+
 export const eventFeed = [];
 
 export function initListeners() {
@@ -48,6 +51,11 @@ export function initListeners() {
 	
 	// Building Listeners
 	
+	
+}
+
+export function pushEvent(desc, target) {
+	eventFeed.push(desc);
 	
 }
 
