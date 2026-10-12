@@ -11,6 +11,7 @@ layout: page
 
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { eventFeed } from "/DM_IG/Javascript/Engine/eventManager.js";
+
 import { BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 
 export const buildingInstances = [];
@@ -45,12 +46,14 @@ export class BuildingManager {
 		};
 		buildingInstances.push(newBldg);
 		
+		
+		
 		// Move to UI
 		document.getElementById("prod-first-row").innerHTML = "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcard_framed.png' class='prod-img'></button>";
 		// Punchcard - On by default
 		
 		// move to eventManager
-		let punchcardButtonID = document.getElementById("punchcard_button");
+		let punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
 		punchcardButtonID.addEventListener("click", function () {
 			let time = Date.now;
 			let punchcardTimeClicked = buildingInstances[0].timeClicked;

@@ -63,6 +63,7 @@ export const BUILDING_DEFS = [
 		},
 		ui: {
 			icon: "punchcard_framed.png",
+			elementID: "punchcard_button",
 			sortOrder: 1,
 			
 		},
