@@ -53,13 +53,13 @@ export class BuildingManager {
 		let punchcardButtonID = document.getElementById("punchcard_button");
 		punchcardButtonID.addEventListener("click", function () {
 			let time = Date.now;
-			let punchcardTimeClicked = buildingInstance[0].timeClicked;
-			if ((time - punchcardTimeClicked) > buildingInstance[0].production.clickInterval) {
-				buildingInstance[0].timeClicked = time;
+			let punchcardTimeClicked = buildingInstances[0].timeClicked;
+			if ((time - punchcardTimeClicked) > buildingInstances[0].production.clickInterval) {
+				buildingInstances[0].timeClicked = time;
 				alert("Punchcard clicked at " + "time");
 			} else {
-				if (!buildingInstance[0].isClicked) {
-					buildingInstance[0].timeClicked = time;
+				if (!buildingInstances[0].isClicked) {
+					buildingInstances[0].timeClicked = time;
 					alert("Punchcard clicked at " + time);
 				} else {
 					alert("Punchcard clicked too early!");
