@@ -23,7 +23,7 @@ export function initUI() {
 	
 	
 	// Punchcard - On by default
-	document.getElementById("prod-first-row").innerHTML = "";
+	//document.getElementById("prod-first-row").innerHTML = "";
 	
 }
 
