@@ -21,8 +21,7 @@ layout: page
 	 // Production Building Buttons
 	 {
 		 Punchcard_Button: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcard_framed.png' class='prod-img'></button>",
-		 Desktop_Button: "",
-		 
+		 Desktop_Button: ""		 
 	 }
  
 ];
