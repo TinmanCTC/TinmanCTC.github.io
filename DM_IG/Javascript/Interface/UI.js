@@ -17,15 +17,13 @@ export function initUI() {
 	// Initialize view buttons
 	addButton(INTERFACE_DEFS[0], "view-buttons");
 	
-	document.getElementById("view-buttons").innerHTML += 
-		"<button data-view='production' id='production_button' class='tab-btn'><div class='tooltip'><img src='Assets/Images/prodButton.jpg' class='btn-img' id='prod-btn'><span class='tooltip-text'>Production</span></div></button>";
-		
-	document.getElementById("view-buttons").innerHTML += 
-		"<button data-view='research' id='research_button' class='tab-btn' type='button'>	<div class='tooltip'><img src='Assets/Images/researchButton.jpg' class='btn-img' id='res-btn'><span class='tooltip-text'>Research</span></div></button>";
+	// Initialize production buttons
+	addButton(INTERFACE_DEFS[1], "production-buttons");
+	
 	
 	
 	// Punchcard - On by default
-	document.getElementById("prod-first-row").innerHTML = "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcard_framed.png' class='prod-img'></button>";
+	document.getElementById("prod-first-row").innerHTML = "";
 	
 }
 
@@ -42,8 +40,13 @@ export function addButton(target, id) {
 			
 			retVal = 1;
 			break;
-		case "production":
+		case "production-buttons":
+			document.getElementById(id).innerHTML += target.Punchcard_Button;
 			
+			// Check if other buildings are unlocked and populate them if so
+			
+			
+			retVal = 2;
 			break;
 		
 		default:
