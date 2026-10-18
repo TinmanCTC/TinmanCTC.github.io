@@ -14,7 +14,7 @@ import { buildingInstances } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 
 export function initUI() {
 	// Initialize view buttons
-	document.getElementById("view-buttons").innerHTML = 
+	document.getElementById("view-buttons").innerHTML += 
 		"<button data-view='production' id='production_button' class='tab-btn'><div class='tooltip'><img src='Assets/Images/prodButton.jpg' class='btn-img' id='prod-btn'><span class='tooltip-text'>Production</span></div></button>"
 	
 	
