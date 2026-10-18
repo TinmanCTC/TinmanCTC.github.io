@@ -47,11 +47,6 @@ export class BuildingManager {
 		buildingInstances.push(newBldg);
 		
 		
-		
-		// Move to UI
-		document.getElementById("prod-first-row").innerHTML = "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcard_framed.png' class='prod-img'></button>";
-		// Punchcard - On by default
-		
 		// move to eventManager
 		let punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
 		punchcardButtonID.addEventListener("click", function () {
@@ -85,42 +80,6 @@ export function initBuildings() {
 	
 	buildingManager.addBuilding(BUILDING_DEFS[0]);
 	
-	/*let Punchcard = new Buildings(
-		Building.Punchcard.id,
-		Building.Punchcard.name,
-		1,
-		1,
-		Building.Punchcard.startUnlocked,
-		Building.Punchcard.baseOutput,
-		Building.Punchcard.baseCost,
-		Building.Punchcard.baseBonus,
-		Building.Punchcard.powerUse,
-		false,
-		0,
-		Building.Punchcard.clickInterval,
-		false,
-		Building.Punchcard.managerInterval,
-		Building.Punchcard.imgStr);
-	
-		document.getElementById("prod-first-row").innerHTML = "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcard_framed.png' class='prod-img'></button>";
-		// Punchcard - On by default
-		
-		let punchcardButtonID = document.getElementById("punchcard_button");
-		punchcardButtonID.addEventListener("click", function () {
-			let time = Date.now;
-			let punchcardTimeClicked = Punchcard.timeClicked;
-			if ((time - punchcardTimeClicked) > Punchcard.clickInterval) {
-				Punchcard.timeClicked = time;
-				alert("Punchcard clicked at " + "time");
-			} else {
-				if (!Punchcard.isClicked) {
-					Punchcard.timeClicked = time;
-					alert("Punchcard clicked at " + time);
-				} else {
-					alert("Punchcard clicked too early!");
-				}
-			}
-		});*/
  };
 
 export class Buildings {

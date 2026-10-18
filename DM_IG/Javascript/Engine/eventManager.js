@@ -15,6 +15,8 @@ import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 
 export const eventFeed = [];
+export const buildingListeners = [];
+export const buttonListeners = [];
 
 export function initListeners() {
 	
@@ -52,6 +54,10 @@ export function initListeners() {
 	// Building Listeners
 	
 	
+}
+
+export function createListener(target, type) {
+	let listenerID = document.getElementById(target);
 }
 
 export function pushEvent(desc, target) {
