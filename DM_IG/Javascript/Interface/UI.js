@@ -1,10 +1,10 @@
 ---
-permalink: /DM_IG/Javascript/Subsystems/UI.js
+permalink: /DM_IG/Javascript/Interface/UI.js
 title: "Data Miner Idle Game"
 layout: page
 ---
 /**
- * ../Subsystems/UI.js
+ * ../Interface/UI.js
  * 
  * 
  */
