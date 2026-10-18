@@ -11,9 +11,12 @@ layout: page
  
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances } from "/DM_IG/Javascript/Subsystems/Buildings.js";
+import { INTERFACE_DEFS } from "/DM_IG/Javascript/Interface/Components.js";
 
 export function initUI() {
 	// Initialize view buttons
+	addButton(INTERFACE_DEFS[0], "view-buttons");
+	
 	document.getElementById("view-buttons").innerHTML += 
 		"<button data-view='production' id='production_button' class='tab-btn'><div class='tooltip'><img src='Assets/Images/prodButton.jpg' class='btn-img' id='prod-btn'><span class='tooltip-text'>Production</span></div></button>";
 		
@@ -24,4 +27,28 @@ export function initUI() {
 	// Punchcard - On by default
 	document.getElementById("prod-first-row").innerHTML = "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcard_framed.png' class='prod-img'></button>";
 	
+}
+
+export function addButton(target, id) {
+	let retVal = 0;
+	
+	switch (id) {
+		case "view-buttons":
+			document.getElementById(id).innerHTML += target.Production_Button;
+			document.getElementById(id).innerHTML += target.Research_Button;
+			document.getElementById(id).innerHTML += target.Upgrades_Button;
+			document.getElementById(id).innerHTML += target.Managers_Button;
+			document.getElementById(id).innerHTML += target.Settings_Button;
+			
+			retVal = 1;
+			break;
+		case "production":
+			
+			break;
+		
+		default:
+			retVal = -1;
+	}
+	
+	return retVal;
 }
