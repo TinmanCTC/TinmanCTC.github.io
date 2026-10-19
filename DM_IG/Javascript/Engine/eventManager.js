@@ -124,17 +124,11 @@ export function initListeners() {
 	// Punchcard building - on by default
 	
 	punchcardButtonID.addEventListener("click", function () {
-		var amt = buildingManager.getOutput(0);		
 		
-		if (buildingInstances[0].isClicked == false) {
-			console.log("click");
-			resourceManager.addBits(amt);
-			buildingManager.disableBuilding(0);
-			setTimeout(buildingManager.enableBuilding(0), buildingInstances[0].production.clickInterval);
-		} else {
-			console.log("else");
-		}
+		console.log(buildingInstances[0]);
 		
+		buildingManager.clickBuilding(0);
+				
 		console.log(buildingInstances[0]);		
 	});
 	

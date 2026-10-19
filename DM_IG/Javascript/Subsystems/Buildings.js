@@ -13,6 +13,7 @@ import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { eventFeed } from "/DM_IG/Javascript/Engine/eventManager.js";
 
 import { BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
+import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 
 export const buildingInstances = [];
 
@@ -50,6 +51,19 @@ export class BuildingManager {
 	// Creates a new building definition and adds it to BUILDING_DEFS
 	createBuilding(bldg) {
 		BUILDING_DEFS.push(bldg);
+	}
+	
+	clickBuilding(id) {
+		var amt = this.getOutput(id);
+		
+		if (buildingInstances[id].isClicked == false) {
+			console.log("click");
+			resourceManager.addBits(amt);
+			this.disableBuilding(id);
+			setTimeout(this.enableBuilding(id), buildingInstances[id].production.clickInterval);
+		} else {
+			
+		}
 	}
 
 	getOutput(id) {
