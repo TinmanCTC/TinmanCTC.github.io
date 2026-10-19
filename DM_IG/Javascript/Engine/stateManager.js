@@ -19,7 +19,8 @@ export const gameState = {
 	bldgs: [],
 	upgrades: [],
 	achievements: [],
-	legacy: 0
+	legacy: 0,
+	currentView: "production"
 };
 
 export function addMoney(amt) {

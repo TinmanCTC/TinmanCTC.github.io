@@ -29,27 +29,82 @@ export function initListeners() {
 	
 	// Change view to Production View
 	productionButtonID.addEventListener("click", function () {
-		alert("Production!");
+		var view = document.getElementById("view-production");
+		
+		if (view.style.display === "none") {
+			document.getElementById("view-research").style.display = "none";
+			document.getElementById("view-upgrades").style.display = "none";
+			document.getElementById("view-managers").style.display = "none";
+			document.getElementById("view-settings").style.display = "none";
+			
+			view.style.display = "flex";
+			gameState.currentView = "production";
+			
+		}
 	});
 
 	// Change view to Research View 
 	researchButtonID.addEventListener("click", function () {
-		alert("Research!");
+		var view = document.getElementById("view-research");
+		
+		if (view.style.display === "none") {
+			document.getElementById("view-production").style.display = "none";
+			document.getElementById("view-upgrades").style.display = "none";
+			document.getElementById("view-managers").style.display = "none";
+			document.getElementById("view-settings").style.display = "none";
+			
+			view.style.display = "flex";
+			gameState.currentView = "research";
+			
+		}
 	});
 	
 	// Change view to Upgrades View 
 	upgradesButtonID.addEventListener("click", function () {
-		alert("Upgrades!");
+		var view = document.getElementById("view-upgrades");
+		
+		if (view.style.display === "none") {
+			document.getElementById("view-research").style.display = "none";
+			document.getElementById("view-production").style.display = "none";
+			document.getElementById("view-managers").style.display = "none";
+			document.getElementById("view-settings").style.display = "none";
+			
+			view.style.display = "flex";
+			gameState.currentView = "upgrades";
+			
+		}
 	});
 	
 	// Change view to Managers View
 	managersButtonID.addEventListener("click", function () {
-		alert("Managers!");
+		var view = document.getElementById("view-managers");
+		
+		if (view.style.display === "none") {
+			document.getElementById("view-research").style.display = "none";
+			document.getElementById("view-upgrades").style.display = "none";
+			document.getElementById("view-production").style.display = "none";
+			document.getElementById("view-settings").style.display = "none";
+			
+			view.style.display = "flex";
+			gameState.currentView = "managers";
+			
+		}
 	});
 	
 	// Change view to Settings View
 	settingsButtonID.addEventListener("click", function () {
-		alert("Settings!");
+		var view = document.getElementById("view-production");
+		
+		if (view.style.display === "none") {
+			document.getElementById("view-research").style.display = "none";
+			document.getElementById("view-upgrades").style.display = "none";
+			document.getElementById("view-managers").style.display = "none";
+			document.getElementById("view-production").style.display = "none";
+			
+			view.style.display = "flex";
+			gameState.currentView = "settings";
+			
+		}
 	});
 	
 	// Building Listeners
