@@ -35,7 +35,7 @@ layout: page
 		 resourceInstances.push(newResrc);
 	 }
 	 
-	 get rate(id) {
+	 get rate() {
 		 return RESOURCE_DEFS[id].baseRate * RESOURCE_DEFS[id].multiplier;
 	 }
 	 
@@ -53,5 +53,6 @@ layout: page
  export function initResources() {
 	 resourceManager.addResource(RESOURCE_DEFS[0]);
 	 resourceManager.addResource(RESOURCE_DEFS[1]);
+	 resourceManager.addResource(RESOURCE_DEFS[2]);
 	 //resourceManager.addResource(RESOURCE_DEFS[2]);	//qBits - locked by default
  }

@@ -19,6 +19,10 @@ export const eventFeed = [];
 export const buildingListeners = [];
 export const buttonListeners = [];
 
+export const cashTick = new Event("cashChange");
+export const bitsTick = new Event("bitsChange");
+export const wattsTick = new Event("wattsChange");
+
 export function initListeners() {
 	
 	const settingsButtonID = document.getElementById("settings_button");
@@ -113,19 +117,9 @@ export function initListeners() {
 	let punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
 	
 	punchcardButtonID.addEventListener("click", function () {
-		let time = Date.now;
-		let punchcardTimeClicked = buildingInstances[0].timeClicked;
-		if ((time - punchcardTimeClicked) > buildingInstances[0].production.clickInterval) {
-			buildingInstances[0].timeClicked = time;
-			alert("Punchcard clicked at " + "time");
-		} else {
-			if (!buildingInstances[0].isClicked) {
-				buildingInstances[0].timeClicked = time;
-				alert("Punchcard clicked at " + time);
-			} else {
-				alert("Punchcard clicked too early!");
-			}
-		}
+		
+		
+		
 	});
 	
 	// Check for other building unlocks (from saved game?)
@@ -139,6 +133,19 @@ export function initListeners() {
 	brokerMotherButtonID.addEventListener("click", function() {
 		alert("Your mother!");
 	});
+	
+	// Resource Listeners
+	
+	let cashDisplay = document.getElementById(resourceInstances[0].elementID);
+	let bitsDisplay = document.getElementById(resourceInstances[1].elementID);
+	let wattsDisplay = document.getElementById(resourceInstances[2].elementID);
+	
+	cashDisplay.addEventListener("cashChange", function() {
+		cashDisplay.innerHTML = gameState.money;
+	});
+	cashDisplay.dispatchEvent(cashTick);
+	
+	
 	
 }
 
