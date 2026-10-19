@@ -32,10 +32,10 @@ layout: page
 	 },
 	 // Resource Display Panels
 	 {
-		 resourceCash_Pnl: "<div id='cash-disp' class='resource-disp'>Cash: <p id='Resource_Cash'></p></div>",
-		 resourceBits_Pnl: "<div id='bits-disp' class='resource-disp'>Bits: <p id='Resource_Bits'></p></div>",
-		 resourceWatts_Pnl: "<div id='watts-disp' class='resource-disp'>Watts: <p id='Resource_Watts'></p></div>",
-		 resourceQbits_Pnl: "<div id='qbits-disp' class='resource-disp'>qBits: <p id='Resource_Qbits'></p></div>"
+		 resourceCash_Pnl: "<div id='cash-disp' class='resource-disp'>Cash: <span id='Resource_Cash'></p></div>",
+		 resourceBits_Pnl: "<div id='bits-disp' class='resource-disp'>Bits: <span id='Resource_Bits'></p></div>",
+		 resourceWatts_Pnl: "<div id='watts-disp' class='resource-disp'>Watts: <span id='Resource_Watts'></p></div>",
+		 resourceQbits_Pnl: "<div id='qbits-disp' class='resource-disp'>qBits: <span id='Resource_Qbits'></p></div>"
 	 }
  
 ];
