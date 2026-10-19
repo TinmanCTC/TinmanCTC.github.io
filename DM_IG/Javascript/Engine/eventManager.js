@@ -126,8 +126,8 @@ export function initListeners() {
 	punchcardButtonID.addEventListener("click", function () {
 		console.log("Punchcard clicked");
 		
-		if (buildingInstances[id].isClicked == false) {
-			var amt = buildingManager.getOutput(id);
+		if (buildingInstances[0].isClicked == false) {
+			var amt = buildingManager.getOutput(0);
 			
 			console.log("click");
 			resourceManager.addBits(amt);
