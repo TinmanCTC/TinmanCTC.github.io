@@ -80,8 +80,11 @@ export class BuildingManager {
 	
 	getClickInterval(id) {
 		console.log("Entering getClickInterval...");
+		
+		var retVal =  buildingInstances[id].production.clickInterval;
+		
 		console.log(buildingInstances[id].production.clickInterval);
-		return buildingInstances[id].production.clickInterval;
+		return retVal;
 	}
 	
 	enableBuilding(id) {
