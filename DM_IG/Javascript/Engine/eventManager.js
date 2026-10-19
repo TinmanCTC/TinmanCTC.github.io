@@ -173,13 +173,13 @@ export function pushEvent(desc, target) {
 				
 			break;
 		case "wattsChange":
-		
+			wattsDisplay.dispatchEvent(wattsTick);
 			break;
 		case "bitsChange":
-		
+			bitsDisplay.dispatchEvent(bitsTick);
 			break;		
 		default:
-				
+			
 	}
 	
 }

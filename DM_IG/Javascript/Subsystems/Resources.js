@@ -50,11 +50,11 @@ layout: page
 	}
 	
 	addPowerCon(amt) {
-		
+		gameState.powerCon += amt;
 	}
 	
 	addPowerGen(amt) {
-		
+		gameState.powerGen += amt;
 	}
  }
  
