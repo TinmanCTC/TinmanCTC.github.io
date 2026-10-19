@@ -135,7 +135,7 @@ export function initListeners() {
 			console.log("else");
 		}
 		
-		
+		console.log(buildingInstances[0]);		
 	});
 	
 	// Check for other building unlocks (from saved game?)
