@@ -126,7 +126,7 @@ export function initListeners() {
 	punchcardButtonID.addEventListener("click", function () {
 		var amt = buildingManager.getOutput(0);		
 		
-		if (!buildingInstances[0].isClicked) {
+		if (buildingInstances[0].isClicked == false) {
 			console.log("click");
 			resourceManager.addBits(amt);
 			buildingManager.disableBuilding(0);
