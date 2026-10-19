@@ -14,6 +14,7 @@ function initGame() {
 	
 	initUI();
 	initBuildings();
+	initBrokers();
 	initListeners();
 	
 	setInterval(tickTock, 100);
