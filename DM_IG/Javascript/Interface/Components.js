@@ -20,8 +20,8 @@ layout: page
 	 },
 	 // Production Building Buttons
 	 {
-		 Punchcard_Button: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcardButton.png' class='prod-img'></button>",
-		 Desktop_Button: ""		 
+		 Punchcard_Btn: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcardButton.png' class='prod-img'></button>",
+		 Desktop_Btn: ""		 
 	 },
 	 // Data Broker Buttons
 	 {
