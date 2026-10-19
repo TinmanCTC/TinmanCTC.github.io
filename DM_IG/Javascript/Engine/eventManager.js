@@ -133,7 +133,7 @@ export function initListeners() {
 			resourceManager.addBits(amt);
 			
 			document.getElementById(buildingInstances[0].ui.elementID).disabled = true;
-			setTimeout(buildingManager.enableBuilding(punchcardButtonID), buildingInstances[0].production.clickInterval);
+			setTimeout(buildingManager.enableBuilding(0), buildingInstances[0].production.clickInterval);
 		} else {
 			console.log("else");
 		}
