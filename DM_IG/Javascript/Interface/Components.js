@@ -25,10 +25,10 @@ layout: page
 	 },
 	 // Data Broker Buttons
 	 {
-			brokerMother_Button: "<button data-view='brokerMother' id='brokerMother_button' class='broker-btn' type='button'><img src='Assets/Images/brokerMother.png' class='broker-img'></button>",
-			brokerCrypto_Button: "<button data-view='brokerMother' id='brokerMother_button' class='broker-btn' type='button'><img src='Assets/Images/brokerCrypto.png' class='broker-img'></button>",
-			brokerSandman_Button: "<button data-view='brokerMother' id='brokerMother_button' class='broker-btn' type='button'><img src='Assets/Images/brokerSandman.png' class='broker-img'></button>",
-			brokerWendy_Button: "<button data-view='brokerMother' id='brokerWendy_button' class='broker-btn' type='button'><img src='Assets/Images/brokerWendy.png' class='broker-img'></button>"
+			brokerMother_Button: "<button data-view='brokerMother' id='brokerMother_button' class='broker-btn' type='button'><img src='Assets/Images/brokerMother.jpeg' class='broker-img'></button>",
+			brokerCrypto_Button: "<button data-view='brokerMother' id='brokerMother_button' class='broker-btn' type='button'><img src='Assets/Images/brokerCrypto.jpeg' class='broker-img'></button>",
+			brokerSandman_Button: "<button data-view='brokerMother' id='brokerMother_button' class='broker-btn' type='button'><img src='Assets/Images/brokerSandman.jpg' class='broker-img'></button>",
+			brokerWendy_Button: "<button data-view='brokerMother' id='brokerWendy_button' class='broker-btn' type='button'><img src='Assets/Images/brokerWendy.jpeg' class='broker-img'></button>"
 	 }
  
 ];
