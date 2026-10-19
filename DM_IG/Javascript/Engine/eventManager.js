@@ -146,6 +146,15 @@ export function initListeners() {
 	});
 	cashDisplay.dispatchEvent(cashTick);
 	
+	bitsDisplay.addEventListener("bitsChange", function() {
+		bitsDisplay.innerHTML = gameState.bits;
+	});
+	bitsDisplay.dispatchEvent(bitsTick);
+	
+	wattsDisplay.addEventListener("wattsChange", function() {
+		wattsDisplay.innerHTML = (gameState.powerGen - gameState.powerCon);
+	});
+	wattsDisplay.dispatchEvent(wattsTick);
 	
 	
 }
