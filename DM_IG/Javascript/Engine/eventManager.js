@@ -24,13 +24,21 @@ export const cashTick = new Event("cashChange");
 export const bitsTick = new Event("bitsChange");
 export const wattsTick = new Event("wattsChange");
 
+const cashDisplay = document.getElementById(resourceInstances[0].elementID);
+const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
+const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
+
+const settingsButtonID = document.getElementById("settings_button");
+const researchButtonID = document.getElementById("research_button");
+const productionButtonID = document.getElementById("production_button");
+const upgradesButtonID = document.getElementById("upgrades_button");
+const managersButtonID = document.getElementById("managers_button");
+
+const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
+
+const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);
+
 export function initListeners() {
-	
-	const settingsButtonID = document.getElementById("settings_button");
-	const researchButtonID = document.getElementById("research_button");
-	const productionButtonID = document.getElementById("production_button");
-	const upgradesButtonID = document.getElementById("upgrades_button");
-	const managersButtonID = document.getElementById("managers_button");
 	
 	// Change view to Production View
 	productionButtonID.addEventListener("click", function () {
@@ -115,7 +123,6 @@ export function initListeners() {
 	// Building Listeners
 	
 	// Punchcard building - on by default
-	let punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
 	
 	punchcardButtonID.addEventListener("click", function () {
 		var amt = buildingManager.getOutput(0);
@@ -127,19 +134,12 @@ export function initListeners() {
 	
 	// Data Broker Listeners
 	
-	// Mother Broker - on by default
-	
-	let brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);
-	
+	// Mother Broker - on by default	
 	brokerMotherButtonID.addEventListener("click", function() {
 		alert("Your mother!");
 	});
 	
-	// Resource Listeners
-	let cashDisplay = document.getElementById(resourceInstances[0].elementID);
-	let bitsDisplay = document.getElementById(resourceInstances[1].elementID);
-	let wattsDisplay = document.getElementById(resourceInstances[2].elementID);
-	
+	// Resource Listeners	
 	cashDisplay.addEventListener("cashChange", function() {
 		cashDisplay.innerHTML = gameState.money;
 	});
