@@ -44,8 +44,7 @@ export class BuildingManager {
 				timeClicked: 0,
 				mngrTimeClicked: 0
 		};
-		buildingInstances.push(newBldg);
-		
+		buildingInstances.push(newBldg);		
 	}
 	
 	// Creates a new building definition and adds it to BUILDING_DEFS
@@ -93,6 +92,10 @@ export const buildingManager = new BuildingManager();
 
 export function initBuildings() {
 	
+	console.log("Initializing buildings...");
+	
 	buildingManager.addBuilding(BUILDING_DEFS[0]);
+	
+	console.log(buildingInstances[0]);
 	
  };

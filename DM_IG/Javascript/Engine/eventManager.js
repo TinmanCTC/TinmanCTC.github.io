@@ -124,11 +124,10 @@ export function initListeners() {
 	// Punchcard building - on by default
 	
 	punchcardButtonID.addEventListener("click", function () {
-		var amt = buildingManager.getOutput(0);
-		buildingManager.disableBuilding(0);
+		var amt = buildingManager.getOutput(0);		
 		
-		console.log("click");
 		if (!buildingInstances[0].isClicked) {
+			console.log("click");
 			resourceManager.addBits(amt);
 			buildingManager.disableBuilding(0);
 			setTimeout(buildingManager.enableBuilding(0), buildingInstances[0].production.clickInterval);
