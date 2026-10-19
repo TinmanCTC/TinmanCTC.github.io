@@ -34,5 +34,4 @@ export function initBrokers() {
 	
 	brokerManager.addBroker(BROKER_DEFS[0]);
 	
- };
 };
