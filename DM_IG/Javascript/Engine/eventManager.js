@@ -118,7 +118,7 @@ export function initListeners() {
 	let punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
 	
 	punchcardButtonID.addEventListener("click", function () {
-		var amt = getOutput(0);
+		var amt = buildingManager.getOutput(0);
 		
 		resourceManager.addMoney(amt);
 	});
@@ -176,10 +176,8 @@ export function pushEvent(desc, target) {
 		
 			break;		
 		default:
-		
-			
+				
 	}
 	
-		
 }
 
