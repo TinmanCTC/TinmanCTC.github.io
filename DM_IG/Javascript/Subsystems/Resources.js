@@ -35,14 +35,6 @@ layout: page
 		 resourceInstances.push(newResrc);
 	 }
 	 
-	 get rate() {
-		 return RESOURCE_DEFS[id].baseRate * RESOURCE_DEFS[id].multiplier;
-	 }
-	 
-	 set rate(id, amt) {
-		 RESOURCE_DEFS[id].baseRate = amt;
-	 }
-	 
 	 createResource(resrc) {
 		 RESOURCE_DEFS.push(resrc);
 	 }
