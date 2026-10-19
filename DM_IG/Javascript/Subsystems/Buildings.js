@@ -57,6 +57,16 @@ export class BuildingManager {
 		return buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus);
 	}
 	
+	enableBuilding(id) {
+		buildingInstances[id].isClicked = false;
+		document.getElementById(buildingInstances[id].ui.elementID).disabled = false;
+	}
+	
+	disableBuilding(id) {
+		buildingInstances[id].isClicked = true;
+		document.getElementById(buildingInstances[id].ui.elementID).disabled = true;
+	}
+	
 }
 
 export const buildingManager = new BuildingManager();

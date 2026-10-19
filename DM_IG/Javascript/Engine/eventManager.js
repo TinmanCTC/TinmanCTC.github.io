@@ -126,7 +126,15 @@ export function initListeners() {
 	punchcardButtonID.addEventListener("click", function () {
 		var amt = buildingManager.getOutput(0);
 		
-		resourceManager.addBits(amt);
+		if (!buildingInstances[0].isClicked) {
+			resourceManager.addBits(amt);
+			buildingManager.disableBuilding(0);
+			setTimeout(buildingManager.enableBuilding(0), buildingInstances[0].production.clickInterval);
+		} else {
+			
+		}
+		
+		
 	});
 	
 	// Check for other building unlocks (from saved game?)
@@ -169,8 +177,7 @@ export function pushEvent(desc, target) {
 	
 	switch(desc) {
 		case "cashChange":
-				cashDisplay.dispatchEvent(cashTick);
-				
+			cashDisplay.dispatchEvent(cashTick);
 			break;
 		case "wattsChange":
 			wattsDisplay.dispatchEvent(wattsTick);
