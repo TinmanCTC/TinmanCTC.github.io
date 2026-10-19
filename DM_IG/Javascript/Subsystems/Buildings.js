@@ -46,24 +46,6 @@ export class BuildingManager {
 		};
 		buildingInstances.push(newBldg);
 		
-		
-		// move to eventManager
-		let punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
-		punchcardButtonID.addEventListener("click", function () {
-			let time = Date.now;
-			let punchcardTimeClicked = buildingInstances[0].timeClicked;
-			if ((time - punchcardTimeClicked) > buildingInstances[0].production.clickInterval) {
-				buildingInstances[0].timeClicked = time;
-				alert("Punchcard clicked at " + "time");
-			} else {
-				if (!buildingInstances[0].isClicked) {
-					buildingInstances[0].timeClicked = time;
-					alert("Punchcard clicked at " + time);
-				} else {
-					alert("Punchcard clicked too early!");
-				}
-			}
-		});
 	}
 	
 	// Creates a new building definition and adds it to BUILDING_DEFS
@@ -82,7 +64,7 @@ export function initBuildings() {
 	
  };
 
-export class Buildings {
+/*export class Buildings {
 	constructor(id, name, resourceID = 0, level = 0,quantity = 1,unlocked = false,baseProduction,baseCost,baseBonus = 0,powerUse,isClicked = false,timeClicked = 0,clickInterval,isManaged = false,mngCost = 500,mngInterval = 5000,imgString) {
 		this.id = id;
 		this.name = name;
@@ -132,6 +114,4 @@ export class Buildings {
 			return this.baseCost * this.discount;
 		}
 				
- };
-
- 
+ };*/

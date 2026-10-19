@@ -53,6 +53,26 @@ export function initListeners() {
 	
 	// Building Listeners
 	
+	// Punchcard building - on by default
+	let punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
+	
+	punchcardButtonID.addEventListener("click", function () {
+		let time = Date.now;
+		let punchcardTimeClicked = buildingInstances[0].timeClicked;
+		if ((time - punchcardTimeClicked) > buildingInstances[0].production.clickInterval) {
+			buildingInstances[0].timeClicked = time;
+			alert("Punchcard clicked at " + "time");
+		} else {
+			if (!buildingInstances[0].isClicked) {
+				buildingInstances[0].timeClicked = time;
+				alert("Punchcard clicked at " + time);
+			} else {
+				alert("Punchcard clicked too early!");
+			}
+		}
+	});
+	
+	// Check for other building unlocks (from saved game?)
 	
 }
 
