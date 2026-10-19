@@ -71,6 +71,10 @@ export class BuildingManager {
 		return buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus);
 	}
 	
+	getClickInterval(id) {
+		return buildingInstances[id].production.clickInterval;
+	}
+	
 	enableBuilding(id) {
 		console.log("Entering enableBuilding...");
 		buildingInstances[id].isClicked = false;
