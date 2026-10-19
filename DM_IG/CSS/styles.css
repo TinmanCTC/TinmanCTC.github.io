@@ -86,6 +86,28 @@ body {
 	max-width: 100px;
 }
 
+.broker-btn {
+	width: 10vw;
+	height: 20vw;
+	min-height: 100px;
+	min-width: 50px;
+	max-height: 512px;
+	max-width: 256px;
+}
+
+.broker-btn:active {
+	transform: translateY(2px);
+}
+
+.broker-img {
+	width: 10vw;
+	height: 20vw;
+	min-height: 100px;
+	min-width: 50px;
+	max-height: 512px;
+	max-width: 256px;
+}
+
 /* Tooltip Code */
 .tooltip {
   position: relative;
