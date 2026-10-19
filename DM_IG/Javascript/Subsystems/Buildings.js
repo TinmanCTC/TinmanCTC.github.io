@@ -69,7 +69,11 @@ export class BuildingManager {
 	
 	buyBuilding(id, amt) {
 		
-		buildingInstances[id].quantity += amt;
+		if (gameState.money <= (buildingInstances[id].cost * amt)) {
+			buildingInstances[id].quantity += amt;
+		} else {
+			alert("Not enough money!");
+		}
 		
 	}
 	
