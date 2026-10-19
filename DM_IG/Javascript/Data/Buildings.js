@@ -41,7 +41,7 @@ export const BUILDING_DEFS = [
 		},
 		production: {
 			base: 864,
-			clickInterval: 100,
+			clickInterval: 3000,
 			bonus: 0,
 			powerUse: 100,
 			growthRate: 1.0,
@@ -71,5 +71,3 @@ export const BUILDING_DEFS = [
 	}
 	// Desktop 
 ];
-
-// Template & Definitions for default buildings

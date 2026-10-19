@@ -67,6 +67,22 @@ export class BuildingManager {
 		document.getElementById(buildingInstances[id].ui.elementID).disabled = true;
 	}
 	
+	buyBuilding(id, amt) {
+		
+		buildingInstances[id].quantity += amt;
+		
+	}
+	
+	sellBuilding(id, amt) {
+		
+		if (buildingInstances[id].quantity - amt >= 0) {
+			buildingInstances[id].quantity -= amt;
+			
+		} else {
+			alert("Not enough buildings!");
+		}
+	}
+	
 }
 
 export const buildingManager = new BuildingManager();
