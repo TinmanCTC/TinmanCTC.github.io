@@ -13,8 +13,8 @@ function initGame() {
 	document.getElementById("float_bar").innerHTML = floaters[i];
 	
 	initUI();
-	initListeners();
 	initBuildings();
+	initListeners();
 	
 	setInterval(tickTock, 100);
 	setInterval(drift, 15000);
