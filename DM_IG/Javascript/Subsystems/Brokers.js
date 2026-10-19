@@ -44,7 +44,7 @@ export class BrokerManager {
 				timeClicked: 0,
 				mngrTimeClicked: 0
 		};
-		brokersInstances.push(newBrkr);
+		brokerInstances.push(newBrkr);
 	}	
 	
 }
