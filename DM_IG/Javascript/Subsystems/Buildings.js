@@ -51,8 +51,7 @@ export class BuildingManager {
 	// Creates a new building definition and adds it to BUILDING_DEFS
 	createBuilding(bldg) {
 		BUILDING_DEFS.push(bldg);
-	}
-	
+	}	
 	
 }
 
