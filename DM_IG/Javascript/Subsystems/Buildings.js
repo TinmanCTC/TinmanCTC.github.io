@@ -82,6 +82,8 @@ export class BuildingManager {
 		console.log(buildingInstances[id].ui.elementID);
 		console.log(buildingInstances[id].isClicked);
 		document.getElementById(buildingInstances[id].ui.elementID).disabled = true;
+		console.log(document.getElementById(buildingInstances[id].ui.elementID));
+		console.log(document.getElementById(buildingInstances[id].ui.elementID).disabled);
 	}
 	
 	buyBuilding(id, amt) {
