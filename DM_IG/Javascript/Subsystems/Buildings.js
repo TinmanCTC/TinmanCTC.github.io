@@ -54,6 +54,7 @@ export class BuildingManager {
 	}
 	
 	clickBuilding(id) {
+		console.log("Entering clickBuilding...");
 		var amt = this.getOutput(id);
 		
 		if (buildingInstances[id].isClicked == false) {
@@ -76,6 +77,7 @@ export class BuildingManager {
 	}
 	
 	disableBuilding(id) {
+		console.log("Entering disableBuilding...");
 		buildingInstances[id].isClicked = true;
 		console.log(buildingInstances[id].ui.elementID);
 		console.log(buildingInstances[id].isClicked);

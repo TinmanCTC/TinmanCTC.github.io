@@ -125,11 +125,9 @@ export function initListeners() {
 	
 	punchcardButtonID.addEventListener("click", function () {
 		
-		console.log(buildingInstances[0]);
-		
+		console.log("Punchcard clicked");
 		buildingManager.clickBuilding(0);
-				
-		console.log(buildingInstances[0]);		
+		
 	});
 	
 	// Check for other building unlocks (from saved game?)
