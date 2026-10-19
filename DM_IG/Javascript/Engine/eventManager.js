@@ -132,7 +132,10 @@ export function initListeners() {
 			resourceManager.addBits(amt);
 			
 			console.log("Disabling building...");
+			console.log(target);
+			console.log(target.disabled);
 			target.disabled = true;
+			console.log(target.disabled);
 			buildingInstances[0].isClicked = true;
 			console.log(buildingManager.getClickInterval(0));
 			
