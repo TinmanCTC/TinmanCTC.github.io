@@ -93,7 +93,7 @@ export function initListeners() {
 	
 	// Change view to Settings View
 	settingsButtonID.addEventListener("click", function () {
-		var view = document.getElementById("view-production");
+		var view = document.getElementById("view-settings");
 		
 		if (view.style.display === "none") {
 			document.getElementById("view-research").style.display = "none";
