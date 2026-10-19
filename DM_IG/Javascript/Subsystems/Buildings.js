@@ -51,7 +51,11 @@ export class BuildingManager {
 	// Creates a new building definition and adds it to BUILDING_DEFS
 	createBuilding(bldg) {
 		BUILDING_DEFS.push(bldg);
-	}	
+	}
+
+	getOutput(id) {
+		return buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus);
+	}
 	
 }
 

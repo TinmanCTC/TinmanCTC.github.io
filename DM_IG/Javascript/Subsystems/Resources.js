@@ -10,7 +10,7 @@ layout: page
  */
  
  import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
- import { eventFeed } from "/DM_IG/Javascript/Engine/eventManager.js";
+ import { eventFeed, pushEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
  import { RESOURCE_DEFS } from "/DM_IG/Javascript/Data/Resources.js";
  
  export const resourceInstances = [];
@@ -38,6 +38,11 @@ layout: page
 	 createResource(resrc) {
 		 RESOURCE_DEFS.push(resrc);
 	 }
+	 
+	addMoney(amt) {
+		gameState.money += amt;
+		pushEvent("cashChange", resourceInstances[0].elementID);
+	}
  }
  
  export const resourceManager = new ResourceManager();

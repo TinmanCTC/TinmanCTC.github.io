@@ -118,9 +118,9 @@ export function initListeners() {
 	let punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
 	
 	punchcardButtonID.addEventListener("click", function () {
+		var amt = getOutput(0);
 		
-		
-		
+		resourceManager.addMoney(amt);
 	});
 	
 	// Check for other building unlocks (from saved game?)
@@ -136,7 +136,6 @@ export function initListeners() {
 	});
 	
 	// Resource Listeners
-	
 	let cashDisplay = document.getElementById(resourceInstances[0].elementID);
 	let bitsDisplay = document.getElementById(resourceInstances[1].elementID);
 	let wattsDisplay = document.getElementById(resourceInstances[2].elementID);
@@ -164,7 +163,23 @@ export function createListener(target, type) {
 }
 
 export function pushEvent(desc, target) {
-	eventFeed.push(desc);
 	
+	switch(desc) {
+		case "cashChange":
+				cashDisplay.dispatchEvent(cashTick);
+				
+			break;
+		case "wattsChange":
+		
+			break;
+		case "bitsChange":
+		
+			break;		
+		default:
+		
+			
+	}
+	
+		
 }
 
