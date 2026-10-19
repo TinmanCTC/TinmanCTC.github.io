@@ -13,7 +13,7 @@ layout: page
 
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
-import { BUILDING_ID } from ""/DM_IG/Javascript/Data/Buildings.js";
+import { BUILDING_ID } from "/DM_IG/Javascript/Data/Buildings.js";
 import { brokerInstances, brokerManager } from "/DM_IG/Javascript/Subsystems/Brokers.js";
 import { resourceInstances, resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 
