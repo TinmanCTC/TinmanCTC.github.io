@@ -124,9 +124,19 @@ export function initListeners() {
 	// Punchcard building - on by default
 	
 	punchcardButtonID.addEventListener("click", function () {
-		
 		console.log("Punchcard clicked");
-		buildingManager.clickBuilding(0);
+		
+		if (buildingInstances[id].isClicked == false) {
+			var amt = buildingManager.getOutput(id);
+			
+			console.log("click");
+			resourceManager.addBits(amt);
+			
+			document.getElementById(punchcardButtonID).disabled = true;
+			setTimeout(buildingManager.enableBuilding(punchcardButtonID), buildingInstances[0].production.clickInterval);
+		} else {
+			console.log("else");
+		}
 		
 	});
 	
