@@ -126,23 +126,11 @@ export function initListeners() {
 	punchcardButtonID.addEventListener("click", function () {
 		console.log("Punchcard clicked");
 		var target = document.getElementById(buildingInstances[0].ui.elementID);
+		target.disable = true;
+		setTimeout(buildingManager.enableBuilding(0), buildingManager.getClickInterval(0));
 		
-		if (buildingInstances[0].isClicked == false) {
-			var amt = buildingManager.getOutput(0);
-			resourceManager.addBits(amt);
-			
-			console.log("Disabling building...");
-			console.log(target);
-			console.log(target.disabled);
-			target.disabled = true;
-			console.log(target.disabled);
-			buildingInstances[0].isClicked = true;
-			console.log(buildingManager.getClickInterval(0));
-			
-			setTimeout(buildingManager.enableBuilding(0), buildingManager.getClickInterval(0));
-		} else {
-			console.log("else");
-		}
+		var amt = getOutput(0);
+		resourceManager.addBits(amt);
 		
 	});
 	
