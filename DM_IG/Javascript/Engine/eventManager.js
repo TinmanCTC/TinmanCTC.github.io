@@ -132,7 +132,10 @@ export function initListeners() {
 			console.log("click");
 			resourceManager.addBits(amt);
 			
+			console.log("Disabling building...");
 			document.getElementById(buildingInstances[0].ui.elementID).disabled = true;
+			console.log(buildingManager.getClickInterval(0));
+			
 			setTimeout(buildingManager.enableBuilding(0), buildingManager.getClickInterval(0));
 		} else {
 			console.log("else");

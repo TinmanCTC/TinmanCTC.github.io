@@ -68,10 +68,19 @@ export class BuildingManager {
 	}
 
 	getOutput(id) {
-		return buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus);
+		console.log("Entering getOutput...");
+		
+		var retVal = buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus)
+
+		console.log(retVal);
+		
+		
+		return retVal;
 	}
 	
 	getClickInterval(id) {
+		console.log("Entering getClickInterval...");
+		console.log(buildingInstances[id].production.clickInterval);
 		return buildingInstances[id].production.clickInterval;
 	}
 	
