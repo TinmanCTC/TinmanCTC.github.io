@@ -13,8 +13,8 @@ layout: page
 
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
-import { brokerInstances } from "/DM_IG/Javascript/Subsystems/Brokers.js";
-import { resourceInstances } from "/DM_IG/Javascript/Subsystems/Resources.js";
+import { brokerInstances, brokerManager } from "/DM_IG/Javascript/Subsystems/Brokers.js";
+import { resourceInstances, resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 
 export const eventFeed = [];
 export const buildingListeners = [];
