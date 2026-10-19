@@ -48,7 +48,7 @@ export const BROKERS_DEFS = [
 			scalesWith: "legacies"
 		},
 		ui: {
-			icon: "brokerMother.png",
+			icon: "brokerMother.jpeg",
 			elementID: "brokerMother_button",
 			sortOrder: 1,
 			
