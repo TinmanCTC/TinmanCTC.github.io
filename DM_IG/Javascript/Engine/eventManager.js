@@ -127,7 +127,7 @@ export function initListeners() {
 	punchcardButtonID.addEventListener("click", function () {
 		console.log("Punchcard clicked");
 		console.log(buildingInstances[0].ui.elementID);
-		document.getElementById(buildingInstances[0].ui.elementID).disabled = true;
+		document.getElementById("punchcard_button").disabled = true;
 		setTimeout(buildingManager.enableBuilding(0), buildingManager.getClickInterval(0));
 		
 		var amt = buildingManager.getOutput(0);
