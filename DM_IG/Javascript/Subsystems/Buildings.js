@@ -63,6 +63,8 @@ export class BuildingManager {
 	
 	disableBuilding(id) {
 		buildingInstances[id].isClicked = true;
+		console.log(buildingInstances[id].ui.elementID);
+		console.log(document.getElementById(buildingInstances[id].ui.elementID));
 		document.getElementById(buildingInstances[id].ui.elementID).disabled = true;
 	}
 	
