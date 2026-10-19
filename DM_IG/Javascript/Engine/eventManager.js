@@ -132,7 +132,7 @@ export function initListeners() {
 			console.log("click");
 			resourceManager.addBits(amt);
 			
-			document.getElementById(punchcardButtonID).disabled = true;
+			document.getElementById(buildingInstances[0].ui.elementID).disabled = true;
 			setTimeout(buildingManager.enableBuilding(punchcardButtonID), buildingInstances[0].production.clickInterval);
 		} else {
 			console.log("else");
