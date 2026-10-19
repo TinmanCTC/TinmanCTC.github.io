@@ -29,6 +29,13 @@ layout: page
 			brokerCrypto_Btn: "<button data-view='brokerMother' id='brokerMother_button' class='broker-btn' type='button'><img src='Assets/Images/brokerCrypto.jpeg' class='broker-img'></button>",
 			brokerSandman_Btn: "<button data-view='brokerMother' id='brokerMother_button' class='broker-btn' type='button'><img src='Assets/Images/brokerSandman.jpg' class='broker-img'></button>",
 			brokerWendy_Btn: "<button data-view='brokerMother' id='brokerWendy_button' class='broker-btn' type='button'><img src='Assets/Images/brokerWendy.jpeg' class='broker-img'></button>"
+	 },
+	 // Resource Display Panels
+	 {
+		 resourceCash_Pnl: "<div id='cash-disp' class='resource-disp'>Cash: <p id='Resource_Cash'></p></div>",
+		 resourceBits_Pnl: "<div id='bits-disp' class='resource-disp'>Bits: <p id='Resource_Bits'></p></div>",
+		 resourceWatts_Pnl: "<div id='watts-disp' class='resource-disp'>Watts: <p id='Resource_Watts'></p></div>",
+		 resourceQbits_Pnl: "<div id='qbits-disp' class='resource-disp'>qBits: <p id='Resource_Qbits'></p></div>"
 	 }
  
 ];

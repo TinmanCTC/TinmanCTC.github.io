@@ -23,6 +23,9 @@ export function initUI() {
 	// Initialize broker buttons
 	addButton(INTERFACE_DEFS[2], "broker-buttons");
 	
+	// Initialize Resource Displays
+	addDisplay(INTERFACE_DEFS[3], "resource-bar");
+	
 }
 
 export function addButton(target, id) {
@@ -56,4 +59,17 @@ export function addButton(target, id) {
 	}
 	
 	return retVal;
+}
+
+export function addDisplay(target, id) {
+	let retVal = 0;
+	
+	switch (id) {
+		case "resource-bar":
+			document.getElementById(id).innerHTML += target.resourceCash_Pnl;
+			document.getElementById(id).innerHTML += target.resourceBits_Pnl;
+			document.getElementById(id).innerHTML += target.resourceWatts_Pnl;
+			
+			break;
+	}
 }

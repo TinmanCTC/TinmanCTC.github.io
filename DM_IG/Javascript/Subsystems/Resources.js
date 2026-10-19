@@ -9,22 +9,49 @@ layout: page
  * 
  */
  
- import { gameState } from ".../Javascript/Engine/stateManager.js";
- import { eventFeed } from ".../Javascript/Engine/eventManager.js";
+ import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
+ import { eventFeed } from "/DM_IG/Javascript/Engine/eventManager.js";
+ import { RESOURCE_DEFS } from "/DM_IG/Javascript/Data/Resources.js";
  
- export class Resources {
-	 constructor(id, name, baseRate) {
-		 this.id = id;
-		 this.name = name;
-		 this.baseRate = baseRate;
-		 this.multiplier = 1;
+ export const resourceInstances = [];
+ 
+ export class ResourceManager {
+	 constructor() {
+		 this.resources = [];
 	 }
 	 
-	 get rate() {
-		 return this.baseRate * this.multiplier;
+	 addResource(resrc) {
+		 this.resources.push(resrc);
+		 let loc = (this.resources.length - 1);
+		 let newResrc = {
+			 id: this.resources[loc].id,
+			 name: this.resources[loc].name,
+			 baseRate: this.resources[loc].baseRate,
+			 multiplier: this.resources[loc].multiplier,
+			 elementID: this.resources[loc].elementID
+		 }
+		 
+		 
+		 resourceInstances.push(newResrc);
 	 }
 	 
-	 set rate(amt) {
-		 this.baseRate = amt;
+	 get rate(id) {
+		 return RESOURCE_DEFS[id].baseRate * RESOURCE_DEFS[id].multiplier;
 	 }
+	 
+	 set rate(id, amt) {
+		 RESOURCE_DEFS[id].baseRate = amt;
+	 }
+	 
+	 createResource(resrc) {
+		 RESOURCE_DEFS.push(resrc);
+	 }
+ }
+ 
+ export const resourceManager = new ResourceManager();
+ 
+ export function initResources() {
+	 resourceManager.addResource(RESOURCE_DEFS[0]);
+	 resourceManager.addResource(RESOURCE_DEFS[1]);
+	 //resourceManager.addResource(RESOURCE_DEFS[2]);	//qBits - locked by default
  }
