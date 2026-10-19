@@ -12,7 +12,7 @@ layout: page
 */
 
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
-import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
+import { buildingInstances, buildingManager, BUILDING_ID } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { brokerInstances, brokerManager } from "/DM_IG/Javascript/Subsystems/Brokers.js";
 import { resourceInstances, resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 
@@ -126,10 +126,10 @@ export function initListeners() {
 	punchcardButtonID.addEventListener("click", function () {
 		console.log("Punchcard clicked");
 		var target = document.getElementById(buildingInstances[0].ui.elementID);
-		target.disable = true;
+		target.disabled = true;
 		setTimeout(buildingManager.enableBuilding(0), buildingManager.getClickInterval(0));
 		
-		var amt = getOutput(0);
+		var amt = buildingManager.getOutput(0);
 		resourceManager.addBits(amt);
 		
 	});

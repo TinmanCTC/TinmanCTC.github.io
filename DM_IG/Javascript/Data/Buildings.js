@@ -27,6 +27,11 @@ layout: page
 
 */
 
+export const BUILDING_ID = {
+		PUNCHCARD: 0,
+		DESKTOP: 1
+};
+
 export const BUILDING_DEFS = [
 	{
 		id: 0,
