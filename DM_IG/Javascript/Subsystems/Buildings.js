@@ -72,6 +72,7 @@ export class BuildingManager {
 	}
 	
 	enableBuilding(id) {
+		console.log("Entering enableBuilding...");
 		buildingInstances[id].isClicked = false;
 		document.getElementById(buildingInstances[id].ui.elementID).disabled = false;
 	}
