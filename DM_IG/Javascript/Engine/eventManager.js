@@ -74,6 +74,16 @@ export function initListeners() {
 	
 	// Check for other building unlocks (from saved game?)
 	
+	// Data Broker Listeners
+	
+	// Mother Broker - on by default
+	
+	let brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);
+	
+	brokerMotherButtonID.addEventListener("click", function() {
+		alert("Your mother!");
+	});
+	
 }
 
 export function createListener(target, type) {

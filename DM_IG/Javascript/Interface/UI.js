@@ -30,16 +30,16 @@ export function addButton(target, id) {
 	
 	switch (id) {
 		case "view-buttons":
-			document.getElementById(id).innerHTML += target.Production_Button;
-			document.getElementById(id).innerHTML += target.Research_Button;
-			document.getElementById(id).innerHTML += target.Upgrades_Button;
-			document.getElementById(id).innerHTML += target.Managers_Button;
-			document.getElementById(id).innerHTML += target.Settings_Button;
+			document.getElementById(id).innerHTML += target.Production_Btn;
+			document.getElementById(id).innerHTML += target.Research_Btn;
+			document.getElementById(id).innerHTML += target.Upgrades_Btn;
+			document.getElementById(id).innerHTML += target.Managers_Btn;
+			document.getElementById(id).innerHTML += target.Settings_Btn;
 			
 			retVal = 1;
 			break;
 		case "production-buttons":
-			document.getElementById(id).innerHTML += target.Punchcard_Button;
+			document.getElementById(id).innerHTML += target.Punchcard_Btn;
 			
 			// Check if other buildings are unlocked and populate them if so
 			
@@ -47,7 +47,7 @@ export function addButton(target, id) {
 			retVal = 2;
 			break;
 		case "broker-buttons":
-			document.getElementById(id).innerHTML += target.brokerMother_Button;
+			document.getElementById(id).innerHTML += target.brokerMother_Btn;
 			
 			retVal = 3;
 			break;

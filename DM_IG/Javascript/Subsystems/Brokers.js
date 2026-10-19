@@ -16,14 +16,14 @@ import { BROKERS_DEFS } from "/DM_IG/Javascript/Data/Brokers.js";
 
 export const brokerInstances = [];
 
-export class BrokerManagers {
+export class BrokerManager {
 		constructor() {
 			this.brokers = [];
 		}
 		
 		// Adds a new instance of broker to buildingInstances utilizing BUILDING_DEFS
 	addBroker(broker) {
-		
+		this.brokers.push(broker);
 	}	
 	
 }
