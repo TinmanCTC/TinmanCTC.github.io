@@ -20,10 +20,8 @@ export function initUI() {
 	// Initialize production buttons
 	addButton(INTERFACE_DEFS[1], "production-buttons");
 	
-	
-	
-	// Punchcard - On by default
-	//document.getElementById("prod-first-row").innerHTML = "";
+	// Initialize broker buttons
+	addButton(INTERFACE_DEFS[2], "broker-buttons");
 	
 }
 
@@ -48,7 +46,11 @@ export function addButton(target, id) {
 			
 			retVal = 2;
 			break;
-		
+		case "broker-buttons":
+			document.getElementById(id).innerHTML += target.brokerMother_Button;
+			
+			retVal = 3;
+			break;
 		default:
 			retVal = -1;
 	}
