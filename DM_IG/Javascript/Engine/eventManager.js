@@ -126,7 +126,7 @@ export function initListeners() {
 	punchcardButtonID.addEventListener("click", function () {
 		var amt = buildingManager.getOutput(0);
 		
-		resourceManager.addMoney(amt);
+		resourceManager.addBits(amt);
 	});
 	
 	// Check for other building unlocks (from saved game?)

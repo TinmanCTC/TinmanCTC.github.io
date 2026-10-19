@@ -43,6 +43,19 @@ layout: page
 		gameState.money += amt;
 		pushEvent("cashChange", resourceInstances[0].elementID);
 	}
+	
+	addBits(amt) {
+		gameState.bits += amt;
+		pushEvent("bitsChange", resourceInstances[1].elementID);
+	}
+	
+	addPowerCon(amt) {
+		
+	}
+	
+	addPowerGen(amt) {
+		
+	}
  }
  
  export const resourceManager = new ResourceManager();
