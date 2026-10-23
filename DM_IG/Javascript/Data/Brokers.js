@@ -20,23 +20,12 @@ export const BROKERS_DEFS = [
 		resource: "cash",
 		description: "Incredibly easy to work with and always with your best interests in mind, but not the most technologically competent.",
 		upgrades: [],
-		cost: {
-			base: 0,
-			growthRate: 1.06,
-			growthFactor: "exponential"
-		},
 		production: {
-			base: 864,
-			clickInterval: 100,
+			multiplier: 1.0,
+			clickInterval: 5000,
 			bonus: 0,
-			powerUse: 100,
 			growthRate: 1.0,
 			growthFactor: "multiplicative",
-		},
-		manager: {
-			cost: 5000,
-			clickInterval: 500,
-			multiplier: 1.0,
 		},
 		unlock: {
 			resource: "bits",

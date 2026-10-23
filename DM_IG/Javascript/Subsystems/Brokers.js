@@ -11,6 +11,7 @@ layout: page
  
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { eventFeed } from "/DM_IG/Javascript/Engine/eventManager.js";
+import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 
 import { BROKERS_DEFS } from "/DM_IG/Javascript/Data/Brokers.js";
 
@@ -33,20 +34,25 @@ export class BrokerManager {
 				description: this.brokers[loc].description,
 				quantity: 1,
 				upgrades: [],
-				cost: this.brokers[loc].cost,
 				production: this.brokers[loc].production,
-				manager: this.brokers[loc].manager,
 				unlock: this.brokers[loc].unlock,
 				prestige: this.brokers[loc].prestige,
 				ui: this.brokers[loc].ui,
-				tags: this.brokers[loc].tags,
-				isClicked: false,
-				timeClicked: 0,
-				mngrTimeClicked: 0
+				tags: this.brokers[loc].tags
 		};
 		brokerInstances.push(newBrkr);
 	}	
 	
+	sellBits(id) {
+		var amt = (brokerInstances[id].production.multiplier * gameState.bits) + brokerInstances[id].production.bonus;
+		var btn = document.getElementById(brokerInstances[id].ui.elementID);
+		
+		resourceManager.addMoney(amt);
+		resourceManager.subBits(gameState.bits);
+		
+		btn.disabled = true;
+		setTimeout(function() { btn.disabled = false; }, brokerInstances[id].production.clickInterval);
+	}
 }
 
 export const brokerManager = new BrokerManager();

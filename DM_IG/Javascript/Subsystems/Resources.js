@@ -54,6 +54,11 @@ layout: page
 		pushEvent("bitsChange", resourceInstances[1].elementID);
 	}
 	
+	subBits(amt) {
+		gameState.bits -= amt;
+		pushEvent("bitsChange", resourceInstances[1].elementID);
+	}
+	
 	addPowerCon(amt) {
 		gameState.powerCon += amt;
 		pushEvent("wattsChange", resourceInstances[2].elementID);
