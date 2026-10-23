@@ -107,6 +107,7 @@ export class BuildingManager {
 		
 		if (gameState.money <= (buildingInstances[id].cost * amt)) {
 			buildingInstances[id].quantity += amt;
+			resourceManager.addPowerCon(buildingInstances[id].production.powerUse);
 		} else {
 			alert("Not enough money!");
 		}
@@ -131,7 +132,9 @@ export function initBuildings() {
 	
 	console.log("Initializing buildings...");
 	
+	// Create Punchcard instance by default
 	buildingManager.addBuilding(BUILDING_DEFS[0]);
+	resourceManager.addPowerCon(buildingInstances[id].production.powerUse);
 	
 	console.log(buildingInstances[0]);
 	

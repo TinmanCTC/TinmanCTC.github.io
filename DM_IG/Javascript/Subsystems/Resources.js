@@ -51,10 +51,12 @@ layout: page
 	
 	addPowerCon(amt) {
 		gameState.powerCon += amt;
+		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	addPowerGen(amt) {
 		gameState.powerGen += amt;
+		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
  }
  
