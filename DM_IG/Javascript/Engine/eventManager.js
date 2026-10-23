@@ -188,7 +188,7 @@ export function initListeners() {
 	
 	storePnchQty.addEventListener("qtyChange", function() {
 		storePnchQty.innerHTML = buildingInstances[0].quantity;
-	}
+	});
 	
 	
 }
