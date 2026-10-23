@@ -13,6 +13,13 @@ layout: page
 
 */
 
+export const BROKERS_ID = {
+		MOTHER: 0,
+		CRYPTO: 1,
+		SANDMAN: 2,
+		WENDY: 3
+};
+
 export const BROKERS_DEFS = [
 	{
 		id: 0,
