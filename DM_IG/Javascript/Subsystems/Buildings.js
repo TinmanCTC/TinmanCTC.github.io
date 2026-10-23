@@ -89,6 +89,12 @@ export class BuildingManager {
 		return retVal;
 	}
 	
+	getBuyCost(id) {
+		var retVal = buildingInstances[id].cost.base + (buildingInstances[id].quantity * buildingInstances[id].cost.growthRate);
+		
+		return retVal;
+	}
+	
 	enableBuilding(id) {
 		console.log("Entering enableBuilding...");
 		buildingInstances[id].isClicked = false;
@@ -107,9 +113,10 @@ export class BuildingManager {
 	
 	buyBuilding(id, amt) {
 		
-		if (gameState.money >= (buildingInstances[id].cost * amt)) {
+		if (gameState.money >= (buildingInstances[id].cost.base * amt)) {
 			buildingInstances[id].quantity += amt;
 			resourceManager.addPowerCon(buildingInstances[id].production.powerUse);
+			resourceManager.subMoney(buildingInstances[id].cost.base * amt);
 		} else {
 			alert("Not enough money!");
 		}

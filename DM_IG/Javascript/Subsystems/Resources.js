@@ -44,6 +44,11 @@ layout: page
 		pushEvent("cashChange", resourceInstances[0].elementID);
 	}
 	
+	subMoney(amt) {
+		gameState.money -= amt;
+		pushEvent("cashChange", resourceInstances[0].elementID);
+	}
+	
 	addBits(amt) {
 		gameState.bits += amt;
 		pushEvent("bitsChange", resourceInstances[1].elementID);
