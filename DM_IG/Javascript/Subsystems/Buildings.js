@@ -134,7 +134,7 @@ export function initBuildings() {
 	
 	// Create Punchcard instance by default
 	buildingManager.addBuilding(BUILDING_DEFS[0]);
-	resourceManager.addPowerCon(buildingInstances[id].production.powerUse);
+	resourceManager.addPowerCon(buildingInstances[0].production.powerUse);
 	
 	console.log(buildingInstances[0]);
 	
