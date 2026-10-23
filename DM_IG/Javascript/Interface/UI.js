@@ -47,8 +47,8 @@ export function addButton(source, type, target) {
 				document.getElementById(type).innerHTML += source.Punchcard_Btn;
 			}
 			
-			if (target == "desktop" && buildingInstances[1].unlock.yes == false) {
-				buildingInstances[1].unlock.yes == true;
+			if (target == "desktop" && buildingInstances[1].unlock.btn == false) {
+				buildingInstances[1].unlock.btn == true;
 				document.getElementById(type).innerHTML += source.Desktop_Btn;
 			}
 			
@@ -77,13 +77,15 @@ export function addDisplay(source, type, target) {
 			
 			break;
 		case "building-list":
-			if (target == "punchcard") {
+			if (target == "punchcard" && buildingInstances[0].unlock.disp == false) {
+				buildingInstances[0].unlock.disp == true;
 				document.getElementById(type).innerHTML += source.storePunchcard_Pnl;
 				document.getElementById("store-pnchcrd-lbl").innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>";
 				document.getElementById("store-pnchcrd-qty").innerHTML = buildingInstances[0].quantity;
 			}
 			
-			if (target == "desktop") {
+			if (target == "desktop"  && buildingInstances[1].unlock.disp == false) {
+				buildingInstances[1].unlock.disp == true;
 				document.getElementById(type).innerHTML += source.storeDesktop_Pnl;
 				document.getElementById("store-dsktp-lbl").innerHTML = "<b><u>Desktop Computer:&emsp;</b></u>";
 				document.getElementById("store-dsktp-qty").innerHTML = buildingInstances[1].quantity;

@@ -28,7 +28,7 @@ export const BROKERS_DEFS = [
 		description: "Incredibly easy to work with and always with your best interests in mind, but not the most technologically competent.",
 		upgrades: [],
 		production: {
-			multiplier: 1.0,
+			multiplier: 0.2,
 			clickInterval: 5000,
 			bonus: 0,
 			growthRate: 1.0,

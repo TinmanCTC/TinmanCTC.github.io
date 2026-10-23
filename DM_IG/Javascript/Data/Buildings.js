@@ -60,7 +60,9 @@ export const BUILDING_DEFS = [
 		unlock: {
 			resource: "bits",
 			threshold: 0,
-			yes: true
+			yes: true,
+			btn: false,
+			disp: false
 		},
 		prestige: {
 			level: 0,
@@ -102,7 +104,9 @@ export const BUILDING_DEFS = [
 		unlock: {
 			resource: "money",
 			threshold: 55296,
-			yes: false
+			yes: false,
+			btn: false,
+			disp: false
 		},
 		prestige: {
 			level: 0,
