@@ -49,8 +49,7 @@ export const BROKERS_DEFS = [
 		ui: {
 			icon: "brokerMother.jpeg",
 			elementID: "brokerMother_button",
-			sortOrder: 1,
-			
+			sortOrder: 1			
 		},
 		tags: ["production", "early-game", "default"]	
 	}

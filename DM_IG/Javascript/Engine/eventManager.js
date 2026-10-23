@@ -15,7 +15,7 @@ import { gameState, checkUnlocks } from "/DM_IG/Javascript/Engine/stateManager.j
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 
 import { BUILDING_ID } from "/DM_IG/Javascript/Data/Buildings.js";
-import { BROKERS_ID } from "/DM_IG/Javascript/Data/Brokers.js";
+import { BROKERS_ID, BROKERS_DEFS } from "/DM_IG/Javascript/Data/Brokers.js";
 
 import { brokerInstances, brokerManager } from "/DM_IG/Javascript/Subsystems/Brokers.js";
 import { resourceInstances, resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
@@ -47,7 +47,7 @@ export function initListeners() {
 
 	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
 	
-	const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);	
+	const brokerMotherButtonID = document.getElementById(BROKERS_DEFS[0].ui.elementID);	
 	
 	// Change view to Production View
 	productionButtonID.addEventListener("click", function () {
