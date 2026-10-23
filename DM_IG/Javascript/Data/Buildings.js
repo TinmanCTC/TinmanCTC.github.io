@@ -46,7 +46,7 @@ export const BUILDING_DEFS = [
 		},
 		production: {
 			base: 864,
-			clickInterval: 3000,
+			clickInterval: 1500,
 			bonus: 0,
 			powerUse: 100,
 			growthRate: 1.0,
