@@ -148,9 +148,10 @@ body {
 
 .store-btn {
 	width: 2vw;
-	height: 1vw;
+	height: 2vw;
 	min-height: 2px;
 	min-width: 4px;
 	max-height: 25px;
 	max-width: 50px;
+	padding: 2px; 
 }
