@@ -158,7 +158,7 @@ export function initBuildings() {
 	resourceManager.addPowerCon(buildingInstances[0].production.powerUse);
 	
 	// Initialize Store Display
-	addDisplay(INTERFACE_DEFS[4], "building-list");
+	addDisplay(INTERFACE_DEFS[4], "building-list", "punchcard");
 	
 	console.log(buildingInstances[0]);
 	
