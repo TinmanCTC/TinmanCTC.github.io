@@ -36,7 +36,10 @@ export const BROKERS_DEFS = [
 		},
 		unlock: {
 			resource: "bits",
-			gate: 0
+			threshold: 0,
+			yes: true,
+			btn: false,
+			disp: false
 		},
 		prestige: {
 			level: 0,

@@ -38,7 +38,6 @@ export function checkUnlocks() {
 	
 	// Unlock Desktop Building
 	if (gameState.lifetimeMoney >= 55296 && buildingInstances[1].unlock.yes == false) {
-		buildingManager.addBuilding(BUILDING_DEFS[1]);
 		buildingInstances[1].quantity = 0;
 		buildingInstances[1].unlock.yes = true;
 		

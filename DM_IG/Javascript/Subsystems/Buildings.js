@@ -155,6 +155,7 @@ export function initBuildings() {
 	
 	// Create Punchcard instance by default
 	buildingManager.addBuilding(BUILDING_DEFS[0]);
+	buildingManager.addBuilding(BUILDING_DEFS[1]);
 	resourceManager.addPowerCon(buildingInstances[0].production.powerUse);
 	
 	// Initialize Store Display

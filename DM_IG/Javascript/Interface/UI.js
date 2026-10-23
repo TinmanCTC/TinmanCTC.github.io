@@ -25,7 +25,7 @@ export function initUI() {
 	addButton(INTERFACE_DEFS[2], "broker-buttons", 0);
 	
 	// Initialize Resource Displays
-	addDisplay(INTERFACE_DEFS[3], "resource-bar");
+	addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
 	
 }
 
@@ -43,7 +43,8 @@ export function addButton(source, type, target) {
 			retVal = 1;
 			break;
 		case "production-buttons":
-			if (target == "punchcard") {
+			if (target == "punchcard" && buildingInstances[0].unlock.btn == false) {
+				buildingInstances[0].unlock.btn == true;
 				document.getElementById(type).innerHTML += source.Punchcard_Btn;
 			}
 			
@@ -55,7 +56,11 @@ export function addButton(source, type, target) {
 			retVal = 2;
 			break;
 		case "broker-buttons":
-			document.getElementById(type).innerHTML += source.brokerMother_Btn;
+			
+			if (target == "mother" && brokerInstances[0].unlock.btn == false) {
+				brokerInstances[0].unlock.btn == true;
+				document.getElementById(type).innerHTML += source.brokerMother_Btn;
+			}
 			
 			retVal = 3;
 			break;
