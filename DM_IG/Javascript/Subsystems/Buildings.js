@@ -107,7 +107,7 @@ export class BuildingManager {
 	
 	buyBuilding(id, amt) {
 		
-		if (gameState.money <= (buildingInstances[id].cost * amt)) {
+		if (gameState.money >= (buildingInstances[id].cost * amt)) {
 			buildingInstances[id].quantity += amt;
 			resourceManager.addPowerCon(buildingInstances[id].production.powerUse);
 		} else {
