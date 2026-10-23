@@ -41,6 +41,7 @@ layout: page
 	 
 	addMoney(amt) {
 		gameState.money += amt;
+		gameState.lifetimeMoney += amt;
 		pushEvent("cashChange", resourceInstances[0].elementID);
 	}
 	

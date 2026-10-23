@@ -13,44 +13,48 @@ import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { INTERFACE_DEFS } from "/DM_IG/Javascript/Interface/Components.js";
 
+
 export function initUI() {
 	// Initialize view buttons
-	addButton(INTERFACE_DEFS[0], "view-buttons");
+	addButton(INTERFACE_DEFS[0], "view-buttons", 0);
 	
 	// Initialize production buttons
-	addButton(INTERFACE_DEFS[1], "production-buttons");
+	addButton(INTERFACE_DEFS[1], "production-buttons", "punchcard");
 	
 	// Initialize broker buttons
-	addButton(INTERFACE_DEFS[2], "broker-buttons");
+	addButton(INTERFACE_DEFS[2], "broker-buttons", 0);
 	
 	// Initialize Resource Displays
 	addDisplay(INTERFACE_DEFS[3], "resource-bar");
 	
 }
 
-export function addButton(target, id) {
+export function addButton(source, type, target) {
 	let retVal = 0;
 	
-	switch (id) {
+	switch (type) {
 		case "view-buttons":
-			document.getElementById(id).innerHTML += target.Production_Btn;
-			document.getElementById(id).innerHTML += target.Research_Btn;
-			document.getElementById(id).innerHTML += target.Upgrades_Btn;
-			document.getElementById(id).innerHTML += target.Managers_Btn;
-			document.getElementById(id).innerHTML += target.Settings_Btn;
+			document.getElementById(type).innerHTML += source.Production_Btn;
+			document.getElementById(type).innerHTML += source.Research_Btn;
+			document.getElementById(type).innerHTML += source.Upgrades_Btn;
+			document.getElementById(type).innerHTML += source.Managers_Btn;
+			document.getElementById(type).innerHTML += source.Settings_Btn;
 			
 			retVal = 1;
 			break;
 		case "production-buttons":
-			document.getElementById(id).innerHTML += target.Punchcard_Btn;
+			if (target == "punchcard") {
+				document.getElementById(type).innerHTML += source.Punchcard_Btn;
+			}
 			
-			// Check if other buildings are unlocked and populate them if so
-			
+			if (target == "desktop") {
+				document.getElementById(type).innerHTML += source.Desktop_Btn;
+			}
 			
 			retVal = 2;
 			break;
 		case "broker-buttons":
-			document.getElementById(id).innerHTML += target.brokerMother_Btn;
+			document.getElementById(type).innerHTML += source.brokerMother_Btn;
 			
 			retVal = 3;
 			break;
@@ -61,20 +65,29 @@ export function addButton(target, id) {
 	return retVal;
 }
 
-export function addDisplay(target, id) {
+export function addDisplay(source, type, target) {
 	let retVal = 0;
 	
-	switch (id) {
+	switch (type) {
 		case "resource-bar":
-			document.getElementById(id).innerHTML += target.resourceCash_Pnl;
-			document.getElementById(id).innerHTML += target.resourceBits_Pnl;
-			document.getElementById(id).innerHTML += target.resourceWatts_Pnl;
+			document.getElementById(type).innerHTML += source.resourceCash_Pnl;
+			document.getElementById(type).innerHTML += source.resourceBits_Pnl;
+			document.getElementById(type).innerHTML += source.resourceWatts_Pnl;
 			
 			break;
 		case "building-list":
-			document.getElementById(id).innerHTML += target.storePunchcard_Pnl;
-			document.getElementById("store-pnchcrd-lbl").innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>";
-			document.getElementById("store-pnchcrd-qty").innerHTML = buildingInstances[0].quantity;
+			if (target == "punchcard") {
+				document.getElementById(type).innerHTML += source.storePunchcard_Pnl;
+				document.getElementById("store-pnchcrd-lbl").innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>";
+				document.getElementById("store-pnchcrd-qty").innerHTML = buildingInstances[0].quantity;
+			}
+			
+			if (target == "desktop") {
+				document.getElementById(type).innerHTML += source.storeDesktop_Pnl;
+				document.getElementById("store-pnchcrd-lbl").innerHTML = "<b><u>Desktop Computer:&emsp;</b></u>";
+				document.getElementById("store-dsktp-qty").innerHTML = buildingInstances[1].quantity;
+			}
+			
 			break;
 	}
 }

@@ -59,7 +59,8 @@ export const BUILDING_DEFS = [
 		},
 		unlock: {
 			resource: "bits",
-			gate: 0
+			threshold: 0,
+			yes: true
 		},
 		prestige: {
 			level: 0,
@@ -69,10 +70,50 @@ export const BUILDING_DEFS = [
 		ui: {
 			icon: "punchcard_framed.png",
 			elementID: "punchcard_button",
-			sortOrder: 1,
-			
+			sortOrder: 1
+		},
+		tags: ["production", "early-game", "default"]	
+	},
+	// Desktop
+	{
+		id: 0,
+		name: "Desktop",
+		resource: "bits",
+		description: "Your day to day consumer computer, capable of classical computation and internet surfing.",
+		upgrades: [],
+		cost: {
+			base: 500,
+			growthRate: 1.24,
+			growthFactor: "exponential"
+		},
+		production: {
+			base: 2056,
+			clickInterval: 3000,
+			bonus: 0,
+			powerUse: 500,
+			growthRate: 1.09,
+			growthFactor: "multiplicative",
+		},
+		manager: {
+			cost: 10000,
+			clickInterval: 500,
+			multiplier: 1.0,
+		},
+		unlock: {
+			resource: "money",
+			threshold: 55296,
+			yes: false
+		},
+		prestige: {
+			level: 0,
+			multiplier: 1.0,
+			scalesWith: "legacies"
+		},
+		ui: {
+			icon: "desktopButton.jpg",
+			elementID: "desktop_button",
+			sortOrder: 2
 		},
 		tags: ["production", "early-game", "default"]	
 	}
-	// Desktop 
 ];

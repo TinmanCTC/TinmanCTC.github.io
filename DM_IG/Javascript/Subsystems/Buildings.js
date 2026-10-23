@@ -47,7 +47,8 @@ export class BuildingManager {
 				timeClicked: 0,
 				mngrTimeClicked: 0
 		};
-		buildingInstances.push(newBldg);		
+		buildingInstances.push(newBldg);
+		gameState.bldgs.push(newBldg);
 	}
 	
 	// Creates a new building definition and adds it to BUILDING_DEFS

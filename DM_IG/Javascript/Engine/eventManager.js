@@ -11,7 +11,7 @@ layout: page
 *  
 */
 
-import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
+import { gameState, checkUnlocks } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 
 import { BUILDING_ID } from "/DM_IG/Javascript/Data/Buildings.js";
@@ -202,15 +202,19 @@ export function pushEvent(desc, target) {
 	switch(desc) {
 		case "cashChange":
 			cashDisplay.dispatchEvent(cashTick);
+			checkUnlocks();
 			break;
 		case "wattsChange":
 			wattsDisplay.dispatchEvent(wattsTick);
+			checkUnlocks();
 			break;
 		case "bitsChange":
 			bitsDisplay.dispatchEvent(bitsTick);
+			checkUnlocks();
 			break;
 		case "qtyChange":
 			storePnchQtyDisplay.dispatchEvent(qtyDelta);
+			checkUnlocks();
 			break;
 		default:
 			

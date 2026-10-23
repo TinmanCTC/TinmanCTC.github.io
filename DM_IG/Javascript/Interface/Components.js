@@ -9,6 +9,14 @@ layout: page
  * 
  */
  
+ export const INTERFACE_ID = {
+	 VIEW_BUTTONS: 0,
+	 PRODUCTION_BUTTONS: 1,
+	 BROKER_BUTTONS: 2,
+	 RESOURCE_DISP: 3,
+	 STORE_DISP: 4
+ };
+ 
  export const INTERFACE_DEFS = [
 	 // View Buttons
 	 {
@@ -21,7 +29,7 @@ layout: page
 	 // Production Building Buttons
 	 {
 		 Punchcard_Btn: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcardButton.png' class='prod-img'></button>",
-		 Desktop_Btn: ""		 
+		 Desktop_Btn: "<button data-view='Desktop' id='desktop_button' class='prod-btn' type='button'><img src='Assets/Images/desktopButton.png' class='prod-img'></button>"		 
 	 },
 	 // Data Broker Buttons
 	 {
@@ -40,7 +48,7 @@ layout: page
 	 // Store Panels
 	 {
 		 storePunchcard_Pnl: "<div id='store-pnch-row' class='store-display'><span id='store-pnchcrd-lbl'></span><span id='store-pnchcrd-qty'></span><button id='store-pnch-buy' class='store-btn'>Buy</button><button id='store-pnch-sell' class='store-btn'>Sell</button></div>",
-		 storeDesktop_Pnl: ""
+		 storeDesktop_Pnl: "<div id='store-pnch-row' class='store-display'><span id='store-dsktp-lbl'></span><span id='store-dsktp-qty'></span><button id='store-dsktp-buy' class='store-btn'>Buy</button><button id='store-dsktp-sell' class='store-btn'>Sell</button></div>"
 	 }
  
 ];
