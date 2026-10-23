@@ -35,6 +35,10 @@ export function initListeners() {
 	const cashDisplay = document.getElementById(resourceInstances[0].elementID);
 	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
 	const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
+	
+	const storePnchBuy = document.getElementById("store-pnch-buy");
+	const storePnchSell = document.getElementById("store-pnch-sell");
+	
 
 	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
 	
@@ -159,6 +163,17 @@ export function initListeners() {
 		wattsDisplay.innerHTML = (gameState.powerGen - gameState.powerCon);
 	});
 	wattsDisplay.dispatchEvent(wattsTick);
+	
+	// Store Listeners - Punchcard Only on default
+	storePnchBuy.addEventListener("click", function() {
+		
+		if (gameState.money >= buildingInstances[0].cost.base) {
+			buildingManager.buyBuilding(0,1);
+		} else {
+			
+		}
+		
+	});
 	
 	
 }
