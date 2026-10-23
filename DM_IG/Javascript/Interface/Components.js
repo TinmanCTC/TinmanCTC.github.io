@@ -29,7 +29,7 @@ layout: page
 	 // Production Building Buttons
 	 {
 		 Punchcard_Btn: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcardButton.png' class='prod-img'></button>",
-		 Desktop_Btn: "<button data-view='Desktop' id='desktop_button' class='prod-btn' type='button'><img src='Assets/Images/desktopButton.png' class='prod-img'></button>"		 
+		 Desktop_Btn: "<button data-view='Desktop' id='desktop_button' class='prod-btn' type='button'><img src='Assets/Images/desktopButton.jpg' class='prod-img'></button>"		 
 	 },
 	 // Data Broker Buttons
 	 {
