@@ -26,6 +26,9 @@ export function initUI() {
 	// Initialize Resource Displays
 	addDisplay(INTERFACE_DEFS[3], "resource-bar");
 	
+	// Initialize Store Display
+	addDisplay(INTERFACE_DEFS[4], "building-list");
+	
 }
 
 export function addButton(target, id) {
@@ -70,6 +73,10 @@ export function addDisplay(target, id) {
 			document.getElementById(id).innerHTML += target.resourceBits_Pnl;
 			document.getElementById(id).innerHTML += target.resourceWatts_Pnl;
 			
+			break;
+		case "building-list":
+			document.getElementById(id).innerHTML += target.storePunchcard_Pnl;
+			document.getElementById("Store_Punchcard_Qty").innerHTML = buildingInstances[0].quantity;
 			break;
 	}
 }

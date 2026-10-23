@@ -13,9 +13,9 @@ layout: page
 
 export const gameState = {
 	bits: 0,
-	money: 0,
+	money: 250,
 	powerCon: 0,
-	powerGen: 0,
+	powerGen: 1000,
 	bldgs: [],
 	upgrades: [],
 	achievements: [],

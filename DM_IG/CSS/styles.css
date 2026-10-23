@@ -137,7 +137,6 @@ body {
 	max-width: 100px;
 }
 
-
 .prod-btn:active {
 	transform: translateY(2px);
 }
@@ -145,4 +144,13 @@ body {
 /* State when disabled */
 .prod-btn:disabled {
   cursor: not-allowed;
+}
+
+.store-btn {
+	width: 2vw;
+	height: 1vw;
+	min-height: 2px;
+	min-width: 4px;
+	max-height: 25px;
+	max-width: 50px;
 }

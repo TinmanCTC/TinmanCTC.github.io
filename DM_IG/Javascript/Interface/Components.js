@@ -36,6 +36,11 @@ layout: page
 		 resourceBits_Pnl: "<div id='bits-disp' class='resource-disp'><b><u>Bits:</u></b> <span id='Resource_Bits'></p></div>",
 		 resourceWatts_Pnl: "<div id='watts-disp' class='resource-disp'><b><u>Watts:</u></b> <span id='Resource_Watts'></p></div>",
 		 resourceQbits_Pnl: "<div id='qbits-disp' class='resource-disp'><b><u>qBits:</u></b> <span id='Resource_Qbits'></p></div>"
+	 },
+	 // Store Panels
+	 {
+		 storePunchcard_Pnl: "<div id='store-pnch-row' class='store-display'><b><u>Punchcard Machine:</u></b><span id='Store_Punchcard_Qty'></span><button id='store-pnch-buy' class='store-btn'>Buy</button><button id='store-pnch-buy' class='store-btn'>Sell</button></div>",
+		 storeDesktop_Pnl: ""
 	 }
  
 ];
