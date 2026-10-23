@@ -120,9 +120,9 @@ export class BuildingManager {
 		} else {
 			var alertPnl = document.getElementById("store-pnchcrd-lbl");
 			
-			alertPnl.innerHTML = "<b style='color:#FF0000;'><u>Not Enough Buildings!&emsp;</b></u>";
+			alertPnl.innerHTML = "<b style='color:#FF0000;'><u>Not Enough Money!&emsp;</b></u>";
 			
-			setTimeout(() => function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
+			setTimeout(function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
 		}
 		
 	}
@@ -139,7 +139,7 @@ export class BuildingManager {
 			
 			alertPnl.innerHTML = "<b style='color:#FF0000;'><u>Not Enough Buildings!&emsp;</b></u>";
 			
-			setTimeout(() => function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
+			setTimeout(function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
 			
 		}
 	}
