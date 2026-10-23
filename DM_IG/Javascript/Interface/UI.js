@@ -43,7 +43,7 @@ export function addButton(source, type, target) {
 			retVal = 1;
 			break;
 		case "production-buttons":
-			if (target == "punchcard" && buildingInstances[0].unlock.btn == false) {
+			if (target == "punchcard") {
 				buildingInstances[0].unlock.btn == true;
 				document.getElementById(type).innerHTML += source.Punchcard_Btn;
 			}
