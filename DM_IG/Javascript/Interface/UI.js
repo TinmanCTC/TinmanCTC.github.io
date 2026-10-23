@@ -73,7 +73,8 @@ export function addDisplay(target, id) {
 			break;
 		case "building-list":
 			document.getElementById(id).innerHTML += target.storePunchcard_Pnl;
-			document.getElementById("Store_Punchcard_Qty").innerHTML = "&emsp;" + buildingInstances[0].quantity;
+			document.getElementById("store-pnchcrd-lbl").innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>";
+			document.getElementById("store-pnchcrd-qty").innerHTML = buildingInstances[0].quantity;
 			break;
 	}
 }

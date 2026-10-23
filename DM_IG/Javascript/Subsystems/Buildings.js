@@ -118,7 +118,11 @@ export class BuildingManager {
 			resourceManager.addPowerCon(buildingInstances[id].production.powerUse);
 			resourceManager.subMoney(buildingInstances[id].cost.base * amt);
 		} else {
-			alert("Not enough money!");
+			var alertPnl = document.getElementById("store-pnchcrd-lbl");
+			
+			alertPnl.innerHTML = "<b style='color:#FF0000;'><u>Not Enough Buildings!&emsp;</b></u>";
+			
+			setTimeout(() => function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
 		}
 		
 	}
@@ -127,9 +131,16 @@ export class BuildingManager {
 		
 		if (buildingInstances[id].quantity - amt >= 0) {
 			buildingInstances[id].quantity -= amt;
+			resourceManager.subPowerCon(buildingInstances[id].production.powerUse);
+			resourceManager.addMoney(buildingInstances[id].cost.base * amt);
 			
 		} else {
-			alert("Not enough buildings!");
+			var alertPnl = document.getElementById("store-pnchcrd-lbl");
+			
+			alertPnl.innerHTML = "<b style='color:#FF0000;'><u>Not Enough Buildings!&emsp;</b></u>";
+			
+			setTimeout(() => function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
+			
 		}
 	}
 	

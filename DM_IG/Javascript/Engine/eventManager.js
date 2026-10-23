@@ -39,7 +39,7 @@ export function initListeners() {
 	
 	const storePnchBuy = document.getElementById("store-pnch-buy");
 	const storePnchSell = document.getElementById("store-pnch-sell");
-	const storePnchQty = document.getElementById("Store_Punchcard_Qty");
+	const storePnchQty = document.getElementById("store-pnchcrd-qty");
 	
 
 	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
@@ -202,7 +202,7 @@ export function pushEvent(desc, target) {
 	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
 	const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
 	
-	const storePnchQtyDisplay = document.getElementById("Store_Punchcard_Qty");
+	const storePnchQtyDisplay = document.getElementById("store-pnchcrd-qty");
 	
 	switch(desc) {
 		case "cashChange":
