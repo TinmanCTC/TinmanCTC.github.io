@@ -168,21 +168,13 @@ export function initListeners() {
 	
 	// Store Listeners - Punchcard Only on default
 	storePnchBuy.addEventListener("click", function() {
-		
-		if (gameState.money >= buildingInstances[0].cost.base) {
-			buildingManager.buyBuilding(0,1);
-			pushEvent("qtyChange", storePnchQty);
-		} else {
-			
-		}
-		
+		buildingManager.buyBuilding(0,1);
+		pushEvent("qtyChange", storePnchQty);		
 	});
 	
 	storePnchSell.addEventListener("click", function() {
-		
 		buildingManager.sellBuilding(0,1);
 		pushEvent("qtyChange", storePnchQty);
-		
 	});
 	
 	storePnchQty.addEventListener("qtyChange", function() {
