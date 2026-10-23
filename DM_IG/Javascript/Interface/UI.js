@@ -56,8 +56,7 @@ export function addButton(source, type, target) {
 			break;
 		case "broker-buttons":
 			
-			if (target == "mother" && brokerInstances[0].unlock.btn == false) {
-				brokerInstances[0].unlock.btn == true;
+			if (target == "mother") {
 				document.getElementById(type).innerHTML += source.brokerMother_Btn;
 			}
 			
