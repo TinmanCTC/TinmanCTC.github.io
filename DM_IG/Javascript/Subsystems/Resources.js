@@ -63,6 +63,16 @@ layout: page
 		gameState.powerGen += amt;
 		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
+	
+	subPowerCon(amt) {
+		gameState.powerCon -= amt;
+		pushEvent("wattsChange", resourceInstances[2].elementID);
+	}
+	
+	subPowerGen(amt) {
+		gameState.powerGen -= amt;
+		pushEvent("wattsChange", resourceInstances[2].elementID);
+	}
  }
  
  export const resourceManager = new ResourceManager();
