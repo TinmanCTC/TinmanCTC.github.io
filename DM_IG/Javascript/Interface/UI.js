@@ -47,7 +47,8 @@ export function addButton(source, type, target) {
 				document.getElementById(type).innerHTML += source.Punchcard_Btn;
 			}
 			
-			if (target == "desktop") {
+			if (target == "desktop" && buildingInstances[1].unlock.yes == false) {
+				buildingInstances[1].unlock.yes == true;
 				document.getElementById(type).innerHTML += source.Desktop_Btn;
 			}
 			
@@ -84,7 +85,7 @@ export function addDisplay(source, type, target) {
 			
 			if (target == "desktop") {
 				document.getElementById(type).innerHTML += source.storeDesktop_Pnl;
-				document.getElementById("store-pnchcrd-lbl").innerHTML = "<b><u>Desktop Computer:&emsp;</b></u>";
+				document.getElementById("store-dsktp-lbl").innerHTML = "<b><u>Desktop Computer:&emsp;</b></u>";
 				document.getElementById("store-dsktp-qty").innerHTML = buildingInstances[1].quantity;
 			}
 			
