@@ -20,7 +20,7 @@ layout: page
 	 },
 	 // Production Building Buttons
 	 {
-		 Punchcard_Btn: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcardButton.png' class='prod-img'><span id='cooldown-progress'></span></button>",
+		 Punchcard_Btn: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcardButton.png' class='prod-img'></button>",
 		 Desktop_Btn: ""		 
 	 },
 	 // Data Broker Buttons

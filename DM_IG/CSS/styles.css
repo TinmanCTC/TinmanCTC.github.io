@@ -59,11 +59,6 @@ body {
 	transform: translateY(2px);
 }
 
-
-.prod-btn:active {
-	transform: translateY(2px);
-}
-
 .btn-img {
 	width: 5vw;
 	height: 5vw;
@@ -140,23 +135,11 @@ body {
 	min-width: 10px;
 	max-height: 100px;
 	max-width: 100px;
-  
-  position: relative;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  overflow: hidden; /* Keeps the progress overlay inside the button */
-  outline: none;
 }
 
-.cooldown-progress {
-	position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%; /* Starts empty */
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* Darkens the button during cooldown */
+
+.prod-btn:active {
+	transform: translateY(2px);
 }
 
 /* State when disabled */
