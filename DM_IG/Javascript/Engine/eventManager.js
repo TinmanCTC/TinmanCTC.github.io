@@ -24,6 +24,7 @@ export const buttonListeners = [];
 export const cashTick = new Event("cashChange");
 export const bitsTick = new Event("bitsChange");
 export const wattsTick = new Event("wattsChange");
+export const qtyDelta = new Event("qtyChange");
 
 export function initListeners() {
 	const settingsButtonID = document.getElementById("settings_button");
@@ -38,6 +39,7 @@ export function initListeners() {
 	
 	const storePnchBuy = document.getElementById("store-pnch-buy");
 	const storePnchSell = document.getElementById("store-pnch-sell");
+	const storePnchQty = document.getElementById("Store_Punchcard_Qty");
 	
 
 	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
@@ -169,11 +171,24 @@ export function initListeners() {
 		
 		if (gameState.money >= buildingInstances[0].cost.base) {
 			buildingManager.buyBuilding(0,1);
+			pushEvent("qtyChange", storePnchQty);
 		} else {
 			
 		}
 		
 	});
+	
+	storePnchSell.addEventListener("click", function() {
+		
+		
+		buildingManager.sellBuilding(0,1);
+		pushEvent("qtyChange", storePnchQty);
+		
+	});
+	
+	storePnchQty.addEventListener("qtyChange", function() {
+		storePnchQty.innerHTML = buildingInstances[0].quantity;
+	}
 	
 	
 }
@@ -188,6 +203,8 @@ export function pushEvent(desc, target) {
 	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
 	const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
 	
+	const storePnchQtyDisplay = document.getElementById("Store_Punchcard_Qty");
+	
 	switch(desc) {
 		case "cashChange":
 			cashDisplay.dispatchEvent(cashTick);
@@ -197,7 +214,9 @@ export function pushEvent(desc, target) {
 			break;
 		case "bitsChange":
 			bitsDisplay.dispatchEvent(bitsTick);
-			break;		
+			break;
+		case "qtyChange":
+			storePnchQtyDisplay.dispatchEvent(qtyDelta);
 		default:
 			
 	}
