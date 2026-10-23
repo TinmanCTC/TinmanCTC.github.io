@@ -150,7 +150,7 @@ export function initListeners() {
 	
 	// Mother Broker - on by default	
 	brokerMotherButtonID.addEventListener("click", function() {
-		brokerManager.sellBits(BROKER_ID.MOTHER);
+		brokerManager.sellBits(BROKERS_ID.MOTHER);
 	});
 	
 	// Resource Listeners	
