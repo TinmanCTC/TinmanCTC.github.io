@@ -39,7 +39,7 @@ layout: page
 	 },
 	 // Store Panels
 	 {
-		 storePunchcard_Pnl: "<div id='store-pnch-row' class='store-display'><b><u>Punchcard Machine:</u></b><span id='Store_Punchcard_Qty'></span><button id='store-pnch-buy' class='store-btn'>Buy</button><button id='store-pnch-buy' class='store-btn'>Sell</button></div>",
+		 storePunchcard_Pnl: "<div id='store-pnch-row' class='store-display'><b><u>Punchcard Machine:</u></b><span id='Store_Punchcard_Qty'></span><button id='store-pnch-buy' class='store-btn'>Buy</button><button id='store-pnch-sell' class='store-btn'>Sell</button></div>",
 		 storeDesktop_Pnl: ""
 	 }
  

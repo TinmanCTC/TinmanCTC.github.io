@@ -180,7 +180,6 @@ export function initListeners() {
 	
 	storePnchSell.addEventListener("click", function() {
 		
-		
 		buildingManager.sellBuilding(0,1);
 		pushEvent("qtyChange", storePnchQty);
 		
