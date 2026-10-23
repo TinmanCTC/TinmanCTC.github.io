@@ -37,7 +37,7 @@ export const gameState = {
 export function checkUnlocks() {
 	
 	// Unlock Desktop Building
-	if (gameState.lifetimeMoney >= BUILDING_DEFS[1].unlock.threshold) {
+	if (gameState.lifetimeMoney >= 55296) {
 		buildingManager.addBuilding(BUILDING_DEFS[1]);
 		buildingInstances[1].quantity = 0;
 		buildingInstances[1].unlock.yes = true;
