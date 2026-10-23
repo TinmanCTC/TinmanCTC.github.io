@@ -44,7 +44,6 @@ export function addButton(source, type, target) {
 			break;
 		case "production-buttons":
 			if (target == "punchcard") {
-				buildingInstances[0].unlock.btn == true;
 				document.getElementById(type).innerHTML += source.Punchcard_Btn;
 			}
 			
@@ -82,8 +81,7 @@ export function addDisplay(source, type, target) {
 			
 			break;
 		case "building-list":
-			if (target == "punchcard" && buildingInstances[0].unlock.disp == false) {
-				buildingInstances[0].unlock.disp == true;
+			if (target == "punchcard") {
 				document.getElementById(type).innerHTML += source.storePunchcard_Pnl;
 				document.getElementById("store-pnchcrd-lbl").innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>";
 				document.getElementById("store-pnchcrd-qty").innerHTML = buildingInstances[0].quantity;
