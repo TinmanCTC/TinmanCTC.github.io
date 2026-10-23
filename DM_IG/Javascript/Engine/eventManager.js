@@ -216,6 +216,7 @@ export function pushEvent(desc, target) {
 			break;
 		case "qtyChange":
 			storePnchQtyDisplay.dispatchEvent(qtyDelta);
+			break;
 		default:
 			
 	}
