@@ -59,14 +59,6 @@ body {
 	transform: translateY(2px);
 }
 
-.prod-btn {
-	width: 6vw;
-	height: 6vw;
-	min-height: 10px;
-	min-width: 10px;
-	max-height: 100px;
-	max-width: 100px;
-}
 
 .prod-btn:active {
 	transform: translateY(2px);
@@ -138,4 +130,40 @@ body {
 /* Show the tooltip text on hover */
 .tooltip:hover .tooltip-text {
   opacity: 1;
+}
+
+/* Button Cooldown Code */
+.prod-btn {
+  width: 6vw;
+	height: 6vw;
+	min-height: 10px;
+	min-width: 10px;
+	max-height: 100px;
+	max-width: 100px;
+  
+  position: relative;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden; /* Keeps the progress overlay inside the button */
+  outline: none;
+}
+
+.cooldown-progress {
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%; /* Starts empty */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Darkens the button during cooldown */
+}
+
+/* State when disabled */
+.prod-btn:disabled {
+  cursor: not-allowed;
 }
