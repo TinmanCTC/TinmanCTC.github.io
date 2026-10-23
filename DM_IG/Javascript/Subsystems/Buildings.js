@@ -14,6 +14,8 @@ import { eventFeed } from "/DM_IG/Javascript/Engine/eventManager.js";
 
 import { BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
+import { addDisplay } from "/DM_IG/Javascript/Interface/UI.js";
+import { INTERFACE_DEFS } from "/DM_IG/Javascript/Interface/Components.js";
 
 export const buildingInstances = [];
 
@@ -135,6 +137,9 @@ export function initBuildings() {
 	// Create Punchcard instance by default
 	buildingManager.addBuilding(BUILDING_DEFS[0]);
 	resourceManager.addPowerCon(buildingInstances[0].production.powerUse);
+	
+	// Initialize Store Display
+	addDisplay(INTERFACE_DEFS[4], "building-list");
 	
 	console.log(buildingInstances[0]);
 	

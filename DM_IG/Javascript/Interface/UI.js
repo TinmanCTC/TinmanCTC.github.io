@@ -26,9 +26,6 @@ export function initUI() {
 	// Initialize Resource Displays
 	addDisplay(INTERFACE_DEFS[3], "resource-bar");
 	
-	// Initialize Store Display
-	addDisplay(INTERFACE_DEFS[4], "building-list");
-	
 }
 
 export function addButton(target, id) {
