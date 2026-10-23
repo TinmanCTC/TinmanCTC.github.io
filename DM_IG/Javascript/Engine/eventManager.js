@@ -37,7 +37,7 @@ export function initListeners() {
 	const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
 
 	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
-	const punchcardProgressID = punchcardButtonID.querySelector('.cooldown-progress');
+	const punchcardProgressID = document.getElementById('cooldown-progress');
 	
 	const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);	
 	
@@ -128,7 +128,9 @@ export function initListeners() {
 	punchcardButtonID.addEventListener("click", function () {
 		console.log("Punchcard clicked");
 		console.log(buildingInstances[0].ui.elementID);
-		punchcardButtonID.disabled = true;
+		//punchcardButtonID.disabled = true;
+		
+		buildingManager.disableBuilding(0);
 		
 		punchcardProgressID.style.transition = 'none';
 		punchcardProgressID.style.width = '100%';
