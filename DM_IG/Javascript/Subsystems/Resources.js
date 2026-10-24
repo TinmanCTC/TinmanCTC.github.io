@@ -40,43 +40,42 @@ layout: page
 	 }
 	 
 	addMoney(amt) {
-		gameState.money += amt;
-		gameState.lifetimeMoney += amt;
+		gameState.addMoney(amt);
 		pushEvent("cashChange", resourceInstances[0].elementID);
 	}
 	
 	subMoney(amt) {
-		gameState.money -= amt;
+		gameState.subMoney(amt);
 		pushEvent("cashChange", resourceInstances[0].elementID);
 	}
 	
 	addBits(amt) {
-		gameState.bits += amt;
+		gameState.addBits(amt);
 		pushEvent("bitsChange", resourceInstances[1].elementID);
 	}
 	
 	subBits(amt) {
-		gameState.bits -= amt;
+		gameState.subBits(amt);
 		pushEvent("bitsChange", resourceInstances[1].elementID);
 	}
 	
 	addPowerCon(amt) {
-		gameState.powerCon += amt;
+		gameState.addPowerCon(amt);
 		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	addPowerGen(amt) {
-		gameState.powerGen += amt;
+		gameState.addPowerGen(amt);
 		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	subPowerCon(amt) {
-		gameState.powerCon -= amt;
+		gameState.subPowerCon(amt);
 		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	subPowerGen(amt) {
-		gameState.powerGen -= amt;
+		gameState.subPowerGen(amt);
 		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
  }

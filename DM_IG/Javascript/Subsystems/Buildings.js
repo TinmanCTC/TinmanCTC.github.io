@@ -59,35 +59,29 @@ export class BuildingManager {
 	clickBuilding(id) {
 		console.log("Entering clickBuilding...");
 		var amt = this.getOutput(id);
+		var cooldown = this.getClickInterval(id);
 		
-		if (buildingInstances[id].isClicked == false) {
-			console.log("click");
-			resourceManager.addBits(amt);
-			this.disableBuilding(id);
-			setTimeout(this.enableBuilding(id), buildingInstances[id].production.clickInterval);
-		} else {
-			
-		}
+		this.disableBuilding(id);
+		setTimeout(() => this.enableBuilding(id), cooldown);
+		
+		resourceManager.addBits(amt);
 	}
 
-	getOutput(id) {
-		console.log("Entering getOutput...");
-		
-		var retVal = buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus)
-
-		console.log(retVal);
-		
+	getOutput(id) {		
+		var retVal = buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus);	
 		
 		return retVal;
 	}
 	
-	getClickInterval(id) {
-		console.log("Entering getClickInterval...");
-		
+	getClickInterval(id) {		
 		var retVal =  buildingInstances[id].production.clickInterval;
+		var power = gameState.getPowerGen() - gameState.getPowerCon();
 		
-		console.log(buildingInstances[id].production.clickInterval);
-		return retVal;
+		if (power >= 0) {
+			return retVal;
+		} else {
+			return (retVal * 2);
+		}
 	}
 	
 	getBuyCost(id) {

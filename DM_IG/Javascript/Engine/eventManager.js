@@ -30,24 +30,29 @@ export const wattsTick = new Event("wattsChange");
 export const qtyDelta = new Event("qtyChange");
 
 export function initListeners() {
+	// Default listeners 
+	// View Toggle Buttons
 	const settingsButtonID = document.getElementById("settings_button");
 	const researchButtonID = document.getElementById("research_button");
 	const productionButtonID = document.getElementById("production_button");
 	const upgradesButtonID = document.getElementById("upgrades_button");
 	const managersButtonID = document.getElementById("managers_button");
 
+	// Resource Displays
 	const cashDisplay = document.getElementById(resourceInstances[0].elementID);
 	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
 	const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
 	
+	// Store Displays
 	const storePnchBuy = document.getElementById("store-pnch-buy");
 	const storePnchSell = document.getElementById("store-pnch-sell");
 	const storePnchQty = document.getElementById("store-pnchcrd-qty");
 	
-
+	// Production Buildings
 	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
 	
-	const brokerMotherButtonID = document.getElementById("brokerMother_button");	
+	// Data Brokers
+	const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);	
 	
 	// Change view to Production View
 	productionButtonID.addEventListener("click", function () {
@@ -132,16 +137,12 @@ export function initListeners() {
 	// Building Listeners
 	
 	// Punchcard building - on by default
-	
 	punchcardButtonID.addEventListener("click", function () {
-		console.log("Punchcard clicked");
-		console.log(buildingInstances[0].ui.elementID);		
 		buildingManager.disableBuilding(0);		
 		setTimeout(() => buildingManager.enableBuilding(0), buildingManager.getClickInterval(0));
 		
 		var amt = buildingManager.getOutput(0);
 		resourceManager.addBits(amt);
-		
 	});
 	
 	// Check for other building unlocks (from saved game?)
@@ -152,6 +153,7 @@ export function initListeners() {
 	brokerMotherButtonID.addEventListener("click", function() {
 		brokerManager.sellBits(BROKERS_ID.MOTHER);
 	});
+	
 	
 	// Resource Listeners	
 	cashDisplay.addEventListener("cashChange", function() {
