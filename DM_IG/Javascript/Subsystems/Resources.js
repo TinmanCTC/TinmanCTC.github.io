@@ -40,43 +40,69 @@ layout: page
 	 }
 	 
 	addMoney(amt) {
-		gameState.addMoney(amt);
+		gameState.money += amt;
+		gameState.lifetimeMoney += amt
 		pushEvent("cashChange", resourceInstances[0].elementID);
 	}
 	
 	subMoney(amt) {
-		gameState.subMoney(amt);
+		gameState.money -= amt;
 		pushEvent("cashChange", resourceInstances[0].elementID);
 	}
 	
 	addBits(amt) {
-		gameState.addBits(amt);
+		gameState.bits += amt;
+		gameState.lifetimeBits += amt;
 		pushEvent("bitsChange", resourceInstances[1].elementID);
 	}
 	
 	subBits(amt) {
-		gameState.subBits(amt);
+		gameState.bits -= amt;
 		pushEvent("bitsChange", resourceInstances[1].elementID);
 	}
 	
 	addPowerCon(amt) {
-		gameState.addPowerCon(amt);
+		gameState.powerCon += amt;
 		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	addPowerGen(amt) {
-		gameState.addPowerGen(amt);
+		gameState.powerGen += amt;
 		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	subPowerCon(amt) {
-		gameState.subPowerCon(amt);
+		gameState.powerCon -= amt;
 		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	subPowerGen(amt) {
-		gameState.subPowerGen(amt);
+		gameState.powerGen -= amt;
 		pushEvent("wattsChange", resourceInstances[2].elementID);
+	}
+	
+	getMoney() {
+		var retVal = gameState.money;
+	
+		return retVal;
+	}
+
+	getBits() {
+		var retVal = gameState.bits;
+	
+		return retVal;
+	}
+
+	getPowerCon() {
+		var retVal = gameState.powerCon;
+	
+		return retVal;
+	}
+
+	getPowerGen() {
+		var retVal = gameState.powerGen;
+	
+		return retVal;
 	}
  }
  

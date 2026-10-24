@@ -32,7 +32,9 @@ export const gameState = {
 	upgrades: [],
 	achievements: [],
 	legacy: 0,
-	currentView: "production"
+	currentView: "production",
+	
+	
 };
 
 export function checkUnlocks() {
@@ -46,63 +48,3 @@ export function checkUnlocks() {
 		addDisplay(INTERFACE_DEFS[4], "building-list", "desktop");
 	}
 }
-
-// SETTER FUNCTIONS
-export function addMoney(amt) {
-	gameState.money += amt;
-	gameState.lifetimeMoney += amt;
-};
-
-export function subMoney(amt) {
-	gameState.money -= amt;
-};
-
-export function addBits(amt) {
-	gameState.bits += amt;
-	gameState.lifetimeBits += amt;
-};
-
-export function subBits(amt) {
-	gameState.bits -= amt;
-};
-
-export function addPowerCon(amt) {
-	gameState.powerCon += amt;
-};
-
-export function addPowerGen(amt) {
-	gameState.powerGen += amt;
-};
-
-export function subPowerCon(amt) {
-	gameState.powerCon -= amt;
-};
-
-export function subPowerGen(amt) {
-	gameState.powerGen -= amt;
-};
-
-// GETTER FUNCTIONS
-export function getMoney() {
-	var retVal = gameState.money;
-	
-	return retVal;
-};
-
-export function getBits() {
-	var retVal = gameState.bits;
-	
-	return retVal;
-};
-
-export function getPowerCon() {
-	var retVal = gameState.powerCon;
-	
-	return retVal;
-};
-
-export function getPowerGen() {
-	var retVal = gameState.powerGen;
-	
-	return retVal;
-};
