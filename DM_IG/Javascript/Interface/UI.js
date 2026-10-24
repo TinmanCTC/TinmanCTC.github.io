@@ -22,7 +22,7 @@ export function initUI() {
 	addButton(INTERFACE_DEFS[1], "production-buttons", "punchcard");
 	
 	// Initialize broker buttons
-	addButton(INTERFACE_DEFS[2], "broker-buttons", 0);
+	addButton(INTERFACE_DEFS[2], "broker-buttons", "mother");
 	
 	// Initialize Resource Displays
 	addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
@@ -74,9 +74,13 @@ export function addDisplay(source, type, target) {
 	
 	switch (type) {
 		case "resource-bar":
-			document.getElementById(type).innerHTML += source.resourceCash_Pnl;
-			document.getElementById(type).innerHTML += source.resourceBits_Pnl;
-			document.getElementById(type).innerHTML += source.resourceWatts_Pnl;
+			if (target == 0) {
+				document.getElementById(type).innerHTML += source.resourceCash_Pnl;
+				document.getElementById(type).innerHTML += source.resourceBits_Pnl;
+				document.getElementById(type).innerHTML += source.resourceWatts_Pnl;
+			}
+			
+			if (target == "qBits") { }
 			
 			break;
 		case "building-list":
