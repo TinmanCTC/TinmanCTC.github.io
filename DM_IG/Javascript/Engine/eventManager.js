@@ -36,24 +36,25 @@ const productionButtonID = document.getElementById("production_button");
 const upgradesButtonID = document.getElementById("upgrades_button");
 const managersButtonID = document.getElementById("managers_button");
 
-// Resource Displays
-const cashDisplay = document.getElementById(resourceInstances[0].elementID);
-const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
-const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
-
-// Store Displays
-const storePnchBuy = document.getElementById(buildingInstances[0].ui.buyBtnID);
-const storePnchSell = document.getElementById(buildingInstances[0].ui.sellBtnID);
-const storePnchQty = document.getElementById(buildingInstances[0].ui.qtyPnlID);
-
-// Production Buildings
-const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
-
-// Data Brokers
-const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);
-
 
 export function initListeners() {
+	// Resource Displays
+	const cashDisplay = document.getElementById(resourceInstances[0].elementID);
+	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
+	const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
+
+	// Store Displays
+	const storePnchBuy = document.getElementById(buildingInstances[0].ui.buyBtnID);
+	const storePnchSell = document.getElementById(buildingInstances[0].ui.sellBtnID);
+	const storePnchQty = document.getElementById(buildingInstances[0].ui.qtyPnlID);
+
+	// Production Buildings
+	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
+
+	// Data Brokers
+	const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);
+	
+	
 	// Default listeners 
 	
 	// Change view to Production View
@@ -200,6 +201,17 @@ export function pushEvent(desc, target) {
 	const cashDisplay = document.getElementById(resourceInstances[0].elementID);
 	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
 	const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
+	
+	// Store Displays
+	const storePnchBuy = document.getElementById(buildingInstances[0].ui.buyBtnID);
+	const storePnchSell = document.getElementById(buildingInstances[0].ui.sellBtnID);
+	const storePnchQty = document.getElementById(buildingInstances[0].ui.qtyPnlID);
+
+	// Production Buildings
+	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
+
+	// Data Brokers
+	const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);
 	
 	switch(desc) {
 		case "cashChange":

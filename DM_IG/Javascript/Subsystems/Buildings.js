@@ -91,19 +91,13 @@ export class BuildingManager {
 	}
 	
 	enableBuilding(id) {
-		console.log("Entering enableBuilding...");
 		buildingInstances[id].isClicked = false;
 		document.getElementById(buildingInstances[id].ui.elementID).disabled = false;
 	}
 	
 	disableBuilding(id) {
-		console.log("Entering disableBuilding...");
 		buildingInstances[id].isClicked = true;
-		console.log(buildingInstances[id].ui.elementID);
-		console.log(buildingInstances[id].isClicked);
 		document.getElementById(buildingInstances[id].ui.elementID).disabled = true;
-		console.log(document.getElementById(buildingInstances[id].ui.elementID));
-		console.log(document.getElementById(buildingInstances[id].ui.elementID).disabled);
 	}
 	
 	buyBuilding(id, amt) {
@@ -144,9 +138,6 @@ export class BuildingManager {
 export const buildingManager = new BuildingManager();
 
 export function initBuildings() {
-	
-	console.log("Initializing buildings...");
-	
 	// Create Punchcard instance by default
 	buildingManager.addBuilding(BUILDING_DEFS[0]);
 	buildingManager.addBuilding(BUILDING_DEFS[1]);
