@@ -10,8 +10,9 @@ layout: page
  */
  
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
-import { buildingInstances } from "/DM_IG/Javascript/Subsystems/Buildings.js";
-import { INTERFACE_DEFS } from "/DM_IG/Javascript/Interface/Components.js";
+import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
+import { BUILDING_ID } from "/DM_IG/Javascript/Data/Buildings.js";
+import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
 
 
 export function initUI() {
@@ -19,10 +20,10 @@ export function initUI() {
 	addButton(INTERFACE_DEFS[0], "view-buttons", 0);
 	
 	// Initialize production buttons
-	addButton(INTERFACE_DEFS[1], "production-buttons", "punchcard");
+	addButton(INTERFACE_DEFS[1], "production-buttons", "Punchcard");
 	
 	// Initialize broker buttons
-	addButton(INTERFACE_DEFS[2], "broker-buttons", "mother");
+	addButton(INTERFACE_DEFS[2], "broker-buttons", "Mother");
 	
 	// Initialize Resource Displays
 	addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
@@ -43,11 +44,11 @@ export function addButton(source, type, target) {
 			retVal = 1;
 			break;
 		case "production-buttons":
-			if (target == "punchcard") {
+			if (target == "Punchcard") {
 				document.getElementById(type).innerHTML += source.Punchcard_Btn;
 			}
 			
-			if (target == "desktop" && buildingInstances[1].unlock.btn == false) {
+			if (target == "Desktop" && buildingInstances[1].unlock.btn == false) {
 				buildingInstances[1].unlock.btn == true;
 				document.getElementById(type).innerHTML += source.Desktop_Btn;
 			}
@@ -56,7 +57,7 @@ export function addButton(source, type, target) {
 			break;
 		case "broker-buttons":
 			
-			if (target == "mother") {
+			if (target == "Mother") {
 				document.getElementById(type).innerHTML += source.brokerMother_Btn;
 			}
 			
@@ -95,6 +96,25 @@ export function addDisplay(source, type, target) {
 				document.getElementById(type).innerHTML += source.storeDesktop_Pnl;
 				document.getElementById("store-dsktp-lbl").innerHTML = "<b><u>Desktop Computer:&emsp;</b></u>";
 				document.getElementById("store-dsktp-qty").innerHTML = buildingInstances[1].quantity;
+				
+				var storeBuyBtn = document.getElementById(buildingInstances[1].ui.buyBtnID);
+				var storeSellBtn = document.getElementById(buildingInstances[1].ui.sellBtnID);
+				var storeQtyPnl = document.getElementById(buildingInstances[1].ui.qtyPnlID);
+				
+				storeBuyBtn.addEventListener("click", function() {
+					buildingManager.buyBuilding(1,1);
+					pushEvent("qtyChange", storeQtyPnl, storeBuyBtn);		
+				});
+				
+				storeSellBtn.addEventListener("click", function() {
+					buildingManager.sellBuilding(1,1);
+					pushEvent("qtyChange", storeQtyPnl, storeSellBtn);		
+				});
+				
+				storeQtyPnl.addEventListener("qtyChange", function() {
+					storeQtyPnl.innerHTML = buildingInstances[1].quantity;
+				});
+				
 			}
 			
 			break;

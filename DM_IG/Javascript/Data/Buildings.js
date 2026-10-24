@@ -72,13 +72,16 @@ export const BUILDING_DEFS = [
 		ui: {
 			icon: "punchcard_framed.png",
 			elementID: "punchcard_button",
+			buyBtnID: "store-pnch-buy",
+			sellBtnID: "store-pnch-sell",
+			qtyPnlID: "store-pnchcrd-qty",
 			sortOrder: 1
 		},
 		tags: ["production", "early-game", "default"]	
 	},
 	// Desktop
 	{
-		id: 0,
+		id: 1,
 		name: "Desktop",
 		resource: "bits",
 		description: "Your day to day consumer computer, capable of classical computation and internet surfing.",
@@ -116,6 +119,9 @@ export const BUILDING_DEFS = [
 		ui: {
 			icon: "desktopButton.jpg",
 			elementID: "desktop_button",
+			buyBtnID: "store-dsktp-buy",
+			sellBtnID: "store-dsktp-sell",
+			qtyPnlID: "store-dsktp-qty",
 			sortOrder: 2
 		},
 		tags: ["production", "early-game", "default"]	

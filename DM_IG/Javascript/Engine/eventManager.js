@@ -29,30 +29,32 @@ export const bitsTick = new Event("bitsChange");
 export const wattsTick = new Event("wattsChange");
 export const qtyDelta = new Event("qtyChange");
 
+// View Toggle Buttons
+const settingsButtonID = document.getElementById("settings_button");
+const researchButtonID = document.getElementById("research_button");
+const productionButtonID = document.getElementById("production_button");
+const upgradesButtonID = document.getElementById("upgrades_button");
+const managersButtonID = document.getElementById("managers_button");
+
+// Resource Displays
+const cashDisplay = document.getElementById(resourceInstances[0].elementID);
+const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
+const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
+
+// Store Displays
+const storePnchBuy = document.getElementById(buildingInstances[0].ui.buyBtnID);
+const storePnchSell = document.getElementById(buildingInstances[0].ui.sellBtnID);
+const storePnchQty = document.getElementById(buildingInstances[0].ui.qtyPnlID);
+
+// Production Buildings
+const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
+
+// Data Brokers
+const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);
+
+
 export function initListeners() {
 	// Default listeners 
-	// View Toggle Buttons
-	const settingsButtonID = document.getElementById("settings_button");
-	const researchButtonID = document.getElementById("research_button");
-	const productionButtonID = document.getElementById("production_button");
-	const upgradesButtonID = document.getElementById("upgrades_button");
-	const managersButtonID = document.getElementById("managers_button");
-
-	// Resource Displays
-	const cashDisplay = document.getElementById(resourceInstances[0].elementID);
-	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
-	const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
-	
-	// Store Displays
-	const storePnchBuy = document.getElementById("store-pnch-buy");
-	const storePnchSell = document.getElementById("store-pnch-sell");
-	const storePnchQty = document.getElementById("store-pnchcrd-qty");
-	
-	// Production Buildings
-	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
-	
-	// Data Brokers
-	const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);	
 	
 	// Change view to Production View
 	productionButtonID.addEventListener("click", function () {
@@ -189,8 +191,8 @@ export function initListeners() {
 	
 }
 
-export function createListener(target, type) {
-	let listenerID = document.getElementById(target);
+export function createListener(source, type, target) {
+		
 }
 
 export function pushEvent(desc, target) {
@@ -198,8 +200,6 @@ export function pushEvent(desc, target) {
 	const cashDisplay = document.getElementById(resourceInstances[0].elementID);
 	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
 	const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
-	
-	const storePnchQtyDisplay = document.getElementById("store-pnchcrd-qty");
 	
 	switch(desc) {
 		case "cashChange":
@@ -215,7 +215,16 @@ export function pushEvent(desc, target) {
 			checkUnlocks();
 			break;
 		case "qtyChange":
-			storePnchQtyDisplay.dispatchEvent(qtyDelta);
+			switch (target) {
+				case buildingInstances[0].ui.qtyPnlID:
+					buildingInstances[0].ui.qtyPnlID.dispatchEvent(qtyDelta);
+					break;
+				case buildingInstances[1].ui.qtyPnlID:
+					buildingInstances[1].ui.qtyPnlID.dispatchEvent(qtyDelta);
+					break;
+				default:
+			}
+			
 			checkUnlocks();
 			break;
 		default:
