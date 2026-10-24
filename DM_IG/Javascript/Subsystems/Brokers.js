@@ -18,27 +18,27 @@ import { BROKERS_DEFS } from "/DM_IG/Javascript/Data/Brokers.js";
 export const brokerInstances = [];
 
 export class BrokerManager {
-		constructor() {
-			this.brokers = [];
-		}
-		
-		// Adds a new instance of broker to buildingInstances utilizing BUILDING_DEFS
+	constructor() {
+		this.brokers = [];
+	}
+	
+	// Adds a new instance of broker to buildingInstances utilizing BUILDING_DEFS
 	addBroker(broker) {
 		this.brokers.push(broker);
 		let loc = (this.brokers.length - 1);
 		let newBrkr = {
-				id: this.brokers[loc].id,
-				name: this.brokers[loc].name,
-				level: 1,
-				resource: this.brokers[loc].resource,
-				description: this.brokers[loc].description,
-				quantity: 1,
-				upgrades: [],
-				production: this.brokers[loc].production,
-				unlock: this.brokers[loc].unlock,
-				prestige: this.brokers[loc].prestige,
-				ui: this.brokers[loc].ui,
-				tags: this.brokers[loc].tags
+			id: this.brokers[loc].id,
+			name: this.brokers[loc].name,
+			level: 1,
+			resource: this.brokers[loc].resource,
+			description: this.brokers[loc].description,
+			quantity: 1,
+			upgrades: [],
+			production: this.brokers[loc].production,
+			unlock: this.brokers[loc].unlock,
+			prestige: this.brokers[loc].prestige,
+			ui: this.brokers[loc].ui,
+			tags: this.brokers[loc].tags
 		};
 		brokerInstances.push(newBrkr);
 	}	

@@ -23,7 +23,7 @@ export const BROKERS_ID = {
 export const BROKERS_DEFS = [
 	{
 		id: 0,
-		name: "Your Mother",
+		name: "Mother",
 		resource: "cash",
 		description: "Incredibly easy to work with and always with your best interests in mind, but not the most technologically competent.",
 		upgrades: [],
