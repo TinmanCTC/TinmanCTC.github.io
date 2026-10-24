@@ -47,7 +47,7 @@ export function initListeners() {
 
 	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
 	
-	const brokerMotherButtonID = document.getElementById(BROKERS_DEFS[0].ui.elementID);	
+	const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);	
 	
 	// Change view to Production View
 	productionButtonID.addEventListener("click", function () {

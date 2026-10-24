@@ -52,6 +52,38 @@ export const BROKERS_DEFS = [
 			sortOrder: 1			
 		},
 		tags: ["production", "early-game", "default"]	
+	},
+	{
+		id: 1,
+		name: "Crypto Bro",
+		resource: "cash",
+		description: "Always claiming to have a brand new strategy and the best rates, sometimes actually does.",
+		upgrades: [],
+		production: {
+			multiplier: 0.5,
+			clickInterval: 5000,
+			bonus: 0,
+			growthRate: 1.0,
+			growthFactor: "multiplicative",
+		},
+		unlock: {
+			resource: "bits",
+			threshold: 0,
+			yes: false,
+			btn: false,
+			disp: false
+		},
+		prestige: {
+			level: 0,
+			multiplier: 1.0,
+			scalesWith: "legacies"
+		},
+		ui: {
+			icon: "brokerMother.jpeg",
+			elementID: "brokerMother_button",
+			sortOrder: 1			
+		},
+		tags: ["production", "early-game", "default"]	
 	}
 	
 ];
