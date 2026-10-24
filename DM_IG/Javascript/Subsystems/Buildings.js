@@ -75,7 +75,7 @@ export class BuildingManager {
 	
 	getClickInterval(id) {		
 		var retVal =  buildingInstances[id].production.clickInterval;
-		var power = gameState.getPowerGen() - gameState.getPowerCon();
+		var power = resourceManager.getPowerGen() - resourceManager.getPowerCon();
 		
 		if (power >= 0) {
 			return retVal;
