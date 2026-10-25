@@ -157,11 +157,9 @@ export function initListeners() {
 	// Building Listeners
 	
 	// Punchcard building - on by default
-	/*
 	punchcardButtonID.addEventListener("click", function () {
 		buildingManager.clickBuilding(BUILDING_ID.PUNCHCARD);
 	});
-	*/
 	// Check for other building unlocks (from saved game?)
 	
 	// Data Broker Listeners
@@ -190,6 +188,7 @@ export function initListeners() {
 	wattsDisplay.dispatchEvent(wattsTick);
 	*/
 	// Store Listeners - Punchcard Only on default
+	/*
 	storePnchBuy.addEventListener("click", function() {
 		buildingManager.buyBuilding(0,1);
 		//pushEvent("qtyChange", buildingInstances[0].ui.qtyPnlID);		
@@ -203,7 +202,7 @@ export function initListeners() {
 	storePnchQty.addEventListener("qtyChange", function() {
 		storePnchQty.innerHTML = buildingInstances[0].quantity;
 	});
-	
+	*/
 	
 }
 
