@@ -85,5 +85,4 @@ export const BROKERS_DEFS = [
 		},
 		tags: ["production", "early-game", "default"]	
 	}
-	
 ];
