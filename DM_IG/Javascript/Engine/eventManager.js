@@ -165,13 +165,6 @@ export function initListeners() {
 	// Punchcard building - on by default
 	punchcardButtonID.addEventListener("click", function () {
 		buildingManager.clickBuilding(BUILDING_ID.PUNCHCARD);
-		
-		
-		//buildingManager.disableBuilding(0);		
-		//setTimeout(() => buildingManager.enableBuilding(0), buildingManager.getClickInterval(0));
-		
-		//var amt = buildingManager.getOutput(0);
-		//resourceManager.addBits(amt);
 	});
 	
 	// Check for other building unlocks (from saved game?)
@@ -185,6 +178,7 @@ export function initListeners() {
 	
 	
 	// Resource Listeners	
+	/*
 	cashDisplay.addEventListener("cashChange", function() {
 		cashDisplay.innerHTML = "$" + gameState.money.toFixed(2);
 	});
@@ -199,16 +193,16 @@ export function initListeners() {
 		wattsDisplay.innerHTML = (gameState.powerGen - gameState.powerCon);
 	});
 	wattsDisplay.dispatchEvent(wattsTick);
-	
+	*/
 	// Store Listeners - Punchcard Only on default
 	storePnchBuy.addEventListener("click", function() {
 		buildingManager.buyBuilding(0,1);
-		pushEvent("qtyChange", buildingInstances[0].ui.qtyPnlID);		
+		//pushEvent("qtyChange", buildingInstances[0].ui.qtyPnlID);		
 	});
 	
 	storePnchSell.addEventListener("click", function() {
 		buildingManager.sellBuilding(0,1);
-		pushEvent("qtyChange", buildingInstances[0].ui.qtyPnlID);
+		//pushEvent("qtyChange", buildingInstances[0].ui.qtyPnlID);
 	});
 	
 	storePnchQty.addEventListener("qtyChange", function() {
