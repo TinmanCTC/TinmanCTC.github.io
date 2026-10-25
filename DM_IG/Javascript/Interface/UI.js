@@ -56,7 +56,6 @@ export function addButton(source, type, target) {
 			retVal = 2;
 			break;
 		case "broker-buttons":
-			
 			if (target == "Mother") {
 				document.getElementById(type).innerHTML += source.brokerMother_Btn;
 			}
