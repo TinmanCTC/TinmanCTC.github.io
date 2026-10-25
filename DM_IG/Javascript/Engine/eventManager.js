@@ -29,15 +29,15 @@ export const bitsTick = new Event("bitsChange");
 export const wattsTick = new Event("wattsChange");
 export const qtyDelta = new Event("qtyChange");
 
-// View Toggle Buttons
-const settingsButtonID = document.getElementById("settings_button");
-const researchButtonID = document.getElementById("research_button");
-const productionButtonID = document.getElementById("production_button");
-const upgradesButtonID = document.getElementById("upgrades_button");
-const managersButtonID = document.getElementById("managers_button");
-
 
 export function initListeners() {
+	// View Toggle Buttons
+	const settingsButtonID = document.getElementById("settings_button");
+	const researchButtonID = document.getElementById("research_button");
+	const productionButtonID = document.getElementById("production_button");
+	const upgradesButtonID = document.getElementById("upgrades_button");
+	const managersButtonID = document.getElementById("managers_button");
+	
 	// Resource Displays
 	const cashDisplay = document.getElementById(resourceInstances[0].elementID);
 	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
