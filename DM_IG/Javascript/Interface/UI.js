@@ -10,13 +10,14 @@ layout: page
  */
  
 import { emitEvent, onEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
-import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
+import { gameState, checkUnlocks } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { BUILDING_ID, BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
 
 function assignListeners() {
 	onEvent("moneyChanged", updateMoneyDisplay);
+	onEvent("moneyChanged", checkMoneyUnlocks);
 	onEvent("bitsChanged", updateBitsDisplay);
 	onEvent("wattsChanged", updateWattsDisplay);
 	onEvent("buildingPurchased", updateBuildingDisplay);
@@ -25,8 +26,8 @@ function assignListeners() {
 
 function updateMoneyDisplay(data) {
 	const pnl = document.getElementById("Resource_Cash"); 
-	
 	pnl.innerHTML = "$" + data.current.toFixed(2);
+	checkUnlocks();
 }
 
 function updateBitsDisplay(data) {
@@ -55,6 +56,10 @@ function showError(data) {
 	pnl.innerHTML = data.message;
 	
 	setTimeout(function() { pnl.innerHTML = data.resetContent; }, 1500);
+}
+
+function checkMoneyUnlocks(data) {
+	
 }
 
 
@@ -148,7 +153,7 @@ export function addDisplay(source, type, target) {
 			if (target == "desktop"  && buildingInstances[1].unlock.disp == false) {
 				buildingInstances[1].unlock.disp == true;
 				document.getElementById(type).innerHTML += source.storeDesktop_Pnl;
-				document.getElementById("store-dsktp-lbl").innerHTML = "<b><u>Desktop Computer:&emsp;</b></u>";
+				document.getElementById("store-dsktp-lbl").innerHTML = buildingInstances[1].ui.shopDescriptor";
 				document.getElementById("store-dsktp-qty").innerHTML = buildingInstances[1].quantity;
 				
 				var storeBuyBtn = document.getElementById(buildingInstances[1].ui.buyBtnID);
@@ -156,17 +161,11 @@ export function addDisplay(source, type, target) {
 				var storeQtyPnl = document.getElementById(buildingInstances[1].ui.qtyPnlID);
 				
 				storeBuyBtn.addEventListener("click", function() {
-					buildingManager.buyBuilding(1,1);
-					pushEvent("qtyChange", storeQtyPnl, storeBuyBtn);		
+					buildingManager.buyBuilding(1,1);		
 				});
 				
 				storeSellBtn.addEventListener("click", function() {
-					buildingManager.sellBuilding(1,1);
-					pushEvent("qtyChange", storeQtyPnl, storeSellBtn);		
-				});
-				
-				storeQtyPnl.addEventListener("qtyChange", function() {
-					storeQtyPnl.innerHTML = buildingInstances[1].quantity;
+					buildingManager.sellBuilding(1,1);	
 				});
 				
 			}
