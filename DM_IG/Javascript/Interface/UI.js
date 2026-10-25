@@ -153,7 +153,7 @@ export function addDisplay(source, type, target) {
 			if (target == "desktop"  && buildingInstances[1].unlock.disp == false) {
 				buildingInstances[1].unlock.disp == true;
 				document.getElementById(type).innerHTML += source.storeDesktop_Pnl;
-				document.getElementById("store-dsktp-lbl").innerHTML = buildingInstances[1].ui.shopDescriptor";
+				document.getElementById("store-dsktp-lbl").innerHTML = buildingInstances[1].ui.shopDescriptor;
 				document.getElementById("store-dsktp-qty").innerHTML = buildingInstances[1].quantity;
 				
 				var storeBuyBtn = document.getElementById(buildingInstances[1].ui.buyBtnID);
