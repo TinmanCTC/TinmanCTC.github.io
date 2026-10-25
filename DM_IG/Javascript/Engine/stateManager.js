@@ -44,7 +44,11 @@ export function checkUnlocks() {
 		buildingInstances[1].quantity = 0;
 		buildingInstances[1].unlock.yes = true;
 		
-		addButton(INTERFACE_DEFS[1], "production-buttons", "desktop");
-		addDisplay(INTERFACE_DEFS[4], "building-list", "desktop");
+		emitEvent("buildingUnlocked", {
+			buildingId: BUILDING_ID.DESKTOP
+		});	
+		
+		//addButton(INTERFACE_DEFS[1], "production-buttons", "desktop");
+		//addDisplay(INTERFACE_DEFS[4], "building-list", "desktop");
 	}
 }
