@@ -177,12 +177,12 @@ export function initListeners() {
 	// Store Listeners - Punchcard Only on default
 	storePnchBuy.addEventListener("click", function() {
 		buildingManager.buyBuilding(0,1);
-		pushEvent("qtyChange", storePnchQty);		
+		pushEvent("qtyChange", buildingInstances[0].ui.qtyPnlID);		
 	});
 	
 	storePnchSell.addEventListener("click", function() {
 		buildingManager.sellBuilding(0,1);
-		pushEvent("qtyChange", storePnchQty);
+		pushEvent("qtyChange", buildingInstances[0].ui.qtyPnlID);
 	});
 	
 	storePnchQty.addEventListener("qtyChange", function() {
