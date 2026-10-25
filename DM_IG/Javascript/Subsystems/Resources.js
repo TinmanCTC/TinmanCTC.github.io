@@ -12,6 +12,7 @@ layout: page
  import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
  import { eventFeed, pushEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
  import { RESOURCE_DEFS } from "/DM_IG/Javascript/Data/Resources.js";
+ import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
  
  export const resourceInstances = [];
  
