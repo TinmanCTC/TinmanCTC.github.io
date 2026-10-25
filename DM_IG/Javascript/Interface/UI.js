@@ -11,7 +11,7 @@ layout: page
  
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
-import { BUILDING_ID } from "/DM_IG/Javascript/Data/Buildings.js";
+import { BUILDING_ID, BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
 
 
@@ -28,6 +28,8 @@ export function initUI() {
 	// Initialize Resource Displays
 	addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
 	
+	// Initialize Store Display
+	addDisplay(INTERFACE_DEFS[4], "building-list", "Punchcard");
 }
 
 export function addButton(source, type, target) {
@@ -84,7 +86,7 @@ export function addDisplay(source, type, target) {
 			
 			break;
 		case "building-list":
-			if (target == "punchcard") {
+			if (target == "Punchcard") {
 				document.getElementById(type).innerHTML += source.storePunchcard_Pnl;
 				document.getElementById("store-pnchcrd-lbl").innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>";
 				document.getElementById("store-pnchcrd-qty").innerHTML = buildingInstances[0].quantity;

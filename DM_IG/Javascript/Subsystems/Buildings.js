@@ -107,29 +107,30 @@ export class BuildingManager {
 			resourceManager.addPowerCon(buildingInstances[id].production.powerUse);
 			resourceManager.subMoney(buildingInstances[id].cost.base * amt);
 		} else {
+			// -FIX THIS
 			var alertPnl = document.getElementById("store-pnchcrd-lbl");
 			
 			alertPnl.innerHTML = "<b style='color:#FF0000;'><u>Not Enough Money!&emsp;</b></u>";
 			
 			setTimeout(function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
+			// -FIX THIS
 		}
 		
 	}
 	
 	sellBuilding(id, amt) {
-		
 		if (buildingInstances[id].quantity - amt >= 0) {
 			buildingInstances[id].quantity -= amt;
 			resourceManager.subPowerCon(buildingInstances[id].production.powerUse);
 			resourceManager.addMoney(buildingInstances[id].cost.base * amt);
-			
 		} else {
+			// -FIX THIS
 			var alertPnl = document.getElementById("store-pnchcrd-lbl");
 			
 			alertPnl.innerHTML = "<b style='color:#FF0000;'><u>Not Enough Buildings!&emsp;</b></u>";
 			
 			setTimeout(function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
-			
+			// -FIX THIS
 		}
 	}
 	
@@ -138,14 +139,8 @@ export class BuildingManager {
 export const buildingManager = new BuildingManager();
 
 export function initBuildings() {
-	// Create Punchcard instance by default
+	// Create Punchcard & Desktop instances by default
 	buildingManager.addBuilding(BUILDING_DEFS[0]);
 	buildingManager.addBuilding(BUILDING_DEFS[1]);
-	resourceManager.addPowerCon(buildingInstances[0].production.powerUse);
-	
-	// Initialize Store Display
-	addDisplay(INTERFACE_DEFS[4], "building-list", "punchcard");
-	
-	console.log(buildingInstances[0]);
-	
+	resourceManager.addPowerCon(buildingInstances[0].production.powerUse);	
  };
