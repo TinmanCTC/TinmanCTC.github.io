@@ -60,14 +60,8 @@ function showError(data) {
 }
 
 function unlockBuilding(data) {
-	console.log(data);
 	const shopPnl = document.getElementById("building-list");
-	const prodPnl = document.getElementById("production-buttons");
-	
-	console.log(buildingInstances[data.buildingId]);
-	//console.log(shopPnlQty);
-	console.log(shopPnl);
-	
+	const prodPnl = document.getElementById("production-buttons");	
 	
 	switch (data.buildingId) {
 		case BUILDING_ID.PUNCHCARD:
@@ -86,14 +80,13 @@ function unlockBuilding(data) {
 			console.log("unlockBuilding() switch(data.buildingId) default case");
 	}
 	
-	
+	const shopPnlLbl = document.getElementById(buildingInstances[data.buildingId].ui.shopPnlID);
 	const shopPnlQty = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
 	const shopBuyBtn = document.getElementById(buildingInstances[data.buildingId].ui.buyBtnID);
 	const shopSellBtn = document.getElementById(buildingInstances[data.buildingId].ui.sellBtnID);
 	const prodBtn = document.getElementById(buildingInstances[data.buildingId].ui.elementId);
 	
-	document.getElementById(buildingInstances[data.buildingId].ui.shopPnlID).innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
-	
+	shopPnlLbl.innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
 	shopPnlQty.innerHTML = buildingInstances[data.buildingId].quantity;
 	
 	shopBuyBtn.addEventListener("click", function() {
