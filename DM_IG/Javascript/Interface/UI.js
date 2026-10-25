@@ -18,6 +18,7 @@ import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Compon
 function assignListeners() {
 	onEvent("moneyChanged", updateMoneyDisplay);
 	onEvent("bitsChanged", updateBitsDisplay);
+	onEvent("wattsChanged", updateWattsDisplay);
 	onEvent("buildingPurchased", updateBuildingDisplay);
 	//onEvent("error", showError);
 }
@@ -31,7 +32,13 @@ function updateMoneyDisplay(data) {
 function updateBitsDisplay(data) {
 	const pnl = document.getElementById("Resource_Bits"); 
 	
-	pnl.innerHTML = "$" + data.current;
+	pnl.innerHTML = data.current;
+}
+
+function updateWattsDisplay(data) {
+	const pnl = document.getElementById("Resource_Watts");
+	
+	pnl.innerHTML = data.current;
 }
 
 function updateBuildingDisplay(data) {

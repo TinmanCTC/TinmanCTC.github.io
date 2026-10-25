@@ -42,15 +42,12 @@ layout: page
 	 
 	addMoney(amt) {
 		gameState.money += amt;
+		gameState.lifetimeMoney += amt;
 		
 		emitEvent("moneyChanged", {
 			current: gameState.money,
 			delta: amt
 		});
-		
-		//gameState.money += amt;
-		//gameState.lifetimeMoney += amt
-		//pushEvent("cashChange", resourceInstances[0].elementID);
 	}
 	
 	subMoney(amt) {
@@ -60,22 +57,16 @@ layout: page
 			current: gameState.money,
 			delta: amt
 		});
-		
-		//gameState.money -= amt;
-		//pushEvent("cashChange", resourceInstances[0].elementID);
 	}
 	
 	addBits(amt) {
 		gameState.bits += amt;
+		gameState.lifetimeBits += amt;
 		
 		emitEvent("bitsChanged", {
 			current: gameState.bits,
 			delta: amt
 		});
-		
-		//gameState.bits += amt;
-		//gameState.lifetimeBits += amt;
-		//pushEvent("bitsChange", resourceInstances[1].elementID);
 	}
 	
 	subBits(amt) {
@@ -85,33 +76,49 @@ layout: page
 			current: gameState.bits,
 			delta: amt
 		});
-		
-		//gameState.bits -= amt;
-		//pushEvent("bitsChange", resourceInstances[1].elementID);
 	}
 	
 	addPowerCon(amt) {
-		
-		
 		gameState.powerCon += amt;
-		pushEvent("wattsChange", resourceInstances[2].elementID);
+		
+		emitEvent("wattsChanged", {
+			current: (gameState.powerGen - gameState.powerCon),
+			delta: amt
+		});
+		
+		//pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	addPowerGen(amt) {
-		
-		
 		gameState.powerGen += amt;
-		pushEvent("wattsChange", resourceInstances[2].elementID);
+		
+		emitEvent("wattsChanged", {
+			current: (gameState.powerGen - gameState.powerCon),
+			delta: amt
+		});
+		
+		//pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	subPowerCon(amt) {
 		gameState.powerCon -= amt;
-		pushEvent("wattsChange", resourceInstances[2].elementID);
+		
+		emitEvent("wattsChanged", {
+			current: (gameState.powerGen - gameState.powerCon),
+			delta: amt
+		});
+		//pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	subPowerGen(amt) {
 		gameState.powerGen -= amt;
-		pushEvent("wattsChange", resourceInstances[2].elementID);
+		
+		emitEvent("wattsChanged", {
+			current: (gameState.powerGen - gameState.powerCon),
+			delta: amt
+		});
+		
+		//pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	getMoney() {
