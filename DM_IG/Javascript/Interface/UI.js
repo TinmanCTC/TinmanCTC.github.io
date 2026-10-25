@@ -106,6 +106,7 @@ export function addButton(source, type, target) {
 		case "production-buttons":
 			if (target == "Punchcard") {
 				document.getElementById(type).innerHTML += source.Punchcard_Btn;
+				
 			}
 			
 			if (target == "Desktop" && buildingInstances[1].unlock.btn == false) {

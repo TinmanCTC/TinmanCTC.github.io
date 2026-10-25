@@ -46,6 +46,7 @@ layout: page
 		
 		emitEvent("moneyChanged", {
 			current: gameState.money,
+			lifetime: gameState.lifetimeMoney,
 			delta: amt
 		});
 	}
@@ -55,6 +56,7 @@ layout: page
 		
 		emitEvent("moneyChanged", {
 			current: gameState.money,
+			lifetime: gameState.lifetimeMoney,
 			delta: amt
 		});
 	}
@@ -65,6 +67,7 @@ layout: page
 		
 		emitEvent("bitsChanged", {
 			current: gameState.bits,
+			lifetime: gameState.lifetimeBits,
 			delta: amt
 		});
 	}
@@ -74,6 +77,7 @@ layout: page
 		
 		emitEvent("bitsChanged", {
 			current: gameState.bits,
+			lifetime: gameState.lifetimeBits,
 			delta: amt
 		});
 	}

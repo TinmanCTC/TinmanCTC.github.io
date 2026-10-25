@@ -124,22 +124,7 @@ export class BuildingManager {
 			cost
 		});
 		
-		return true;
-		
-		/*if (gameState.money >= (buildingInstances[id].cost.base * amt)) {
-			buildingInstances[id].quantity += amt;
-			resourceManager.addPowerCon(buildingInstances[id].production.powerUse);
-			resourceManager.subMoney(buildingInstances[id].cost.base * amt);
-		} else {
-			// -FIX THIS
-			var alertPnl = document.getElementById("store-pnchcrd-lbl");
-			
-			alertPnl.innerHTML = "<b style='color:#FF0000;'><u>Not Enough Money!&emsp;</b></u>";
-			
-			setTimeout(function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
-			// -FIX THIS
-		}*/
-		
+		return true;		
 	}
 	
 	sellBuilding(id, amt) {
@@ -167,21 +152,6 @@ export class BuildingManager {
 		});
 		
 		return true;
-		
-		
-		/*if (buildingInstances[id].quantity - amt >= 0) {
-			buildingInstances[id].quantity -= amt;
-			resourceManager.subPowerCon(buildingInstances[id].production.powerUse);
-			resourceManager.addMoney(buildingInstances[id].cost.base * amt);
-		} else {
-			// -FIX THIS
-			var alertPnl = document.getElementById("store-pnchcrd-lbl");
-			
-			alertPnl.innerHTML = "<b style='color:#FF0000;'><u>Not Enough Buildings!&emsp;</b></u>";
-			
-			setTimeout(function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
-			// -FIX THIS
-		}*/
 	}
 	
 	
