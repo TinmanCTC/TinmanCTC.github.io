@@ -10,7 +10,7 @@ layout: page
  */
 
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
-import { eventFeed } from "/DM_IG/Javascript/Engine/eventManager.js";
+import { eventFeed, emitEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
 
 import { BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
@@ -60,24 +60,25 @@ export class BuildingManager {
 	
 	clickBuilding(id) {
 		console.log("Entering clickBuilding...");
-		var amt = this.getOutput(id);
-		var cooldown = this.getClickInterval(id);
+		const amt = this.getOutput(id);
+		const cooldown = this.getClickInterval(id);
 		
 		this.disableBuilding(id);
 		setTimeout(() => this.enableBuilding(id), cooldown);
 		
 		resourceManager.addBits(amt);
+		//emitEvent("buildingClicked", data => { stats.totalClicks++ });
 	}
 
 	getOutput(id) {		
-		var retVal = buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus);	
+		const retVal = buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus);	
 		
 		return retVal;
 	}
 	
 	getClickInterval(id) {		
-		var retVal =  buildingInstances[id].production.clickInterval;
-		var power = resourceManager.getPowerGen() - resourceManager.getPowerCon();
+		const retVal =  buildingInstances[id].production.clickInterval;
+		const power = resourceManager.getPowerGen() - resourceManager.getPowerCon();
 		
 		if (power >= 0) {
 			return retVal;
@@ -87,7 +88,7 @@ export class BuildingManager {
 	}
 	
 	getBuyCost(id) {
-		var retVal = buildingInstances[id].cost.base + (buildingInstances[id].quantity * buildingInstances[id].cost.growthRate);
+		const retVal = buildingInstances[id].cost.base + (buildingInstances[id].quantity * buildingInstances[id].cost.growthRate);
 		
 		return retVal;
 	}
@@ -104,7 +105,26 @@ export class BuildingManager {
 	
 	buyBuilding(id, amt) {
 		
-		if (gameState.money >= (buildingInstances[id].cost.base * amt)) {
+		const cost = buildingInstances[id].cost.base * amt;
+		
+		if (gameState.money < cost) {
+			emitEvent("error", { message: "Not enough money!" });
+			
+			return false;
+		}
+		
+		buildingInstances[id].quantity += amt;
+		resourceManager.subMoney(cost);
+		
+		emitEvent("buildingPurchased", {
+			buildingId: id,
+			quantity: buildingInstances[id].quantity,
+			cost
+		});
+		
+		return true;
+		
+		/*if (gameState.money >= (buildingInstances[id].cost.base * amt)) {
 			buildingInstances[id].quantity += amt;
 			resourceManager.addPowerCon(buildingInstances[id].production.powerUse);
 			resourceManager.subMoney(buildingInstances[id].cost.base * amt);
@@ -116,7 +136,7 @@ export class BuildingManager {
 			
 			setTimeout(function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
 			// -FIX THIS
-		}
+		}*/
 		
 	}
 	

@@ -10,7 +10,7 @@ layout: page
  */
  
  import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
- import { eventFeed, pushEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
+ import { eventFeed, pushEvent, emitEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
  import { RESOURCE_DEFS } from "/DM_IG/Javascript/Data/Resources.js";
  import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
  
@@ -42,32 +42,64 @@ layout: page
 	 
 	addMoney(amt) {
 		gameState.money += amt;
-		gameState.lifetimeMoney += amt
-		pushEvent("cashChange", resourceInstances[0].elementID);
+		
+		emitEvent("moneyChanged", {
+			current: gameState.money,
+			delta: amt
+		});
+		
+		//gameState.money += amt;
+		//gameState.lifetimeMoney += amt
+		//pushEvent("cashChange", resourceInstances[0].elementID);
 	}
 	
 	subMoney(amt) {
 		gameState.money -= amt;
-		pushEvent("cashChange", resourceInstances[0].elementID);
+		
+		emitEvent("moneyChanged", {
+			current: gameState.money,
+			delta: amt
+		});
+		
+		//gameState.money -= amt;
+		//pushEvent("cashChange", resourceInstances[0].elementID);
 	}
 	
 	addBits(amt) {
 		gameState.bits += amt;
-		gameState.lifetimeBits += amt;
-		pushEvent("bitsChange", resourceInstances[1].elementID);
+		
+		emitEvent("bitsChanged", {
+			current: gameState.bits,
+			delta: amt
+		});
+		
+		//gameState.bits += amt;
+		//gameState.lifetimeBits += amt;
+		//pushEvent("bitsChange", resourceInstances[1].elementID);
 	}
 	
 	subBits(amt) {
 		gameState.bits -= amt;
-		pushEvent("bitsChange", resourceInstances[1].elementID);
+		
+		emitEvent("bitsChanged", {
+			current: gameState.bits,
+			delta: amt
+		});
+		
+		//gameState.bits -= amt;
+		//pushEvent("bitsChange", resourceInstances[1].elementID);
 	}
 	
 	addPowerCon(amt) {
+		
+		
 		gameState.powerCon += amt;
 		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	addPowerGen(amt) {
+		
+		
 		gameState.powerGen += amt;
 		pushEvent("wattsChange", resourceInstances[2].elementID);
 	}

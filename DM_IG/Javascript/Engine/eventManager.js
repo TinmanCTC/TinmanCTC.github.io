@@ -21,14 +21,37 @@ import { brokerInstances, brokerManager } from "/DM_IG/Javascript/Subsystems/Bro
 import { resourceInstances, resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 
 export const eventFeed = [];
-export const buildingListeners = [];
-export const buttonListeners = [];
+export const eventListeners = {};
 
 export const cashTick = new Event("cashChange");
 export const bitsTick = new Event("bitsChange");
 export const wattsTick = new Event("wattsChange");
 export const qtyDelta = new Event("qtyChange");
 
+
+// eventManager onEvent function 
+// Checks if event is pre-defined and passes associated event code to run
+export function onEvent(eventName, carryFunction) {
+	
+	if (!eventListeners[eventName]) {
+		eventListeners[eventName] = [];
+	}
+	
+	eventListeners[eventName].push(carryFunction);
+}
+
+// eventManager emitEvent function
+// Checks if eventName exists and if so passes the associated data to the event function
+export function emitEvent(eventName, payload) {
+	
+	if (!eventListeners[eventName]) {
+		return -1;
+	}
+	
+	eventListeners[eventName].forEach(carryFunction => {
+		carryFunction(payload);
+	});
+}
 
 export function initListeners() {
 	// View Toggle Buttons
@@ -141,11 +164,14 @@ export function initListeners() {
 	
 	// Punchcard building - on by default
 	punchcardButtonID.addEventListener("click", function () {
-		buildingManager.disableBuilding(0);		
-		setTimeout(() => buildingManager.enableBuilding(0), buildingManager.getClickInterval(0));
+		buildingManager.clickBuilding(BUILDING_ID.PUNCHCARD);
 		
-		var amt = buildingManager.getOutput(0);
-		resourceManager.addBits(amt);
+		
+		//buildingManager.disableBuilding(0);		
+		//setTimeout(() => buildingManager.enableBuilding(0), buildingManager.getClickInterval(0));
+		
+		//var amt = buildingManager.getOutput(0);
+		//resourceManager.addBits(amt);
 	});
 	
 	// Check for other building unlocks (from saved game?)

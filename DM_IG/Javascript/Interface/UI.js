@@ -9,11 +9,32 @@ layout: page
  * 
  */
  
-import { pushEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
+import { pushEvent, onEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { BUILDING_ID, BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
+
+function assignListeners() {
+	onEvent("moneyChanged", updateMoneyDisplay);
+	onEvent("bitsChanged", updateBitsDisplay);
+	onEvent("buildingPurchased", updateBuildingDisplay);
+	onEvent("error", showError);
+}
+
+function updateMoneyDisplay(data) {
+	const pnl = document.getElementById("Resource_Cash"); 
+	
+	pnl.innerHTML = "$" + data.current.toFixed(2);
+}
+
+function updateBuildingDisplay(data) {
+
+    const pnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
+
+    pnl.innerHTML = data.quantity;
+
+}
 
 
 export function initUI() {
@@ -31,6 +52,8 @@ export function initUI() {
 	
 	// Initialize Store Display
 	addDisplay(INTERFACE_DEFS[4], "building-list", "Punchcard");
+	
+	assignListeners();
 }
 
 export function addButton(source, type, target) {
