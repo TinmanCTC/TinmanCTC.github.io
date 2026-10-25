@@ -197,6 +197,10 @@ export function createListener(source, type, target) {
 }
 
 export function pushEvent(desc, target) {
+	console.log("entering pushevent(desc,target)");
+	console.log("desc: " + desc);
+	console.log("target: " + target);
+	
 	
 	const cashDisplay = document.getElementById(resourceInstances[0].elementID);
 	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
