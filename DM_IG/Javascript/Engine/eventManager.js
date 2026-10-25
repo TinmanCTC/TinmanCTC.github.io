@@ -233,10 +233,10 @@ export function pushEvent(desc, target) {
 		case "qtyChange":
 			switch (target) {
 				case buildingInstances[0].ui.qtyPnlID:
-					buildingInstances[0].ui.qtyPnlID.dispatchEvent(qtyDelta);
+					document.getElementByID(target).dispatchEvent(qtyDelta);
 					break;
 				case buildingInstances[1].ui.qtyPnlID:
-					buildingInstances[1].ui.qtyPnlID.dispatchEvent(qtyDelta);
+					document.getElementByID(target).dispatchEvent(qtyDelta);
 					break;
 				default:
 					console.log("qtyChange default case");
