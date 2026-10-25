@@ -14,9 +14,8 @@ function initGame() {
 	let i = Math.round(Math.random() * floaters.length);
 	document.getElementById("float_bar").innerHTML = floaters[i];
 	
-	
-	initBuildings();
 	initUI();
+	initBuildings();
 	initResources();
 	initBrokers();
 	initListeners();

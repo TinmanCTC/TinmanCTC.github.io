@@ -73,7 +73,6 @@ function unlockBuilding(data) {
 		case BUILDING_ID.PUNCHCARD:
 			prodPnl.innerHTML += INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Punchcard_Btn;
 			shopPnl.innerHTML += INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storePunchcard_Pnl;
-			document.getElementById(buildingInstances[data.buildingId].ui.shopPnlID).innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
 			
 			
 			break;
@@ -86,6 +85,8 @@ function unlockBuilding(data) {
 		default:
 			console.log("unlockBuilding() switch(data.buildingId) default case");
 	}
+	
+	document.getElementById(buildingInstances[data.buildingId].ui.shopPnlID).innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
 	
 	shopPnlQty.innerHTML = buildingInstances[data.buildingId].quantity;
 	shopBuyBtn.addEventListener("click", function() {
