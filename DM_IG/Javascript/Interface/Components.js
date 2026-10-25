@@ -50,5 +50,4 @@ layout: page
 		 storePunchcard_Pnl: "<div id='store-pnch-row' class='store-display'><span id='store-pnchcrd-lbl'></span><span id='store-pnchcrd-qty'></span><button id='store-pnch-buy' class='store-btn'>Buy</button><button id='store-pnch-sell' class='store-btn'>Sell</button></div>",
 		 storeDesktop_Pnl: "<div id='store-pnch-row' class='store-display'><span id='store-dsktp-lbl'></span><span id='store-dsktp-qty'></span><button id='store-dsktp-buy' class='store-btn'>Buy</button><button id='store-dsktp-sell' class='store-btn'>Sell</button></div>"
 	 }
- 
 ];
