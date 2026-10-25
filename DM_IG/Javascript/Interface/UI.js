@@ -126,6 +126,9 @@ export function initUI() {
 	//addDisplay(INTERFACE_DEFS[4], "building-list", "Punchcard");
 	
 	assignListeners();
+	emitEvent("buildingUnlocked", {
+		buildingId: BUILDING_ID.PUNCHCARD
+	});
 	emitEvent("moneyChanged", {
 		current: gameState.money,
 		delta: 0
