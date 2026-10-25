@@ -62,12 +62,7 @@ function showError(data) {
 function unlockBuilding(data) {
 	console.log(data);
 	const shopPnl = document.getElementById("building-list");
-	const shopPnlQty = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
-	const shopBuyBtn = document.getElementById(buildingInstances[data.buildingId].ui.buyBtnID);
-	const shopSellBtn = document.getElementById(buildingInstances[data.buildingId].ui.sellBtnID);
-	
 	const prodPnl = document.getElementById("production-buttons");
-	const prodBtn = document.getElementById(buildingInstances[data.buildingId].ui.elementId);
 	
 	console.log(buildingInstances[data.buildingId]);
 	console.log(shopPnlQty);
@@ -90,6 +85,12 @@ function unlockBuilding(data) {
 		default:
 			console.log("unlockBuilding() switch(data.buildingId) default case");
 	}
+	
+	
+	const shopPnlQty = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
+	const shopBuyBtn = document.getElementById(buildingInstances[data.buildingId].ui.buyBtnID);
+	const shopSellBtn = document.getElementById(buildingInstances[data.buildingId].ui.sellBtnID);
+	const prodBtn = document.getElementById(buildingInstances[data.buildingId].ui.elementId);
 	
 	document.getElementById(buildingInstances[data.buildingId].ui.shopPnlID).innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
 	
