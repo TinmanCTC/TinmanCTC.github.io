@@ -6,8 +6,8 @@ layout: page
 import { initListeners } from "./Javascript/Engine/eventManager.js";
 import { initBuildings, buildingInstances, buildingManager } from "./Javascript/Subsystems/Buildings.js";
 import { initUI } from "./Javascript/Interface/UI.js";
-import { initBrokers, resourceManager } from "./Javascript/Subsystems/Brokers.js";
-import { initResources } from "./Javascript/Subsystems/Resources.js";
+import { initBrokers } from "./Javascript/Subsystems/Brokers.js";
+import { initResources, resourceManager } from "./Javascript/Subsystems/Resources.js";
 import { tickTock, drift, floaters } from "./Javascript/Engine/Helpers.js";
 
 function initGame() {	
