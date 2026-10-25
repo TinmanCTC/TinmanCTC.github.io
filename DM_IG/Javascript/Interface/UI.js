@@ -19,13 +19,19 @@ function assignListeners() {
 	onEvent("moneyChanged", updateMoneyDisplay);
 	onEvent("bitsChanged", updateBitsDisplay);
 	onEvent("buildingPurchased", updateBuildingDisplay);
-	onEvent("error", showError);
+	//onEvent("error", showError);
 }
 
 function updateMoneyDisplay(data) {
 	const pnl = document.getElementById("Resource_Cash"); 
 	
 	pnl.innerHTML = "$" + data.current.toFixed(2);
+}
+
+function updateBitsDisplay(data) {
+	const pnl = document.getElementById("Resource_Bits"); 
+	
+	pnl.innerHTML = "$" + data.current;
 }
 
 function updateBuildingDisplay(data) {
