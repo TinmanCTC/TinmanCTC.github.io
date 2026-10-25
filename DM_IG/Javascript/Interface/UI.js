@@ -60,6 +60,7 @@ function showError(data) {
 }
 
 function unlockBuilding(data) {
+	console.log(data);
 	const shopPnl = document.getElementById("building-list");
 	const shopPnlQty = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
 	const shopBuyBtn = document.getElementById(buildingInstances[data.buildingId].ui.buyBtnID);
@@ -67,6 +68,10 @@ function unlockBuilding(data) {
 	
 	const prodPnl = document.getElementById("production-buttons");
 	const prodBtn = document.getElementById(buildingInstances[data.buildingId].ui.elementId);
+	
+	console.log(buildingInstances[data.buildingId]);
+	console.log(shopPnlQty);
+	console.log(shopPnl);
 	
 	
 	switch (data.buildingId) {
@@ -89,6 +94,7 @@ function unlockBuilding(data) {
 	document.getElementById(buildingInstances[data.buildingId].ui.shopPnlID).innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
 	
 	shopPnlQty.innerHTML = buildingInstances[data.buildingId].quantity;
+	
 	shopBuyBtn.addEventListener("click", function() {
 		buildingManager.buyBuilding(data.buildingId, 1);
 	});
