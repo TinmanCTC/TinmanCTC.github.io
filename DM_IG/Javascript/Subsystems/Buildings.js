@@ -107,7 +107,7 @@ export class BuildingManager {
 		if (gameState.money < cost) {
 			emitEvent("error", { 
 				message: "Not enough money!",
-				target: buildingInstances[id].ui.qtyPnlID,
+				target: buildingInstances[id].ui.shopPnlID,
 				resetContent: buildingInstances[id].ui.shopDescriptor
 			});
 			

@@ -75,6 +75,7 @@ export const BUILDING_DEFS = [
 			buyBtnID: "store-pnch-buy",
 			sellBtnID: "store-pnch-sell",
 			qtyPnlID: "store-pnchcrd-qty",
+			shopPnlID: "store-pnchcrd-lbl",
 			shopDescriptor: "<b><u>Punchcard Machine:&emsp;</b></u>",
 			sortOrder: 1
 		},
@@ -123,6 +124,8 @@ export const BUILDING_DEFS = [
 			buyBtnID: "store-dsktp-buy",
 			sellBtnID: "store-dsktp-sell",
 			qtyPnlID: "store-dsktp-qty",
+			shopPnlID: "store-dsktp-lbl",
+			shopDescriptor: "<b><u>Desktop Computer:&emsp;</b></u>",
 			sortOrder: 2
 		},
 		tags: ["production", "early-game", "default"]	
