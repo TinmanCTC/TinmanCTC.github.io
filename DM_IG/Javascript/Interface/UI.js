@@ -9,7 +9,7 @@ layout: page
  * 
  */
  
-import { pushEvent, onEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
+import { emitEvent, onEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { BUILDING_ID, BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
@@ -67,6 +67,14 @@ export function initUI() {
 	addDisplay(INTERFACE_DEFS[4], "building-list", "Punchcard");
 	
 	assignListeners();
+	emitEvent("moneyChanged", {
+		current: gameState.money,
+		delta: 0
+	});
+	emitEvent("bitsChanged", {
+		current: gameState.bits,
+		delta: 0
+	});
 }
 
 export function addButton(source, type, target) {
