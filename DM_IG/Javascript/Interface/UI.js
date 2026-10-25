@@ -65,7 +65,7 @@ function unlockBuilding(data) {
 	const prodPnl = document.getElementById("production-buttons");
 	
 	console.log(buildingInstances[data.buildingId]);
-	console.log(shopPnlQty);
+	//console.log(shopPnlQty);
 	console.log(shopPnl);
 	
 	
