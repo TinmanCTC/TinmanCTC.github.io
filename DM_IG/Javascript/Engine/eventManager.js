@@ -23,12 +23,6 @@ import { resourceInstances, resourceManager } from "/DM_IG/Javascript/Subsystems
 export const eventFeed = [];
 export const eventListeners = {};
 
-export const cashTick = new Event("cashChange");
-export const bitsTick = new Event("bitsChange");
-export const wattsTick = new Event("wattsChange");
-export const qtyDelta = new Event("qtyChange");
-
-
 // eventManager onEvent function 
 // Checks if event is pre-defined and passes associated event code to run
 export function onEvent(eventName, carryFunction) {

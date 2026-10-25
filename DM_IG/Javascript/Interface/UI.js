@@ -20,6 +20,7 @@ function assignListeners() {
 	onEvent("moneyChanged", checkMoneyUnlocks);
 	onEvent("bitsChanged", updateBitsDisplay);
 	onEvent("wattsChanged", updateWattsDisplay);
+	onEvent("buildingUnlocked", unlockBuilding);
 	onEvent("buildingPurchased", updateBuildingDisplay);
 	onEvent("error", showError);
 }
@@ -58,6 +59,46 @@ function showError(data) {
 	setTimeout(function() { pnl.innerHTML = data.resetContent; }, 1500);
 }
 
+function unlockBuilding(data) {
+	const shopPnl = document.getElementById("building-list");
+	const shopPnlQty = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
+	const shopBuyBtn = document.getElementById(buildingInstances[data.buildingId].ui.buyBtnID);
+	const shopSellBtn = document.getElementById(buildingInstances[data.buildingId].ui.sellBtnID);
+	
+	const prodPnl = document.getElementById("production-buttons");
+	const prodBtn = document.getElementById(buildingInstances[data.buildingId].ui.elementId);
+	
+	
+	switch (data.buildingId) {
+		case BUILDING_ID.PUNCHCARD:
+			prodPnl.innerHTML += INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Punchcard_Btn;
+			shopPnl.innerHTML += INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storePunchcard_Pnl;
+			document.getElementById(buildingInstances[data.buildingId].ui.shopPnlID).innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
+			
+			
+			break;
+		case BUILDING_ID.DESKTOP:
+			prodPnl.innerHTML += INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Desktop_Btn;
+			shopPnl.innerHTML += INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storeDesktop_Pnl;
+			
+			
+			break;
+		default:
+			console.log("unlockBuilding() switch(data.buildingId) default case");
+	}
+	
+	shopPnlQty.innerHTML = buildingInstances[data.buildingId].quantity;
+	shopBuyBtn.addEventListener("click", function() {
+		buildingManager.buyBuilding(data.buildingId, 1);
+	});
+	
+	shopSellBtn.addEventListener("click", function() {
+		buildingManager.sellBuilding(data.buildingId, 1);
+	});
+	
+	
+}
+
 function checkMoneyUnlocks(data) {
 	
 }
@@ -68,7 +109,9 @@ export function initUI() {
 	addButton(INTERFACE_DEFS[0], "view-buttons", 0);
 	
 	// Initialize production buttons
-	addButton(INTERFACE_DEFS[1], "production-buttons", "Punchcard");
+	
+	// -REPLACING:
+	//addButton(INTERFACE_DEFS[1], "production-buttons", "Punchcard");
 	
 	// Initialize broker buttons
 	addButton(INTERFACE_DEFS[2], "broker-buttons", "Mother");
@@ -77,7 +120,9 @@ export function initUI() {
 	addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
 	
 	// Initialize Store Display
-	addDisplay(INTERFACE_DEFS[4], "building-list", "Punchcard");
+	
+	// -REPLACING
+	//addDisplay(INTERFACE_DEFS[4], "building-list", "Punchcard");
 	
 	assignListeners();
 	emitEvent("moneyChanged", {
@@ -157,9 +202,9 @@ export function addDisplay(source, type, target) {
 				document.getElementById("store-dsktp-lbl").innerHTML = buildingInstances[1].ui.shopDescriptor;
 				document.getElementById("store-dsktp-qty").innerHTML = buildingInstances[1].quantity;
 				
-				var storeBuyBtn = document.getElementById(buildingInstances[1].ui.buyBtnID);
-				var storeSellBtn = document.getElementById(buildingInstances[1].ui.sellBtnID);
-				var storeQtyPnl = document.getElementById(buildingInstances[1].ui.qtyPnlID);
+				const storeBuyBtn = document.getElementById(buildingInstances[1].ui.buyBtnID);
+				const storeSellBtn = document.getElementById(buildingInstances[1].ui.sellBtnID);
+				const storeQtyPnl = document.getElementById(buildingInstances[1].ui.qtyPnlID);
 				
 				storeBuyBtn.addEventListener("click", function() {
 					buildingManager.buyBuilding(1,1);		

@@ -12,7 +12,7 @@ layout: page
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { eventFeed, emitEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
 
-import { BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
+import { BUILDING_DEFS, BUILDING_ID } from "/DM_IG/Javascript/Data/Buildings.js";
 import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 import { addDisplay } from "/DM_IG/Javascript/Interface/UI.js";
 import { INTERFACE_DEFS } from "/DM_IG/Javascript/Interface/Components.js";
@@ -27,6 +27,7 @@ export class BuildingManager {
 	// Adds a new instance of bldg to buildingInstances utilizing BUILDING_DEFS
 	addBuilding(bldg) {
 		this.buildings.push(bldg);
+		console.log(this.buildings);
 		let loc = (this.buildings.length - 1);
 		let newBldg = {
 				id: this.buildings[loc].id,
@@ -163,4 +164,8 @@ export function initBuildings() {
 	// Create Punchcard & Desktop instances by default
 	buildingManager.addBuilding(BUILDING_DEFS[0]);
 	buildingManager.addBuilding(BUILDING_DEFS[1]);
+	
+	emitEvent("buildingUnlocked", {
+		buildingId: BUILDING_ID.PUNCHCARD
+	});
  };
