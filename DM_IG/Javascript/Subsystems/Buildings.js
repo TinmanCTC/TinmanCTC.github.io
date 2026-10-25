@@ -104,8 +104,8 @@ export class BuildingManager {
 	}
 	
 	buyBuilding(id, amt) {
-		
 		const cost = buildingInstances[id].cost.base * amt;
+		const powerCon = buildingInstances[id].production.powerUse * amt;
 		
 		if (gameState.money < cost) {
 			emitEvent("error", { message: "Not enough money!" });
@@ -115,6 +115,7 @@ export class BuildingManager {
 		
 		buildingInstances[id].quantity += amt;
 		resourceManager.subMoney(cost);
+		resourceManager.addPowerCon(powerCon);
 		
 		emitEvent("buildingPurchased", {
 			buildingId: id,
@@ -141,7 +142,29 @@ export class BuildingManager {
 	}
 	
 	sellBuilding(id, amt) {
-		if (buildingInstances[id].quantity - amt >= 0) {
+		const cost = buildingInstances[id].cost.base * amt;
+		const powerCon = buildingInstances[id].production.powerUse * amt;
+		
+		if (buildingInstances[id].quantity < amt) {
+			emitEvent("error", { message: "Not enough buildings!" });
+			
+			return false;
+		}
+		
+		buildingInstances[id].quantity -= amt;
+		resourceManager.addMoney(cost);
+		resourceManager.subPowerCon(powerCon);
+		
+		emitEvent("buildingPurchased", {
+			buildingId: id,
+			quantity: buildingInstances[id].quantity,
+			cost
+		});
+		
+		return true;
+		
+		
+		/*if (buildingInstances[id].quantity - amt >= 0) {
 			buildingInstances[id].quantity -= amt;
 			resourceManager.subPowerCon(buildingInstances[id].production.powerUse);
 			resourceManager.addMoney(buildingInstances[id].cost.base * amt);
@@ -153,8 +176,9 @@ export class BuildingManager {
 			
 			setTimeout(function() { alertPnl.innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>"; }, 1000);
 			// -FIX THIS
-		}
+		}*/
 	}
+	
 	
 }
 
