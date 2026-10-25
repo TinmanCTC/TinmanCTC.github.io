@@ -26,7 +26,9 @@ export class BuildingManager {
 	
 	// Adds a new instance of bldg to buildingInstances utilizing BUILDING_DEFS
 	addBuilding(bldg) {
+		console.log(this.buildings.length);
 		this.buildings.push(bldg);
+		console.log(this.buildings.length);
 		let loc = (this.buildings.length - 1);
 		let newBldg = {
 				id: this.buildings[loc].id,

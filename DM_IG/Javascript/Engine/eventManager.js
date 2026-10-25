@@ -160,7 +160,7 @@ export function initListeners() {
 	
 	// Resource Listeners	
 	cashDisplay.addEventListener("cashChange", function() {
-		cashDisplay.innerHTML = gameState.money;
+		cashDisplay.innerHTML = "$" + gameState.money.toFixed(2);
 	});
 	cashDisplay.dispatchEvent(cashTick);
 	
@@ -235,11 +235,13 @@ export function pushEvent(desc, target) {
 					buildingInstances[1].ui.qtyPnlID.dispatchEvent(qtyDelta);
 					break;
 				default:
+					console.log("qtyChange default case");
 			}
 			
 			checkUnlocks();
 			break;
 		default:
+			console.log("pushEvent() switch(desc) default case");
 			
 	}
 	
