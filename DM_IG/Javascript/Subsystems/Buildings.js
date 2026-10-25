@@ -26,9 +26,7 @@ export class BuildingManager {
 	
 	// Adds a new instance of bldg to buildingInstances utilizing BUILDING_DEFS
 	addBuilding(bldg) {
-		console.log(this.buildings.length);
 		this.buildings.push(bldg);
-		console.log(this.buildings.length);
 		let loc = (this.buildings.length - 1);
 		let newBldg = {
 				id: this.buildings[loc].id,
@@ -59,7 +57,6 @@ export class BuildingManager {
 	}
 	
 	clickBuilding(id) {
-		console.log("Entering clickBuilding...");
 		const amt = this.getOutput(id);
 		const cooldown = this.getClickInterval(id);
 		
@@ -108,7 +105,11 @@ export class BuildingManager {
 		const powerCon = buildingInstances[id].production.powerUse * amt;
 		
 		if (gameState.money < cost) {
-			emitEvent("error", { message: "Not enough money!" });
+			emitEvent("error", { 
+				message: "Not enough money!",
+				target: buildingInstances[id].ui.qtyPnlID,
+				resetContent: buildingInstances[id].ui.shopDescriptor
+			});
 			
 			return false;
 		}
@@ -146,7 +147,11 @@ export class BuildingManager {
 		const powerCon = buildingInstances[id].production.powerUse * amt;
 		
 		if (buildingInstances[id].quantity < amt) {
-			emitEvent("error", { message: "Not enough buildings!" });
+			emitEvent("error", { 
+				message: "Not enough buildings!",
+				target: buildingInstances[id].ui.qtyPnlID,
+				resetContent: buildingInstances[id].ui.shopDescriptor
+			});
 			
 			return false;
 		}

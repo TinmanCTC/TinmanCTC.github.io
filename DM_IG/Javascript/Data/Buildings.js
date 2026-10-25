@@ -35,7 +35,7 @@ export const BUILDING_ID = {
 export const BUILDING_DEFS = [
 	{
 		id: 0,
-		name: "Punchcard",
+		name: "Punchcard Machine",
 		resource: "bits",
 		description: "A vintage, manual punch card machine. It processes data... In its own way.",
 		upgrades: [],
@@ -75,6 +75,7 @@ export const BUILDING_DEFS = [
 			buyBtnID: "store-pnch-buy",
 			sellBtnID: "store-pnch-sell",
 			qtyPnlID: "store-pnchcrd-qty",
+			shopDescriptor: "<b><u>Punchcard Machine:&emsp;</b></u>",
 			sortOrder: 1
 		},
 		tags: ["production", "early-game", "default"]	

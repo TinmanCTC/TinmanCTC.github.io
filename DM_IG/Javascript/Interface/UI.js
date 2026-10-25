@@ -20,7 +20,7 @@ function assignListeners() {
 	onEvent("bitsChanged", updateBitsDisplay);
 	onEvent("wattsChanged", updateWattsDisplay);
 	onEvent("buildingPurchased", updateBuildingDisplay);
-	//onEvent("error", showError);
+	onEvent("error", showError);
 }
 
 function updateMoneyDisplay(data) {
@@ -47,6 +47,14 @@ function updateBuildingDisplay(data) {
 
     pnl.innerHTML = data.quantity;
 
+}
+
+function showError(data) {
+	const pnl = document.getElementById(data.target);
+	
+	pnl.innerHTML = data.message;
+	
+	setTimeout(function() { pnl.innerHTML = data.resetContent; }, 1500);
 }
 
 
