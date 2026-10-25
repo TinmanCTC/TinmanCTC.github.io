@@ -142,5 +142,4 @@ export function initBuildings() {
 	// Create Punchcard & Desktop instances by default
 	buildingManager.addBuilding(BUILDING_DEFS[0]);
 	buildingManager.addBuilding(BUILDING_DEFS[1]);
-	resourceManager.addPowerCon(buildingInstances[0].production.powerUse);	
  };

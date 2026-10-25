@@ -113,4 +113,6 @@ layout: page
 	 resourceManager.addResource(RESOURCE_DEFS[1]);
 	 resourceManager.addResource(RESOURCE_DEFS[2]);
 	 //resourceManager.addResource(RESOURCE_DEFS[2]);	//qBits - locked by default
+	 
+	resourceManager.addPowerCon(buildingInstances[0].production.powerUse);
  }
