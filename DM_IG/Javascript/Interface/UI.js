@@ -9,7 +9,8 @@ layout: page
  * 
  */
  
-import { gameState, pushEvent } from "/DM_IG/Javascript/Engine/stateManager.js";
+import { pushEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
+import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { BUILDING_ID, BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
