@@ -43,10 +43,7 @@ export class BuildingManager {
 				unlock: this.buildings[loc].unlock,
 				prestige: this.buildings[loc].prestige,
 				ui: this.buildings[loc].ui,
-				tags: this.buildings[loc].tags,
-				isClicked: false,
-				timeClicked: 0,
-				mngrTimeClicked: 0
+				tags: this.buildings[loc].tags
 		};
 		buildingInstances.push(newBldg);
 		gameState.bldgs.push(newBldg);
