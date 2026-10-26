@@ -89,6 +89,10 @@ function unlockBuilding(data) {
 	shopPnlLbl.innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
 	shopPnlQty.innerHTML = buildingInstances[data.buildingId].quantity;
 	
+	prodBtn.addEventListener("click", function() {
+		buildingManager.clickBuilding(data.buildingId);
+	});
+	
 	shopBuyBtn.addEventListener("click", function() {
 		buildingManager.buyBuilding(data.buildingId, 1);
 	});
