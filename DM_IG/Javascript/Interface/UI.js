@@ -28,7 +28,7 @@ function assignListeners() {
 function updateMoneyDisplay(data) {
 	const pnl = document.getElementById("Resource_Cash"); 
 	pnl.innerHTML = "$" + data.current.toFixed(2);
-	checkUnlocks();
+	//checkUnlocks();
 }
 
 function updateBitsDisplay(data) {
@@ -84,11 +84,13 @@ function unlockBuilding(data) {
 	const shopPnlQty = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
 	const shopBuyBtn = document.getElementById(buildingInstances[data.buildingId].ui.buyBtnID);
 	const shopSellBtn = document.getElementById(buildingInstances[data.buildingId].ui.sellBtnID);
+	
 	const prodBtn = document.getElementById(buildingInstances[data.buildingId].ui.elementID);
 	
 	shopPnlLbl.innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
 	shopPnlQty.innerHTML = buildingInstances[data.buildingId].quantity;
 	
+	buildingInstances[data.buildingId].ui.prodBtnListener = document.getElementById(buildingInstances[data.buildingId].ui.elementID);
 	buildingInstances[data.buildingId].ui.buyBtnListener = document.getElementById(buildingInstances[data.buildingId].ui.buyBtnID);
 	buildingInstances[data.buildingId].ui.sellBtnListener = document.getElementById(buildingInstances[data.buildingId].ui.sellBtnID);
 	
@@ -97,7 +99,11 @@ function unlockBuilding(data) {
 	});
 	
 	buildingInstances[data.buildingId].ui.sellBtnListener.addEventListener("click", function() {
-		buildingManager.buyBuilding(data.buildingId, 1);
+		buildingManager.sellBuilding(data.buildingId, 1);
+	});
+	
+	buildingInstances[data.buildingId].ui.prodBtnListener.addEventListener("click", function() {
+		buildingManager.clickBuilding(data.buildingId);
 	});
 	
 	/*shopSellBtn.addEventListener("click", function() {

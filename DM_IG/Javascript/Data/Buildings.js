@@ -123,6 +123,7 @@ export const BUILDING_DEFS = [
 		ui: {
 			icon: "desktopButton.jpg",
 			elementID: "desktop_button",
+			prodBtnListener: "",
 			buyBtnID: "store-dsktp-buy",
 			buyBtnListener: "",
 			sellBtnID: "store-dsktp-sell",
