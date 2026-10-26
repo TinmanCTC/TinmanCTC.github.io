@@ -84,7 +84,7 @@ function unlockBuilding(data) {
 	const shopPnlQty = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
 	const shopBuyBtn = document.getElementById(buildingInstances[data.buildingId].ui.buyBtnID);
 	const shopSellBtn = document.getElementById(buildingInstances[data.buildingId].ui.sellBtnID);
-	const prodBtn = document.getElementById(buildingInstances[data.buildingId].ui.elementId);
+	const prodBtn = document.getElementById(buildingInstances[data.buildingId].ui.elementID);
 	
 	shopPnlLbl.innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
 	shopPnlQty.innerHTML = buildingInstances[data.buildingId].quantity;
