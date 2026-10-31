@@ -15,6 +15,13 @@ import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems
 import { BUILDING_ID, BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
 
+/******** DOM Manipulators and Helper Functions
+*
+*
+*
+*
+*/
+
 function addComponent(targetID, component) {
 	const tmp = document.createElement("div");
 	
@@ -29,6 +36,15 @@ function addComponent(targetID, component) {
 	
 	return 1;							// Success
 }
+
+
+/******** UI Listeners and Event Handlers
+*
+*
+*
+*
+*/
+
 
 function assignListeners() {
 	onEvent("moneyChanged", updateMoneyDisplay);
@@ -137,23 +153,16 @@ export function initUI() {
 	// Initialize view buttons
 	addButton(INTERFACE_DEFS[0], "view-buttons", 0);
 	
-	// Initialize production buttons
-	
-	// -REPLACING:
-	//addButton(INTERFACE_DEFS[1], "production-buttons", "Punchcard");
-	
 	// Initialize broker buttons
 	addButton(INTERFACE_DEFS[2], "broker-buttons", "Mother");
 	
 	// Initialize Resource Displays
 	addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
 	
-	// Initialize Store Display
-	
-	// -REPLACING
-	//addDisplay(INTERFACE_DEFS[4], "building-list", "Punchcard");
-	
+	// Initialize UI listeners and Event Handlers
 	assignListeners();
+	
+	// Wake up default resources and production buildings
 	emitEvent("buildingUnlocked", {
 		buildingId: BUILDING_ID.PUNCHCARD
 	});
@@ -177,32 +186,24 @@ export function addButton(source, type, target) {
 			addComponent(type, source.Upgrades_Btn);
 			addComponent(type, source.Managers_Btn);
 			addComponent(type, source.Settings_Btn);
-			
-			
-			//document.getElementById(type).innerHTML += source.Production_Btn;
-			//document.getElementById(type).innerHTML += source.Research_Btn;
-			//document.getElementById(type).innerHTML += source.Upgrades_Btn;
-			//document.getElementById(type).innerHTML += source.Managers_Btn;
-			//document.getElementById(type).innerHTML += source.Settings_Btn;
-			
+						
 			retVal = 1;
 			break;
 		case "production-buttons":
 			if (target == "Punchcard") {
-				document.getElementById(type).innerHTML += source.Punchcard_Btn;
-				
+				addComponent(type, source.Punchcard_Btn);				
 			}
 			
 			if (target == "Desktop" && buildingInstances[1].unlock.btn == false) {
-				buildingInstances[1].unlock.btn == true;
-				document.getElementById(type).innerHTML += source.Desktop_Btn;
+				buildingInstances[1].unlock.btn = true;
+				addComponent(type, source.Desktop_Btn);
 			}
 			
 			retVal = 2;
 			break;
 		case "broker-buttons":
 			if (target == "Mother") {
-				document.getElementById(type).innerHTML += source.brokerMother_Btn;
+				addComponent(type, source.brokerMother_Btn);
 			}
 			
 			retVal = 3;
@@ -219,25 +220,29 @@ export function addDisplay(source, type, target) {
 	
 	switch (type) {
 		case "resource-bar":
+			// Default case
 			if (target == 0) {
-				document.getElementById(type).innerHTML += source.resourceCash_Pnl;
-				document.getElementById(type).innerHTML += source.resourceBits_Pnl;
-				document.getElementById(type).innerHTML += source.resourceWatts_Pnl;
+				addComponent(type, source.resourceCash_Pnl);
+				addComponent(type, source.resourceBits_Pnl);
+				addComponent(type, source.resourceWatts_Pnl);
 			}
 			
+			// Late game unlock
 			if (target == "qBits") { }
 			
 			break;
 		case "building-list":
 			if (target == "Punchcard") {
-				document.getElementById(type).innerHTML += source.storePunchcard_Pnl;
+				addComponent(type, source.storePunchcard_Pnl);
+				
 				document.getElementById("store-pnchcrd-lbl").innerHTML = "<b><u>Punchcard Machine:&emsp;</b></u>";
 				document.getElementById("store-pnchcrd-qty").innerHTML = buildingInstances[0].quantity;
 			}
 			
 			if (target == "desktop"  && buildingInstances[1].unlock.disp == false) {
-				buildingInstances[1].unlock.disp == true;
-				document.getElementById(type).innerHTML += source.storeDesktop_Pnl;
+				buildingInstances[1].unlock.disp = true;
+				addComponent(type, source.storeDesktop_Pnl);
+				
 				document.getElementById("store-dsktp-lbl").innerHTML = buildingInstances[1].ui.shopDescriptor;
 				document.getElementById("store-dsktp-qty").innerHTML = buildingInstances[1].quantity;
 				
