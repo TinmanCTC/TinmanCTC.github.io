@@ -52,7 +52,7 @@ export function addButton(source, type, target) {
 			break;
 		case "production-buttons":
 			if (target == "Punchcard") {
-				addComponent(type, source.Punchcard_Btn);				
+				addComponent(type, source.Punchcard_Btn);
 			}
 			
 			if (target == "Desktop" && buildingInstances[1].unlock.btn == false) {
@@ -94,7 +94,7 @@ export function addDisplay(source, type, target) {
 			break;
 		case "building-list":
 			if (target == "Punchcard") {
-				addComponent(type, source.storePunchcard_Pnl);
+				//addComponent(type, source.storePunchcard_Pnl);
 				
 				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopDescriptor;
 				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].quantity;
@@ -111,9 +111,9 @@ export function addDisplay(source, type, target) {
 				});
 			}
 			
-			if (target == "desktop"  && buildingInstances[BLDG_IDS.DESKTOP].unlock.disp == false) {
+			if (target == "Desktop"  && buildingInstances[BLDG_IDS.DESKTOP].unlock.disp == false) {
 				buildingInstances[BLDG_IDS.DESKTOP].unlock.disp = true;
-				addComponent(type, source.storeDesktop_Pnl);
+				//addComponent(type, source.storeDesktop_Pnl);
 				
 				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].ui.shopDescriptor;
 				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].quantity;
@@ -195,11 +195,12 @@ function unlockBuilding(data) {
 		case BLDG_IDS.PUNCHCARD:
 			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Punchcard_Btn);
 			addComponent("building-list", INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storePunchcard_Pnl);
+			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Punchcard");
 			
 			break;
 		case BLDG_IDS.DESKTOP:
 			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Desktop_Btn);
-			addComponent("building-list", INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storeDesktop_Pnl);			
+			addComponent("building-list", INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storeDesktop_Pnl);addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");		
 			
 			break;
 		default:
