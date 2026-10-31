@@ -200,7 +200,7 @@ function unlockBuilding(data) {
 	
 	switch (data.buildingId) {
 		case BLDG_IDS.PUNCHCARD:
-			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS, "production-buttons", "Punchcard");
+			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Punchcard");
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Punchcard");
 			
 			break;
