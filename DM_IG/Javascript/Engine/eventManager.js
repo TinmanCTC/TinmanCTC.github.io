@@ -152,6 +152,8 @@ export function initListeners() {
 	
 	// Data Broker Listeners
 	
+	const brokerMotherButtonID = document.getElementById(brokerInstances[BROKERS_ID.MOTHER].ui.elementID);
+	
 	// Mother Broker - on by default	
 	brokerMotherButtonID.addEventListener("click", function() {
 		brokerManager.sellBits(BROKERS_ID.MOTHER);
