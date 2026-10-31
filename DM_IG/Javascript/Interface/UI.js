@@ -193,13 +193,13 @@ function unlockBuilding(data) {
 	
 	switch (data.buildingId) {
 		case BLDG_IDS.PUNCHCARD:
-			addComponent(prodPnl, INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Punchcard_Btn);
-			addComponent(shopPnl, INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storePunchcard_Pnl);
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Punchcard_Btn);
+			addComponent("building-list", INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storePunchcard_Pnl);
 			
 			break;
 		case BLDG_IDS.DESKTOP:
-			addComponent(prodPnl, INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Desktop_Btn);
-			addComponent(shopPnl, INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storeDesktop_Pnl);			
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Desktop_Btn);
+			addComponent("building-list", INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storeDesktop_Pnl);			
 			
 			break;
 		default:
