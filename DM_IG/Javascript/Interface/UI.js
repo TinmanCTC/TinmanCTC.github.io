@@ -15,6 +15,21 @@ import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems
 import { BUILDING_ID, BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
 
+function addComponent(targetID, component) {
+	const tmp = document.createElement("div");
+	
+	tmp.innerHTML = component.trim();
+	
+	// Check if source component was initialized
+	if (tmp.innerHTML == null) {
+			return -1;					// Failure
+	}
+	
+	document.getElementById(targetID).appendChild(tmp.firstElementChild);
+	
+	return 1;							// Success
+}
+
 function assignListeners() {
 	onEvent("moneyChanged", updateMoneyDisplay);
 	onEvent("moneyChanged", checkMoneyUnlocks);
@@ -157,11 +172,18 @@ export function addButton(source, type, target) {
 	
 	switch (type) {
 		case "view-buttons":
-			document.getElementById(type).innerHTML += source.Production_Btn;
-			document.getElementById(type).innerHTML += source.Research_Btn;
-			document.getElementById(type).innerHTML += source.Upgrades_Btn;
-			document.getElementById(type).innerHTML += source.Managers_Btn;
-			document.getElementById(type).innerHTML += source.Settings_Btn;
+			addComponent(type, source.Production_Btn);
+			addComponent(type, source.Research_Btn);
+			addComponent(type, source.Upgrades_Btn);
+			addComponent(type, source.Managers_Btn);
+			addComponent(type, source.Settings_Btn);
+			
+			
+			//document.getElementById(type).innerHTML += source.Production_Btn;
+			//document.getElementById(type).innerHTML += source.Research_Btn;
+			//document.getElementById(type).innerHTML += source.Upgrades_Btn;
+			//document.getElementById(type).innerHTML += source.Managers_Btn;
+			//document.getElementById(type).innerHTML += source.Settings_Btn;
 			
 			retVal = 1;
 			break;
