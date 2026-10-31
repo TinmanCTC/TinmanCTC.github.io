@@ -19,7 +19,7 @@ import { eventFeed, emitEvent, onEvent } from "/DM_IG/Javascript/Engine/eventMan
 import { addButton, addDisplay } from "/DM_IG/Javascript/Interface/UI.js";
 import { INTERFACE_DEFS } from "/DM_IG/Javascript/Interface/Components.js";
 
-import { BUILDING_ID, BUILDING_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
+import { BLDG_IDS, BLDG_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { BROKERS_ID } from "/DM_IG/Javascript/Data/Brokers.js";
 
 export const gameState = {
@@ -46,7 +46,7 @@ export function checkUnlocks() {
 		buildingInstances[1].unlock.yes = true;
 		
 		emitEvent("buildingUnlocked", {
-			buildingId: BUILDING_ID.DESKTOP
+			buildingId: BLDG_IDS.DESKTOP
 		});	
 		
 		//addButton(INTERFACE_DEFS[1], "production-buttons", "desktop");
