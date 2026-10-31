@@ -156,7 +156,7 @@ function assignListeners() {
 function updateMoneyDisplay(data) {
 	const pnl = document.getElementById("Resource_Cash"); 
 	pnl.innerHTML = "$" + data.current.toFixed(2);
-	//checkUnlocks();
+	checkUnlocks();
 }
 
 function updateBitsDisplay(data) {

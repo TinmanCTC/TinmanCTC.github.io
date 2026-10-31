@@ -41,9 +41,9 @@ export const gameState = {
 export function checkUnlocks() {
 	
 	// Unlock Desktop Building
-	if (gameState.lifetimeMoney >= 55296 && buildingInstances[1].unlock.yes == false) {
-		buildingInstances[1].quantity = 0;
-		buildingInstances[1].unlock.yes = true;
+	if (gameState.lifetimeMoney >= 55296 && buildingInstances[BLDG_IDS.DESKTOP].unlock.yes == false) {
+		buildingInstances[BLDG_IDS.DESKTOP].quantity = 0;
+		buildingInstances[BLDG_IDS.DESKTOP].unlock.yes = true;
 		
 		emitEvent("buildingUnlocked", {
 			buildingId: BLDG_IDS.DESKTOP
