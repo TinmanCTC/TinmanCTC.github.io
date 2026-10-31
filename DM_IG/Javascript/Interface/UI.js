@@ -42,11 +42,40 @@ export function addButton(source, type, target) {
 	
 	switch (type) {
 		case "view-buttons":
+			// Add DOM elements from templates
 			addComponent(type, source.Production_Btn);
 			addComponent(type, source.Research_Btn);
 			addComponent(type, source.Upgrades_Btn);
 			addComponent(type, source.Managers_Btn);
 			addComponent(type, source.Settings_Btn);
+			
+			// Assign onClick listeners to new buttons
+			// View Toggle Buttons
+			const settingsButtonID = document.getElementById("settings_button");
+			const researchButtonID = document.getElementById("research_button");
+			const productionButtonID = document.getElementById("production_button");
+			const upgradesButtonID = document.getElementById("upgrades_button");
+			const managersButtonID = document.getElementById("managers_button");
+			
+			productionButtonID.addEventListener("click", function () {
+				changeView(gameState.currentView, "Production");
+			});
+			
+			settingsButtonID.addEventListener("click", function () {
+				changeView(gameState.currentView, "Settings");
+			});
+			
+			researchButtonID.addEventListener("click", function () {
+				changeView(gameState.currentView, "Research");
+			});
+			
+			upgradesButtonID.addEventListener("click", function () {
+				changeView(gameState.currentView, "Upgrades");
+			});
+			
+			managersButtonID.addEventListener("click", function () {
+				changeView(gameState.currentView, "Managers");
+			});
 						
 			retVal = 1;
 			break;
@@ -146,6 +175,88 @@ export function addDisplay(source, type, target) {
 			
 			break;
 	}
+}
+
+function changeView(currView, targetView) {
+	const productionView = document.getElementById("view-production");
+	const managersView = document.getElementById("view-managers");
+	const upgradesView = document.getElementById("view-upgrades");
+	const researchView = document.getElementById("view-research");
+	const settingsView = document.getElementById("view-settings");
+	
+	// Do nothing if view button for current view is clicked
+	if (currView == targetView) { return 0; }
+	
+	switch (targetView) {
+		case "Production":
+			gameState.currentView = targetView;
+			let currViewID = getViewID(currView);
+			
+			currViewID.style.display = "none";
+			productionView.style.display = "flex";			
+			break;
+		case "Research":
+			gameState.currentView = targetView;
+			let currViewID = getViewID(currView);
+			
+			currViewID.style.display = "none";
+			researchView.style.display = "flex";
+			break;
+		case "Upgrades": 
+			gameState.currentView = targetView;
+			let currViewID = getViewID(currView);
+			
+			currViewID.style.display = "none";
+			upgradesView.style.display = "flex";
+		
+			break;
+		case "Managers":
+			gameState.currentView = targetView;
+			let currViewID = getViewID(currView);
+			
+			currViewID.style.display = "none";
+			managersView.style.display = "flex";
+			break;
+		case "Settings":
+			gameState.currentView = targetView;
+			let currViewID = getViewID(currView);
+			
+			currViewID.style.display = "none";
+			settingsView.style.display = "flex";
+			break;
+		default:
+			gameState.currentView = "Production";
+			let currViewID = getViewID(currView);
+			
+			currViewID.style.display = "none";
+			productionView.style.display = "flex";	
+	}
+}
+
+function getViewID(view) {
+	let retVal = -1;
+	
+	switch (view) {
+		case "Production":
+			retVal = document.getElementById("view-production");
+			break;
+		case "Upgrades":
+			retVal = document.getElementById("view-upgrades");
+			break;
+		case "Managers":
+			retVal = document.getElementById("view-managers");
+			break;
+		case "Research":
+			retVal = document.getElementById("view-research");
+			break;
+		case "Settings":
+			retVal = document.getElementById("view-settings");
+			break;		
+		default:
+			retVal = document.getElementById("view-production");
+	}
+	
+	return retVal;
 }
 
 /******** UI Listeners and Event Handlers

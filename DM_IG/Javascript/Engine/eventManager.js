@@ -50,19 +50,14 @@ export function emitEvent(eventName, payload) {
 
 
 export function initListeners() {
-	// View Toggle Buttons
-	const settingsButtonID = document.getElementById("settings_button");
-	const researchButtonID = document.getElementById("research_button");
-	const productionButtonID = document.getElementById("production_button");
-	const upgradesButtonID = document.getElementById("upgrades_button");
-	const managersButtonID = document.getElementById("managers_button");
 	
 	
+	/*
 	// Default listeners 
 	
 	// Change view to Production View
 	productionButtonID.addEventListener("click", function () {
-		var view = document.getElementById("view-production");
+		let view = document.getElementById("view-production");
 		
 		if (view.style.display === "none") {
 			document.getElementById("view-research").style.display = "none";
@@ -139,7 +134,7 @@ export function initListeners() {
 			
 		}
 	});
-	
+	*/
 	// Building Listeners
 	
 	// Check for other building unlocks (from saved game?)

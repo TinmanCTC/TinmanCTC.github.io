@@ -33,8 +33,7 @@ export const gameState = {
 	upgrades: [],
 	achievements: [],
 	legacy: 0,
-	currentView: "production",
-	
+	currentView: "Production"
 	
 };
 
