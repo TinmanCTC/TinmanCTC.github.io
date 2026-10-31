@@ -14,7 +14,7 @@ layout: page
 import { gameState, checkUnlocks } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 
-import { BUILDING_ID } from "/DM_IG/Javascript/Data/Buildings.js";
+import { BLDG_IDS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { BROKERS_ID, BROKERS_DEFS } from "/DM_IG/Javascript/Data/Brokers.js";
 
 import { brokerInstances, brokerManager } from "/DM_IG/Javascript/Subsystems/Brokers.js";
@@ -47,6 +47,8 @@ export function emitEvent(eventName, payload) {
 	});
 }
 
+
+
 export function initListeners() {
 	// View Toggle Buttons
 	const settingsButtonID = document.getElementById("settings_button");
@@ -54,22 +56,6 @@ export function initListeners() {
 	const productionButtonID = document.getElementById("production_button");
 	const upgradesButtonID = document.getElementById("upgrades_button");
 	const managersButtonID = document.getElementById("managers_button");
-	
-	// Resource Displays
-	const cashDisplay = document.getElementById(resourceInstances[0].elementID);
-	const bitsDisplay = document.getElementById(resourceInstances[1].elementID);
-	const wattsDisplay = document.getElementById(resourceInstances[2].elementID);
-
-	// Store Displays
-	const storePnchBuy = document.getElementById(buildingInstances[0].ui.buyBtnID);
-	const storePnchSell = document.getElementById(buildingInstances[0].ui.sellBtnID);
-	const storePnchQty = document.getElementById(buildingInstances[0].ui.qtyPnlID);
-
-	// Production Buildings
-	const punchcardButtonID = document.getElementById(buildingInstances[0].ui.elementID);
-
-	// Data Brokers
-	const brokerMotherButtonID = document.getElementById(brokerInstances[0].ui.elementID);
 	
 	
 	// Default listeners 
@@ -158,7 +144,7 @@ export function initListeners() {
 	
 	// Punchcard building - on by default
 	punchcardButtonID.addEventListener("click", function () {
-		buildingManager.clickBuilding(BUILDING_ID.PUNCHCARD);
+		buildingManager.clickBuilding(BLDG_IDS.PUNCHCARD);
 	});
 	// Check for other building unlocks (from saved game?)
 	
@@ -168,42 +154,6 @@ export function initListeners() {
 	brokerMotherButtonID.addEventListener("click", function() {
 		brokerManager.sellBits(BROKERS_ID.MOTHER);
 	});
-	
-	
-	// Resource Listeners	
-	/*
-	cashDisplay.addEventListener("cashChange", function() {
-		cashDisplay.innerHTML = "$" + gameState.money.toFixed(2);
-	});
-	cashDisplay.dispatchEvent(cashTick);
-	
-	bitsDisplay.addEventListener("bitsChange", function() {
-		bitsDisplay.innerHTML = gameState.bits;
-	});
-	bitsDisplay.dispatchEvent(bitsTick);
-	
-	wattsDisplay.addEventListener("wattsChange", function() {
-		wattsDisplay.innerHTML = (gameState.powerGen - gameState.powerCon);
-	});
-	wattsDisplay.dispatchEvent(wattsTick);
-	*/
-	// Store Listeners - Punchcard Only on default
-	/*
-	storePnchBuy.addEventListener("click", function() {
-		buildingManager.buyBuilding(0,1);
-		//pushEvent("qtyChange", buildingInstances[0].ui.qtyPnlID);		
-	});
-	
-	storePnchSell.addEventListener("click", function() {
-		buildingManager.sellBuilding(0,1);
-		//pushEvent("qtyChange", buildingInstances[0].ui.qtyPnlID);
-	});
-	
-	storePnchQty.addEventListener("qtyChange", function() {
-		storePnchQty.innerHTML = buildingInstances[0].quantity;
-	});
-	*/
-	
 }
 
 export function createListener(source, type, target) {
@@ -246,11 +196,11 @@ export function pushEvent(desc, target) {
 			break;
 		case "qtyChange":
 			switch (target) {
-				case buildingInstances[BUILDING_ID.PUNCHCARD].ui.qtyPnlID:
+				case buildingInstances[BLDG_IDS.PUNCHCARD].ui.qtyPnlID:
 					var panel = document.getElementById(target);
 					panel.dispatchEvent(qtyDelta);
 					break;
-				case buildingInstances[BUILDING_ID.DESKTOP].ui.qtyPnlID:
+				case buildingInstances[BLDG_IDS.DESKTOP].ui.qtyPnlID:
 					var panel = document.getElementById(target);
 					panel.dispatchEvent(qtyDelta);
 					break;

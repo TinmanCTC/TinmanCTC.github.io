@@ -27,12 +27,18 @@ layout: page
 
 */
 
-export const BUILDING_ID = {
+export const BLDG_IDS = {
 		PUNCHCARD: 0,
-		DESKTOP: 1
+		DESKTOP: 1,
+		CUBICLE: 2,
+		LAN: 3,
+		CHEAP_GEN: 4,
+		CLOUD: 5,
+		BLOCKCHAIN: 6,
+		DIESEL_GEN: 7
 };
 
-export const BUILDING_DEFS = [
+export const BLDG_DEFS = [
 	{
 		id: 0,
 		name: "Punchcard Machine",

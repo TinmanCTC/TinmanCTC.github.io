@@ -12,7 +12,7 @@ layout: page
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { eventFeed, emitEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
 
-import { BUILDING_DEFS, BUILDING_ID } from "/DM_IG/Javascript/Data/Buildings.js";
+import { BLDG_DEFS, BLDG_IDS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 import { addDisplay } from "/DM_IG/Javascript/Interface/UI.js";
 import { INTERFACE_DEFS } from "/DM_IG/Javascript/Interface/Components.js";
@@ -24,7 +24,7 @@ export class BuildingManager {
 		this.buildings = [];
 	}
 	
-	// Adds a new instance of bldg to buildingInstances utilizing BUILDING_DEFS
+	// Adds a new instance of bldg to buildingInstances utilizing BLDG_DEFS
 	addBuilding(bldg) {
 		this.buildings.push(bldg);
 		//console.log(this.buildings);
@@ -49,9 +49,9 @@ export class BuildingManager {
 		gameState.bldgs.push(newBldg);
 	}
 	
-	// Creates a new building definition and adds it to BUILDING_DEFS
+	// Creates a new building definition and adds it to BLDG_DEFS
 	createBuilding(bldg) {
-		BUILDING_DEFS.push(bldg);
+		BLDG_DEFS.push(bldg);
 	}
 	
 	clickBuilding(id) {
@@ -159,6 +159,6 @@ export const buildingManager = new BuildingManager();
 
 export function initBuildings() {
 	// Create Punchcard & Desktop instances by default
-	buildingManager.addBuilding(BUILDING_DEFS[0]);
-	buildingManager.addBuilding(BUILDING_DEFS[1]);
+	buildingManager.addBuilding(BLDG_DEFS[0]);
+	buildingManager.addBuilding(BLDG_DEFS[1]);
  };
