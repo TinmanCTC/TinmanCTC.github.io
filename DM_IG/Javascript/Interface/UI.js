@@ -205,8 +205,8 @@ function unlockBuilding(data) {
 			
 			break;
 		case BLDG_IDS.DESKTOP:
-			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Desktop_Btn);
-			addComponent("building-list", INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storeDesktop_Pnl);addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");		
+			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Desktop");
+			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");		
 			
 			break;
 		default:
