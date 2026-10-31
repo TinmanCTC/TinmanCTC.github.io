@@ -53,10 +53,17 @@ export function addButton(source, type, target) {
 		case "production-buttons":
 			if (target == "Punchcard") {
 				addComponent(type, source.Punchcard_Btn);
+				
+				const punchcardButtonID = document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.elementID);
+	
+				// Punchcard building - on by default
+				punchcardButtonID.addEventListener("click", function () {
+					buildingManager.clickBuilding(BLDG_IDS.PUNCHCARD);
+				});
 			}
 			
 			if (target == "Desktop" && buildingInstances[1].unlock.btn == false) {
-				buildingInstances[BLDG_IDS.PUNCHCARD].unlock.btn = true;
+				buildingInstances[BLDG_IDS.DESKTOP].unlock.btn = true;
 				addComponent(type, source.Desktop_Btn);
 			}
 			
@@ -94,7 +101,7 @@ export function addDisplay(source, type, target) {
 			break;
 		case "building-list":
 			if (target == "Punchcard") {
-				//addComponent(type, source.storePunchcard_Pnl);
+				addComponent(type, source.storePunchcard_Pnl);
 				
 				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopDescriptor;
 				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].quantity;
@@ -193,8 +200,7 @@ function unlockBuilding(data) {
 	
 	switch (data.buildingId) {
 		case BLDG_IDS.PUNCHCARD:
-			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Punchcard_Btn);
-			addComponent("building-list", INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].storePunchcard_Pnl);
+			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS, "production-buttons", "Punchcard");
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Punchcard");
 			
 			break;

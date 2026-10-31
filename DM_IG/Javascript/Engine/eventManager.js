@@ -142,12 +142,6 @@ export function initListeners() {
 	
 	// Building Listeners
 	
-	const punchcardButtonID = document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.elementID);
-	
-	// Punchcard building - on by default
-	punchcardButtonID.addEventListener("click", function () {
-		buildingManager.clickBuilding(BLDG_IDS.PUNCHCARD);
-	});
 	// Check for other building unlocks (from saved game?)
 	
 	// Data Broker Listeners
