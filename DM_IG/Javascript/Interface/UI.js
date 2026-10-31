@@ -120,7 +120,7 @@ export function addDisplay(source, type, target) {
 			
 			if (target == "Desktop"  && buildingInstances[BLDG_IDS.DESKTOP].unlock.disp == false) {
 				buildingInstances[BLDG_IDS.DESKTOP].unlock.disp = true;
-				//addComponent(type, source.storeDesktop_Pnl);
+				addComponent(type, source.storeDesktop_Pnl);
 				
 				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].ui.shopDescriptor;
 				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].quantity;
