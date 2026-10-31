@@ -187,47 +187,37 @@ function changeView(currView, targetView) {
 	// Do nothing if view button for current view is clicked
 	if (currView == targetView) { return 0; }
 	
+	let currViewID = getViewID(currView);
+	
 	switch (targetView) {
 		case "Production":
-			gameState.currentView = targetView;
-			let currViewID = getViewID(currView);
-			
+			gameState.currentView = targetView;			
 			currViewID.style.display = "none";
 			productionView.style.display = "flex";			
 			break;
 		case "Research":
 			gameState.currentView = targetView;
-			let currViewID = getViewID(currView);
-			
 			currViewID.style.display = "none";
 			researchView.style.display = "flex";
 			break;
 		case "Upgrades": 
 			gameState.currentView = targetView;
-			let currViewID = getViewID(currView);
-			
 			currViewID.style.display = "none";
 			upgradesView.style.display = "flex";
 		
 			break;
 		case "Managers":
 			gameState.currentView = targetView;
-			let currViewID = getViewID(currView);
-			
 			currViewID.style.display = "none";
 			managersView.style.display = "flex";
 			break;
 		case "Settings":
 			gameState.currentView = targetView;
-			let currViewID = getViewID(currView);
-			
 			currViewID.style.display = "none";
 			settingsView.style.display = "flex";
 			break;
 		default:
 			gameState.currentView = "Production";
-			let currViewID = getViewID(currView);
-			
 			currViewID.style.display = "none";
 			productionView.style.display = "flex";	
 	}
