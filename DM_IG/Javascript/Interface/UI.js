@@ -62,9 +62,15 @@ export function addButton(source, type, target) {
 				});
 			}
 			
-			if (target == "Desktop" && buildingInstances[1].unlock.btn == false) {
+			if (target == "Desktop" && !buildingInstances[BLDG_IDS.DESKTOP].unlock.btn) {
 				buildingInstances[BLDG_IDS.DESKTOP].unlock.btn = true;
 				addComponent(type, source.Desktop_Btn);
+				
+				const desktopButtonID = document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.elementID);
+				
+				desktopButtonID.addEventListener("click", function () {
+					buildingManager.clickBuilding(BLDG_IDS.DESKTOP);
+				});
 			}
 			
 			retVal = 2;
