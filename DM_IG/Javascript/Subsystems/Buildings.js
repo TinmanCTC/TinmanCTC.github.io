@@ -105,9 +105,9 @@ export class BuildingManager {
 		
 		if (gameState.money < cost) {
 			emitEvent("error", { 
-				message: "Not enough money!",
-				target: buildingInstances[id].ui.shopPnlID,
-				resetContent: buildingInstances[id].ui.shopDescriptor
+				type: "shop",
+				buyOrSell: "buy",
+				ID: id
 			});
 			
 			return false;
@@ -133,9 +133,9 @@ export class BuildingManager {
 		
 		if (buildingInstances[id].quantity < amt) {
 			emitEvent("error", { 
-				message: "Not enough buildings!",
-				target: buildingInstances[id].ui.qtyPnlID,
-				resetContent: buildingInstances[id].ui.shopDescriptor
+				type: "shop",
+				buyOrSell: "sell",
+				ID: id
 			});
 			
 			return false;
