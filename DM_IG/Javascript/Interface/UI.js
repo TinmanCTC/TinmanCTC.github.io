@@ -409,7 +409,7 @@ export function initUI() {
 	addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
 	
 	// Initialize Upgrades Panel
-	addDisplay(INTERFACE_DEFS[UPGRADES_DISP], "upgrades-list", 0);
+	addDisplay(INTERFACE_DEFS[INTERFACE_ID.UPGRADES_DISP], "upgrades-list", 0);
 	
 	// Initialize UI listeners and Event Handlers
 	assignListeners();
