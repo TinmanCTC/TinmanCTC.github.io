@@ -51,8 +51,8 @@ export const BLDG_DEFS = [
 			growthFactor: "exponential"
 		},
 		production: {
-			base: 864,
-			clickInterval: 1500,
+			base: 768,
+			clickInterval: 1000,
 			bonus: 0,
 			powerUse: 100,
 			growthRate: 1.01,
@@ -103,8 +103,8 @@ export const BLDG_DEFS = [
 			growthFactor: "exponential"
 		},
 		production: {
-			base: 2056,
-			clickInterval: 3000,
+			base: 4096,
+			clickInterval: 2000,
 			bonus: 0,
 			powerUse: 500,
 			growthRate: 1.09,
