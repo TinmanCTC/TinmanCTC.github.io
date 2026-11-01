@@ -99,7 +99,7 @@ export class BuildingManager {
 	}
 	
 	buyBuilding(id, amt) {
-		const cost = this.getBuyCost(id) * amt;
+		const cost = (this.getBuyCost(id) * amt).toFixed(2);
 		const powerCon = buildingInstances[id].production.powerUse * amt;
 		
 		if (gameState.money < cost) {
