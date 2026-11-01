@@ -16,9 +16,10 @@ function initGame() {
 	
 	
 	initBuildings();
+	initBrokers();
 	initUI();
 	initResources();
-	initBrokers();
+	
 	
 	resourceManager.addPowerCon(buildingInstances[0].production.powerUse);
 	

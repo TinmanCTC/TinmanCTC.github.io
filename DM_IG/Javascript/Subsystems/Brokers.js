@@ -57,8 +57,7 @@ export class BrokerManager {
 
 export const brokerManager = new BrokerManager();
 
-export function initBrokers() {
-	
+export function initBrokers() {	
 	brokerManager.addBroker(BROKERS_DEFS[0]);
 	
 };
