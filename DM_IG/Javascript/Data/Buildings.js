@@ -118,7 +118,7 @@ export const BLDG_DEFS = [
 		},
 		unlock: {
 			resource: "money",
-			threshold: 55296,
+			threshold: 21960,
 			yes: false,
 			btn: false,
 			disp: false

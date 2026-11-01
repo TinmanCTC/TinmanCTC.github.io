@@ -40,15 +40,12 @@ export const gameState = {
 export function checkUnlocks() {
 	
 	// Unlock Desktop Building
-	if (gameState.lifetimeMoney >= 55296 && buildingInstances[BLDG_IDS.DESKTOP].unlock.yes == false) {
+	if (gameState.lifetimeMoney >= buildingInstances[BLDG_IDS.DESKTOP].unlock.threshold && buildingInstances[BLDG_IDS.DESKTOP].unlock.yes == false) {
 		buildingInstances[BLDG_IDS.DESKTOP].quantity = 0;
 		buildingInstances[BLDG_IDS.DESKTOP].unlock.yes = true;
 		
 		emitEvent("buildingUnlocked", {
 			buildingId: BLDG_IDS.DESKTOP
-		});	
-		
-		//addButton(INTERFACE_DEFS[1], "production-buttons", "desktop");
-		//addDisplay(INTERFACE_DEFS[4], "building-list", "desktop");
+		});
 	}
 }
