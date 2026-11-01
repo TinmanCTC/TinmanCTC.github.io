@@ -309,42 +309,40 @@ function showError(data) {
 	
 	switch (data.type) {
 		case "shop":
-			switch (data.buyOrSell) {
-				const qtyPnl = document.getElementById(buildingInstances[data.ID].ui.qtyPnlID);
-				const cstPnl = document.getElementById(buildingInstances[data.ID].ui.costPnlID);
-				const shopPnl = document.getElementById(buildingInstances[data.ID].ui.shopPnlID);
+			const qtyPnl = document.getElementById(buildingInstances[data.ID].ui.qtyPnlID);
+			const cstPnl = document.getElementById(buildingInstances[data.ID].ui.costPnlID);
+			const shopPnl = document.getElementById(buildingInstances[data.ID].ui.shopPnlID);
+			
+			if (data.buyOrSell == "buy") {
+				cstPnl.innerHTML = "";
+				qtyPnl.innerHTML = "";
+				shopPnl.innerHTML = "Not enough money!";
 				
-				case "buy":
-					cstPnl.innerHTML = "";
-					qtyPnl.innerHTML = "";
-					shopPnl.innerHTML = "Not enough money!";
-					
-					setTimeout(function () {
-						shopPnl.innerHTML = buildingInstances[data.ID].ui.shopDescriptor;
-						qtyPnl.innerHTML = buildingInstances[data.ID].quantity;
-						cstPnl.innerHTML = "$" + buildingManager.getBuyCost(data.ID).toFixed(2) + "]:</b></u>";
-					}, 1500);
-					
-					retVal = 1;
-					break;
-				case "sell":
-					cstPnl.innerHTML = "";
-					qtyPnl.innerHTML = "";
-					shopPnl.innerHTML = "Not enough buildings!";
-					
-					setTimeout(function () {
-						shopPnl.innerHTML = buildingInstances[data.ID].ui.shopDescriptor;
-						qtyPnl.innerHTML = buildingInstances[data.ID].quantity;
-						cstPnl.innerHTML = "$" + buildingManager.getBuyCost(data.ID).toFixed(2) + "]:</b></u>";
-					}, 1500);
-					
-					retVal = 1;
-					break;
-				default:
-					retVal = 0;
+				setTimeout(function () {
+					shopPnl.innerHTML = buildingInstances[data.ID].ui.shopDescriptor;
+					qtyPnl.innerHTML = buildingInstances[data.ID].quantity;
+					cstPnl.innerHTML = "$" + buildingManager.getBuyCost(data.ID).toFixed(2) + "]:</b></u>";
+				}, 1500);
+				
+				retVal = 1;
+			}
+			
+			if (data.buyOrSell == "sell") {
+				cstPnl.innerHTML = "";
+				qtyPnl.innerHTML = "";
+				shopPnl.innerHTML = "Not enough buildings!";
+				
+				setTimeout(function () {
+					shopPnl.innerHTML = buildingInstances[data.ID].ui.shopDescriptor;
+					qtyPnl.innerHTML = buildingInstances[data.ID].quantity;
+					cstPnl.innerHTML = "$" + buildingManager.getBuyCost(data.ID).toFixed(2) + "]:</b></u>";
+				}, 1500);
+				
+				retVal = 1;
 			}
 			break;
 		default:
+			
 	}
 	
 	return retVal;
