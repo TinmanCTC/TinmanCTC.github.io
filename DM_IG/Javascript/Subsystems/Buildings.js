@@ -120,7 +120,7 @@ export class BuildingManager {
 	}
 
 	getOutput(id) {		
-		const retVal = buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus);	
+		const retVal = buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + (buildingInstances[id].production.bonus * (buildingInstances[id].growthRate ** buildingInstances[id].level)));	
 		
 		return retVal;
 	}
