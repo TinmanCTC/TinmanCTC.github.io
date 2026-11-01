@@ -120,14 +120,14 @@ export class BuildingManager {
 		emitEvent("buildingPurchased", {
 			buildingId: id,
 			quantity: buildingInstances[id].quantity,
-			cost
+			this.getBuyCost(id)
 		});
 		
 		return true;		
 	}
 	
 	sellBuilding(id, amt) {
-		const cost = this.getBuyCost(id) * amt;
+		let cost = this.getBuyCost(id) * amt;
 		const powerCon = buildingInstances[id].production.powerUse * amt;
 		
 		if (buildingInstances[id].quantity < amt) {
@@ -147,7 +147,7 @@ export class BuildingManager {
 		emitEvent("buildingPurchased", {
 			buildingId: id,
 			quantity: buildingInstances[id].quantity,
-			cost
+			this.getBuyCost(id)
 		});
 		
 		return true;
