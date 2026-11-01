@@ -107,6 +107,13 @@ export function addButton(source, type, target) {
 		case "broker-buttons":
 			if (target == "Mother") {
 				addComponent(type, source.brokerMother_Btn);
+				
+				const brokerMotherButtonID = document.getElementById(brokerInstances[BROKERS_ID.MOTHER].ui.elementID);
+	
+				// Mother Broker - on by default	
+				brokerMotherButtonID.addEventListener("click", function() {
+					brokerManager.sellBits(BROKERS_ID.MOTHER);
+				});
 			}
 			
 			retVal = 3;
@@ -287,9 +294,11 @@ function updateWattsDisplay(data) {
 
 function updateBuildingDisplay(data) {
 
-    const pnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
+    const qtyPnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
+	cosnt cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
 
-    pnl.innerHTML = data.quantity;
+    qtyPnl.innerHTML = data.quantity;
+	cstPnl.innerHTML = data.cost.toFixed(2);
 
 }
 

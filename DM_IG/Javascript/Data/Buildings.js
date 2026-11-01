@@ -55,7 +55,8 @@ export const BLDG_DEFS = [
 			clickInterval: 1500,
 			bonus: 0,
 			powerUse: 100,
-			growthRate: 1.0,
+			growthRate: 1.01,
+			shopGrowthRate: 1.02,
 			growthFactor: "multiplicative",
 		},
 		manager: {
@@ -84,6 +85,7 @@ export const BLDG_DEFS = [
 			sellBtnListener: "",
 			qtyPnlID: "store-pnchcrd-qty",
 			shopPnlID: "store-pnchcrd-lbl",
+			costPnlID: "store-pnchcrd-cst",
 			shopDescriptor: "<b><u>Punchcard Machine:&emsp;</b></u>",
 			sortOrder: 1
 		},
@@ -107,6 +109,7 @@ export const BLDG_DEFS = [
 			bonus: 0,
 			powerUse: 500,
 			growthRate: 1.09,
+			shopGrowthRate: 1.08,
 			growthFactor: "multiplicative",
 		},
 		manager: {
@@ -136,6 +139,7 @@ export const BLDG_DEFS = [
 			sellBtnListener: "",
 			qtyPnlID: "store-dsktp-qty",
 			shopPnlID: "store-dsktp-lbl",
+			costPnlID: "store-dsktp-cst",
 			shopDescriptor: "<b><u>Desktop Computer:&emsp;</b></u>",
 			sortOrder: 2
 		},

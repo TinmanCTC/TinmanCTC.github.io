@@ -3,7 +3,7 @@ permalink: /DM_IG/main.js
 title: "Data Miner Idle Game"
 layout: page
 ---
-import { initListeners } from "./Javascript/Engine/eventManager.js";
+//import { initListeners } from "./Javascript/Engine/eventManager.js";
 import { initBuildings, buildingInstances, buildingManager } from "./Javascript/Subsystems/Buildings.js";
 import { initUI } from "./Javascript/Interface/UI.js";
 import { initBrokers } from "./Javascript/Subsystems/Brokers.js";
@@ -19,7 +19,6 @@ function initGame() {
 	initUI();
 	initResources();
 	initBrokers();
-	initListeners();
 	
 	resourceManager.addPowerCon(buildingInstances[0].production.powerUse);
 	

@@ -83,7 +83,7 @@ export class BuildingManager {
 	}
 	
 	getBuyCost(id) {
-		const retVal = buildingInstances[id].cost.base + (buildingInstances[id].quantity * buildingInstances[id].cost.growthRate);
+		const retVal = buildingInstances[id].cost.base * (buildingInstances[id].cost.shopGrowthRate ** buildingInstances[id].quantity);
 		
 		return retVal;
 	}
@@ -99,7 +99,7 @@ export class BuildingManager {
 	}
 	
 	buyBuilding(id, amt) {
-		const cost = buildingInstances[id].cost.base * amt;
+		const cost = this.getBuyCost(id) * amt;
 		const powerCon = buildingInstances[id].production.powerUse * amt;
 		
 		if (gameState.money < cost) {
@@ -126,7 +126,7 @@ export class BuildingManager {
 	}
 	
 	sellBuilding(id, amt) {
-		const cost = buildingInstances[id].cost.base * amt;
+		const cost = this.getBuyCost(id) * amt;
 		const powerCon = buildingInstances[id].production.powerUse * amt;
 		
 		if (buildingInstances[id].quantity < amt) {

@@ -45,109 +45,11 @@ export function emitEvent(eventName, payload) {
 	eventListeners[eventName].forEach(carryFunction => {
 		carryFunction(payload);
 	});
+	eventFeed.push(eventName);
 }
 
 
 
-export function initListeners() {
-	
-	
-	/*
-	// Default listeners 
-	
-	// Change view to Production View
-	productionButtonID.addEventListener("click", function () {
-		let view = document.getElementById("view-production");
-		
-		if (view.style.display === "none") {
-			document.getElementById("view-research").style.display = "none";
-			document.getElementById("view-upgrades").style.display = "none";
-			document.getElementById("view-managers").style.display = "none";
-			document.getElementById("view-settings").style.display = "none";
-			
-			view.style.display = "flex";
-			gameState.currentView = "production";
-			
-		}
-	});
-
-	// Change view to Research View 
-	researchButtonID.addEventListener("click", function () {
-		var view = document.getElementById("view-research");
-		
-		if (view.style.display === "none") {
-			document.getElementById("view-production").style.display = "none";
-			document.getElementById("view-upgrades").style.display = "none";
-			document.getElementById("view-managers").style.display = "none";
-			document.getElementById("view-settings").style.display = "none";
-			
-			view.style.display = "flex";
-			gameState.currentView = "research";
-			
-		}
-	});
-	
-	// Change view to Upgrades View 
-	upgradesButtonID.addEventListener("click", function () {
-		var view = document.getElementById("view-upgrades");
-		
-		if (view.style.display === "none") {
-			document.getElementById("view-research").style.display = "none";
-			document.getElementById("view-production").style.display = "none";
-			document.getElementById("view-managers").style.display = "none";
-			document.getElementById("view-settings").style.display = "none";
-			
-			view.style.display = "flex";
-			gameState.currentView = "upgrades";
-			
-		}
-	});
-	
-	// Change view to Managers View
-	managersButtonID.addEventListener("click", function () {
-		var view = document.getElementById("view-managers");
-		
-		if (view.style.display === "none") {
-			document.getElementById("view-research").style.display = "none";
-			document.getElementById("view-upgrades").style.display = "none";
-			document.getElementById("view-production").style.display = "none";
-			document.getElementById("view-settings").style.display = "none";
-			
-			view.style.display = "flex";
-			gameState.currentView = "managers";
-			
-		}
-	});
-	
-	// Change view to Settings View
-	settingsButtonID.addEventListener("click", function () {
-		var view = document.getElementById("view-settings");
-		
-		if (view.style.display === "none") {
-			document.getElementById("view-research").style.display = "none";
-			document.getElementById("view-upgrades").style.display = "none";
-			document.getElementById("view-managers").style.display = "none";
-			document.getElementById("view-production").style.display = "none";
-			
-			view.style.display = "flex";
-			gameState.currentView = "settings";
-			
-		}
-	});
-	*/
-	// Building Listeners
-	
-	// Check for other building unlocks (from saved game?)
-	
-	// Data Broker Listeners
-	
-	const brokerMotherButtonID = document.getElementById(brokerInstances[BROKERS_ID.MOTHER].ui.elementID);
-	
-	// Mother Broker - on by default	
-	brokerMotherButtonID.addEventListener("click", function() {
-		brokerManager.sellBits(BROKERS_ID.MOTHER);
-	});
-}
 
 export function createListener(source, type, target) {
 		
