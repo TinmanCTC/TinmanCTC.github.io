@@ -64,6 +64,60 @@ export class BuildingManager {
 		resourceManager.addBits(amt);
 		//emitEvent("buildingClicked", data => { stats.totalClicks++ });
 	}
+	
+	modValue(attr, data) {
+		let retVal = -1;
+		
+		switch (attr) {
+			case "cooldown":
+				if (data.op == "add") { buildingInstances[data.ID].production.clickInterval += data.value }
+				if (data.op == "mult") { buildingInstances[data.ID].production.clickInterval *= data.value }
+				if (data.op == "sub") { buildingInstances[data.ID].production.clickInterval -= data.value }
+				if (data.op == "div") { buildingInstances[data.ID].production.clickInterval /= data.value }
+				
+				retVal = 1;
+				break;
+			case "production":
+				if (data.type == "base") {
+					if (data.op == "add") { buildingInstances[data.ID].production.base += data.value }
+					if (data.op == "mult") { buildingInstances[data.ID].production.base *= data.value }
+					if (data.op == "sub") { buildingInstances[data.ID].production.base -= data.value }
+					if (data.op == "div") { buildingInstances[data.ID].production.base /= data.value }
+				}
+				if (data.type == "rate") {
+					if (data.op == "add") { buildingInstances[data.ID].production.growthRate += data.value }
+					if (data.op == "mult") { buildingInstances[data.ID].production.growthRate *= data.value }
+					if (data.op == "sub") { buildingInstances[data.ID].production.growthRate -= data.value }
+					if (data.op == "div") { buildingInstances[data.ID].production.growthRate /= data.value }
+				}
+				if (data.type == "factor") {
+					buildingInstances[data.ID].production.growthFactor = data.value;
+				}
+				
+				retVal = 1;
+				break;
+			case "power":
+				if (data.op == "add") { buildingInstances[data.ID].production.powerUse += data.value }
+				if (data.op == "mult") { buildingInstances[data.ID].production.powerUse *= data.value }
+				if (data.op == "sub") { buildingInstances[data.ID].production.powerUse -= data.value }
+				if (data.op == "div") { buildingInstances[data.ID].production.powerUse /= data.value }
+				
+				retVal = 1;
+				break;
+			case "bonus":
+				if (data.op == "add") { buildingInstances[data.ID].production.bonus += data.value }
+				if (data.op == "mult") { buildingInstances[data.ID].production.bonus *= data.value }
+				if (data.op == "sub") { buildingInstances[data.ID].production.bonus -= data.value }
+				if (data.op == "div") { buildingInstances[data.ID].production.bonus /= data.value }
+				
+				retVal = 1;
+				break;
+			default:
+				return -1;
+		}
+		
+		return retVal;
+	}
 
 	getOutput(id) {		
 		const retVal = buildingInstances[id].quantity * ((buildingInstances[id].production.base * buildingInstances[id].prestige.multiplier) + buildingInstances[id].production.bonus);	
@@ -154,8 +208,6 @@ export class BuildingManager {
 		
 		return true;
 	}
-	
-	
 }
 
 export const buildingManager = new BuildingManager();

@@ -89,8 +89,6 @@ layout: page
 			current: (gameState.powerGen - gameState.powerCon),
 			delta: amt
 		});
-		
-		//pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	addPowerGen(amt) {
@@ -100,8 +98,6 @@ layout: page
 			current: (gameState.powerGen - gameState.powerCon),
 			delta: amt
 		});
-		
-		//pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	subPowerCon(amt) {
@@ -111,7 +107,6 @@ layout: page
 			current: (gameState.powerGen - gameState.powerCon),
 			delta: amt
 		});
-		//pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	subPowerGen(amt) {
@@ -121,31 +116,37 @@ layout: page
 			current: (gameState.powerGen - gameState.powerCon),
 			delta: amt
 		});
-		
-		//pushEvent("wattsChange", resourceInstances[2].elementID);
 	}
 	
 	getMoney() {
-		var retVal = gameState.money;
+		let retVal = gameState.money;
 	
 		return retVal;
 	}
 
 	getBits() {
-		var retVal = gameState.bits;
+		let retVal = gameState.bits;
 	
 		return retVal;
 	}
 
 	getPowerCon() {
-		var retVal = gameState.powerCon;
+		let retVal = gameState.powerCon;
 	
 		return retVal;
 	}
 
 	getPowerGen() {
-		var retVal = gameState.powerGen;
+		let retVal = gameState.powerGen;
 	
+		return retVal;
+	}
+	
+	getPower() {
+		let pCon = this.getPowerCon();
+		let pGen = this.getPowerGen();
+		let retVal = pGen - pCon;
+		
 		return retVal;
 	}
  }
