@@ -144,6 +144,7 @@ export function addDisplay(source, type, target) {
 			
 			break;
 		case "building-list":
+			// Create Punchcard production button and shop listeners
 			if (target == "Punchcard") {
 				addComponent(type, source.storePunchcard_Pnl);
 				
@@ -183,6 +184,18 @@ export function addDisplay(source, type, target) {
 			}
 			
 			break;
+		case "upgrades-list":
+			// Add upgrade list selection buttons and associated upgrade panels
+			if (target == 0) {
+				addComponent(type, source.upgradesButtons);
+				//addComponent(type, source.upgradesBuildings);
+				//addComponent(type, source.upgradesBrokers);
+				//addComponent(type, source.upgradesManagers);
+				//addComponent(type, source.upgradesMisc);
+			}
+			break;
+		default:
+			
 	}
 }
 
@@ -394,6 +407,9 @@ export function initUI() {
 	
 	// Initialize Resource Displays
 	addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
+	
+	// Initialize Upgrades Panel
+	addDisplay(INTERFACE_DEFS[UPGRADES_DISP], "upgrades-list", 0);
 	
 	// Initialize UI listeners and Event Handlers
 	assignListeners();

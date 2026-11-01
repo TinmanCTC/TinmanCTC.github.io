@@ -14,7 +14,11 @@ layout: page
 	 PRODUCTION_BUTTONS: 1,
 	 BROKER_BUTTONS: 2,
 	 RESOURCE_DISP: 3,
-	 STORE_DISP: 4
+	 STORE_DISP: 4,
+	 UPGRADES_DISP: 5,
+	 RESEARCH_DISP: 6,
+	 MANAGERS_DISP: 7,
+	 SETTINGS_DISP: 8
  };
  
  export const INTERFACE_DEFS = [
@@ -49,5 +53,33 @@ layout: page
 	 {
 		 storePunchcard_Pnl: "<div id='store-pnch-row' class='store-display'><span id='store-pnchcrd-lbl'></span><span id='store-pnchcrd-cst'></span><span id='store-pnchcrd-qty'></span><button id='store-pnch-buy' class='store-btn'>Buy</button><button id='store-pnch-sell' class='store-btn'>Sell</button></div>",
 		 storeDesktop_Pnl: "<div id='store-dsktp-row' class='store-display'><span id='store-dsktp-lbl'></span><span id='store-dsktp-cst'></span><span id='store-dsktp-qty'></span><button id='store-dsktp-buy' class='store-btn'>Buy</button><button id='store-dsktp-sell' class='store-btn'>Sell</button></div>"
+	 },
+	 // Upgrades Panels
+	 {
+		upgradesButtons: "<div id='upgr-btn-col' class='upgr-disp'><button id='upgr-btn-bldg'>Buildings</button><br><button id='upgr-btn-brkrs'>Data Brokers</button><br><button id='upgr-btn-mngrs'>Managers</button><br><button id='upgr-btn-misc'>Misc</button></div> ",
+		upgradesBuildings: "",
+		upgradesBrokers: "",
+		upgradesManagers: "",
+		upgradesMisc: ""
+	 },
+	 // Research Panels
+	 {
+		researchMath: "",
+		researchScience: "",
+		researchLanguage: "",
+		researchArt: "",
+		researchHistory: ""
+	 },
+	 // Managers Panels
+	 {
+		 managerPunchcard: "",
+		 managerDesktop: "",
+		 managerCubicle: "",
+		 managerCloud: "",
+		 managerBlockchain: ""
+	 },
+	 // Settings Panels
+	 {
+		 settingsPanel: ""
 	 }
 ];
