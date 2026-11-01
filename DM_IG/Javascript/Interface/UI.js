@@ -300,7 +300,7 @@ function updateBuildingDisplay(data) {
 	const cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
 
     qtyPnl.innerHTML = data.quantity;
-	cstPnl.innerHTML = "$" + data.cost;
+	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]</b></u> ";
 
 }
 
