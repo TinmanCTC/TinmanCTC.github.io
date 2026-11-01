@@ -116,11 +116,12 @@ export class BuildingManager {
 		buildingInstances[id].quantity += amt;
 		resourceManager.subMoney(cost);
 		resourceManager.addPowerCon(powerCon);
+		cost = this.getBuyCost(id);
 		
 		emitEvent("buildingPurchased", {
 			buildingId: id,
 			quantity: buildingInstances[id].quantity,
-			this.getBuyCost(id)
+			cost
 		});
 		
 		return true;		
@@ -143,11 +144,12 @@ export class BuildingManager {
 		buildingInstances[id].quantity -= amt;
 		resourceManager.addMoney(cost);
 		resourceManager.subPowerCon(powerCon);
+		cost = this.getBuyCost(id);
 		
 		emitEvent("buildingPurchased", {
 			buildingId: id,
 			quantity: buildingInstances[id].quantity,
-			this.getBuyCost(id)
+			cost
 		});
 		
 		return true;
