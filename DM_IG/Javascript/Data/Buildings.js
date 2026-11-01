@@ -85,7 +85,7 @@ export const BLDG_DEFS = [
 			qtyPnlID: "store-pnchcrd-qty",
 			shopPnlID: "store-pnchcrd-lbl",
 			costPnlID: "store-pnchcrd-cst",
-			shopDescriptor: "<b><u>Punchcard Machine:&emsp;[Cost: ",
+			shopDescriptor: "<b><u>Punchcard Machine [Cost: ",
 			sortOrder: 1
 		},
 		tags: ["production", "early-game", "default"]	
@@ -139,7 +139,7 @@ export const BLDG_DEFS = [
 			qtyPnlID: "store-dsktp-qty",
 			shopPnlID: "store-dsktp-lbl",
 			costPnlID: "store-dsktp-cst",
-			shopDescriptor: "<b><u>Desktop Computer:&emsp;[Cost: ",
+			shopDescriptor: "<b><u>Desktop Computer [Cost: ",
 			sortOrder: 2
 		},
 		tags: ["production", "early-game", "default"]	

@@ -300,7 +300,7 @@ function updateBuildingDisplay(data) {
 	const cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
 
     qtyPnl.innerHTML = data.quantity;
-	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]</b></u> ";
+	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]:</b></u> ";
 
 }
 
@@ -334,12 +334,14 @@ function unlockBuilding(data) {
 	const shopPnlLbl = document.getElementById(buildingInstances[data.buildingId].ui.shopPnlID);
 	const shopPnlQty = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
 	const shopBuyBtn = document.getElementById(buildingInstances[data.buildingId].ui.buyBtnID);
+	const cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
 	const shopSellBtn = document.getElementById(buildingInstances[data.buildingId].ui.sellBtnID);
 	
 	const prodBtn = document.getElementById(buildingInstances[data.buildingId].ui.elementID);
 	
 	shopPnlLbl.innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
 	shopPnlQty.innerHTML = buildingInstances[data.buildingId].quantity;	
+	cstPnl.innerHTML = "$" + buildingManager.getBuyCost(data.buildingId) + "]:</b></u> ";
 }
 
 function checkMoneyUnlocks(data) {
