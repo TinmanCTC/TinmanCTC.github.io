@@ -56,7 +56,7 @@ layout: page
 	 },
 	 // Upgrades Panels
 	 {
-		upgradesButtons: "<div id='upgr-btn-col' class='upgr-disp'><button id='upgr-btn-bldg'>Buildings</button><br><button id='upgr-btn-brkrs'>Data Brokers</button><br><button id='upgr-btn-mngrs'>Managers</button><br><button id='upgr-btn-misc'>Misc</button></div> ",
+		upgradesButtons: "<div id='upgr-btn-col' class='upgr-disp'><button id='upgr-btn-bldg' class='upgr-btn'>Buildings</button><br><button id='upgr-btn-brkrs' class='upgr-btn'>Data Brokers</button><br><button id='upgr-btn-mngrs' class='upgr-btn'>Managers</button><br><button id='upgr-btn-misc' class='upgr-btn'>Misc</button></div>",
 		upgradesBuildings: "",
 		upgradesBrokers: "",
 		upgradesManagers: "",

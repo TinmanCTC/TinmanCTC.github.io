@@ -59,6 +59,15 @@ body {
 	transform: translateY(2px);
 }
 
+.upgr-btn {
+	width: 7vw;
+	height: 7vw;
+	min-height: 3px;
+	min-width: 3px;
+	max-height: 20px;
+	max-width: 20px;
+}
+
 .btn-img {
 	width: 5vw;
 	height: 5vw;
