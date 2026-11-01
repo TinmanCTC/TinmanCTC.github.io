@@ -83,7 +83,7 @@ export class BuildingManager {
 	}
 	
 	getBuyCost(id) {
-		const retVal = buildingInstances[id].cost.base * (buildingInstances[id].cost.shopGrowthRate ** buildingInstances[id].quantity);
+		const retVal = buildingInstances[id].cost.base * (buildingInstances[id].cost.growthRate ** buildingInstances[id].quantity);
 		console.log(retVal);
 		
 		return retVal;

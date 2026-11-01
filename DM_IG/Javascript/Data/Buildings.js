@@ -56,7 +56,6 @@ export const BLDG_DEFS = [
 			bonus: 0,
 			powerUse: 100,
 			growthRate: 1.01,
-			shopGrowthRate: 1.02,
 			growthFactor: "multiplicative",
 		},
 		manager: {
