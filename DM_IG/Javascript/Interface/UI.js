@@ -295,7 +295,7 @@ function updateWattsDisplay(data) {
 function updateBuildingDisplay(data) {
 
     const qtyPnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
-	cosnt cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
+	const cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
 
     qtyPnl.innerHTML = data.quantity;
 	cstPnl.innerHTML = data.cost.toFixed(2);
