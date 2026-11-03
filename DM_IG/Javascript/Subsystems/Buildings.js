@@ -36,7 +36,7 @@ export class BuildingManager {
 				resource: this.buildings[loc].resource,
 				description: this.buildings[loc].description,
 				quantity: 1,
-				upgrades: [],
+				upgrades: this.buildings[loc].upgrades,
 				cost: this.buildings[loc].cost,
 				production: this.buildings[loc].production,
 				manager: this.buildings[loc].manager,
