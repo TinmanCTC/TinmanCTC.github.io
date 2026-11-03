@@ -121,7 +121,7 @@ export function addButton(source, type, target) {
 			
 			retVal = 3;
 			break;
-		case "upgrade-buttons":
+		case "upgrades-list":
 			addComponent(type, source.upgradesButtons);
 			
 			const upgrBldgBtnID = document.getElementById(UPGR_DEFS.upgrBldgBtn);
@@ -139,6 +139,8 @@ export function addButton(source, type, target) {
 export function addStoreButtons(bldg) {
 	const storeBuyBtn = document.getElementById(buildingInstances[bldg].ui.buyBtnID);
 	const storeSellBtn = document.getElementById(buildingInstances[bldg].ui.sellBtnID);
+	console.log(storeBuyBtn);
+	console.log(storeSellBtn);
 	
 	storeBuyBtn.addEventListener("click", function() {
 		buildingManager.buyBuilding(bldg,1);
@@ -188,7 +190,7 @@ export function addDisplay(source, type, target) {
 		case "upgrades-list":
 			// Add upgrade list selection buttons and associated upgrade panels
 			if (target == 0) {
-				addButton(source.upgradesButtons, "upgrade-buttons", 0);
+				addButton(source, "upgrade-list", 0);
 				
 				const panel = createBldgUpgrPnl(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
 				const upgrRow1 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
