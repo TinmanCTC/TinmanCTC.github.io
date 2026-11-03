@@ -16,6 +16,7 @@ import { BROKERS_ID } from "/DM_IG/Javascript/Data/Brokers.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { BLDG_IDS, BLDG_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
+import { createBldgUpgrPnl, createBldgUpgrRow} from "/DM_IG/Javascript/Interface/UpgradePanels.js";
 
 /******** DOM Manipulators and Helper Functions
 *
@@ -120,11 +121,32 @@ export function addButton(source, type, target) {
 			
 			retVal = 3;
 			break;
+		case "upgrade-buttons":
+			addComponent(type, source.upgradesButtons);
+			
+			const upgrBldgBtnID = document.getElementById(UPGR_DEFS.upgrBldgBtn);
+			const upgrBrkrBtnID = document.getElementById(UPGR_DEFS.upgrBrkrBtn);
+			const upgrMngrBtnID = document.getElementById(UPGR_DEFS.upgrMngrBtn);
+			const upgrMiscBtnID = document.getElementById(UPGR_DEFS.upgrMiscBtn);
+			break;
 		default:
 			retVal = -1;
 	}
 	
 	return retVal;
+}
+
+export function addStoreButtons(bldg) {
+	const storeBuyBtn = document.getElementById(buildingInstances[bldg].ui.buyBtnID);
+	const storeSellBtn = document.getElementById(buildingInstances[bldg].ui.sellBtnID);
+	
+	storeBuyBtn.addEventListener("click", function() {
+		buildingManager.buyBuilding(bldg,1);
+	});
+	
+	storeSellBtn.addEventListener("click", function() {
+		buildingManager.sellBuilding(bldg,1);
+	});
 }
 
 export function addDisplay(source, type, target) {
@@ -147,51 +169,45 @@ export function addDisplay(source, type, target) {
 			// Create Punchcard production button and shop listeners
 			if (target == "Punchcard") {
 				addComponent(type, source.storePunchcard_Pnl);
+				addStoreButtons(BLDG_IDS.PUNCHCARD);
 				
 				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopDescriptor;
 				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].quantity;
-				
-				const storeBuyBtn = document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.buyBtnID);
-				const storeSellBtn = document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.sellBtnID);
-				
-				storeBuyBtn.addEventListener("click", function() {
-					buildingManager.buyBuilding(BLDG_IDS.PUNCHCARD,1);
-				});
-				
-				storeSellBtn.addEventListener("click", function() {
-					buildingManager.sellBuilding(BLDG_IDS.PUNCHCARD,1);
-				});
 			}
 			
 			if (target == "Desktop"  && buildingInstances[BLDG_IDS.DESKTOP].unlock.disp == false) {
 				buildingInstances[BLDG_IDS.DESKTOP].unlock.disp = true;
 				addComponent(type, source.storeDesktop_Pnl);
+				addStoreButtons(BLDG_IDS.DESKTOP);
 				
 				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].ui.shopDescriptor;
-				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].quantity;
-				
-				const storeBuyBtn = document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.buyBtnID);
-				const storeSellBtn = document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.sellBtnID);
-				
-				storeBuyBtn.addEventListener("click", function() {
-					buildingManager.buyBuilding(BLDG_IDS.DESKTOP,1);		
-				});
-				
-				storeSellBtn.addEventListener("click", function() {
-					buildingManager.sellBuilding(BLDG_IDS.DESKTOP,1);	
-				});
-				
+				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].quantity;			
 			}
 			
 			break;
 		case "upgrades-list":
 			// Add upgrade list selection buttons and associated upgrade panels
 			if (target == 0) {
-				addComponent(type, source.upgradesButtons);
+				addButton(source, "upgrade-buttons", 0);
+				
+				const panel = createBldgUpgrPnl(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
+				const upgrRow1 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
+				const upgrRow2 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[1]);
+				const upgrRow3 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[2]);
+				
+				panel.appendChild(upgrRow1);
+				panel.appendChild(upgrRow2);
+				panel.appendChild(upgrRow3);
+				
+				document.getElementById("upgrade-list").appendChild(panel);
+				
 				//addComponent(type, source.upgradesBuildings);
 				//addComponent(type, source.upgradesBrokers);
 				//addComponent(type, source.upgradesManagers);
 				//addComponent(type, source.upgradesMisc);
+				
+				
+				
 			}
 			break;
 		default:

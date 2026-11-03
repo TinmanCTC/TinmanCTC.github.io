@@ -44,7 +44,26 @@ export const BLDG_DEFS = [
 		name: "Punchcard Machine",
 		resource: "bits",
 		description: "A vintage, manual punch card machine. It processes data... In its own way.",
-		upgrades: [],
+		upgrades: [
+			{
+				id: 0,
+				name: "Base Production",
+				level: 0,
+				cost: 100
+			},
+			{
+				id: 1,
+				name: "Power Consumption",
+				level: 0,
+				cost: 250
+			},
+			{
+				id: 2,
+				name: "Click Cooldown",
+				level: 0,
+				cost: 500
+			}
+		],
 		cost: {
 			base: 50,
 			growthRate: 1.06,
@@ -76,7 +95,7 @@ export const BLDG_DEFS = [
 			scalesWith: "legacies"
 		},
 		ui: {
-			icon: "punchcard_framed.png",
+			icon: "Assets/Images/punchcardButton.png",
 			elementID: "punchcard_button",
 			buyBtnID: "store-pnch-buy",
 			buyBtnListener: "",
@@ -86,6 +105,7 @@ export const BLDG_DEFS = [
 			shopPnlID: "store-pnchcrd-lbl",
 			costPnlID: "store-pnchcrd-cst",
 			shopDescriptor: "<b><u>Punchcard Machine [Cost: ",
+			upgrPnlID: "upgr-pnchcrd-pnl",
 			sortOrder: 1
 		},
 		tags: ["production", "early-game", "default"]	

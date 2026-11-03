@@ -59,6 +59,43 @@ body {
 	transform: translateY(2px);
 }
 
+#view-upgrades {
+	
+}
+
+.upgrade-panel {
+	display: flex;
+	flex-direction: column;
+	width: 75vw;
+	padding: 12px;
+	border: 2px solid #666;
+	margin-bottom: 16px;
+}
+
+.upgrades-list {
+	display: grid;
+	grid-template-columns: 1fr 80px 60px;
+	gap: 8px;
+	margin-bottom: 6px;
+}
+
+.upgrade-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 12px;
+}
+
+.upgrade-image {
+	width: 128px;
+	height: 128px;
+	object-fit: contain;
+}
+
+.upgrades-row {
+	
+}
+
 .upgr-btn {
 	width: 75vw;
 	height: 5vw;
