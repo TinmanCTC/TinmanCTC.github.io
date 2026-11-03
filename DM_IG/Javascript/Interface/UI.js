@@ -188,7 +188,7 @@ export function addDisplay(source, type, target) {
 		case "upgrades-list":
 			// Add upgrade list selection buttons and associated upgrade panels
 			if (target == 0) {
-				addButton(source, "upgrade-buttons", 0);
+				addButton(source.upgradesButtons, "upgrade-buttons", 0);
 				
 				const panel = createBldgUpgrPnl(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
 				const upgrRow1 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
