@@ -201,7 +201,7 @@ export function addDisplay(source, type, target) {
 				panel.appendChild(upgrRow2);
 				panel.appendChild(upgrRow3);
 				
-				document.getElementById("upgrade-list").appendChild(panel);
+				document.getElementById("upgrades-list").appendChild(panel);
 				
 				//addComponent(type, source.upgradesBuildings);
 				//addComponent(type, source.upgradesBrokers);
