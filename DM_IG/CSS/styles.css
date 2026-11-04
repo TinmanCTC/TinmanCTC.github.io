@@ -86,9 +86,9 @@ body {
 	margin-bottom: 12px;
 }
 
-.upgrade-image {
-	width: 10vw;
-	height: 10vw;
+.upgrade-img {
+	width: 128px;
+	height: 128px;
 	object-fit: contain;
 }
 
