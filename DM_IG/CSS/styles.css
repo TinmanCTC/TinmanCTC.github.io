@@ -96,6 +96,11 @@ body {
 	
 }
 
+.upgrade-line {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
 .upgr-btn {
 	width: 75vw;
 	height: 5vw;

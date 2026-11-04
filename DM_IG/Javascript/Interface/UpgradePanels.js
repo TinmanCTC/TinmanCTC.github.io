@@ -85,11 +85,11 @@ export function createBldgUpgrRow(building, upgrades) {
 	
 	const costSpan = document.createElement("span");
 	costSpan.classList.add("upgrade-line");
-	costSpan.textContent = "&nbsp;$" + upgrades.cost.toFixed(2) + "&nbsp;";
+	costSpan.textContent = "$" + upgrades.cost.toFixed(2);
 	
 	const lvlSpan = document.createElement("span");
 	lvlSpan.classList.add("upgrade-line");
-	lvlSpan.textContent = "&nbsp;Lvl: " + upgrades.level + "&nbsp;";
+	lvlSpan.textContent = "Lvl: " + upgrades.level;
 	
 	row.appendChild(btn);
 	row.appendChild(costSpan);
