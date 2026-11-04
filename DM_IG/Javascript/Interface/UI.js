@@ -17,6 +17,7 @@ import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems
 import { BLDG_IDS, BLDG_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
 import { createBldgUpgrPnl, createBldgUpgrRow} from "/DM_IG/Javascript/Interface/UpgradePanels.js";
+import { UPGR_DEFS } from "/DM_IG/Javascript/Data/Upgrades.js";
 
 /******** DOM Manipulators and Helper Functions
 *
