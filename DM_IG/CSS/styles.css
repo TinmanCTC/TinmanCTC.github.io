@@ -116,8 +116,7 @@ body {
 }
 
 .upgr-line {
-	display: flex;
-	place-content: space-evenly;
+	align-content: space-evenly;
 	padding-left: 4px;
 }
 
