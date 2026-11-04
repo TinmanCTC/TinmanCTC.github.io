@@ -55,7 +55,7 @@ export function createBldgUpgrPnl(building, upgrades) {
 	hdr.classList.add("upgrade-header");
 	
 	const list = document.createElement("div");
-	list.classList.add("upgrade-list");
+	list.classList.add("upgrades-list");
 	
 	const img = document.createElement("img");
 	img.src = building.ui.icon;
