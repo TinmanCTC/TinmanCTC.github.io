@@ -63,7 +63,26 @@ body {
 	
 }
 
-.upgrade-panel {
+/* Upgrade Panel CSS
+ 	Layout:
++---------------------------------+
+|                                 |
+|         Building Image          |
+|                                 |
++---------------------------------+
+	  <h3>Building Title</h3>
+
++----------------------+-----+-----+		<-- upgr-line
+| Upgrade Button       |Cost | Lv  |
++----------------------+-----+-----+
++----------------------+-----+-----+		<-- upgr-line
+| Upgrade Button       |Cost | Lv  |
++----------------------+-----+-----+
++----------------------+-----+-----+		<-- upgr-line
+| Upgrade Button       |Cost | Lv  |
++----------------------+-----+-----+
+*/
+.upgr-pnl {
 	display: flex;
 	flex-direction: column;
 	width: 18vw;
@@ -72,31 +91,31 @@ body {
 	margin-bottom: 16px;
 }
 
-.upgrades-list {
+.upgr-list {
 	display: grid;
 	grid-template-columns: 1fr 80px 60px;
 	gap: 8px;
 	margin-bottom: 6px;
 }
 
-.upgrade-header {
+.upgr-hdr {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 12px;
 }
 
-.upgrade-img {
+.upgr-img {
 	width: 128px;
 	height: 128px;
 	object-fit: contain;
 }
 
-.upgrades-row {
+.upgr-row {
 	
 }
 
-.upgrade-line {
+.upgr-line {
 	display: grid;
 	padding-left: 4px;
 }
@@ -109,6 +128,8 @@ body {
 	max-height: 20px;
 	max-width: 100px;
 }
+
+
 
 .btn-img {
 	width: 5vw;

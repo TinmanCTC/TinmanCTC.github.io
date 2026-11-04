@@ -139,8 +139,8 @@ export function addButton(source, type, target) {
 export function addStoreButtons(bldg) {
 	const storeBuyBtn = document.getElementById(buildingInstances[bldg].ui.buyBtnID);
 	const storeSellBtn = document.getElementById(buildingInstances[bldg].ui.sellBtnID);
-	console.log(storeBuyBtn);
-	console.log(storeSellBtn);
+	//console.log(storeBuyBtn);
+	//console.log(storeSellBtn);
 	
 	storeBuyBtn.addEventListener("click", function() {
 		buildingManager.buyBuilding(bldg,1);

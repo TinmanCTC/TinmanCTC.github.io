@@ -49,17 +49,17 @@ END GOAL: MAKE THIS:
 
 export function createBldgUpgrPnl(building, upgrades) {
 	const pnl = document.createElement("div");
-	pnl.classList.add("upgrade-panel");
+	pnl.classList.add("upgr-pnl");
 	
 	const hdr = document.createElement("div");
-	hdr.classList.add("upgrade-header");
+	hdr.classList.add("upgr-hdr");
 	
 	const list = document.createElement("div");
-	list.classList.add("upgrades-list");
+	list.classList.add("upgr-list");
 	
 	const img = document.createElement("img");
 	img.src = building.ui.icon;
-	img.classList.add("upgrade-img");
+	img.classList.add("upgr-img");
 	
 	const title = document.createElement("h3");
 	title.textContent = building.name;
@@ -75,20 +75,20 @@ export function createBldgUpgrPnl(building, upgrades) {
 
 export function createBldgUpgrRow(building, upgrades) {
 	const row = document.createElement("div");
-	row.classList.add("upgrade-row");
+	row.classList.add("upgr-row");
 	
 	const btn = document.createElement("button");
-	btn.classList.add("upgrade-btn");
+	btn.classList.add("upgr-btn");
 	btn.textContent = upgrades.name;
 	btn.dataset.upgrID = upgrades.id;
 	btn.dataset.bldgID = building.id;
 	
 	const costSpan = document.createElement("span");
-	costSpan.classList.add("upgrade-line");
+	costSpan.classList.add("upgr-line");
 	costSpan.textContent = "$" + upgrades.cost.toFixed(2);
 	
 	const lvlSpan = document.createElement("span");
-	lvlSpan.classList.add("upgrade-line");
+	lvlSpan.classList.add("upgr-line");
 	lvlSpan.style.alignContent = "space-around";
 	lvlSpan.textContent = "Lvl: " + upgrades.level;
 	
