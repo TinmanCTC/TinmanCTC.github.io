@@ -89,7 +89,7 @@ export function createBldgUpgrRow(building, upgrades) {
 	
 	const lvlSpan = document.createElement("span");
 	lvlSpan.classList.add("upgrade-line");
-	lvlSpan.style.alignItems = "right";
+	lvlSpan.style.alignContent = "space-around";
 	lvlSpan.textContent = "Lvl: " + upgrades.level;
 	
 	row.appendChild(btn);
