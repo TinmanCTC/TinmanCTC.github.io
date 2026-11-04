@@ -10,7 +10,7 @@ layout: page
  */
  
  export const UPGR_DEFS = {
-	viewElementID: "upgrades-list",
+	viewElementID: "upgr-list",
 	upgrBldgBtn: "upgr-btn-bldg",
 	upgrBrkrBtn: "upgr-btn-brkrs",
 	upgrMngrBtn: "upgr-btn-mngrs",
