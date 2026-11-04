@@ -97,6 +97,7 @@ body {
 }
 
 .upgrade-line {
+	display: grid;
 	padding-left: 4px;
 }
 
