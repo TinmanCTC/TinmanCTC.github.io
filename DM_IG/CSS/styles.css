@@ -93,7 +93,7 @@ body {
 
 .upgr-list {
 	display: grid;
-	grid-template-columns: 1fr 80px 60px;
+	grid-template-columns: 1fr 1fr 1fr;
 	gap: 8px;
 	margin-bottom: 6px;
 }
@@ -116,12 +116,11 @@ body {
 }
 
 .upgr-line {
-	display: grid;
 	padding-left: 4px;
 }
 
 .upgr-btn {
-	width: 100vw;
+	width: 75vw;
 	height: 5vw;
 	min-height: 3px;
 	min-width: 3px;

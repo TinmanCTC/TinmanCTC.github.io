@@ -121,7 +121,7 @@ export function addButton(source, type, target) {
 			
 			retVal = 3;
 			break;
-		case "upgrades-list":
+		case "upgr-list":
 			addComponent(type, source.upgradesButtons);
 			
 			const upgrBldgBtnID = document.getElementById(UPGR_DEFS.upgrBldgBtn);
@@ -187,10 +187,10 @@ export function addDisplay(source, type, target) {
 			}
 			
 			break;
-		case "upgrades-list":
+		case "upgr-list":
 			// Add upgrade list selection buttons and associated upgrade panels
 			if (target == 0) {
-				addButton(source, "upgrade-list", 0);
+				addButton(source, "upgr-list", 0);
 				
 				const panel = createBldgUpgrPnl(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
 				const upgrRow1 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
@@ -201,7 +201,7 @@ export function addDisplay(source, type, target) {
 				panel.appendChild(upgrRow2);
 				panel.appendChild(upgrRow3);
 				
-				document.getElementById("upgrades-list").appendChild(panel);
+				document.getElementById("upgr-list").appendChild(panel);
 				
 				//addComponent(type, source.upgradesBuildings);
 				//addComponent(type, source.upgradesBrokers);
