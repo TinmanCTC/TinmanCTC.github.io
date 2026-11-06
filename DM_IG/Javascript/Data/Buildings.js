@@ -68,7 +68,7 @@ export const BLDG_DEFS = [
 			}
 		],
 		cost: {
-			base: 50,
+			base: 47.1698,
 			growthRate: 1.06,
 			growthFactor: "exponential"
 		},
@@ -121,7 +121,7 @@ export const BLDG_DEFS = [
 		description: "Your day to day consumer computer, capable of classical computation and internet surfing.",
 		upgrades: [],
 		cost: {
-			base: 500,
+			base: 403.2258,
 			growthRate: 1.24,
 			growthFactor: "exponential"
 		},
