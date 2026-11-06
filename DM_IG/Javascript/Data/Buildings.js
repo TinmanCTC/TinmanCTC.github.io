@@ -49,21 +49,21 @@ export const BLDG_DEFS = [
 				id: 0,
 				name: "Base Production",
 				level: 1,
-				cost: 100,
+				cost: 91.7431,
 				growthRate: 1.09
 			},
 			{
 				id: 1,
 				name: "Power Consumption",
 				level: 1,
-				cost: 250,
+				cost: 223.2142,
 				growthRate: 1.12
 			},
 			{
 				id: 2,
 				name: "Click Cooldown",
 				level: 1,
-				cost: 500,
+				cost: 434.7826,
 				growthRate: 1.15
 			}
 		],
