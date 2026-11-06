@@ -157,6 +157,14 @@ export class BuildingManager {
 		return retVal;
 	}
 	
+	getUpgradeCost(building, upgrade) {
+		let retVal = -1;
+		
+		retVal = buildingInstances[building].upgrades[upgrade].cost * (buildingInstances[building].upgrades[upgrade].growthRate ** buildingInstances[building].upgrades[upgrade].level);
+		
+		return retVal;
+	}
+	
 	enableBuilding(id) {
 		buildingInstances[id].isClicked = false;
 		document.getElementById(buildingInstances[id].ui.elementID).disabled = false;

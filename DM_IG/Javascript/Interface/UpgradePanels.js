@@ -74,6 +74,8 @@ export function createBldgUpgrPnl(building, upgrades) {
 }
 
 export function createBldgUpgrRow(building, upgrades) {
+	const upgrCost = buildingManager.getUpgradeCost(building.id, upgrades.id);
+	
 	const row = document.createElement("div");
 	row.classList.add("upgr-row");
 	
@@ -85,7 +87,7 @@ export function createBldgUpgrRow(building, upgrades) {
 	
 	const costSpan = document.createElement("span");
 	costSpan.classList.add("upgr-line");
-	costSpan.textContent = "$" + upgrades.cost.toFixed(2);
+	costSpan.textContent = "$" + upgrCost.toFixed(2);
 	
 	const lvlSpan = document.createElement("span");
 	lvlSpan.classList.add("upgr-line");
