@@ -409,7 +409,7 @@ function unlockBuilding(data) {
 	
 	shopPnlLbl.innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
 	shopPnlQty.innerHTML = buildingInstances[data.buildingId].quantity;	
-	cstPnl.innerHTML = "$" + buildingManager.getBuyCost(data.buildingId) + "]:</b></u> ";
+	cstPnl.innerHTML = "$" + (buildingManager.getBuyCost(data.buildingId)).toFixed(2) + "]:</b></u> ";
 }
 
 function checkMoneyUnlocks(data) {
