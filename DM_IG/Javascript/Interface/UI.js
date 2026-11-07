@@ -204,6 +204,7 @@ export function addDisplay(source, type, target) {
 				
 				document.getElementById("upgr-list").appendChild(panel);
 				document.getElementById("upgr-list").style.display = "grid";
+				document.getElementById("upgr-list").style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
 				
 				//addComponent(type, source.upgradesBuildings);
 				//addComponent(type, source.upgradesBrokers);
