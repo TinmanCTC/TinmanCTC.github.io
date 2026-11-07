@@ -82,6 +82,11 @@ body {
 | Upgrade Button       |Cost | Lv  |
 +----------------------+-----+-----+
 */
+.view-upgrades {
+	display: flex;
+	flex-direction: row;
+}
+
 .upgr-pnl {
 	
 	display: flex;
