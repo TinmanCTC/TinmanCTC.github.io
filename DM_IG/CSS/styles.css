@@ -63,31 +63,31 @@ body {
 	
 }
 
-/* Upgrade Panel CSS
+/* Building Upgrade Panel CSS
  	Layout:
-+---------------------------------+
-|                                 |
-|         Building Image          |
-|                                 |
-+---------------------------------+
+	+-------------------------+				<-- bldg-upgr-pnl
+	|                         |
+	|     Building Image      |
+	|                         |
+	+-------------------------+				<-- bldg-upgr-hdr
 	  <h3>Building Title</h3>
 
-+----------------------+-----+-----+		<-- upgr-line
++----------------------+-----+-----+		<-- bldg-upgr-row
 | Upgrade Button       |Cost | Lv  |
 +----------------------+-----+-----+
-+----------------------+-----+-----+		<-- upgr-line
++----------------------+-----+-----+		<-- bldg-upgr-row
 | Upgrade Button       |Cost | Lv  |
 +----------------------+-----+-----+
-+----------------------+-----+-----+		<-- upgr-line
++----------------------+-----+-----+		<-- bldg-upgr-row
 | Upgrade Button       |Cost | Lv  |
-+----------------------+-----+-----+
++----------------------+-----+-----+		</-- bldg-upgr-pnl
 */
 .view-upgrades {
 	display: flex;
 	flex-direction: row;
 }
 
-.upgr-pnl {
+.bldg-upgr-pnl {
 	
 	display: flex;
 	flex-direction: column;
@@ -97,36 +97,35 @@ body {
 	margin-bottom: 16px;
 }
 
-.upgr-list {
+.bldg-upgr-list {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	gap: 8px;
 	margin-bottom: 6px;
 }
 
-.upgr-hdr {
+.bldg-upgr-hdr {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 12px;
 }
 
-.upgr-img {
+.bldg-upgr-img {
 	width: 128px;
 	height: 128px;
 	object-fit: contain;
 }
 
-.upgr-row {
+.bldg-upgr-row {
 	font-size: 10px;
 }
 
-.upgr-line {
-	align-content: space-evenly;
+.bldg-upgr-line {
 	padding-left: 4px;
 }
 
-.upgr-btn {
+.bldg-upgr-btn {
 	width: fit-content;
 	height: fit-content;
 	min-height: 3px;

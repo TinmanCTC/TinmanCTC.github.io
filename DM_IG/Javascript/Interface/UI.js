@@ -5,7 +5,8 @@ layout: page
 ---
 /**
  * ../Interface/UI.js
- * 
+ * Use components.js for large UI elements with complicated code or fancy bits
+ * Use UpgradePanels style element addition for all others
  * 
  */
  
@@ -16,7 +17,7 @@ import { BROKERS_ID } from "/DM_IG/Javascript/Data/Brokers.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { BLDG_IDS, BLDG_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
-import { createBldgUpgrPnl, createBldgUpgrRow} from "/DM_IG/Javascript/Interface/UpgradePanels.js";
+import { createBldgUpgrPnl, createBldgUpgrRow, addBldgUpgrPnl } from "/DM_IG/Javascript/Interface/UpgradePanels.js";
 import { UPGR_DEFS } from "/DM_IG/Javascript/Data/Upgrades.js";
 
 /******** DOM Manipulators and Helper Functions
@@ -41,6 +42,7 @@ function addComponent(targetID, component) {
 	return 1;							// Success
 }
 
+// UPDATE THIS?
 export function addButton(source, type, target) {
 	let retVal = 0;
 	
@@ -395,7 +397,9 @@ function unlockBuilding(data) {
 		case BLDG_IDS.DESKTOP:
 			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Desktop");
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");		
+			addBldgUpgrPnl(buildingInstances[BLDG_IDS.DESKTOP]);
 			
+			/*
 			const panel = createBldgUpgrPnl(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[0]);
 			const upgrRow1 = createBldgUpgrRow(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[0]);
 			const upgrRow2 = createBldgUpgrRow(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[1]);
@@ -406,7 +410,7 @@ function unlockBuilding(data) {
 			panel.appendChild(upgrRow3);
 			
 			document.getElementById("upgr-list").appendChild(panel);
-			
+			*/
 			break;
 		default:
 			console.log("unlockBuilding() switch(data.buildingId) default case");

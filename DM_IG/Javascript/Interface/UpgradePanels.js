@@ -49,17 +49,17 @@ END GOAL: MAKE THIS:
 
 export function createBldgUpgrPnl(building, upgrades) {
 	const pnl = document.createElement("div");
-	pnl.classList.add("upgr-pnl");
+	pnl.classList.add("bldg-upgr-pnl");
 	
 	const hdr = document.createElement("div");
-	hdr.classList.add("upgr-hdr");
+	hdr.classList.add("bldg-upgr-hdr");
 	
 	const list = document.createElement("div");
-	list.classList.add("upgr-list");
+	list.classList.add("bldg-upgr-list");
 	
 	const img = document.createElement("img");
 	img.src = building.ui.icon;
-	img.classList.add("upgr-img");
+	img.classList.add("bldg-upgr-img");
 	
 	const title = document.createElement("h3");
 	title.textContent = building.name;
@@ -77,21 +77,21 @@ export function createBldgUpgrRow(building, upgrades) {
 	const upgrCost = buildingManager.getUpgradeCost(building.id, upgrades.id);
 	
 	const row = document.createElement("div");
-	row.classList.add("upgr-row");
+	row.classList.add("bldg-upgr-row");
 	
 	const btn = document.createElement("button");
-	btn.classList.add("upgr-btn");
+	btn.classList.add("bldg-upgr-btn");
 	btn.textContent = upgrades.name;
 	btn.dataset.upgrID = upgrades.id;
 	btn.dataset.bldgID = building.id;
 	
 	const costSpan = document.createElement("span");
-	costSpan.classList.add("upgr-line");
+	costSpan.classList.add("bldg-upgr-line");
 	costSpan.textContent = "$" + upgrCost.toFixed(2);
 	
 	const lvlSpan = document.createElement("span");
-	lvlSpan.classList.add("upgr-line");
-	lvlSpan.style.alignContent = "space-around";
+	lvlSpan.classList.add("bldg-upgr-line");
+	lvlSpan.style.alignContent = "space-evenly";
 	lvlSpan.textContent = "Lvl: " + upgrades.level;
 	
 	row.appendChild(btn);
@@ -99,4 +99,17 @@ export function createBldgUpgrRow(building, upgrades) {
 	row.appendChild(lvlSpan);
 	
 	return row;
+}
+
+// Assumes buildingInstances[ind] is already initialized
+// should probably fix in the future
+export function addBldgUpgrPnl(building) {
+	const pnl = createBldgUpgrPnl(buildingInstances[building.id], buildingInstances[building.id].upgrades[0]);
+	const upgrRow1 = createBldgUpgrRow(buildingInstances[building.id], buildingInstances[building.id].upgrades[0]);
+	const upgrRow2 = createBldgUpgrRow(buildingInstances[building.id], buildingInstances[building.id].upgrades[1]);
+	const upgrRow3 = createBldgUpgrRow(buildingInstances[building.id], buildingInstances[building.id].upgrades[2]);
+	
+	pnl.append(upgrRow1, upgrRow2, upgrRow3);
+	
+	document.getElementById("bldg-upgr-list").appendChild(pnl);
 }
