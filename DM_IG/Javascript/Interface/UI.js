@@ -194,7 +194,12 @@ export function addDisplay(source, type, target) {
 			// Add upgrade list selection buttons and associated upgrade panels
 			if (target == 0) {
 				addButton(source, "upgr-list", 0);
+				addBldgUpgrPnl(buildingInstances[BLDG_IDS.PUNCHCARD]);
 				
+				document.getElementById("upgr-list").style.display = "grid";
+				document.getElementById("upgr-list").style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+				
+				/*
 				const panel = createBldgUpgrPnl(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
 				const upgrRow1 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
 				const upgrRow2 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[1]);
@@ -205,8 +210,7 @@ export function addDisplay(source, type, target) {
 				panel.appendChild(upgrRow3);
 				
 				document.getElementById("upgr-list").appendChild(panel);
-				document.getElementById("upgr-list").style.display = "grid";
-				document.getElementById("upgr-list").style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+				*/
 				
 				//addComponent(type, source.upgradesBuildings);
 				//addComponent(type, source.upgradesBrokers);
@@ -399,18 +403,6 @@ function unlockBuilding(data) {
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");		
 			addBldgUpgrPnl(buildingInstances[BLDG_IDS.DESKTOP]);
 			
-			/*
-			const panel = createBldgUpgrPnl(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[0]);
-			const upgrRow1 = createBldgUpgrRow(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[0]);
-			const upgrRow2 = createBldgUpgrRow(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[1]);
-			const upgrRow3 = createBldgUpgrRow(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[2]);
-			
-			panel.appendChild(upgrRow1);
-			panel.appendChild(upgrRow2);
-			panel.appendChild(upgrRow3);
-			
-			document.getElementById("upgr-list").appendChild(panel);
-			*/
 			break;
 		default:
 			console.log("unlockBuilding() switch(data.buildingId) default case");
