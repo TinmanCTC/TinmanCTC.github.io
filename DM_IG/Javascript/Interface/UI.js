@@ -203,6 +203,7 @@ export function addDisplay(source, type, target) {
 				panel.appendChild(upgrRow3);
 				
 				document.getElementById("upgr-list").appendChild(panel);
+				document.getElementById("upgr-list").style.display = "grid";
 				
 				//addComponent(type, source.upgradesBuildings);
 				//addComponent(type, source.upgradesBrokers);
