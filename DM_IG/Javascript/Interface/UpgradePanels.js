@@ -111,5 +111,5 @@ export function addBldgUpgrPnl(building) {
 	
 	pnl.append(upgrRow1, upgrRow2, upgrRow3);
 	
-	document.getElementById("bldg-upgr-list").appendChild(pnl);
+	document.getElementById("upgr-list").appendChild(pnl);
 }
