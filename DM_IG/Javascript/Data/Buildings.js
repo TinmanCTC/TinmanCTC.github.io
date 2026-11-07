@@ -174,7 +174,7 @@ export const BLDG_DEFS = [
 			scalesWith: "legacies"
 		},
 		ui: {
-			icon: "Assets/Images/desktopButton.png",
+			icon: "Assets/Images/desktopButton.jpg",
 			elementID: "desktop_button",
 			prodBtnListener: "",
 			buyBtnID: "store-dsktp-buy",
