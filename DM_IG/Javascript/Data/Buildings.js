@@ -119,7 +119,29 @@ export const BLDG_DEFS = [
 		name: "Desktop",
 		resource: "bits",
 		description: "Your day to day consumer computer, capable of classical computation and internet surfing.",
-		upgrades: [],
+		upgrades: [
+			{
+				id: 0,
+				name: "Base Production",
+				level: 1,
+				cost: 219.2982,
+				growthRate: 1.14
+			},
+			{
+				id: 1,
+				name: "Power Consumption",
+				level: 1,
+				cost: 427.3054,
+				growthRate: 1.17
+			},
+			{
+				id: 2,
+				name: "Click Cooldown",
+				level: 1,
+				cost: 833.3333,
+				growthRate: 1.20
+			}
+		],
 		cost: {
 			base: 403.2258,
 			growthRate: 1.24,
@@ -152,7 +174,7 @@ export const BLDG_DEFS = [
 			scalesWith: "legacies"
 		},
 		ui: {
-			icon: "desktopButton.jpg",
+			icon: "Assets/Images/desktopButton.png",
 			elementID: "desktop_button",
 			prodBtnListener: "",
 			buyBtnID: "store-dsktp-buy",

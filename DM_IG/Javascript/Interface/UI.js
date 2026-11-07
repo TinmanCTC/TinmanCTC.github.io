@@ -394,6 +394,17 @@ function unlockBuilding(data) {
 			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Desktop");
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");		
 			
+			const panel = createBldgUpgrPnl(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[0]);
+			const upgrRow1 = createBldgUpgrRow(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[0]);
+			const upgrRow2 = createBldgUpgrRow(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[1]);
+			const upgrRow3 = createBldgUpgrRow(buildingInstances[BLDG_IDS.DESKTOP], buildingInstances[BLDG_IDS.DESKTOP].upgrades[2]);
+			
+			panel.appendChild(upgrRow1);
+			panel.appendChild(upgrRow2);
+			panel.appendChild(upgrRow3);
+			
+			document.getElementById("upgr-list").appendChild(panel);
+			
 			break;
 		default:
 			console.log("unlockBuilding() switch(data.buildingId) default case");
