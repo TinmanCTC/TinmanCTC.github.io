@@ -83,6 +83,7 @@ body {
 +----------------------+-----+-----+
 */
 .upgr-pnl {
+	
 	display: flex;
 	flex-direction: column;
 	width: 15vw;
@@ -92,7 +93,6 @@ body {
 }
 
 .upgr-list {
-	font-size: 10px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 8px;
@@ -113,7 +113,7 @@ body {
 }
 
 .upgr-row {
-	
+	font-size: 10px;
 }
 
 .upgr-line {
