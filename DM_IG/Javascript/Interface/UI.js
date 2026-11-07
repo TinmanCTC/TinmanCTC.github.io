@@ -154,6 +154,14 @@ export function addStoreButtons(bldg) {
 	});
 }
 
+export function addStoreText(bldg) {
+	const storeLbl = document.getElementById(buildingInstances[bldg].ui.shopPnlID);
+	const storeQty = document.getElementById(buildingInstances[bldg].ui.qtyPnlID);
+	
+	storeLbl.innerHTML = buildingInstances[bldg].ui.shopDescriptor;
+	storeQty.innerHTML = buildingInstances[bldg].quantity;
+}
+
 export function addDisplay(source, type, target) {
 	let retVal = 0;
 	
@@ -175,9 +183,10 @@ export function addDisplay(source, type, target) {
 			if (target == "Punchcard") {
 				addComponent(type, source.storePunchcard_Pnl);
 				addStoreButtons(BLDG_IDS.PUNCHCARD);
+				addStoreText(BLDG_IDS.PUNCHCARD);
 				
-				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopDescriptor;
-				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].quantity;
+				//document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopDescriptor;
+				//document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].quantity;
 			}
 			
 			if (target == "Desktop"  && buildingInstances[BLDG_IDS.DESKTOP].unlock.disp == false) {
