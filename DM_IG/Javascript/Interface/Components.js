@@ -32,8 +32,8 @@ layout: page
 	 },
 	 // Production Building Buttons
 	 {
-		 Punchcard_Btn: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><img src='Assets/Images/punchcardButton.png' class='prod-img'></button><div class='tooltip'><span class='tooltip-text' id='bldg-pnch-desc'></span></div>",
-		 Desktop_Btn: "<button data-view='Desktop' id='desktop_button' class='prod-btn' type='button'><img src='Assets/Images/desktopButton.jpg' class='prod-img'></button><div class='tooltip'><span class='tooltip-text' id='bldg-dsktp-desc'></span></div>"		 
+		 Punchcard_Btn: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><div class='tooltip'><span class='tooltip-text' id='bldg-pnch-desc'></span></div><img src='Assets/Images/punchcardButton.png' class='prod-img'></button>",
+		 Desktop_Btn: "<button data-view='Desktop' id='desktop_button' class='prod-btn' type='button'><div class='tooltip'><span class='tooltip-text' id='bldg-dsktp-desc'></span></div><img src='Assets/Images/desktopButton.jpg' class='prod-img'></button>"		 
 	 },
 	 // Data Broker Buttons
 	 {
