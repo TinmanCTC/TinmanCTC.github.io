@@ -186,6 +186,9 @@ export function addDisplay(source, type, target) {
 				addStoreButtons(BLDG_IDS.PUNCHCARD);
 				addStoreText(BLDG_IDS.PUNCHCARD);
 				
+				// Add tooltip flavor text
+				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.descID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].description;
+				
 				//document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopDescriptor;
 				//document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].quantity;
 			}

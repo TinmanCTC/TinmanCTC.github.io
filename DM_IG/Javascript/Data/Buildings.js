@@ -115,6 +115,7 @@ export const BLDG_DEFS = [
 		ui: {
 			icon: "Assets/Images/punchcardButton.png",
 			elementID: "punchcard_button",
+			descID: "bldg-pnch-desc",
 			buyBtnID: "store-pnch-buy",
 			sellBtnID: "store-pnch-sell",
 			qtyPnlID: "store-pnchcrd-qty",
