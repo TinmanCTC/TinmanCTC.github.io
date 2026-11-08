@@ -369,8 +369,8 @@ function updateBldgUpgrDisplay(data) {
 	const lvlPnl = document.getElementById(buildingInstances[data.buildingId].ui.upgrLvlID);
 	const costPnl = document.getElementById(buildingInstances[data.buildingId].ui.upgrCostID);
 	
-	lvlPnl.innerHTML = data.buildingUpgr.level;
-	costPnl.innerHTML = data.buildingUpgr.cost;
+	lvlPnl.innerHTML = "Lvl: " + data.buildingUpgr.level;
+	costPnl.innerHTML = "$" + data.buildingUpgr.cost.toFixed(2);
 	
 	if (data.buildingUpgr.type == "cost") {
 		upgradeBldgShopDisplay({ 
