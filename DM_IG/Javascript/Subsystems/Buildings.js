@@ -268,7 +268,7 @@ export class BuildingManager {
 				let currPowerConTotal = currPowerCon * buildingInstances[id].quantity;
 				let newPowerCon = (currPowerCon / (1 + upgrade.coeff));
 				let newPowerConTotal = newPowerCon * buildingInstances[id].quantity;
-				let delta = newPowerConTotal - currPowerConTotal;
+				let delta = currPowerConTotal - newPowerConTotal;
 				
 				resourceManager.subPowerCon(delta);				
 				buildingInstances[id].production.powerUse = newPowerCon;
