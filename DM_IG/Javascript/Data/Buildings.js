@@ -83,7 +83,7 @@ export const BLDG_DEFS = [
 			}
 		],
 		cost: {
-			base: 943.3962,
+			base: 1000,
 			growthRate: 1.06,
 			growthFactor: "exponential"
 		},
