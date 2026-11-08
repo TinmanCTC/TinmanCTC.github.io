@@ -59,6 +59,11 @@ body {
 	transform: translateY(2px);
 }
 
+.production-buttons {
+	left-padding: 4px;
+	right-padding: 8px;
+}
+
 #view-upgrades {
 	
 }
