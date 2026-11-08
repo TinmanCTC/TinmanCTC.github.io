@@ -366,7 +366,8 @@ function updateBldgShopDisplay(data) {
 
     qtyPnl.innerHTML = data.quantity;
 	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]:</b></u> ";
-
+	
+	checkUnlocks();
 }
 
 function updateBldgUpgrDisplay(data) {
@@ -383,6 +384,8 @@ function updateBldgUpgrDisplay(data) {
 			cost: buildingInstances[data.buildingId].cost
 		});
 	}
+	
+	checkUnlocks();
 }
 
 function showError(data) {
