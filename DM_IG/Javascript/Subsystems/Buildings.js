@@ -264,7 +264,14 @@ export class BuildingManager {
 				buildingInstances[id].production.clickInterval = (buildingInstances[id].production.clickInterval / (1 + upgrade.coeff));
 				break;
 			case "power":
-				buildingInstances[id].production.powerUse = (buildingInstances[id].production.powerUse / (1 + upgrade.coeff));
+				let currPowerCon = buildingInstances[id].production.powerUse;
+				let currPowerConTotal = currPowerCon * buildingInstances[id].quantity;
+				let newPowerCon = (currPowerCon / (1 + upgrade.coeff));
+				let newPowerConTotal = newPowerCon * buildingInstances[id].quantity;
+				let delta = currPowerConTotal - newPowerConTotal;
+				
+				resourceManager.subPowerCon(delta);				
+				buildingInstances[id].production.powerUse = newPowerCon;
 				break;
 			case "production":
 				buildingInstances[id].production.base = (buildingInstances[id].production.base * (1 + upgrade.coeff));
