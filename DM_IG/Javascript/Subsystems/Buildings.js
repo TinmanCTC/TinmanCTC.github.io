@@ -267,7 +267,7 @@ export class BuildingManager {
 				buildingInstances[id].production.powerUse = (buildingInstances[id].production.powerUse / (1 + upgrade.coeff));
 				break;
 			case "production":
-				buildingInstances[id].production.base = (buildingInstances[id].production.base / (1 + upgrade.coeff));
+				buildingInstances[id].production.base = (buildingInstances[id].production.base * (1 + upgrade.coeff));
 				break;
 			default:
 		}
