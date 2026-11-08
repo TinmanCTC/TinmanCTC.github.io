@@ -188,18 +188,19 @@ export function addDisplay(source, type, target) {
 				
 				// Add tooltip flavor text
 				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.descID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].description;
-				
-				//document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].ui.shopDescriptor;
-				//document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].quantity;
 			}
 			
 			if (target == "Desktop"  && buildingInstances[BLDG_IDS.DESKTOP].unlock.disp == false) {
 				buildingInstances[BLDG_IDS.DESKTOP].unlock.disp = true;
 				addComponent(type, source.storeDesktop_Pnl);
 				addStoreButtons(BLDG_IDS.DESKTOP);
+				addStoreText(BLDG_IDS.DESKTOP);
 				
-				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].ui.shopDescriptor;
-				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].quantity;			
+				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.descID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].description;
+				
+				
+				//document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].ui.shopDescriptor;
+				//document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].quantity;			
 			}
 			
 			break;
@@ -345,7 +346,9 @@ function assignListeners() {
 function updateMoneyDisplay(data) {
 	const pnl = document.getElementById("Resource_Cash"); 
 	pnl.innerHTML = "$" + data.current.toFixed(2);
-	checkUnlocks();
+	
+	
+	checkUnlocks();	// UPDATE THIS
 }
 
 function updateBitsDisplay(data) {
@@ -366,8 +369,6 @@ function updateBldgShopDisplay(data) {
 
     qtyPnl.innerHTML = data.quantity;
 	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]:</b></u> ";
-	
-	checkUnlocks();
 }
 
 function updateBldgUpgrDisplay(data) {
@@ -384,8 +385,6 @@ function updateBldgUpgrDisplay(data) {
 			cost: buildingInstances[data.buildingId].cost
 		});
 	}
-	
-	checkUnlocks();
 }
 
 function showError(data) {

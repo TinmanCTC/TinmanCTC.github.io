@@ -25,15 +25,15 @@ layout: page
 	 // View Buttons
 	 {
 		 Production_Btn: "<button data-view='production' id='production_button' class='tab-btn'><div class='tooltip'><img src='Assets/Images/prodButton.jpg' class='btn-img' id='prod-btn'><span class='tooltip-text'>Production</span></div></button>",
-		 Research_Btn: "<button data-view='research' id='research_button' class='tab-btn' type='button'>	<div class='tooltip'><img src='Assets/Images/researchButton.jpg' class='btn-img' id='res-btn'><span class='tooltip-text'>Research</span></div></button>",
+		 Research_Btn: "<button data-view='research' id='research_button' class='tab-btn' type='button'><div class='tooltip'><img src='Assets/Images/researchButton.jpg' class='btn-img' id='res-btn'><span class='tooltip-text'>Research</span></div></button>",
 		 Upgrades_Btn: "<button data-view='upgrades' id='upgrades_button' class='tab-btn' type='button'><div class='tooltip'><img src='Assets/Images/upgradeButton.jpg' class='btn-img' id='upgr-btn'><span class='tooltip-text'>Upgrades</span></div></button>",
 		 Managers_Btn: "<button data-view='managers' id='managers_button' class='tab-btn' type='button'><div class='tooltip'><img src='Assets/Images/managerButton.jpg' class='btn-img' id='mang-btn'><span class='tooltip-text'>Managers</span></div></button>",
 		 Settings_Btn: "<button data-view='settings' id='settings_button' class='tab-btn' type='button'><div class='tooltip'><img src='Assets/Images/settingsButton.jpg' class='btn-img' id='sett-btn'><span class='tooltip-text'>Settings</span></div></button>"
 	 },
 	 // Production Building Buttons
 	 {
-		 Punchcard_Btn: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><div class='tooltip'><img src='Assets/Images/punchcardButton.png' class='prod-img'><span class='tooltip-text' id='bldg-pnch-desc'>Settings</span></div></button>",
-		 Desktop_Btn: "<button data-view='Desktop' id='desktop_button' class='prod-btn' type='button'><img src='Assets/Images/desktopButton.jpg' class='prod-img'></button>"		 
+		 Punchcard_Btn: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><div class='tooltip'><img src='Assets/Images/punchcardButton.png' class='prod-img'><span class='tooltip-text' id='bldg-pnch-desc'></span></div></button>",
+		 Desktop_Btn: "<button data-view='Desktop' id='desktop_button' class='prod-btn' type='button'><div class='tooltip'><img src='Assets/Images/desktopButton.jpg' class='prod-img'><span class='tooltip-text' id='bldg-dsktp-desc'></span></div></button>"		 
 	 },
 	 // Data Broker Buttons
 	 {
