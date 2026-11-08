@@ -53,7 +53,9 @@ export const BLDG_DEFS = [
 				growthRate: 1.09,
 				type: "production",
 				coeff: 0.01,
-				btnID: "pnch-upgr-base-prod"
+				btnID: "pnch-upgr-base-prod",
+				lvlID: "pnch-upgr-base-prod-lvl",
+				costID: "pnch-upgr-base-prod-cost"
 			},
 			{
 				id: 1,
@@ -63,7 +65,9 @@ export const BLDG_DEFS = [
 				growthRate: 1.12,
 				type: "power",
 				coeff: 0.05,
-				btnID: "pnch-upgr-power-con"
+				btnID: "pnch-upgr-power-con",
+				lvlID: "pnch-upgr-power-con-lvl",
+				costID: "pnch-upgr-power-con-cost"
 			},
 			{
 				id: 2,
@@ -73,7 +77,9 @@ export const BLDG_DEFS = [
 				growthRate: 1.15,
 				type: "cooldown",
 				coeff: 0.1,
-				btnID: "pnch-upgr-cooldown"
+				btnID: "pnch-upgr-cooldown",
+				lvlID: "pnch-upgr-cooldown-lvl",
+				costID: "pnch-upgr-cooldown-cost"
 			}
 		],
 		cost: {
@@ -116,8 +122,6 @@ export const BLDG_DEFS = [
 			costPnlID: "store-pnchcrd-cst",
 			shopDescriptor: "<b><u>Punchcard Machine [Cost: ",
 			upgrPnlID: "upgr-pnchcrd-pnl",
-			upgrLvlID: "upgr-pnchcrd-lvl",
-			upgrCostID: "upgr-pnchcrd-cost",
 			sortOrder: 1
 		},
 		tags: ["production", "early-game", "default"]	
@@ -137,7 +141,9 @@ export const BLDG_DEFS = [
 				growthRate: 1.14,
 				type: "production",
 				coeff: 0.05,
-				btnID: "dsktp-upgr-base-prod"
+				btnID: "dsktp-upgr-base-prod",
+				lvlID: "dsktp-upgr-base-prod-lvl",
+				costID: "dsktp-upgr-base-prod-cost"
 			},
 			{
 				id: 1,
@@ -147,7 +153,9 @@ export const BLDG_DEFS = [
 				growthRate: 1.17,
 				type: "power",
 				coeff: 0.075,
-				btnID: "dsktp-upgr-power-con"
+				btnID: "dsktp-upgr-power-con",
+				lvlID: "dsktp-upgr-power-con-lvl",
+				costID: "dsktp-upgr-power-con-cost"
 			},
 			{
 				id: 2,
@@ -157,7 +165,9 @@ export const BLDG_DEFS = [
 				growthRate: 1.20,
 				type: "cooldown",
 				coeff: 0.1,
-				btnID: "dsktp-upgr-cooldown"
+				btnID: "dsktp-upgr-cooldown",
+				lvlID: "dsktp-upgr-cooldown-lvl",
+				costID: "dsktp-upgr-cooldown-cost"
 			}
 		],
 		cost: {
