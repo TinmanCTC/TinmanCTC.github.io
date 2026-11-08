@@ -215,7 +215,7 @@ export function addDisplay(source, type, target) {
 						const upgrId = e.target.dataset.upgrID;
 						const bldgId = e.target.dataset.bldgID;
 						const upgrCost = buildingManager.getUpgradeCost(bldgId, upgrId);
-						const upgrBtn = document.getElementById(buildingInstances[bldgId].ui.upgrBtnID);
+						const upgrBtn = document.getElementById(buildingInstances[bldgId].upgrades[upgrId].btnID);
 						
 						if (gameState.money < upgrCost) {
 							upgrBtn.textContent = "Not enough money!";
@@ -227,6 +227,7 @@ export function addDisplay(source, type, target) {
 							return 0;
 						}
 						
+						resourceManager.subMoney(upgrCost);
 						buildingManager.upgradeBuilding(bldgId, buildingInstances[bldgId].upgrades[upgrId]);
 					
 					}

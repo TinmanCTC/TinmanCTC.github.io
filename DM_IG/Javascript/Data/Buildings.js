@@ -52,7 +52,8 @@ export const BLDG_DEFS = [
 				cost: 91.7431,
 				growthRate: 1.09,
 				type: "production",
-				coeff: 0.01
+				coeff: 0.01,
+				btnID: "pnch-upgr-base-prod"
 			},
 			{
 				id: 1,
@@ -61,7 +62,8 @@ export const BLDG_DEFS = [
 				cost: 223.2142,
 				growthRate: 1.12,
 				type: "power",
-				coeff: 0.05
+				coeff: 0.05,
+				btnID: "pnch-upgr-power-con"
 			},
 			{
 				id: 2,
@@ -70,7 +72,8 @@ export const BLDG_DEFS = [
 				cost: 434.7826,
 				growthRate: 1.15,
 				type: "cooldown",
-				coeff: 0.1
+				coeff: 0.1,
+				btnID: "pnch-upgr-cooldown"
 			}
 		],
 		cost: {
@@ -115,7 +118,6 @@ export const BLDG_DEFS = [
 			upgrPnlID: "upgr-pnchcrd-pnl",
 			upgrLvlID: "upgr-pnchcrd-lvl",
 			upgrCostID: "upgr-pnchcrd-cost",
-			upgrBtnID: "upgr-pnchcrd-btn",
 			sortOrder: 1
 		},
 		tags: ["production", "early-game", "default"]	
@@ -134,7 +136,8 @@ export const BLDG_DEFS = [
 				cost: 219.2982,
 				growthRate: 1.14,
 				type: "production",
-				coeff: 0.05
+				coeff: 0.05,
+				btnID: "dsktp-upgr-base-prod"
 			},
 			{
 				id: 1,
@@ -143,7 +146,8 @@ export const BLDG_DEFS = [
 				cost: 427.3054,
 				growthRate: 1.17,
 				type: "power",
-				coeff: 0.075
+				coeff: 0.075,
+				btnID: "dsktp-upgr-power-con"
 			},
 			{
 				id: 2,
@@ -152,7 +156,8 @@ export const BLDG_DEFS = [
 				cost: 833.3333,
 				growthRate: 1.20,
 				type: "cooldown",
-				coeff: 0.1
+				coeff: 0.1,
+				btnID: "dsktp-upgr-cooldown"
 			}
 		],
 		cost: {
@@ -201,7 +206,6 @@ export const BLDG_DEFS = [
 			upgrPnlID: "upgr-dsktp-pnl",
 			upgrLvlID: "upgr-dsktp-lvl",
 			upgrCostID: "upgr-dsktp-cost",
-			upgrBtnID: "upgr-dsktp-btn",
 			sortOrder: 2
 		},
 		tags: ["production", "early-game", "default"]	

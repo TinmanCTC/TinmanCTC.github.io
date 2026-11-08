@@ -81,7 +81,7 @@ export function createBldgUpgrRow(building, upgrades) {
 	
 	const btn = document.createElement("button");
 	btn.classList.add("bldg-upgr-btn");
-	btn.id = building.upgrBtnID;
+	btn.id = upgrades.btnID;
 	btn.textContent = upgrades.name;
 	btn.dataset.txt = upgrades.name;
 	btn.dataset.upgrID = upgrades.id;
