@@ -365,8 +365,8 @@ function updateBldgShopDisplay(data) {
 }
 
 function updateBldgUpgrDisplay(data) {
-	const lvlPnl = document.getElementById(buildingInstances[data.buildingId].ui.upgrLvlID;
-	const costPnl = document.getElementById(buildingInstances[data.buildingId].ui.upgrCostID
+	const lvlPnl = document.getElementById(buildingInstances[data.buildingId].ui.upgrLvlID);
+	const costPnl = document.getElementById(buildingInstances[data.buildingId].ui.upgrCostID);
 	
 	lvlPnl.innerHTML = data.buildingUpgr.level;
 	costPnl.innerHTML = data.buildingUpgr.cost;
