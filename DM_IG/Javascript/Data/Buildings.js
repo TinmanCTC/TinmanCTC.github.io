@@ -205,9 +205,8 @@ export const BLDG_DEFS = [
 		ui: {
 			icon: "Assets/Images/desktopButton.jpg",
 			elementID: "desktop_button",
-			prodBtnListener: "",
+			descID: "bldg-dsktp-desc",
 			buyBtnID: "store-dsktp-buy",
-			buyBtnListener: "",
 			sellBtnID: "store-dsktp-sell",
 			sellBtnListener: "",
 			qtyPnlID: "store-dsktp-qty",
