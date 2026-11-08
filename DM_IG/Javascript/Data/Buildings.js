@@ -50,21 +50,27 @@ export const BLDG_DEFS = [
 				name: "Base Production",
 				level: 1,
 				cost: 91.7431,
-				growthRate: 1.09
+				growthRate: 1.09,
+				type: "production",
+				coeff: 0.01
 			},
 			{
 				id: 1,
 				name: "Power Consumption",
 				level: 1,
 				cost: 223.2142,
-				growthRate: 1.12
+				growthRate: 1.12,
+				type: "power",
+				coeff: 0.05
 			},
 			{
 				id: 2,
 				name: "Click Cooldown",
 				level: 1,
 				cost: 434.7826,
-				growthRate: 1.15
+				growthRate: 1.15,
+				type: "cooldown",
+				coeff: 0.1
 			}
 		],
 		cost: {
@@ -101,14 +107,15 @@ export const BLDG_DEFS = [
 			icon: "Assets/Images/punchcardButton.png",
 			elementID: "punchcard_button",
 			buyBtnID: "store-pnch-buy",
-			buyBtnListener: "",
 			sellBtnID: "store-pnch-sell",
-			sellBtnListener: "",
 			qtyPnlID: "store-pnchcrd-qty",
 			shopPnlID: "store-pnchcrd-lbl",
 			costPnlID: "store-pnchcrd-cst",
 			shopDescriptor: "<b><u>Punchcard Machine [Cost: ",
 			upgrPnlID: "upgr-pnchcrd-pnl",
+			upgrLvlID: "upgr-pnchcrd-lvl",
+			upgrCostID: "upgr-pnchcrd-cost",
+			upgrBtnID: "upgr-pnchcrd-btn",
 			sortOrder: 1
 		},
 		tags: ["production", "early-game", "default"]	
@@ -125,25 +132,31 @@ export const BLDG_DEFS = [
 				name: "Base Production",
 				level: 1,
 				cost: 219.2982,
-				growthRate: 1.14
+				growthRate: 1.14,
+				type: "production",
+				coeff: 0.05
 			},
 			{
 				id: 1,
 				name: "Power Consumption",
 				level: 1,
 				cost: 427.3054,
-				growthRate: 1.17
+				growthRate: 1.17,
+				type: "power",
+				coeff: 0.075
 			},
 			{
 				id: 2,
 				name: "Click Cooldown",
 				level: 1,
 				cost: 833.3333,
-				growthRate: 1.20
+				growthRate: 1.20,
+				type: "cooldown",
+				coeff: 0.1
 			}
 		],
 		cost: {
-			base: 403.2258,
+			base: 500,
 			growthRate: 1.24,
 			growthFactor: "exponential"
 		},
@@ -185,6 +198,10 @@ export const BLDG_DEFS = [
 			shopPnlID: "store-dsktp-lbl",
 			costPnlID: "store-dsktp-cst",
 			shopDescriptor: "<b><u>Desktop Computer [Cost: ",
+			upgrPnlID: "upgr-dsktp-pnl",
+			upgrLvlID: "upgr-dsktp-lvl",
+			upgrCostID: "upgr-dsktp-cost",
+			upgrBtnID: "upgr-dsktp-btn",
 			sortOrder: 2
 		},
 		tags: ["production", "early-game", "default"]	

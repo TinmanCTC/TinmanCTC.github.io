@@ -122,6 +122,7 @@ body {
 }
 
 .bldg-upgr-line {
+	align-content: space-evenly;
 	padding-left: 4px;
 }
 

@@ -125,7 +125,7 @@ export function addButton(source, type, target) {
 			retVal = 3;
 			break;
 		case "upgr-list":
-			addComponent(type, source.upgradesButtons);
+			addComponent(type, source.upgradesButtons);		
 			
 			const upgrBldgBtnID = document.getElementById(UPGR_DEFS.upgrBldgBtn);
 			const upgrBrkrBtnID = document.getElementById(UPGR_DEFS.upgrBrkrBtn);
@@ -208,18 +208,29 @@ export function addDisplay(source, type, target) {
 				document.getElementById("upgr-list").style.display = "grid";
 				document.getElementById("upgr-list").style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
 				
-				/*
-				const panel = createBldgUpgrPnl(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
-				const upgrRow1 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[0]);
-				const upgrRow2 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[1]);
-				const upgrRow3 = createBldgUpgrRow(buildingInstances[BLDG_IDS.PUNCHCARD], buildingInstances[BLDG_IDS.PUNCHCARD].upgrades[2]);
-				
-				panel.appendChild(upgrRow1);
-				panel.appendChild(upgrRow2);
-				panel.appendChild(upgrRow3);
-				
-				document.getElementById("upgr-list").appendChild(panel);
-				*/
+				// Add Upgrade Button Listeners Here
+				document.getElementById("upgr-list").addEventListener("click", 
+				e => {
+					if (e.target.matches(".bldg-upgr-btn")) {
+						const upgrId = e.target.dataset.upgrID;
+						const bldgId = e.target.dataset.bldgID;
+						const upgrCost = buildingManager.getUpgradeCost(bldgId, upgrId);
+						const upgrBtn = document.getElementById(buildingInstances[bldgId].ui.upgrBtnID);
+						
+						if (gameState.money < upgrCost) {
+							upgrBtn.textContent = "Not enough money!";
+							
+							setTimeout(function() {
+								upgrBtn.textContent = e.target.dataset.txt;
+							}, 1500);
+							
+							return 0;
+						}
+						
+						buildingManager.upgradeBuilding(bldgId, buildingInstances[bldgId].upgrades[upgrId]);
+					
+					}
+				});
 				
 				//addComponent(type, source.upgradesBuildings);
 				//addComponent(type, source.upgradesBrokers);
@@ -321,7 +332,8 @@ function assignListeners() {
 	onEvent("bitsChanged", updateBitsDisplay);
 	onEvent("wattsChanged", updateWattsDisplay);
 	onEvent("buildingUnlocked", unlockBuilding);
-	onEvent("buildingPurchased", updateBuildingDisplay);
+	onEvent("buildingPurchased", updateBldgShopDisplay);
+	onEvent("buildingUpgraded", updateBldgUpgrDisplay);
 	onEvent("error", showError);
 }
 
@@ -343,14 +355,29 @@ function updateWattsDisplay(data) {
 	pnl.innerHTML = data.current;
 }
 
-function updateBuildingDisplay(data) {
-
+function updateBldgShopDisplay(data) {
     const qtyPnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
 	const cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
 
     qtyPnl.innerHTML = data.quantity;
 	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]:</b></u> ";
 
+}
+
+function updateBldgUpgrDisplay(data) {
+	const lvlPnl = document.getElementById(buildingInstances[data.buildingId].ui.upgrLvlID;
+	const costPnl = document.getElementById(buildingInstances[data.buildingId].ui.upgrCostID
+	
+	lvlPnl.innerHTML = data.buildingUpgr.level;
+	costPnl.innerHTML = data.buildingUpgr.cost;
+	
+	if (data.buildingUpgr.type == "cost") {
+		upgradeBldgShopDisplay({ 
+			buildingId: data.buildingId, 
+			quantity: buildingInstances[data.buildingId].quantity,
+			cost: buildingInstances[data.buildingId].cost
+		});
+	}
 }
 
 function showError(data) {

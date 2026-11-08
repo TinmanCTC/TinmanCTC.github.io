@@ -16,6 +16,7 @@ import { BLDG_DEFS, BLDG_IDS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 import { addDisplay } from "/DM_IG/Javascript/Interface/UI.js";
 import { INTERFACE_DEFS } from "/DM_IG/Javascript/Interface/Components.js";
+import { bldgUpgrades } from "/DM_IG/Javascript/Data/Upgrades.js";
 
 export const buildingInstances = [];
 
@@ -157,11 +158,19 @@ export class BuildingManager {
 		return retVal;
 	}
 	
-	getUpgradeCost(building, upgrade) {
+	getUpgradeCost(bldg, upgr) {
 		let retVal = -1;
 		
-		retVal = buildingInstances[building].upgrades[upgrade].cost * (buildingInstances[building].upgrades[upgrade].growthRate ** buildingInstances[building].upgrades[upgrade].level);
+		retVal = buildingInstances[bldg].upgrades[upgr].cost * (buildingInstances[bldg].upgrades[upgr].growthRate ** buildingInstances[bldg].upgrades[upgr].level);
 		
+		return retVal;
+	}
+	
+	getUpgradeCoeff(bldg, upgr) {
+		let retVal = -1;
+		
+		retVal = buildingInstances[bldg].upgrades[upgr].coeff * (buildingInstances[bldg].upgrades[upgr].growthRate ** buildingInstances[bldg].upgrades[upgr].level);
+	
 		return retVal;
 	}
 	
@@ -229,6 +238,44 @@ export class BuildingManager {
 		});
 		
 		return true;
+	}
+	
+	upgradeBuilding(id, upgrade) {
+		if (!buildingInstances[id].upgrades[upgrade.id]) {
+			buildingInstances[id].upgrades[upgrade.id].push(upgrade);
+		}
+		
+		buildingInstances[id].upgrades[upgrade.id].level++;
+		buildingInstances[id].upgrades[upgrade.id].cost = this.getUpgradeCost(id, upgrade.id);
+		buildingInstances[id].upgrades[upgrade.id].coeff = this.getUpgradeCoeff(id, upgrade.id);
+		
+		// Check if upgrade is predefined and if not reserve space for it
+		if (!bldgUpgrades[id]) {
+			bldgUpgrades[id] = [];
+		}
+		bldgUpgrades[id].push(upgrade);
+
+		// Add scaling factor logic tree eventually
+		switch (upgrade.type) {
+			case "cost":
+				buildingInstances[id].cost.base = (buildingInstances[id].cost.base / (1 + upgrade.coeff));
+				break;
+			case "cooldown":
+				buildingInstances[id].production.clickInterval = (buildingInstances[id].production.clickInterval / (1 + upgrade.coeff));
+				break;
+			case "power":
+				buildingInstances[id].production.powerUse = (buildingInstances[id].production.powerUse / (1 + upgrade.coeff));
+				break;
+			case "production":
+				buildingInstances[id].production.base = (buildingInstances[id].production.base / (1 + upgrade.coeff));
+				break;
+			default:
+		}
+		
+		emitEvent("buildingUpgraded", { 
+			buildingId: id,
+			buildingUpgr: upgrade
+		});
 	}
 }
 

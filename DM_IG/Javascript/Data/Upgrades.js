@@ -9,6 +9,8 @@ layout: page
  * 
  */
  
+ export const bldgUpgrades = { };
+ 
  export const UPGR_DEFS = {
 	viewElementID: "upgr-list",
 	upgrBldgBtn: "upgr-btn-bldg",
@@ -26,7 +28,8 @@ layout: page
 	{
 		id: 0,
 		cost: 100,
-		level: 0
+		level: 0,
+		type: "building"
 	},
 	{
 		id: 1,
