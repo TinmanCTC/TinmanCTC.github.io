@@ -43,7 +43,7 @@ export const BLDG_DEFS = [
 		id: 0,
 		name: "Punchcard Machine",
 		resource: "bits",
-		description: "A vintage, manual punch card machine. It processes data... In its own way.",
+		description: "A vintage, manual punch card machine. It processes data... In its own way. You're probably better off selling it as an antique and buying a regular desktop computer.",
 		upgrades: [
 			{
 				id: 0,
@@ -83,13 +83,13 @@ export const BLDG_DEFS = [
 			}
 		],
 		cost: {
-			base: 47.1698,
+			base: 943.3962,
 			growthRate: 1.06,
 			growthFactor: "exponential"
 		},
 		production: {
-			base: 768,
-			clickInterval: 1000,
+			base: 960,
+			clickInterval: 2500,
 			bonus: 0,
 			powerUse: 100,
 			growthRate: 1.01,
@@ -171,7 +171,7 @@ export const BLDG_DEFS = [
 			}
 		],
 		cost: {
-			base: 500,
+			base: 750,
 			growthRate: 1.24,
 			growthFactor: "exponential"
 		},
@@ -191,7 +191,7 @@ export const BLDG_DEFS = [
 		},
 		unlock: {
 			resource: "money",
-			threshold: 21960,
+			threshold: 1000,
 			yes: false,
 			btn: false,
 			disp: false
