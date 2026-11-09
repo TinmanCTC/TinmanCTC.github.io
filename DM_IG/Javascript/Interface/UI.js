@@ -109,6 +109,17 @@ export function addButton(source, type, target) {
 				});
 			}
 			
+			if (target == "Cheap_Gen" && !buildingInstances[BLDG_IDS.DESKTOP].unlock.btn) {
+				buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.btn = true;
+				addComponent(type, source.CheapGen_Btn);
+				
+				const cheapGenButtonID = document.getElementById(buildingInstances[BLDG_IDS.CHEAP_GEN].ui.elementID);
+				
+				cheapGenButtonID.addEventListener("click", function () {
+					buildingManager.clickBuilding(BLDG_IDS.CHEAP_GEN);
+				});
+			}
+			
 			retVal = 2;
 			break;
 		case "broker-buttons":
@@ -196,13 +207,17 @@ export function addDisplay(source, type, target) {
 				addStoreButtons(BLDG_IDS.DESKTOP);
 				addStoreText(BLDG_IDS.DESKTOP);
 				
-				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.descID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].description;
-				
-				
-				//document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.shopPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].ui.shopDescriptor;
-				//document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.qtyPnlID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].quantity;			
+				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.descID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].description;		
 			}
 			
+			if (target == "Cheap_Gen" && !buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.disp) {
+				buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.disp = true;
+				addComponent(type, source.storeCheapGen_Pnl);
+				addStoreButtons(BLDG_IDS.CHEAP_GEN);
+				addStoreText(BLDG_IDS.CHEAP_GEN);
+				
+				document.getElementById(buildingInstances[BLDG_IDS.CHEAP_GEN].ui.descID).innerHTML = buildingInstances[BLDG_IDS.CHEAP_GEN].description;		
+			}				
 			break;
 		case "upgr-list":
 			// Add upgrade list selection buttons and associated upgrade panels

@@ -476,7 +476,7 @@ export const BLDG_DEFS = [
 			scalesWith: "legacies"
 		},
 		ui: {
-			icon: "Assets/Images/cheapGenButton.jpg",
+			icon: "Assets/Images/cheapGenButton.jpeg",
 			elementID: "chpGen_button",
 			descID: "bldg-chpGen-desc",
 			buyBtnID: "store-chpGen-buy",
