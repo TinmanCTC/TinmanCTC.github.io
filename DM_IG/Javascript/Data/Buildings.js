@@ -477,7 +477,7 @@ export const BLDG_DEFS = [
 		},
 		ui: {
 			icon: "Assets/Images/cheapGenButton.jpeg",
-			elementID: "chpGen_button",
+			elementID: "cheapGen_button",
 			descID: "bldg-chpGen-desc",
 			buyBtnID: "store-chpGen-buy",
 			sellBtnID: "store-chpGen-sell",
