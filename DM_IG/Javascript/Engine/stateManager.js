@@ -50,7 +50,6 @@ export function checkUnlocks() {
 	}
 	
 	if (resourceManager.getPower() <= 0) {
-		buildingManager.addBuilding(BLDG_DEFS[4]);
 		buildingInstances[BLDG_IDS.CHEAP_GEN].quantity = 0;
 		buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.yes = true;
 		
