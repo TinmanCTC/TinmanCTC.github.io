@@ -361,6 +361,7 @@ function updateWattsDisplay(data) {
 	const pnl = document.getElementById("Resource_Watts");
 	
 	pnl.innerHTML = data.current;
+	checkUnlocks();
 }
 
 function updateBldgShopDisplay(data) {
@@ -445,6 +446,14 @@ function unlockBuilding(data) {
 			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Desktop");
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");		
 			addBldgUpgrPnl(buildingInstances[BLDG_IDS.DESKTOP]);
+			
+			break;
+		case BLDG_IDS.CHEAP_GEN:
+			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Cheap_Gen");
+			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Cheap_Gen");
+			
+			addBldgUpgrPnl(buildingInstances[BLDG_IDS.CHEAP_GEN]);
+			
 			
 			break;
 		default:

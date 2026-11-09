@@ -32,8 +32,9 @@ layout: page
 	 },
 	 // Production Building Buttons
 	 {
-		 Punchcard_Btn: "<button data-view='Punchcard' id='punchcard_button' class='prod-btn' type='button'><div class='tooltip'><span class='tooltip-text' id='bldg-pnch-desc'></span></div><img src='Assets/Images/punchcardButton.png' class='prod-img'></button>",
-		 Desktop_Btn: "<button data-view='Desktop' id='desktop_button' class='prod-btn' type='button'><div class='tooltip'><span class='tooltip-text' id='bldg-dsktp-desc'></span></div><img src='Assets/Images/desktopButton.jpg' class='prod-img'></button>"		 
+		Punchcard_Btn: "<button id='punchcard_button' class='prod-btn' type='button'><div class='tooltip'><span class='tooltip-text' id='bldg-pnch-desc'></span></div><img src='Assets/Images/punchcardButton.png' class='prod-img'></button>",
+		Desktop_Btn: "<button id='desktop_button' class='prod-btn' type='button'><div class='tooltip'><span class='tooltip-text' id='bldg-dsktp-desc'></span></div><img src='Assets/Images/desktopButton.jpg' class='prod-img'></button>",	 
+		CheapGen_Btn: "<button id='cheapGen_button' class='prod-btn' type='button'><div class='tooltip'><span class='tooltip-text' id='bldg-chpGen-desc'></span></div><img src='Assets/Images/cheapGenButton.jpg' class='prod-img'></button>"
 	 },
 	 // Data Broker Buttons
 	 {
@@ -52,7 +53,8 @@ layout: page
 	 // Store Panels
 	 {
 		 storePunchcard_Pnl: "<div id='store-pnch-row' class='store-display'><span id='store-pnchcrd-lbl'></span><span id='store-pnchcrd-cst'></span><span id='store-pnchcrd-qty'></span><button id='store-pnch-buy' class='store-btn'>Buy</button><button id='store-pnch-sell' class='store-btn'>Sell</button></div>",
-		 storeDesktop_Pnl: "<div id='store-dsktp-row' class='store-display'><span id='store-dsktp-lbl'></span><span id='store-dsktp-cst'></span><span id='store-dsktp-qty'></span><button id='store-dsktp-buy' class='store-btn'>Buy</button><button id='store-dsktp-sell' class='store-btn'>Sell</button></div>"
+		 storeDesktop_Pnl: "<div id='store-dsktp-row' class='store-display'><span id='store-dsktp-lbl'></span><span id='store-dsktp-cst'></span><span id='store-dsktp-qty'></span><button id='store-dsktp-buy' class='store-btn'>Buy</button><button id='store-dsktp-sell' class='store-btn'>Sell</button></div>",
+		 storeCheapGen_Pnl: "<div id='store-chpGen-row' class='store-display'><span id='store-chpGen-lbl'></span><span id='store-chpGen-cst'></span><span id='store-chpGen-qty'></span><button id='store-chpGen-buy' class='store-btn'>Buy</button><button id='store-chpGen-sell' class='store-btn'>Sell</button></div>"
 	 },
 	 // Upgrades Panels
 	 {

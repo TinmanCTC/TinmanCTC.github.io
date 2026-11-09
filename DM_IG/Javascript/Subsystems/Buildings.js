@@ -292,5 +292,7 @@ export function initBuildings() {
 	// Create Punchcard & Desktop instances by default
 	buildingManager.addBuilding(BLDG_DEFS[0]);
 	buildingManager.addBuilding(BLDG_DEFS[1]);
+	buildingManager.addBuilding(BLDG_DEFS[2]);
+	buildingManager.addBuilding(BLDG_DEFS[3]);
 	// Consider initializing all base buildings?
  };

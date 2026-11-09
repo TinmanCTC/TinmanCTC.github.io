@@ -208,7 +208,6 @@ export const BLDG_DEFS = [
 			descID: "bldg-dsktp-desc",
 			buyBtnID: "store-dsktp-buy",
 			sellBtnID: "store-dsktp-sell",
-			sellBtnListener: "",
 			qtyPnlID: "store-dsktp-qty",
 			shopPnlID: "store-dsktp-lbl",
 			costPnlID: "store-dsktp-cst",
@@ -217,6 +216,279 @@ export const BLDG_DEFS = [
 			upgrLvlID: "upgr-dsktp-lvl",
 			upgrCostID: "upgr-dsktp-cost",
 			sortOrder: 2
+		},
+		tags: ["production", "early-game", "default"]	
+	},
+	{
+		id: 2,
+		name: "Cubicle Workstation",
+		resource: "bits",
+		description: "",
+		upgrades: [
+			{
+				id: 0,
+				name: "Base Production",
+				level: 1,
+				cost: 219.2982,
+				growthRate: 1.14,
+				type: "production",
+				coeff: 0.05,
+				btnID: "cbcl-upgr-base-prod",
+				lvlID: "cbcl-upgr-base-prod-lvl",
+				costID: "cbcl-upgr-base-prod-cost"
+			},
+			{
+				id: 1,
+				name: "Power Consumption",
+				level: 1,
+				cost: 427.3054,
+				growthRate: 1.17,
+				type: "power",
+				coeff: 0.075,
+				btnID: "cbcl-upgr-power-con",
+				lvlID: "cbcl-upgr-power-con-lvl",
+				costID: "cbcl-upgr-power-con-cost"
+			},
+			{
+				id: 2,
+				name: "Click Cooldown",
+				level: 1,
+				cost: 833.3333,
+				growthRate: 1.20,
+				type: "cooldown",
+				coeff: 0.1,
+				btnID: "cbcl-upgr-cooldown",
+				lvlID: "cbcl-upgr-cooldown-lvl",
+				costID: "cbcl-upgr-cooldown-cost"
+			}
+		],
+		cost: {
+			base: 750,
+			growthRate: 1.24,
+			growthFactor: "exponential"
+		},
+		production: {
+			base: 4096,
+			clickInterval: 2000,
+			bonus: 0,
+			powerUse: 500,
+			growthRate: 1.09,
+			shopGrowthRate: 1.08,
+			growthFactor: "multiplicative",
+		},
+		manager: {
+			cost: 10000,
+			clickInterval: 500,
+			multiplier: 1.0,
+		},
+		unlock: {
+			resource: "money",
+			threshold: 1000,
+			yes: false,
+			btn: false,
+			disp: false
+		},
+		prestige: {
+			level: 0,
+			multiplier: 1.0,
+			scalesWith: "legacies"
+		},
+		ui: {
+			icon: "Assets/Images/desktopButton.jpg",
+			elementID: "desktop_button",
+			descID: "bldg-cbcl-desc",
+			buyBtnID: "store-cbcl-buy",
+			sellBtnID: "store-cbcl-sell",
+			qtyPnlID: "store-cbcl-qty",
+			shopPnlID: "store-cbcl-lbl",
+			costPnlID: "store-cbcl-cst",
+			shopDescriptor: "<b><u>Cubicle Workstation [Cost: ",
+			upgrPnlID: "upgr-cbcl-pnl",
+			upgrLvlID: "upgr-cbcl-lvl",
+			upgrCostID: "upgr-cbcl-cost",
+			sortOrder: 2
+		},
+		tags: ["production", "early-game", "default"]	
+	},
+	{
+		id: 3,
+		name: "Cloud Server",
+		resource: "bits",
+		description: "",
+		upgrades: [
+			{
+				id: 0,
+				name: "Base Production",
+				level: 1,
+				cost: 219.2982,
+				growthRate: 1.14,
+				type: "production",
+				coeff: 0.05,
+				btnID: "cloud-upgr-base-prod",
+				lvlID: "cloud-upgr-base-prod-lvl",
+				costID: "cloud-upgr-base-prod-cost"
+			},
+			{
+				id: 1,
+				name: "Power Consumption",
+				level: 1,
+				cost: 427.3054,
+				growthRate: 1.17,
+				type: "power",
+				coeff: 0.075,
+				btnID: "cloud-upgr-power-con",
+				lvlID: "cloud-upgr-power-con-lvl",
+				costID: "cloud-upgr-power-con-cost"
+			},
+			{
+				id: 2,
+				name: "Click Cooldown",
+				level: 1,
+				cost: 833.3333,
+				growthRate: 1.20,
+				type: "cooldown",
+				coeff: 0.1,
+				btnID: "cloud-upgr-cooldown",
+				lvlID: "cloud-upgr-cooldown-lvl",
+				costID: "cloud-upgr-cooldown-cost"
+			}
+		],
+		cost: {
+			base: 750,
+			growthRate: 1.24,
+			growthFactor: "exponential"
+		},
+		production: {
+			base: 4096,
+			clickInterval: 2000,
+			bonus: 0,
+			powerUse: 500,
+			growthRate: 1.09,
+			shopGrowthRate: 1.08,
+			growthFactor: "multiplicative",
+		},
+		manager: {
+			cost: 10000,
+			clickInterval: 500,
+			multiplier: 1.0,
+		},
+		unlock: {
+			resource: "money",
+			threshold: 1000,
+			yes: false,
+			btn: false,
+			disp: false
+		},
+		prestige: {
+			level: 0,
+			multiplier: 1.0,
+			scalesWith: "legacies"
+		},
+		ui: {
+			icon: "Assets/Images/desktopButton.jpg",
+			elementID: "cloud_button",
+			descID: "bldg-cloud-desc",
+			buyBtnID: "store-cloud-buy",
+			sellBtnID: "store-cloud-sell",
+			qtyPnlID: "store-cloud-qty",
+			shopPnlID: "store-cloud-lbl",
+			costPnlID: "store-cloud-cst",
+			shopDescriptor: "<b><u>Cloud Server [Cost: ",
+			upgrPnlID: "upgr-cloud-pnl",
+			upgrLvlID: "upgr-cloud-lvl",
+			upgrCostID: "upgr-cloud-cost",
+			sortOrder: 2
+		},
+		tags: ["production", "early-game", "default"]	
+	},
+	{
+		id: 4,
+		name: "Cheap Generator",
+		resource: "power",
+		description: "A big box retail brand gas generator. Loud and inefficient, but it gets the job done.",
+		upgrades: [
+			{
+				id: 0,
+				name: "Base Production",
+				level: 1,
+				cost: 219.2982,
+				growthRate: 1.14,
+				type: "production",
+				coeff: 0.05,
+				btnID: "chpGen-upgr-base-prod",
+				lvlID: "chpGen-upgr-base-prod-lvl",
+				costID: "chpGen-upgr-base-prod-cost"
+			},
+			{
+				id: 1,
+				name: "Power Consumption",
+				level: 1,
+				cost: 427.3054,
+				growthRate: 1.17,
+				type: "power",
+				coeff: 0.075,
+				btnID: "chpGen-upgr-power-con",
+				lvlID: "chpGen-upgr-power-con-lvl",
+				costID: "chpGen-upgr-power-con-cost"
+			},
+			{
+				id: 2,
+				name: "Click Cooldown",
+				level: 1,
+				cost: 833.3333,
+				growthRate: 1.20,
+				type: "cooldown",
+				coeff: 0.1,
+				btnID: "chpGen-upgr-cooldown",
+				lvlID: "chpGen-upgr-cooldown-lvl",
+				costID: "chpGen-upgr-cooldown-cost"
+			}
+		],
+		cost: {
+			base: 500,
+			growthRate: 1.24,
+			growthFactor: "exponential"
+		},
+		production: {
+			base: 2000,
+			clickInterval: 10000,
+			bonus: 0,
+			powerUse: 0,
+			growthRate: 1.09,
+			shopGrowthRate: 1.08,
+			growthFactor: "multiplicative",
+		},
+		manager: {
+			cost: 10000,
+			clickInterval: 500,
+			multiplier: 1.0,
+		},
+		unlock: {
+			resource: "power",
+			threshold: 0,
+			yes: false,
+			btn: false,
+			disp: false
+		},
+		prestige: {
+			level: 0,
+			multiplier: 1.0,
+			scalesWith: "legacies"
+		},
+		ui: {
+			icon: "Assets/Images/cheapGenButton.jpg",
+			elementID: "chpGen_button",
+			descID: "bldg-chpGen-desc",
+			buyBtnID: "store-chpGen-buy",
+			sellBtnID: "store-chpGen-sell",
+			qtyPnlID: "store-chpGen-qty",
+			shopPnlID: "store-chpGen-lbl",
+			costPnlID: "store-chpGen-cst",
+			shopDescriptor: "<b><u>Cheap Generator [Cost: ",
+			upgrPnlID: "upgr-chpGen-pnl",
+			upgrLvlID: "upgr-chpGen-lvl",
+			upgrCostID: "upgr-chpGen-cost",
+			sortOrder: 3
 		},
 		tags: ["production", "early-game", "default"]	
 	}
