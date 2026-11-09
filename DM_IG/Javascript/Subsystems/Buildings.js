@@ -186,7 +186,11 @@ export class BuildingManager {
 	
 	buyBuilding(id, amt) {
 		let cost = this.getBuyCost(id) * amt;
-		const powerCon = buildingInstances[id].production.powerUse * amt;
+		let powerCon = buildingInstances[id].production.powerUse * amt;
+		
+		if (id == BLDG_IDS.CHEAP_GEN) {
+			let powerGen = buildingInstances[id].production.base * amt;
+		}
 		
 		if (gameState.money < cost) {
 			emitEvent("error", { 
@@ -200,8 +204,22 @@ export class BuildingManager {
 		
 		buildingInstances[id].quantity += amt;
 		resourceManager.subMoney(cost);
-		resourceManager.addPowerCon(powerCon);
-		cost = this.getBuyCost(id);
+		
+		switch (id) {
+			case BLDG_IDS.PUNCHCARD:
+				
+			case BLDG_IDS.DESKTOP:
+			
+			case BLDG_IDS.LAN:
+				
+			case BLDG_IDS.CLOUD:
+				resourceManager.addPowerCon(powerCon);
+				break;
+			case BLDG_IDS.CHEAP_GEN:
+				resourceManager.addPowerGen(powerGen);
+				break;
+		}
+			
 		
 		emitEvent("buildingPurchased", {
 			buildingId: id,
@@ -215,6 +233,9 @@ export class BuildingManager {
 	sellBuilding(id, amt) {
 		let cost = this.getBuyCost(id) * amt;
 		const powerCon = buildingInstances[id].production.powerUse * amt;
+		if (id == BLDG_IDS.CHEAP_GEN) {
+			let powerGen = buildingInstances[id].production.base * amt;
+		}
 		
 		if (buildingInstances[id].quantity < amt) {
 			emitEvent("error", { 
@@ -228,8 +249,21 @@ export class BuildingManager {
 		
 		buildingInstances[id].quantity -= amt;
 		resourceManager.addMoney(cost);
-		resourceManager.subPowerCon(powerCon);
-		cost = this.getBuyCost(id);
+		
+		switch (id) {
+			case BLDG_IDS.PUNCHCARD:
+				
+			case BLDG_IDS.DESKTOP:
+			
+			case BLDG_IDS.LAN:
+				
+			case BLDG_IDS.CLOUD:
+				resourceManager.subPowerCon(powerCon);
+				break;
+			case BLDG_IDS.CHEAP_GEN:
+				resourceManager.subPowerGen(powerGen);
+				break;
+		}
 		
 		emitEvent("buildingPurchased", {
 			buildingId: id,
