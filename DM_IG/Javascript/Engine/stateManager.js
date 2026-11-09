@@ -49,7 +49,7 @@ export function checkUnlocks() {
 		});
 	}
 	
-	if (resourceManager.getPower() <= 0) {
+	if (resourceManager.getPower() <= 0 && buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.yes == false) {
 		buildingInstances[BLDG_IDS.CHEAP_GEN].quantity = 0;
 		buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.yes = true;
 		
