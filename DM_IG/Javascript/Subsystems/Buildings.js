@@ -295,5 +295,6 @@ export function initBuildings() {
 	buildingManager.addBuilding(BLDG_DEFS[2]);
 	buildingManager.addBuilding(BLDG_DEFS[3]);
 	buildingManager.addBuilding(BLDG_DEFS[4]);
+	console.log(buildingInstances);
 	// Consider initializing all base buildings?
  };
