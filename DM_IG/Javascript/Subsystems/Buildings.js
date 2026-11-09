@@ -187,10 +187,8 @@ export class BuildingManager {
 	buyBuilding(id, amt) {
 		let cost = this.getBuyCost(id) * amt;
 		let powerCon = buildingInstances[id].production.powerUse * amt;
+		let powerGen = buildingInstances[id].production.base * amt;
 		
-		if (id == BLDG_IDS.CHEAP_GEN) {
-			let powerGen = buildingInstances[id].production.base * amt;
-		}
 		
 		if (gameState.money < cost) {
 			emitEvent("error", { 
@@ -232,10 +230,8 @@ export class BuildingManager {
 	
 	sellBuilding(id, amt) {
 		let cost = this.getBuyCost(id) * amt;
-		const powerCon = buildingInstances[id].production.powerUse * amt;
-		if (id == BLDG_IDS.CHEAP_GEN) {
-			let powerGen = buildingInstances[id].production.base * amt;
-		}
+		let powerCon = buildingInstances[id].production.powerUse * amt;
+		let powerGen = buildingInstances[id].production.base * amt;
 		
 		if (buildingInstances[id].quantity < amt) {
 			emitEvent("error", { 
