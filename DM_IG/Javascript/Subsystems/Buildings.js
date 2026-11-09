@@ -62,7 +62,23 @@ export class BuildingManager {
 		this.disableBuilding(id);
 		setTimeout(() => this.enableBuilding(id), cooldown);
 		
-		resourceManager.addBits(amt);
+		switch (id) {
+			case BLDG_IDS.PUNCHCARD:
+				
+			case BLDG_IDS.DESKTOP:
+			
+			case BLDG_IDS.LAN:
+				
+			case BLDG_IDS.CLOUD:
+				resourceManager.addBits(amt);
+				break;
+			case BLDG_IDS.CHEAP_GEN:
+				resourceManager.addPowerGen(amt);
+				setTimeout(() => resourceManager.subPowerGen(amt), cooldown);
+				break;
+		}
+		
+		
 		//emitEvent("buildingClicked", data => { stats.totalClicks++ });
 	}
 	
