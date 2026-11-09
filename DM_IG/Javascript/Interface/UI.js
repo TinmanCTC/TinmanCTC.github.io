@@ -109,7 +109,7 @@ export function addButton(source, type, target) {
 				});
 			}
 			
-			if (target == "Cheap_Gen" && !buildingInstances[BLDG_IDS.DESKTOP].unlock.btn) {
+			if (target == "Cheap_Gen" && !buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.btn) {
 				buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.btn = true;
 				addComponent(type, source.CheapGen_Btn);
 				
