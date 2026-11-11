@@ -298,7 +298,6 @@ export function addDisplay(source, type, target) {
 			// Create Punchcard production button and shop listeners
 			if (target == "Punchcard") {
 				addComponent(type, source.storePunchcard_Pnl);
-				addStoreButtons(BLDG_IDS.PUNCHCARD);
 				addStoreText(BLDG_IDS.PUNCHCARD);
 				
 				// Add tooltip flavor text
@@ -308,7 +307,6 @@ export function addDisplay(source, type, target) {
 			if (target == "Desktop" && buildingInstances[BLDG_IDS.DESKTOP].unlock.disp == false) {
 				buildingInstances[BLDG_IDS.DESKTOP].unlock.disp = true;
 				addComponent(type, source.storeDesktop_Pnl);
-				addStoreButtons(BLDG_IDS.DESKTOP);
 				addStoreText(BLDG_IDS.DESKTOP);
 				
 				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.descID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].description;		
@@ -317,7 +315,6 @@ export function addDisplay(source, type, target) {
 			if (target == "Cheap_Gen" && !buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.disp) {
 				buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.disp = true;
 				addComponent(type, source.storeCheapGen_Pnl);
-				addStoreButtons(BLDG_IDS.CHEAP_GEN);
 				addStoreText(BLDG_IDS.CHEAP_GEN);
 				
 				document.getElementById(buildingInstances[BLDG_IDS.CHEAP_GEN].ui.descID).innerHTML = buildingInstances[BLDG_IDS.CHEAP_GEN].description;		
@@ -557,15 +554,12 @@ function unlockBuilding(data) {
 	
 	switch (data.buildingId) {
 		case BLDG_IDS.PUNCHCARD:
-			//addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Punchcard");
-			addProductionButton(data.buildingId);
-			
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Punchcard");
+			addProductionButton(data.buildingId);
 			addStoreButtons(data.buildingId);
 			
 			break;
 		case BLDG_IDS.DESKTOP:
-			//addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Desktop");
 			addProductionButton(data.buildingId);
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");
 			addStoreButtons(data.buildingId);
@@ -574,7 +568,6 @@ function unlockBuilding(data) {
 			
 			break;
 		case BLDG_IDS.CHEAP_GEN:
-			//addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Cheap_Gen");
 			addProductionButton(data.buildingId);
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Cheap_Gen");
 			addStoreButtons(data.buildingId);
@@ -598,7 +591,6 @@ function checkMoneyUnlocks(data) {
 
 export function initUI() {
 	// Initialize view buttons
-	//addButton(INTERFACE_DEFS[0], "view-buttons", 0);
 	addViewButtons();
 	
 	// Initialize broker buttons
