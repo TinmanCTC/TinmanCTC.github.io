@@ -147,7 +147,7 @@ function addBrokerButton(brkr) {
 			
 			brkrBtn = document.getElementById(brokerInstances[BROKERS_ID.MOTHER].ui.elementID);
 			
-			brokerMotherButtonID.addEventListener("click", function() {
+			brkrBtn.addEventListener("click", function() {
 				brokerManager.sellBits(BROKERS_ID.MOTHER);
 			});
 			
