@@ -138,12 +138,14 @@ export function addButton(source, type, target) {
 
 export function addProductionButton(bldg) {
 	let retVal = -1;
+	let buttonID = null;
+	
 	
 	switch (bldg) {
 		case BLDG_IDS.PUNCHCARD:
 			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Punchcard_Btn);
 			
-			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.elementID);
+			buttonID = document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.elementID);
 			
 			buttonID.addEventListener("click", function () {
 				buildingManager.clickBuilding(BLDG_IDS.PUNCHCARD);
@@ -154,7 +156,7 @@ export function addProductionButton(bldg) {
 		case BLDG_IDS.DESKTOP:
 			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Desktop_Btn);
 			
-			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.elementID);
+			buttonID = document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.elementID);
 			
 			buttonID.addEventListener("click", function () {
 				buildingManager.clickBuilding(BLDG_IDS.DESKTOP);
@@ -165,7 +167,7 @@ export function addProductionButton(bldg) {
 		case BLDG_IDS.CHEAP_GEN:
 			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].CheapGen_Btn);
 			
-			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.CHEAP_GEN].ui.elementID);
+			buttonID = document.getElementById(buildingInstances[BLDG_IDS.CHEAP_GEN].ui.elementID);
 			
 			buttonID.addEventListener("click", function () {
 				buildingManager.clickBuilding(BLDG_IDS.CHEAP_GEN);
@@ -176,7 +178,7 @@ export function addProductionButton(bldg) {
 		case BLDG_IDS.LAN:
 			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].LanServer_Btn);
 			
-			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.LAN].ui.elementID);
+			buttonID = document.getElementById(buildingInstances[BLDG_IDS.LAN].ui.elementID);
 			
 			buttonID.addEventListener("click", function () {
 				buildingManager.clickBuilding(BLDG_IDS.LAN);
@@ -187,7 +189,7 @@ export function addProductionButton(bldg) {
 		case BLDG_IDS.CLOUD:
 			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].CloudServer_Btn);
 			
-			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.CLOUD].ui.elementID);
+			buttonID = document.getElementById(buildingInstances[BLDG_IDS.CLOUD].ui.elementID);
 			
 			buttonID.addEventListener("click", function () {
 				buildingManager.clickBuilding(BLDG_IDS.CLOUD);
