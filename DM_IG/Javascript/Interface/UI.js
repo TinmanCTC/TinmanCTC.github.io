@@ -30,7 +30,7 @@ import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 
 /*	FUNCTION addComponent (string targetID, DOM component)
 *	Accepts: 	element id of target DOM element
-* 				source code of element(s) to add to target element*
+* 				source code of element(s) to add to target element
 * 
 * 	Returns: -1 on failure, 1 on success
 *
@@ -67,40 +67,7 @@ export function addButton(source, type, target) {
 	
 	switch (type) {
 		case "view-buttons":
-			// Add DOM elements from templates
-			addComponent(type, source.Production_Btn);
-			addComponent(type, source.Research_Btn);
-			addComponent(type, source.Upgrades_Btn);
-			addComponent(type, source.Managers_Btn);
-			addComponent(type, source.Settings_Btn);
 			
-			// Assign onClick listeners to new buttons
-			// View Toggle Buttons
-			const settingsButtonID = document.getElementById("settings_button");
-			const researchButtonID = document.getElementById("research_button");
-			const productionButtonID = document.getElementById("production_button");
-			const upgradesButtonID = document.getElementById("upgrades_button");
-			const managersButtonID = document.getElementById("managers_button");
-			
-			productionButtonID.addEventListener("click", function () {
-				changeView(gameState.currentView, "Production");
-			});
-			
-			settingsButtonID.addEventListener("click", function () {
-				changeView(gameState.currentView, "Settings");
-			});
-			
-			researchButtonID.addEventListener("click", function () {
-				changeView(gameState.currentView, "Research");
-			});
-			
-			upgradesButtonID.addEventListener("click", function () {
-				changeView(gameState.currentView, "Upgrades");
-			});
-			
-			managersButtonID.addEventListener("click", function () {
-				changeView(gameState.currentView, "Managers");
-			});
 						
 			retVal = 1;
 			break;
@@ -165,6 +132,49 @@ export function addButton(source, type, target) {
 		default:
 			retVal = -1;
 	}
+	
+	return retVal;
+}
+
+export function addViewButtons() {
+	let retVal = -1;
+	
+	// Add DOM elements from templates
+	addComponent("view-buttons", INTERFACE_DEFS[INTERFACE_ID.VIEW_BUTTONS].Production_Btn);
+	addComponent("view-buttons", INTERFACE_DEFS[INTERFACE_ID.VIEW_BUTTONS].Research_Btn);
+	addComponent("view-buttons", INTERFACE_DEFS[INTERFACE_ID.VIEW_BUTTONS].Upgrades_Btn);
+	addComponent("view-buttons", INTERFACE_DEFS[INTERFACE_ID.VIEW_BUTTONS].Managers_Btn);
+	addComponent("view-buttons", INTERFACE_DEFS[INTERFACE_ID.VIEW_BUTTONS].Settings_Btn);
+	
+	// Assign onClick listeners to new buttons
+	// View Toggle Buttons
+	const settingsButtonID = document.getElementById("settings_button");
+	const researchButtonID = document.getElementById("research_button");
+	const productionButtonID = document.getElementById("production_button");
+	const upgradesButtonID = document.getElementById("upgrades_button");
+	const managersButtonID = document.getElementById("managers_button");
+	
+	productionButtonID.addEventListener("click", function () {
+		changeView(gameState.currentView, "Production");
+	});
+	
+	settingsButtonID.addEventListener("click", function () {
+		changeView(gameState.currentView, "Settings");
+	});
+	
+	researchButtonID.addEventListener("click", function () {
+		changeView(gameState.currentView, "Research");
+	});
+	
+	upgradesButtonID.addEventListener("click", function () {
+		changeView(gameState.currentView, "Upgrades");
+	});
+	
+	managersButtonID.addEventListener("click", function () {
+		changeView(gameState.currentView, "Managers");
+	});
+	
+	retVal = 1;
 	
 	return retVal;
 }
@@ -485,7 +495,8 @@ function unlockBuilding(data) {
 			break;
 		case BLDG_IDS.DESKTOP:
 			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Desktop");
-			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");addStoreButtons(data.buildingId);
+			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");
+			addStoreButtons(data.buildingId);
 			
 			addBldgUpgrPnl(buildingInstances[BLDG_IDS.DESKTOP]);
 			
@@ -514,7 +525,8 @@ function checkMoneyUnlocks(data) {
 
 export function initUI() {
 	// Initialize view buttons
-	addButton(INTERFACE_DEFS[0], "view-buttons", 0);
+	//addButton(INTERFACE_DEFS[0], "view-buttons", 0);
+	addViewButtons();
 	
 	// Initialize broker buttons
 	addButton(INTERFACE_DEFS[2], "broker-buttons", "Mother");
