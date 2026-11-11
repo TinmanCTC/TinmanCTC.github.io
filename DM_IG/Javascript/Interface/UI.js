@@ -136,6 +136,73 @@ export function addButton(source, type, target) {
 	return retVal;
 }
 
+export function addProductionButton(bldg) {
+	let retVal = -1;
+	
+	switch (bldg) {
+		case BLDG_IDS.PUNCHCARD:
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Punchcard_Btn;
+			
+			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.elementID);
+			
+			buttonID.addEventListener("click", function () {
+				buildingManager.clickBuilding(BLDG_IDS.PUNCHCARD);
+			});
+			
+			retVal = bldg;
+			break;
+		case BLDG_IDS.DESKTOP:
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Desktop_Btn;
+			
+			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.elementID);
+			
+			buttonID.addEventListener("click", function () {
+				buildingManager.clickBuilding(BLDG_IDS.DESKTOP);
+			});
+			
+			retVal = bldg;
+			break;
+		case BLDG_IDS.CHEAP_GEN:
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].CheapGen_Btn;
+			
+			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.CHEAP_GEN].ui.elementID);
+			
+			buttonID.addEventListener("click", function () {
+				buildingManager.clickBuilding(BLDG_IDS.CHEAP_GEN);
+			});
+			
+			retVal = bldg;
+			break;
+		case BLDG_IDS.LAN:
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].LanServer_Btn;
+			
+			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.LAN].ui.elementID);
+			
+			buttonID.addEventListener("click", function () {
+				buildingManager.clickBuilding(BLDG_IDS.LAN);
+			});
+			
+			retVal = bldg;
+			break;
+		case BLDG_IDS.CLOUD:
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].CloudServer_Btn;
+			
+			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.CLOUD].ui.elementID);
+			
+			buttonID.addEventListener("click", function () {
+				buildingManager.clickBuilding(BLDG_IDS.CLOUD);
+			});
+			
+			retVal = bldg;
+			break;
+		default:
+			retval = -2;
+	}
+	
+	console.log("addProductionButton() return: " + retVal);
+	return retVal;
+}
+
 export function addViewButtons() {
 	let retVal = -1;
 	
@@ -488,13 +555,16 @@ function unlockBuilding(data) {
 	
 	switch (data.buildingId) {
 		case BLDG_IDS.PUNCHCARD:
-			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Punchcard");
+			//addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Punchcard");
+			addProductionButton(data.buildingId);
+			
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Punchcard");
 			addStoreButtons(data.buildingId);
 			
 			break;
 		case BLDG_IDS.DESKTOP:
-			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Desktop");
+			//addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Desktop");
+			addProductionButton(data.buildingId);
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");
 			addStoreButtons(data.buildingId);
 			
@@ -502,7 +572,8 @@ function unlockBuilding(data) {
 			
 			break;
 		case BLDG_IDS.CHEAP_GEN:
-			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Cheap_Gen");
+			//addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Cheap_Gen");
+			addProductionButton(data.buildingId);
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Cheap_Gen");
 			addStoreButtons(data.buildingId);
 			
