@@ -28,6 +28,15 @@ import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 *
 */
 
+/*	FUNCTION addComponent (string targetID, DOM component)
+*	Accepts: 	element id of target DOM element
+* 				source code of element(s) to add to target element*
+* 
+* 	Returns: -1 on failure, 1 on success
+*
+*	Dependencies: None
+*
+*/
 function addComponent(targetID, component) {
 	const tmp = document.createElement("div");
 	
@@ -44,6 +53,15 @@ function addComponent(targetID, component) {
 }
 
 // UPDATE THIS?
+/*	FUNCTION addButton (DOM targetID, DOM component)
+*	Accepts: 	element id of target DOM element
+* 				source code of element(s) to add to target element*
+* 
+* 	Returns: -1 on failure, 1 on success
+*
+*	Dependencies: None
+*
+*/
 export function addButton(source, type, target) {
 	let retVal = 0;
 	
@@ -154,8 +172,15 @@ export function addButton(source, type, target) {
 export function addStoreButtons(bldg) {
 	const storeBuyBtn = document.getElementById(buildingInstances[bldg].ui.buyBtnID);
 	const storeSellBtn = document.getElementById(buildingInstances[bldg].ui.sellBtnID);
-	//console.log(storeBuyBtn);
-	//console.log(storeSellBtn);
+	const storePnlLbl = document.getElementById(buildingInstances[bldg].ui.shopPnlID);
+	const storePnlQty = document.getElementById(buildingInstances[bldg].ui.qtyPnlID);
+	const cstPnl = document.getElementById(buildingInstances[bldg].ui.costPnlID)
+	
+	const prodBtn = document.getElementById(buildingInstances[bldg].ui.elementID);
+	
+	storePnlLbl.innerHTML = buildingInstances[bldg].ui.shopDescriptor;
+	storePnlQty.innerHTML = buildingInstances[bldg].quantity;	
+	cstPnl.innerHTML = "$" + (buildingManager.getBuyCost(bldg)).toFixed(2) + "]:</b></u> ";
 	
 	storeBuyBtn.addEventListener("click", function() {
 		buildingManager.buyBuilding(bldg,1);
@@ -201,7 +226,7 @@ export function addDisplay(source, type, target) {
 				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.descID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].description;
 			}
 			
-			if (target == "Desktop"  && buildingInstances[BLDG_IDS.DESKTOP].unlock.disp == false) {
+			if (target == "Desktop" && buildingInstances[BLDG_IDS.DESKTOP].unlock.disp == false) {
 				buildingInstances[BLDG_IDS.DESKTOP].unlock.disp = true;
 				addComponent(type, source.storeDesktop_Pnl);
 				addStoreButtons(BLDG_IDS.DESKTOP);
@@ -455,37 +480,31 @@ function unlockBuilding(data) {
 		case BLDG_IDS.PUNCHCARD:
 			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Punchcard");
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Punchcard");
+			addStoreButtons(data.buildingId);
 			
 			break;
 		case BLDG_IDS.DESKTOP:
 			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Desktop");
-			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");		
+			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");addStoreButtons(data.buildingId);
+			
 			addBldgUpgrPnl(buildingInstances[BLDG_IDS.DESKTOP]);
 			
 			break;
 		case BLDG_IDS.CHEAP_GEN:
 			addButton(INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS], "production-buttons", "Cheap_Gen");
 			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Cheap_Gen");
+			addStoreButtons(data.buildingId);
 			
 			addBldgUpgrPnl(buildingInstances[BLDG_IDS.CHEAP_GEN]);
-			
-			
+						
 			break;
 		default:
 			console.log("unlockBuilding() switch(data.buildingId) default case");
 	}
 	
-	const shopPnlLbl = document.getElementById(buildingInstances[data.buildingId].ui.shopPnlID);
-	const shopPnlQty = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
-	const shopBuyBtn = document.getElementById(buildingInstances[data.buildingId].ui.buyBtnID);
-	const cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
-	const shopSellBtn = document.getElementById(buildingInstances[data.buildingId].ui.sellBtnID);
+	// Add building shop Buttons
 	
-	const prodBtn = document.getElementById(buildingInstances[data.buildingId].ui.elementID);
 	
-	shopPnlLbl.innerHTML = buildingInstances[data.buildingId].ui.shopDescriptor;
-	shopPnlQty.innerHTML = buildingInstances[data.buildingId].quantity;	
-	cstPnl.innerHTML = "$" + (buildingManager.getBuyCost(data.buildingId)).toFixed(2) + "]:</b></u> ";
 }
 
 function checkMoneyUnlocks(data) {
