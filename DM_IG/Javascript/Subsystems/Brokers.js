@@ -22,7 +22,7 @@ export class BrokerManager {
 		this.brokers = [];
 	}
 	
-	// Adds a new instance of broker to buildingInstances utilizing BUILDING_DEFS
+	// Adds a new instance of broker to buildingInstances utilizing BROKERS_DEFS
 	addBroker(broker) {
 		this.brokers.push(broker);
 		let loc = (this.brokers.length - 1);

@@ -136,6 +136,39 @@ export function addButton(source, type, target) {
 	return retVal;
 }
 
+function addBrokerButton(brkr) {
+	let retVal = -1;
+	let brkrBtn = null;
+	
+	
+	switch (brkr) {
+		case BROKERS_ID.MOTHER: 
+			addComponent("broker-buttons", INTERFACE_DEFS[INTERFACE_ID.BROKER_BUTTONS].brokerMother_Btn);
+			
+			brkrBtn = document.getElementById(brokerInstances[BROKERS_ID.MOTHER].ui.elementID);
+			
+			brokerMotherButtonID.addEventListener("click", function() {
+				brokerManager.sellBits(BROKERS_ID.MOTHER);
+			});
+			
+			retVal = brkr;
+			break;
+		case BROKERS_ID.CRYPTO:
+		
+			break;
+		case BROKERS_ID.SANDMAN:
+		
+			break;
+		case BROKERS_ID.WENDY:
+			
+			break;
+		default:
+			retval = -2;
+	}
+	
+	return retVal;
+}
+
 export function addProductionButton(bldg) {
 	let retVal = -1;
 	let buttonID = null;
@@ -594,7 +627,8 @@ export function initUI() {
 	addViewButtons();
 	
 	// Initialize broker buttons
-	addButton(INTERFACE_DEFS[2], "broker-buttons", "Mother");
+	//addButton(INTERFACE_DEFS[2], "broker-buttons", "Mother");
+	addBrokerButton(BROKERS_ID.MOTHER);
 	
 	// Initialize Resource Displays
 	addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
