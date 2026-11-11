@@ -141,7 +141,7 @@ export function addProductionButton(bldg) {
 	
 	switch (bldg) {
 		case BLDG_IDS.PUNCHCARD:
-			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Punchcard_Btn;
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Punchcard_Btn);
 			
 			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.elementID);
 			
@@ -152,7 +152,7 @@ export function addProductionButton(bldg) {
 			retVal = bldg;
 			break;
 		case BLDG_IDS.DESKTOP:
-			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Desktop_Btn;
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].Desktop_Btn);
 			
 			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.elementID);
 			
@@ -163,7 +163,7 @@ export function addProductionButton(bldg) {
 			retVal = bldg;
 			break;
 		case BLDG_IDS.CHEAP_GEN:
-			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].CheapGen_Btn;
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].CheapGen_Btn);
 			
 			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.CHEAP_GEN].ui.elementID);
 			
@@ -174,7 +174,7 @@ export function addProductionButton(bldg) {
 			retVal = bldg;
 			break;
 		case BLDG_IDS.LAN:
-			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].LanServer_Btn;
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].LanServer_Btn);
 			
 			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.LAN].ui.elementID);
 			
@@ -185,7 +185,7 @@ export function addProductionButton(bldg) {
 			retVal = bldg;
 			break;
 		case BLDG_IDS.CLOUD:
-			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].CloudServer_Btn;
+			addComponent("production-buttons", INTERFACE_DEFS[INTERFACE_ID.PRODUCTION_BUTTONS].CloudServer_Btn);
 			
 			const buttonID = document.getElementById(buildingInstances[BLDG_IDS.CLOUD].ui.elementID);
 			
