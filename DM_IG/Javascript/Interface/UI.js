@@ -37,7 +37,7 @@ import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 *	Dependencies: None
 *
 */
-function addComponent(targetID, component) {
+export function addComponent(targetID, component) {
 	const tmp = document.createElement("div");
 	
 	tmp.innerHTML = component.trim();
