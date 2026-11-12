@@ -311,6 +311,17 @@ export function addStoreText(bldg) {
 	storeQty.innerHTML = buildingInstances[bldg].quantity;
 }
 
+function addResourceDisplays() {
+	let retVal = -1;
+	
+	addComponent("resource-bar", INTERFACE_DEFS[INTERFACE_ID.RESOURCE_DISP].resourceCash_Pnl);
+	addComponent("resource-bar", INTERFACE_DEFS[INTERFACE_ID.RESOURCE_DISP].resourceBits_Pnl);
+	addComponent("resource-bar", INTERFACE_DEFS[INTERFACE_ID.RESOURCE_DISP].resourceWatts_Pnl);
+	
+	retVal = 1;
+	return retVal;
+}
+
 export function addDisplay(source, type, target) {
 	let retVal = 0;
 	
@@ -513,6 +524,14 @@ function updateWattsDisplay(data) {
 	checkUnlocks();
 }
 
+function addBldgShopDisplay() {
+	
+}
+
+function addBldgUpgrDisplay() {
+	
+}
+
 function updateBldgShopDisplay(data) {
     const qtyPnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
 	const cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
@@ -623,15 +642,12 @@ function checkMoneyUnlocks(data) {
 
 
 export function initUI() {
-	// Initialize view buttons
 	addViewButtons();
-	
-	// Initialize broker buttons
-	//addButton(INTERFACE_DEFS[2], "broker-buttons", "Mother");
 	addBrokerButton(BROKERS_ID.MOTHER);
+	addResourceDisplays();
 	
 	// Initialize Resource Displays
-	addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
+	//addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
 	
 	// Initialize Upgrades Panel
 	addDisplay(INTERFACE_DEFS[INTERFACE_ID.UPGRADES_DISP], "upgr-list", 0);
