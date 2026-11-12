@@ -51,7 +51,7 @@ END GOAL: MAKE THIS:
 
 export function initBldgUpgrPnl() {
 	addComponent("upgr-list", INTERFACE_DEFS[INTERFACE_ID.UPGRADES_DISP].upgradesButtons);
-	addBldgUpgrPanel(buildingInstances[BLDG_IDS.PUNCHCARD]);
+	addBldgUpgrPnl(buildingInstances[BLDG_IDS.PUNCHCARD]);
 	
 	document.getElementById("upgr-list").style.display = "grid";
 	document.getElementById("upgr-list").style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
