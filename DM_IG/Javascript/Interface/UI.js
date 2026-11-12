@@ -52,90 +52,6 @@ export function addComponent(targetID, component) {
 	return 1;							// Success
 }
 
-// UPDATE THIS?
-/*	FUNCTION addButton (DOM targetID, DOM component)
-*	Accepts: 	element id of target DOM element
-* 				source code of element(s) to add to target element*
-* 
-* 	Returns: -1 on failure, 1 on success
-*
-*	Dependencies: None
-*
-*/
-export function addButton(source, type, target) {
-	let retVal = 0;
-	
-	switch (type) {
-		case "view-buttons":
-			
-						
-			retVal = 1;
-			break;
-		case "production-buttons":
-			if (target == "Punchcard") {
-				addComponent(type, source.Punchcard_Btn);
-				
-				const punchcardButtonID = document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.elementID);
-	
-				// Punchcard building - on by default
-				punchcardButtonID.addEventListener("click", function () {
-					buildingManager.clickBuilding(BLDG_IDS.PUNCHCARD);
-				});
-			}
-			
-			if (target == "Desktop" && !buildingInstances[BLDG_IDS.DESKTOP].unlock.btn) {
-				buildingInstances[BLDG_IDS.DESKTOP].unlock.btn = true;
-				addComponent(type, source.Desktop_Btn);
-				
-				const desktopButtonID = document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.elementID);
-				
-				desktopButtonID.addEventListener("click", function () {
-					buildingManager.clickBuilding(BLDG_IDS.DESKTOP);
-				});
-			}
-			
-			if (target == "Cheap_Gen" && !buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.btn) {
-				buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.btn = true;
-				addComponent(type, source.CheapGen_Btn);
-				
-				const cheapGenButtonID = document.getElementById(buildingInstances[BLDG_IDS.CHEAP_GEN].ui.elementID);
-				
-				cheapGenButtonID.addEventListener("click", function () {
-					buildingManager.clickBuilding(BLDG_IDS.CHEAP_GEN);
-				});
-			}
-			
-			retVal = 2;
-			break;
-		case "broker-buttons":
-			if (target == "Mother") {
-				addComponent(type, source.brokerMother_Btn);
-				
-				const brokerMotherButtonID = document.getElementById(brokerInstances[BROKERS_ID.MOTHER].ui.elementID);
-	
-				// Mother Broker - on by default	
-				brokerMotherButtonID.addEventListener("click", function() {
-					brokerManager.sellBits(BROKERS_ID.MOTHER);
-				});
-			}
-			
-			retVal = 3;
-			break;
-		case "upgr-list":
-			addComponent(type, source.upgradesButtons);		
-			
-			const upgrBldgBtnID = document.getElementById(UPGR_DEFS.upgrBldgBtn);
-			const upgrBrkrBtnID = document.getElementById(UPGR_DEFS.upgrBrkrBtn);
-			const upgrMngrBtnID = document.getElementById(UPGR_DEFS.upgrMngrBtn);
-			const upgrMiscBtnID = document.getElementById(UPGR_DEFS.upgrMiscBtn);
-			break;
-		default:
-			retVal = -1;
-	}
-	
-	return retVal;
-}
-
 function addBrokerButton(brkr) {
 	let retVal = -1;
 	let brkrBtn = null;
@@ -169,7 +85,7 @@ function addBrokerButton(brkr) {
 	return retVal;
 }
 
-export function addProductionButton(bldg) {
+function addProductionButton(bldg) {
 	let retVal = -1;
 	let buttonID = null;
 	
@@ -238,7 +154,7 @@ export function addProductionButton(bldg) {
 	return retVal;
 }
 
-export function addViewButtons() {
+function addViewButtons() {
 	let retVal = -1;
 	
 	// Add DOM elements from templates
@@ -281,7 +197,7 @@ export function addViewButtons() {
 	return retVal;
 }
 
-export function addStoreButtons(bldg) {
+function addStoreButtons(bldg) {
 	const storeBuyBtn = document.getElementById(buildingInstances[bldg].ui.buyBtnID);
 	const storeSellBtn = document.getElementById(buildingInstances[bldg].ui.sellBtnID);
 	const storePnlLbl = document.getElementById(buildingInstances[bldg].ui.shopPnlID);
@@ -303,7 +219,7 @@ export function addStoreButtons(bldg) {
 	});
 }
 
-export function addStoreText(bldg) {
+function addStoreText(bldg) {
 	const storeLbl = document.getElementById(buildingInstances[bldg].ui.shopPnlID);
 	const storeQty = document.getElementById(buildingInstances[bldg].ui.qtyPnlID);
 	
@@ -358,99 +274,6 @@ function addProductionDisplay(bldg) {
 	addStoreText(bldg);
 	document.getElementById(buildingInstances[bldg].ui.descID).innerHTML = buildingInstances[bldg].description;
 	
-	return retVal;
-}
-
-export function addDisplay(source, type, target) {
-	let retVal = 0;
-	
-	switch (type) {
-		case "resource-bar":
-			// Default case
-			if (target == 0) {
-				addComponent(type, source.resourceCash_Pnl);
-				addComponent(type, source.resourceBits_Pnl);
-				addComponent(type, source.resourceWatts_Pnl);
-			}
-			
-			// Late game unlock
-			if (target == "qBits") { }
-			
-			break;
-		case "building-list":
-			// Create Punchcard production button and shop listeners
-			if (target == "Punchcard") {
-				addComponent(type, source.storePunchcard_Pnl);
-				addStoreText(BLDG_IDS.PUNCHCARD);
-				
-				// Add tooltip flavor text
-				document.getElementById(buildingInstances[BLDG_IDS.PUNCHCARD].ui.descID).innerHTML = buildingInstances[BLDG_IDS.PUNCHCARD].description;
-			}
-			
-			if (target == "Desktop" && buildingInstances[BLDG_IDS.DESKTOP].unlock.disp == false) {
-				buildingInstances[BLDG_IDS.DESKTOP].unlock.disp = true;
-				addComponent(type, source.storeDesktop_Pnl);
-				addStoreText(BLDG_IDS.DESKTOP);
-				
-				document.getElementById(buildingInstances[BLDG_IDS.DESKTOP].ui.descID).innerHTML = buildingInstances[BLDG_IDS.DESKTOP].description;		
-			}
-			
-			if (target == "Cheap_Gen" && !buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.disp) {
-				buildingInstances[BLDG_IDS.CHEAP_GEN].unlock.disp = true;
-				addComponent(type, source.storeCheapGen_Pnl);
-				addStoreText(BLDG_IDS.CHEAP_GEN);
-				
-				document.getElementById(buildingInstances[BLDG_IDS.CHEAP_GEN].ui.descID).innerHTML = buildingInstances[BLDG_IDS.CHEAP_GEN].description;		
-			}				
-			break;
-		case "upgr-list":
-			// Add upgrade list selection buttons and associated upgrade panels
-			if (target == 0) {
-				addButton(source, "upgr-list", 0);
-				addBldgUpgrPnl(buildingInstances[BLDG_IDS.PUNCHCARD]);
-				
-				document.getElementById("upgr-list").style.display = "grid";
-				document.getElementById("upgr-list").style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
-				
-				// Add Upgrade Button Listeners Here
-				document.getElementById("upgr-list").addEventListener("click", 
-				e => {
-					if (e.target.matches(".bldg-upgr-btn")) {
-						const upgrId = e.target.dataset.upgrID;
-						const bldgId = e.target.dataset.bldgID;
-						const upgrCost = buildingManager.getUpgradeCost(bldgId, upgrId);
-						const upgrBtn = document.getElementById(buildingInstances[bldgId].upgrades[upgrId].btnID);
-						
-						if (gameState.money < upgrCost) {
-							upgrBtn.textContent = "Not enough money!";
-							
-							setTimeout(function() {
-								upgrBtn.textContent = e.target.dataset.txt;
-							}, 1500);
-							
-							return 0;
-						}
-						
-						resourceManager.subMoney(upgrCost);
-						buildingManager.upgradeBuilding(bldgId, buildingInstances[bldgId].upgrades[upgrId]);
-					
-					}
-				});
-				
-				//addComponent(type, source.upgradesBuildings);
-				//addComponent(type, source.upgradesBrokers);
-				//addComponent(type, source.upgradesManagers);
-				//addComponent(type, source.upgradesMisc);
-				
-				
-				
-			}
-			break;
-		default:
-			
-	}
-	
-	console.log("addDisplay return: " + retVal);
 	return retVal;
 }
 
@@ -566,17 +389,6 @@ function updateWattsDisplay(data) {
 	checkUnlocks();
 }
 
-function addBldgUpgrDisplay(bldg) {
-	let retVal = -1;
-	
-	switch (bldg) {
-		
-	}
-	
-	
-	return retVal;
-}
-
 function updateBldgShopDisplay(data) {
     const qtyPnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
 	const cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
@@ -687,9 +499,6 @@ export function initUI() {
 	addResourceDisplays();
 	addBrokerButton(BROKERS_ID.MOTHER);
 	initBldgUpgrPnl();
-	
-	// Initialize Upgrades Panel
-	//addDisplay(INTERFACE_DEFS[INTERFACE_ID.UPGRADES_DISP], "upgr-list", 0);
 	
 	// Initialize UI listeners and Event Handlers
 	assignListeners();
