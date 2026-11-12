@@ -12,6 +12,7 @@ layout: page
 import { emitEvent, onEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
 import { gameState, checkUnlocks } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { brokerInstances, brokerManager } from "/DM_IG/Javascript/Subsystems/Brokers.js";
+import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 import { BROKERS_ID } from "/DM_IG/Javascript/Data/Brokers.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { BLDG_IDS, BLDG_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
