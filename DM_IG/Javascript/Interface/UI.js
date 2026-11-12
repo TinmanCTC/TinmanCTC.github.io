@@ -319,6 +319,7 @@ function addResourceDisplays() {
 	addComponent("resource-bar", INTERFACE_DEFS[INTERFACE_ID.RESOURCE_DISP].resourceWatts_Pnl);
 	
 	retVal = 1;
+	console.log("addResourceDisplays return: " + retVal);
 	return retVal;
 }
 
@@ -410,6 +411,9 @@ export function addDisplay(source, type, target) {
 		default:
 			
 	}
+	
+	console.log("addDisplay return: " + retVal);
+	return retVal;
 }
 
 function changeView(currView, targetView) {
