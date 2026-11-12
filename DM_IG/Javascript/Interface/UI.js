@@ -323,6 +323,44 @@ function addResourceDisplays() {
 	return retVal;
 }
 
+// Adds production building shop panels, text, and flavor text
+function addProductionDisplay(bldg) {
+	let retVal = -1;
+	
+	switch (bldg) {
+		case BLDG_IDS.PUNCHCARD:
+			addComponent("building-list", INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].Punchcard_Pnl);
+			
+			retVal = bldg;
+			break;
+		case BLDG_IDS.DESKTOP:
+			addComponent("building-list", INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].Desktop_Pnl);
+			
+			retVal = bldg;
+			break;
+		case BLDG_IDS.CHEAP_GEN:
+			addComponent("building-list", INTERFACE_DEFS[INTERFACE_ID.STORE_DISP].CheapGen_Pnl);
+			
+			retVal = bldg;
+			break;
+		case BLDG_IDS.LAN:
+		
+			retVal = bldg;
+			break;
+		case BLDG_IDS.CLOUD:
+			
+			retVal = bldg;
+			break;
+		default:
+			retVal = -2;
+	}
+	
+	addStoreText(bldg);
+	document.getElementById(buildingInstances[bldg].ui.descID).innerHTML = buildingInstances[bldg].description;
+	
+	return retVal;
+}
+
 export function addDisplay(source, type, target) {
 	let retVal = 0;
 	
@@ -611,7 +649,8 @@ function unlockBuilding(data) {
 	switch (data.buildingId) {
 		case BLDG_IDS.PUNCHCARD:
 			addProductionButton(data.buildingId);
-			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Punchcard");
+			addProductionDisplay(data.buildingId);
+			//addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Punchcard");
 			addStoreButtons(data.buildingId);
 			
 			break;

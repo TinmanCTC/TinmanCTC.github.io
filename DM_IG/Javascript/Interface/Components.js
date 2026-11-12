@@ -52,9 +52,9 @@ layout: page
 	 },
 	 // Store Panels
 	 {
-		 storePunchcard_Pnl: "<div id='store-pnch-row' class='store-display'><span id='store-pnchcrd-lbl'></span><span id='store-pnchcrd-cst'></span><span id='store-pnchcrd-qty'></span><button id='store-pnch-buy' class='store-btn'>Buy</button><button id='store-pnch-sell' class='store-btn'>Sell</button></div>",
-		 storeDesktop_Pnl: "<div id='store-dsktp-row' class='store-display'><span id='store-dsktp-lbl'></span><span id='store-dsktp-cst'></span><span id='store-dsktp-qty'></span><button id='store-dsktp-buy' class='store-btn'>Buy</button><button id='store-dsktp-sell' class='store-btn'>Sell</button></div>",
-		 storeCheapGen_Pnl: "<div id='store-chpGen-row' class='store-display'><span id='store-chpGen-lbl'></span><span id='store-chpGen-cst'></span><span id='store-chpGen-qty'></span><button id='store-chpGen-buy' class='store-btn'>Buy</button><button id='store-chpGen-sell' class='store-btn'>Sell</button></div>"
+		 Punchcard_Pnl: "<div id='store-pnch-row' class='store-display'><span id='store-pnchcrd-lbl'></span><span id='store-pnchcrd-cst'></span><span id='store-pnchcrd-qty'></span><button id='store-pnch-buy' class='store-btn'>Buy</button><button id='store-pnch-sell' class='store-btn'>Sell</button></div>",
+		 Desktop_Pnl: "<div id='store-dsktp-row' class='store-display'><span id='store-dsktp-lbl'></span><span id='store-dsktp-cst'></span><span id='store-dsktp-qty'></span><button id='store-dsktp-buy' class='store-btn'>Buy</button><button id='store-dsktp-sell' class='store-btn'>Sell</button></div>",
+		 CheapGen_Pnl: "<div id='store-chpGen-row' class='store-display'><span id='store-chpGen-lbl'></span><span id='store-chpGen-cst'></span><span id='store-chpGen-qty'></span><button id='store-chpGen-buy' class='store-btn'>Buy</button><button id='store-chpGen-sell' class='store-btn'>Sell</button></div>"
 	 },
 	 // Upgrades Panels
 	 {
