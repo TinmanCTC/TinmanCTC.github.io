@@ -16,6 +16,8 @@ import { BROKERS_ID } from "/DM_IG/Javascript/Data/Brokers.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { BLDG_IDS, BLDG_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
+import { addComponent } from "/DM_IG/Javascript/Interface/UI.js";
+import { UPGR_DEFS } from "/DM_IG/Javascript/Data/Upgrades.js";
 
 /*
 END GOAL: MAKE THIS:
@@ -46,6 +48,39 @@ END GOAL: MAKE THIS:
 
 */
 
+
+export function initBldgUpgrPnl() {
+	addComponent("upgr-list", INTERFACE_DEFS[INTERFACE_ID.UPGRADES_DISP]);
+	addBldgUpgrPanel(buildingInstances[BLDG_IDS.PUNCHCARD]);
+	
+	document.getElementById("upgr-list").style.display = "grid";
+	document.getElementById("upgr-list").style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+	
+	// Add Upgrade Button Listeners Here
+	document.getElementById("upgr-list").addEventListener("click", 
+	e => {
+		if (e.target.matches(".bldg-upgr-btn")) {
+			const upgrId = e.target.dataset.upgrID;
+			const bldgId = e.target.dataset.bldgID;
+			const upgrCost = buildingManager.getUpgradeCost(bldgId, upgrId);
+			const upgrBtn = document.getElementById(buildingInstances[bldgId].upgrades[upgrId].btnID);
+			
+			if (gameState.money < upgrCost) {
+				upgrBtn.textContent = "Not enough money!";
+				
+				setTimeout(function() {
+					upgrBtn.textContent = e.target.dataset.txt;
+				}, 1500);
+				
+				return 0;
+			}
+			
+			resourceManager.subMoney(upgrCost);
+			buildingManager.upgradeBuilding(bldgId, buildingInstances[bldgId].upgrades[upgrId]);
+		
+		}
+	});
+}
 
 export function createBldgUpgrPnl(building, upgrades) {
 	const pnl = document.createElement("div");

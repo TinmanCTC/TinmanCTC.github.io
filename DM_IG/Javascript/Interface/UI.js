@@ -17,7 +17,7 @@ import { BROKERS_ID } from "/DM_IG/Javascript/Data/Brokers.js";
 import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems/Buildings.js";
 import { BLDG_IDS, BLDG_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { INTERFACE_DEFS, INTERFACE_ID } from "/DM_IG/Javascript/Interface/Components.js";
-import { createBldgUpgrPnl, createBldgUpgrRow, addBldgUpgrPnl } from "/DM_IG/Javascript/Interface/UpgradePanels.js";
+import { initBldgUpgrPnl, createBldgUpgrPnl, createBldgUpgrRow, addBldgUpgrPnl } from "/DM_IG/Javascript/Interface/UpgradePanels.js";
 import { UPGR_DEFS } from "/DM_IG/Javascript/Data/Upgrades.js";
 import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 
@@ -566,12 +566,15 @@ function updateWattsDisplay(data) {
 	checkUnlocks();
 }
 
-function addBldgShopDisplay() {
+function addBldgUpgrDisplay(bldg) {
+	let retVal = -1;
 	
-}
-
-function addBldgUpgrDisplay() {
+	switch (bldg) {
+		
+	}
 	
+	
+	return retVal;
 }
 
 function updateBldgShopDisplay(data) {
@@ -650,13 +653,12 @@ function unlockBuilding(data) {
 		case BLDG_IDS.PUNCHCARD:
 			addProductionButton(data.buildingId);
 			addProductionDisplay(data.buildingId);
-			//addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Punchcard");
 			addStoreButtons(data.buildingId);
 			
 			break;
 		case BLDG_IDS.DESKTOP:
 			addProductionButton(data.buildingId);
-			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Desktop");
+			addProductionDisplay(data.buildingId);
 			addStoreButtons(data.buildingId);
 			
 			addBldgUpgrPnl(buildingInstances[BLDG_IDS.DESKTOP]);
@@ -664,7 +666,7 @@ function unlockBuilding(data) {
 			break;
 		case BLDG_IDS.CHEAP_GEN:
 			addProductionButton(data.buildingId);
-			addDisplay(INTERFACE_DEFS[INTERFACE_ID.STORE_DISP], "building-list", "Cheap_Gen");
+			addProductionDisplay(data.buildingId);
 			addStoreButtons(data.buildingId);
 			
 			addBldgUpgrPnl(buildingInstances[BLDG_IDS.CHEAP_GEN]);
@@ -672,11 +674,7 @@ function unlockBuilding(data) {
 			break;
 		default:
 			console.log("unlockBuilding() switch(data.buildingId) default case");
-	}
-	
-	// Add building shop Buttons
-	
-	
+	}	
 }
 
 function checkMoneyUnlocks(data) {
@@ -686,14 +684,12 @@ function checkMoneyUnlocks(data) {
 
 export function initUI() {
 	addViewButtons();
-	addBrokerButton(BROKERS_ID.MOTHER);
 	addResourceDisplays();
-	
-	// Initialize Resource Displays
-	//addDisplay(INTERFACE_DEFS[3], "resource-bar", 0);
+	addBrokerButton(BROKERS_ID.MOTHER);
+	initBldgUpgrPnl();
 	
 	// Initialize Upgrades Panel
-	addDisplay(INTERFACE_DEFS[INTERFACE_ID.UPGRADES_DISP], "upgr-list", 0);
+	//addDisplay(INTERFACE_DEFS[INTERFACE_ID.UPGRADES_DISP], "upgr-list", 0);
 	
 	// Initialize UI listeners and Event Handlers
 	assignListeners();
