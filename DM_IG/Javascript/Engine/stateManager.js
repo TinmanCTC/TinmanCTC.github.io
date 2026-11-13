@@ -15,8 +15,6 @@ import { buildingInstances, buildingManager } from "/DM_IG/Javascript/Subsystems
 import { brokerInstances, brokerManager } from "/DM_IG/Javascript/Subsystems/Brokers.js";
 import { resourceInstances, resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
 import { eventFeed, emitEvent, onEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
-
-import { addButton, addDisplay } from "/DM_IG/Javascript/Interface/UI.js";
 import { INTERFACE_DEFS } from "/DM_IG/Javascript/Interface/Components.js";
 
 import { BLDG_IDS, BLDG_DEFS } from "/DM_IG/Javascript/Data/Buildings.js";
