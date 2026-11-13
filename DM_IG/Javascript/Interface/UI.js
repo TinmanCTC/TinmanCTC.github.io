@@ -459,7 +459,7 @@ function updateBldgShopDisplay(data) {
 	let cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID);
 	
     qtyPnl.innerHTML = data.quantity;
-	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]:</b></u> ";
+	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]: ";
 }
 
 function updateBldgUpgrDisplay(data) {
@@ -495,7 +495,7 @@ function showError(data) {
 				setTimeout(function () {
 					shopPnl.innerHTML = buildingInstances[data.ID].ui.shopDescriptor;
 					qtyPnl.innerHTML = buildingInstances[data.ID].quantity;
-					cstPnl.innerHTML = "$" + buildingManager.getBuyCost(data.ID).toFixed(2) + "]:</b></u>";
+					cstPnl.innerHTML = "$" + buildingManager.getBuyCost(data.ID).toFixed(2) + "]:";
 				}, 1500);
 				
 				retVal = 1;
@@ -509,7 +509,7 @@ function showError(data) {
 				setTimeout(function () {
 					shopPnl.innerHTML = buildingInstances[data.ID].ui.shopDescriptor;
 					qtyPnl.innerHTML = buildingInstances[data.ID].quantity;
-					cstPnl.innerHTML = "$" + buildingManager.getBuyCost(data.ID).toFixed(2) + "]:</b></u>";
+					cstPnl.innerHTML = "$" + buildingManager.getBuyCost(data.ID).toFixed(2) + "]:";
 				}, 1500);
 				
 				retVal = 1;
