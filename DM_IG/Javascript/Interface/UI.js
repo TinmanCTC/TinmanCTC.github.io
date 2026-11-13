@@ -336,7 +336,7 @@ function addProductionDisplay(bldg) {
 			retVal = -2;
 	}
 	
-	addStoreText(bldg);
+	//addStoreText(bldg);
 	document.getElementById(buildingInstances[bldg].ui.descID).innerHTML = buildingInstances[bldg].description;
 	
 	return retVal;
@@ -529,7 +529,7 @@ function unlockBuilding(data) {
 	switch (data.buildingId) {
 		case BLDG_IDS.PUNCHCARD:
 			addProductionButton(data.buildingId);
-			addProductionDisplay(data.buildingId);
+			//addProductionDisplay(data.buildingId);
 			addStoreRow(data.buildingId);
 			//addStoreButtons(data.buildingId);
 			
