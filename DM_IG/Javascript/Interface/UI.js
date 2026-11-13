@@ -557,7 +557,6 @@ function unlockBuilding(data) {
 			break;
 		case BLDG_IDS.DESKTOP:
 			addProductionButton(data.buildingId);
-			addProductionDisplay(data.buildingId);
 			addStoreRow(data.buildingId);
 			//addStoreButtons(data.buildingId);
 			
@@ -566,7 +565,6 @@ function unlockBuilding(data) {
 			break;
 		case BLDG_IDS.CHEAP_GEN:
 			addProductionButton(data.buildingId);
-			addProductionDisplay(data.buildingId);
 			addStoreRow(data.buildingId);
 			//addStoreButtons(data.buildingId);
 			
