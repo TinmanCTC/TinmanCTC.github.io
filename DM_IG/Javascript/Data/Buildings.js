@@ -122,7 +122,7 @@ export const BLDG_DEFS = [
 			shopID: "store-pnch-row",
 			shopPnlID: "store-pnchcrd-lbl",
 			costPnlID: "store-pnchcrd-cst",
-			shopDescriptor: "<b><u>Punchcard Machine [Cost: ",
+			shopDescriptor: "Punchcard Machine [Cost: ",
 			upgrPnlID: "upgr-pnchcrd-pnl",
 			sortOrder: 1
 		},

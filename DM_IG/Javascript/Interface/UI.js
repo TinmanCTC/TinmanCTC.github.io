@@ -217,7 +217,7 @@ function addStoreButtons(bldg) {
 	
 	storePnlLbl.innerHTML = buildingInstances[bldg].ui.shopDescriptor;
 	storePnlQty.innerHTML = buildingInstances[bldg].quantity;	
-	cstPnl.innerHTML = "$" + (buildingManager.getBuyCost(bldg)).toFixed(2) + "]:</b></u> ";
+	cstPnl.innerHTML = "$" + (buildingManager.getBuyCost(bldg)).toFixed(2) + "]: ";
 	
 	storeBuyBtn.dataset.bldgID = bldg;
 	storeBuyBtn.dataset.op = "Buy";
