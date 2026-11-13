@@ -119,6 +119,7 @@ export const BLDG_DEFS = [
 			buyBtnID: "store-pnch-buy",
 			sellBtnID: "store-pnch-sell",
 			qtyPnlID: "store-pnchcrd-qty",
+			shopID: "store-pnch-row",
 			shopPnlID: "store-pnchcrd-lbl",
 			costPnlID: "store-pnchcrd-cst",
 			shopDescriptor: "<b><u>Punchcard Machine [Cost: ",

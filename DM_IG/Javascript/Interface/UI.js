@@ -154,7 +154,61 @@ function addProductionButton(bldg) {
 	return retVal;
 }
 
+function addStoreRow(bldg) {
+	const row = createStoreRow(bldg);
+	
+	// add event listener once and only once if bldg = 0
+	
+	document.getElementById("building-list").appendChild(row);
+}
+
+function createStoreRow(bldg) {
+	const bldgCost = buildingManager.getBuyCost(bldg);
+	
+	const row = document.createElement("div");
+	row.classList.add("store-display");
+	row.id = buildingInstances[bldg].ui.shopID;
+	
+	const labelSpan = document.createElement("span");
+	labelSpan.id = buildingInstances[bldg].ui.shopPnlID;
+	labelSpan.textContent = buildingInstances[bldg].ui.shopDescriptor;
+	
+	const costSpan = document.createElement("span");
+	costSpan.id = buildingInstances[bldg].ui.costPnlID;
+	costSpan.textContent = "$" + bldgCost.toFixed(2) + "]:</b></u> ";
+	
+	const qtySpan = document.createElement("span");
+	qtySpan.id = buildingInstances[bldg].ui.qtyPnlID;
+	qtySpan.textContent = buildingInstances[bldg].quantity;
+	
+	const buyBtn = document.createElement("button");
+	const sellBtn = document.createElement("button");
+	
+	buyBtn.classList.add("bldg-shop-btn");
+	buyBtn.id = buildingInstances[bldg].ui.buyBtnID;
+	buyBtn.textContent = "Buy";
+	buyBtn.dataset.bldgID = bldg;
+	buyBtn.dataset.op = "Buy";
+	buyBtn.dataset.amt = 1;
+	
+	sellBtn.classList.add("bldg-shop-btn");
+	sellBtn.id = buildingInstances[bldg].ui.sellBtnID;
+	sellBtn.textContent = "Sell";
+	sellBtn.dataset.bldgID = bldg;
+	sellBtn.dataset.op = "Sell";
+	sellBtn.dataset.amt = 1;
+	
+	row.appendChild(labelSpan);
+	row.appendChild(costSpan);
+	row.appendChild(qtySpan);
+	row.appendChild(buyBtn);
+	row.appendChild(sellBtn);
+	
+	return row;
+}
+
 function addStoreButtons(bldg) {
+	let retVal = -1;
 	let storeBuyBtn = document.getElementById(buildingInstances[bldg].ui.buyBtnID);
 	let storeSellBtn = document.getElementById(buildingInstances[bldg].ui.sellBtnID);
 	let storePnlLbl = document.getElementById(buildingInstances[bldg].ui.shopPnlID);
@@ -165,13 +219,26 @@ function addStoreButtons(bldg) {
 	storePnlQty.innerHTML = buildingInstances[bldg].quantity;	
 	cstPnl.innerHTML = "$" + (buildingManager.getBuyCost(bldg)).toFixed(2) + "]:</b></u> ";
 	
-	storeBuyBtn.addEventListener("click", function() {
-		buildingManager.buyBuilding(bldg,1);
-	});
+	storeBuyBtn.dataset.bldgID = bldg;
+	storeBuyBtn.dataset.op = "Buy";
+	storeBuyBtn.dataset.amt = 1;
+	storeSellBtn.dataset.bldgID = bldg;
+	storeSellBtn.dataset.op = "Sell";
+	storeSellBtn.dataset.amt = 1;
 	
-	storeSellBtn.addEventListener("click", function() {
-		buildingManager.sellBuilding(bldg,1);
-	});
+	// Initialize event listener for all store buttons once on initial building unlock
+	if (bldg == BLDG_IDS.PUNCHCARD) {
+		document.getElementById("building-list").addEventListener("click",
+		e => {
+			
+		});
+		
+		
+	}
+	retVal = bldg;
+	
+	
+	return retVal;
 }
 
 function addStoreText(bldg) {
@@ -390,7 +457,8 @@ function updateWattsDisplay(data) {
 function updateBldgShopDisplay(data) {
     let qtyPnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
 	let cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
-
+	let bldgCost = buildingManager.getBuyCost(
+	
     qtyPnl.innerHTML = data.quantity;
 	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]:</b></u> ";
 }
@@ -463,13 +531,14 @@ function unlockBuilding(data) {
 		case BLDG_IDS.PUNCHCARD:
 			addProductionButton(data.buildingId);
 			addProductionDisplay(data.buildingId);
-			addStoreButtons(data.buildingId);
+			addStoreRow(data.buildingId);
+			//addStoreButtons(data.buildingId);
 			
 			break;
 		case BLDG_IDS.DESKTOP:
 			addProductionButton(data.buildingId);
 			addProductionDisplay(data.buildingId);
-			addStoreButtons(data.buildingId);
+			//addStoreButtons(data.buildingId);
 			
 			addBldgUpgrPnl(buildingInstances[BLDG_IDS.DESKTOP]);
 			
@@ -477,7 +546,7 @@ function unlockBuilding(data) {
 		case BLDG_IDS.CHEAP_GEN:
 			addProductionButton(data.buildingId);
 			addProductionDisplay(data.buildingId);
-			addStoreButtons(data.buildingId);
+			//addStoreButtons(data.buildingId);
 			
 			addBldgUpgrPnl(buildingInstances[BLDG_IDS.CHEAP_GEN]);
 						
