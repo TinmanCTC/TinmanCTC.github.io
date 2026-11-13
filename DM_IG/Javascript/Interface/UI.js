@@ -154,6 +154,34 @@ function addProductionButton(bldg) {
 	return retVal;
 }
 
+function addStoreButtons(bldg) {
+	let storeBuyBtn = document.getElementById(buildingInstances[bldg].ui.buyBtnID);
+	let storeSellBtn = document.getElementById(buildingInstances[bldg].ui.sellBtnID);
+	let storePnlLbl = document.getElementById(buildingInstances[bldg].ui.shopPnlID);
+	let storePnlQty = document.getElementById(buildingInstances[bldg].ui.qtyPnlID);
+	let cstPnl = document.getElementById(buildingInstances[bldg].ui.costPnlID)
+	
+	storePnlLbl.innerHTML = buildingInstances[bldg].ui.shopDescriptor;
+	storePnlQty.innerHTML = buildingInstances[bldg].quantity;	
+	cstPnl.innerHTML = "$" + (buildingManager.getBuyCost(bldg)).toFixed(2) + "]:</b></u> ";
+	
+	storeBuyBtn.addEventListener("click", function() {
+		buildingManager.buyBuilding(bldg,1);
+	});
+	
+	storeSellBtn.addEventListener("click", function() {
+		buildingManager.sellBuilding(bldg,1);
+	});
+}
+
+function addStoreText(bldg) {
+	const storeLbl = document.getElementById(buildingInstances[bldg].ui.shopPnlID);
+	const storeQty = document.getElementById(buildingInstances[bldg].ui.qtyPnlID);
+	
+	storeLbl.innerHTML = buildingInstances[bldg].ui.shopDescriptor;
+	storeQty.innerHTML = buildingInstances[bldg].quantity;
+}
+
 function addViewButtons() {
 	let retVal = -1;
 	
@@ -195,36 +223,6 @@ function addViewButtons() {
 	retVal = 1;
 	
 	return retVal;
-}
-
-function addStoreButtons(bldg) {
-	const storeBuyBtn = document.getElementById(buildingInstances[bldg].ui.buyBtnID);
-	const storeSellBtn = document.getElementById(buildingInstances[bldg].ui.sellBtnID);
-	const storePnlLbl = document.getElementById(buildingInstances[bldg].ui.shopPnlID);
-	const storePnlQty = document.getElementById(buildingInstances[bldg].ui.qtyPnlID);
-	const cstPnl = document.getElementById(buildingInstances[bldg].ui.costPnlID)
-	
-	const prodBtn = document.getElementById(buildingInstances[bldg].ui.elementID);
-	
-	storePnlLbl.innerHTML = buildingInstances[bldg].ui.shopDescriptor;
-	storePnlQty.innerHTML = buildingInstances[bldg].quantity;	
-	cstPnl.innerHTML = "$" + (buildingManager.getBuyCost(bldg)).toFixed(2) + "]:</b></u> ";
-	
-	storeBuyBtn.addEventListener("click", function() {
-		buildingManager.buyBuilding(bldg,1);
-	});
-	
-	storeSellBtn.addEventListener("click", function() {
-		buildingManager.sellBuilding(bldg,1);
-	});
-}
-
-function addStoreText(bldg) {
-	const storeLbl = document.getElementById(buildingInstances[bldg].ui.shopPnlID);
-	const storeQty = document.getElementById(buildingInstances[bldg].ui.qtyPnlID);
-	
-	storeLbl.innerHTML = buildingInstances[bldg].ui.shopDescriptor;
-	storeQty.innerHTML = buildingInstances[bldg].quantity;
 }
 
 function addResourceDisplays() {
@@ -390,8 +388,8 @@ function updateWattsDisplay(data) {
 }
 
 function updateBldgShopDisplay(data) {
-    const qtyPnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
-	const cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
+    let qtyPnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
+	let cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID)
 
     qtyPnl.innerHTML = data.quantity;
 	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]:</b></u> ";

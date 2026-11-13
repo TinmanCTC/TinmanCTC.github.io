@@ -167,9 +167,9 @@ export class BuildingManager {
 	}
 	
 	getBuyCost(id) {
-		const retVal = buildingInstances[id].cost.base * (buildingInstances[id].cost.growthRate ** buildingInstances[id].quantity);
-		console.log(retVal);
+		let retVal = buildingInstances[id].cost.base * (buildingInstances[id].cost.growthRate ** buildingInstances[id].quantity);
 		
+		console.log("getBuyCost retVal: " + retVal);
 		return retVal;
 	}
 	
@@ -216,15 +216,19 @@ export class BuildingManager {
 		}
 		
 		buildingInstances[id].quantity += amt;
+		buildingInstances[id].cost.base = this.getBuyCost(id);
 		resourceManager.subMoney(cost);
 		
 		switch (id) {
 			case BLDG_IDS.PUNCHCARD:
-				
+				resourceManager.addPowerCon(powerCon);
+				break;
 			case BLDG_IDS.DESKTOP:
-			
+				resourceManager.addPowerCon(powerCon);
+				break;
 			case BLDG_IDS.LAN:
-				
+				resourceManager.addPowerCon(powerCon);
+				break;
 			case BLDG_IDS.CLOUD:
 				resourceManager.addPowerCon(powerCon);
 				break;
@@ -259,15 +263,19 @@ export class BuildingManager {
 		}
 		
 		buildingInstances[id].quantity -= amt;
+		buildingInstances[id].cost.base = this.getBuyCost(id);
 		resourceManager.addMoney(cost);
 		
 		switch (id) {
 			case BLDG_IDS.PUNCHCARD:
-				
+				resourceManager.addPowerCon(powerCon);
+				break;
 			case BLDG_IDS.DESKTOP:
-			
+				resourceManager.addPowerCon(powerCon);
+				break;
 			case BLDG_IDS.LAN:
-				
+				resourceManager.addPowerCon(powerCon);
+				break;
 			case BLDG_IDS.CLOUD:
 				resourceManager.subPowerCon(powerCon);
 				break;

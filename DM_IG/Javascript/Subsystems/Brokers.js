@@ -12,7 +12,6 @@ layout: page
 import { gameState } from "/DM_IG/Javascript/Engine/stateManager.js";
 import { eventFeed } from "/DM_IG/Javascript/Engine/eventManager.js";
 import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
-
 import { BROKERS_DEFS } from "/DM_IG/Javascript/Data/Brokers.js";
 
 export const brokerInstances = [];
