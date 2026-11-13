@@ -268,13 +268,13 @@ export class BuildingManager {
 		
 		switch (id) {
 			case BLDG_IDS.PUNCHCARD:
-				resourceManager.addPowerCon(powerCon);
+				resourceManager.subPowerCon(powerCon);
 				break;
 			case BLDG_IDS.DESKTOP:
-				resourceManager.addPowerCon(powerCon);
+				resourceManager.subPowerCon(powerCon);
 				break;
 			case BLDG_IDS.LAN:
-				resourceManager.addPowerCon(powerCon);
+				resourceManager.subPowerCon(powerCon);
 				break;
 			case BLDG_IDS.CLOUD:
 				resourceManager.subPowerCon(powerCon);
