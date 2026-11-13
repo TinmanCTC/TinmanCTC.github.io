@@ -165,12 +165,12 @@ function addStoreRow(bldg) {
 				
 				if (e.target.matches(".bldg-shop-btn")) {
 					if (e.target.dataset.op == "Buy") {
-						buildingManager.buyBuilding(e.target.dataset.bldgID);
+						buildingManager.buyBuilding(e.target.dataset.bldgID, e.target.dataset.amt);
 						retVal = 1;
 					}
 					
 					if (e.target.dataset.op == "Sell" ) {
-						buildingManager.sellBuilding(e.target.dataset.bldgID);
+						buildingManager.sellBuilding(e.target.dataset.bldgID, e.target.dataset.amt);
 						retVal = 2;
 					}
 				}
