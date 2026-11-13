@@ -157,7 +157,28 @@ function addProductionButton(bldg) {
 function addStoreRow(bldg) {
 	const row = createStoreRow(bldg);
 	
-	// add event listener once and only once if bldg = 0
+	// add event listener once and only once if bldg = 0 (first building unlock)
+	if (bldg == BLDG_IDS.PUNCHCARD) {
+		document.getElementById("building-list").addEventListener("click",
+			e => {
+				let retVal = -1;
+				
+				if (e.target.matches(".bldg-shop-btn")) {
+					if (e.target.dataset.op == "Buy") {
+						buildingManager.buyBuilding(e.target.dataset.bldgID);
+						retVal = 1;
+					}
+					
+					if (e.target.dataset.op == "Sell" ) {
+						buildingManager.sellBuilding(e.target.dataset.bldgID);
+						retVal = 2;
+					}
+				}
+				
+				console.log("Store Button Click Listener retVal: " + retVal);
+				return retVal;
+			});
+	}
 	
 	document.getElementById("building-list").appendChild(row);
 }
