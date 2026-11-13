@@ -175,7 +175,7 @@ function createStoreRow(bldg) {
 	
 	const costSpan = document.createElement("span");
 	costSpan.id = buildingInstances[bldg].ui.costPnlID;
-	costSpan.textContent = "$" + bldgCost.toFixed(2) + "]:</b></u> ";
+	costSpan.textContent = "$" + bldgCost.toFixed(2) + "]: ";
 	
 	const qtySpan = document.createElement("span");
 	qtySpan.id = buildingInstances[bldg].ui.qtyPnlID;
