@@ -14,7 +14,6 @@ import { eventFeed, emitEvent } from "/DM_IG/Javascript/Engine/eventManager.js";
 
 import { BLDG_DEFS, BLDG_IDS } from "/DM_IG/Javascript/Data/Buildings.js";
 import { resourceManager } from "/DM_IG/Javascript/Subsystems/Resources.js";
-import { addDisplay } from "/DM_IG/Javascript/Interface/UI.js";
 import { INTERFACE_DEFS } from "/DM_IG/Javascript/Interface/Components.js";
 import { bldgUpgrades } from "/DM_IG/Javascript/Data/Upgrades.js";
 
