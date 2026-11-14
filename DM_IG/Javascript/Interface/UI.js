@@ -549,9 +549,9 @@ function unlockBuilding(data) {
 	
 	switch (data.buildingId) {
 		case BLDG_IDS.PUNCHCARD:
+			buildingInstances[data.buildingId].quantity++;
 			addProductionButton(data.buildingId);
 			addStoreRow(data.buildingId);
-			buildingInstances[data.buildingId].quantity++;
 			break;
 		case BLDG_IDS.DESKTOP:
 			addProductionButton(data.buildingId);

@@ -167,7 +167,9 @@ export class BuildingManager {
 	}
 	
 	getBuyCost(id) {
-		let retVal = buildingInstances[id].cost.base * (buildingInstances[id].cost.growthRate ** buildingInstances[id].quantity);
+		let retVal = -1;
+		
+		retVal = buildingInstances[id].cost.base * (buildingInstances[id].cost.growthRate ** buildingInstances[id].quantity);
 		
 		console.log("getBuyCost retVal: " + retVal);
 		return retVal;
@@ -178,6 +180,7 @@ export class BuildingManager {
 		
 		retVal = buildingInstances[bldg].upgrades[upgr].cost * (buildingInstances[bldg].upgrades[upgr].growthRate ** buildingInstances[bldg].upgrades[upgr].level);
 		
+		console.log("getUpgradeCost retVal: " + retVal);
 		return retVal;
 	}
 	
@@ -185,7 +188,8 @@ export class BuildingManager {
 		let retVal = -1;
 		
 		retVal = buildingInstances[bldg].upgrades[upgr].coeff * (buildingInstances[bldg].upgrades[upgr].growthRate ** buildingInstances[bldg].upgrades[upgr].level);
-	
+		
+		console.log("getUpgradeCoeff retVal: " + retVal);
 		return retVal;
 	}
 	
@@ -200,6 +204,8 @@ export class BuildingManager {
 	}
 	
 	buyBuilding(id, amt) {
+		console.log("buyBuilding id: " + id);
+		console.log("buyBuilding amt: " + amt);
 		let cost = this.getBuyCost(id) * amt;
 		let powerCon = buildingInstances[id].production.powerUse * amt;
 		let powerGen = buildingInstances[id].production.base * amt;
@@ -248,6 +254,8 @@ export class BuildingManager {
 	}
 	
 	sellBuilding(id, amt) {
+		console.log("sellBuilding id: " + id);
+		console.log("sellBuilding amt: " + amt);
 		let cost = this.getBuyCost(id) * amt;
 		let powerCon = buildingInstances[id].production.powerUse * amt;
 		let powerGen = buildingInstances[id].production.base * amt;
