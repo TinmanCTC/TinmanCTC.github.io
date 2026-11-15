@@ -481,6 +481,8 @@ function updateBldgShopDisplay(data) {
 	
     qtyPnl.innerHTML = data.quantity;
 	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]: ";
+	console.log("updateBldgShopDisplay data.quantity: " + data.quantity);
+	console.log("updateBldgShopDisplay data.cost: " + data.cost);
 }
 
 function updateBldgUpgrDisplay(data) {
