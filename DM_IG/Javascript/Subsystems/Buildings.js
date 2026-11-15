@@ -35,7 +35,7 @@ export class BuildingManager {
 				level: 1,
 				resource: this.buildings[loc].resource,
 				description: this.buildings[loc].description,
-				quantity: (int)0,
+				quantity: 0,
 				upgrades: this.buildings[loc].upgrades,
 				cost: this.buildings[loc].cost,
 				production: this.buildings[loc].production,
@@ -204,6 +204,9 @@ export class BuildingManager {
 	}
 	
 	buyBuilding(id, amt) {
+		id = Number(id);
+		amt = Number(amt);
+		
 		console.log("buyBuilding id: " + id);
 		console.log("buyBuilding amt: " + amt);
 		let cost = this.getBuyCost(id) * amt;
@@ -254,6 +257,8 @@ export class BuildingManager {
 	}
 	
 	sellBuilding(id, amt) {
+		id = Number(id);
+		amt = Number(amt);
 		console.log("sellBuilding id: " + id);
 		console.log("sellBuilding amt: " + amt);
 		let cost = this.getBuyCost(id) * amt;
