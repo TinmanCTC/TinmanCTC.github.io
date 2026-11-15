@@ -221,7 +221,7 @@ export class BuildingManager {
 			return false;
 		}
 		
-		buildingInstances[id].quantity += amt;
+		buildingInstances[id].quantity = buildingInstances[id].quantity + amt;
 		buildingInstances[id].cost.base = this.getBuyCost(id);
 		resourceManager.subMoney(cost);
 		
@@ -270,7 +270,7 @@ export class BuildingManager {
 			return false;
 		}
 		
-		buildingInstances[id].quantity -= amt;
+		buildingInstances[id].quantity = buildingInstances[id].quantity - amt;
 		buildingInstances[id].cost.base = this.getBuyCost(id);
 		resourceManager.addMoney(cost);
 		
