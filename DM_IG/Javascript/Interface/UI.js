@@ -478,11 +478,12 @@ function updateWattsDisplay(data) {
 function updateBldgShopDisplay(data) {
     let qtyPnl = document.getElementById(buildingInstances[data.buildingId].ui.qtyPnlID);
 	let cstPnl = document.getElementById(buildingInstances[data.buildingId].ui.costPnlID);
+	let cost = buildingManager.getBuyCost(data.buildingId);
 	
     qtyPnl.innerHTML = data.quantity;
-	cstPnl.innerHTML = "$" + data.cost.toFixed(2) + "]: ";
+	cstPnl.innerHTML = "$" + cost.toFixed(2) + "]: ";
 	console.log("updateBldgShopDisplay data.quantity: " + data.quantity);
-	console.log("updateBldgShopDisplay data.cost: " + data.cost);
+	console.log("updateBldgShopDisplay data.cost: " + cost);
 }
 
 function updateBldgUpgrDisplay(data) {
